@@ -1,0 +1,139 @@
+abstract: 'Physical-world adversarial attacks based on universal adversarial
+  patches have been proved to be able to mislead deep convolutional neural
+  networks (CNNs), exposing the vulnerability of real-world visual
+  classification systems based on CNNs. In this paper, we empirically reveal
+  and mathematically explain that the universal adversarial patches usually
+  lead to deep feature vectors with very large norms in popular CNNs. Inspired
+  by this, we propose a simple yet effective defending approach using a new
+  feature norm clipping (FNC) layer which is a differentiable module that can
+  be flexibly inserted in different CNNs to adaptively suppress the generation
+  of large norm deep feature vectors. FNC introduces no trainable parameter and
+  only very low computational overhead. However, experiments on multiple
+  datasets validate that it can effectively improve the robustness of different
+  CNNs towards white-box universal patch attacks while maintaining a
+  satisfactory recognition accuracy for clean samples.'
+author: Yu, Cheng and Chen, Jiansheng and Xue, Youze and Liu, Yuyang and Wan, Weitao
+  and Bao, Jiayu and Ma, Huimin
+author_list:
+- affiliation:
+  - name: Tsinghua University,Department of Electronic Engineering,China
+  family: Yu
+  given: Cheng
+- affiliation:
+  - name: Tsinghua University,Department of Electronic Engineering,China
+  family: Chen
+  given: Jiansheng
+- affiliation:
+  - name: Tsinghua University,Department of Electronic Engineering,China
+  family: Xue
+  given: Youze
+- affiliation:
+  - name: Tsinghua University,Department of Electronic Engineering,China
+  family: Liu
+  given: Yuyang
+- affiliation:
+  - name: Tsinghua University,Department of Electronic Engineering,China
+  family: Wan
+  given: Weitao
+- affiliation:
+  - name: Tsinghua University,Department of Electronic Engineering,China
+  family: Bao
+  given: Jiayu
+- affiliation:
+  - name: University of Science and Technology Beijing,China
+  family: Ma
+  given: Huimin
+booktitle: 2021 IEEE/CVF International Conference on Computer Vision (ICCV)
+citations:
+- article-title: Imagenet classification with deep convolutional neural networks
+  author: krizhevsky
+  journal-title: Annual Conference on Neural Information Processing Systems
+  year: '2012'
+- article-title: Understanding the effective receptive field in deep convolutional
+    neural networks
+  author: luo
+  first-page: '4905'
+  journal-title: Proceedings of the 30th International Conference on Neural Information
+    Processing Systems
+  year: '2016'
+- article-title: Towards deep learning models resistant to adversarial attacks
+  author: madry
+  journal-title: International Conference on Learning Representations
+  year: '2018'
+- doi: 10.1109/WACV.2019.00143
+- doi: 10.1109/CVPR.2015.7298640
+- doi: 10.1109/CVPR.2018.00474
+- doi: 10.1145/3243734.3278515
+- doi: 10.1145/2976749.2978392
+- doi: 10.1109/CVPR.2016.308
+- article-title: Intriguing properties of neural networks
+  author: szegedy
+  journal-title: 2nd International Conference on Learning Representations ICLR 2014
+  year: '2014'
+- article-title: Physical adversarial examples for object detectors
+  author: eykholt
+  journal-title: Proceedings of the 12th USENIX Conference on Offensive Technologies
+  year: '2018'
+- article-title: Certified defenses for adversarial patches
+  author: chiang
+  journal-title: International Conference on Learning Representations
+  year: '2020'
+- doi: 10.1109/CVPR.2016.90
+- doi: 10.1109/CVPRW.2018.00210
+- article-title: 'Lavan: Localized and visible adversarial noise'
+  author: karmon
+  first-page: '2507'
+  journal-title: International Conference on Machine Learning
+  year: '2018'
+- doi: 10.1109/CVPR42600.2020.00080
+- article-title: Adversarial patch
+  author: brown
+  year: '2017'
+- author: krizhevsky
+  journal-title: Learning multiple layers of features from tiny images
+  year: '2009'
+- article-title: 'Obfuscated gradients give a false sense of security: Circumventing
+    defenses to adversarial examples'
+  author: athalye
+  first-page: '274'
+  journal-title: International Conference on Machine Learning
+  year: '2018'
+- author: thomas
+  journal-title: Calculus
+  year: '1961'
+- article-title: Defending against physically realizable attacks on image classification
+  author: wu
+  journal-title: International Conference on Learning Representations
+  year: '2020'
+- article-title: Transferable, controllable, and inconspicuous adversarial attacks
+    on person re-identification with deep misranking
+  author: wang
+  first-page: '342'
+  journal-title: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern
+    Recognition
+  year: '2020'
+- doi: 10.1007/978-3-030-58558-7_39
+- article-title: 'Patchguard: Provable defense against adversarial patches using masks
+    on small receptive fields'
+  author: xiang
+  year: '2020'
+- doi: 10.1109/CVPR42600.2020.01453
+doi: 10.1109/iccv48922.2021.01612
+files:
+- yu-defending-against-universal-adversarial-patches-by-clipping-feature-norms-iccv-2021-paper.pdf
+journal: 2021 IEEE/CVF International Conference on Computer Vision (ICCV)
+month: 10
+publisher: IEEE
+ref: DefendingAgainYuCh2021
+tags: ICCV2021 defence
+time-added: 2023-03-07-08:48:34
+title: Defending against Universal Adversarial Patches by Clipping Feature Norms
+type: inproceedings
+url: https://openaccess.thecvf.com/content/ICCV2021/papers/Yu_Defending_Against_Universal_Adversarial_Patches_by_Clipping_Feature_Norms_ICCV_2021_paper.pdf
+venue: Montreal, QC, Canada
+year: 2021
+notes: 'Mathematical explanation why universal adversarial patches usually lead to
+  deep feature vector with very large norms in popular CNNs. Propose a new
+  layer: Feature Norm Clipping (FNC) It can effectively improve the robustness
+  of different CNNs towards white-box patch attacks while maintaining a
+  satisfactory recognition accuracy for clean samples.'

@@ -1,0 +1,234 @@
+abstract: 'While deep neural networks have shown impressive performance in many
+  tasks, they are fragile to carefully de-signed adversarial attacks. We propose
+  a novel adversarial training-based model by Attention Guided Knowledge
+  Distillation and Bi-directional Metric Learning (AGKD-BML). The attention
+  knowledge is obtained from a weight-fixed model trained on a clean dataset,
+  referred to as a teacher model, and transferred to a model that is under
+  training on adversarial examples (AEs), referred to as a student model. In this
+  way, the student model is able to focus on the correct region, as well as
+  correcting the intermediate features corrupted by AEs to eventually improve the
+  model accuracy. Moreover, to efficiently regularize the representation in
+  feature space, we propose a bidirectional metric learning. Specifically, given
+  a clean image, it is first attacked to its most confusing class to get the
+  forward AE. A clean image in the most confusing class is then randomly picked
+  and attacked back to the original class to get the backward AE. A triplet loss
+  is then used to shorten the representation distance between original image and
+  its AE, while enlarge that between the forward and backward AEs. We conduct
+  extensive adversarial robustness experiments on two widely used datasets with
+  different attacks. Our proposed AGKD-BML model consistently outperforms the
+  state-of-the-art approaches. The code of AGKD-BML will be available at:
+  https://github.com/hongw579/AGKD-BML.'
+author: Wang, Hong and Deng, Yuefan and Yoo, Shinjae and Ling, Haibin and Lin, Yuewei
+author_list:
+- affiliation:
+  - name: Stony Brook University,Stony Brook,NY,USA
+  family: Wang
+  given: Hong
+- affiliation:
+  - name: Stony Brook University,Stony Brook,NY,USA
+  family: Deng
+  given: Yuefan
+- affiliation:
+  - name: Brookhaven National Laboratory,Upton,NY,USA
+  family: Yoo
+  given: Shinjae
+- affiliation:
+  - name: Stony Brook University,Stony Brook,NY,USA
+  family: Ling
+  given: Haibin
+- affiliation:
+  - name: Brookhaven National Laboratory,Upton,NY,USA
+  family: Lin
+  given: Yuewei
+booktitle: 2021 IEEE/CVF International Conference on Computer Vision (ICCV)
+citations:
+- article-title: Are labels required for improving adversarial robustness?
+  author: uesato
+  journal-title: NeurIPS
+  year: '2019'
+- article-title: Intriguing properties of neural networks
+  author: szegedy
+  journal-title: ICLRE
+  year: '2014'
+- article-title: Overfitting in adversarially robust deep learning
+  author: rice
+  first-page: '8093'
+  journal-title: ICML
+  year: '2020'
+- doi: 10.1109/ICCV.2019.00130
+- doi: 10.1109/EuroSP.2016.36
+- doi: 10.1609/aaai.v34i04.5982
+- doi: 10.1109/CVPR.2019.01171
+- article-title: 'Pixeldefend: Leveraging generative models to understand and defend
+    against adversarial examples'
+  author: song
+  journal-title: ICLRE
+  year: '2018'
+- article-title: Adversarial training for free!
+  author: shafahi
+  first-page: '3358'
+  journal-title: NeurIPS
+  year: '2019'
+- doi: 10.1109/ICCV.2017.74
+- article-title: Metric learning for adversarial robustness
+  author: mao
+  first-page: '480'
+  journal-title: NeurIPS
+  year: '2019'
+- article-title: Towards deep learning models resistant to adversarial attacks
+  author: madry
+  journal-title: ICLRE
+  year: '2018'
+- article-title: 'Deepfool: a simple and accurate method to fool deep neural networks'
+  author: moosavi-dezfooli
+  first-page: '2574'
+  journal-title: CVPR
+  year: '2016'
+- article-title: 'Obfuscated gradients give a false sense of security: Circumventing
+    defenses to adversarial examples'
+  author: athalye
+  first-page: '274'
+  journal-title: ICML
+  year: '2018'
+- article-title: 'Square attack: a query-efficient black-box adversarial attack via
+    random search'
+  author: andriushchenko
+  first-page: '484'
+  journal-title: ECCV
+  year: '2020'
+- doi: 10.1109/CVPR.2018.00467
+- article-title: Imagenet classification with deep convolutional neural networks
+  author: krizhevsky
+  first-page: '1097'
+  journal-title: NeurIPS
+  year: '2012'
+- article-title: Adversarial logit pairing
+  author: kannan
+  journal-title: arXiv 1803 06373
+  year: '2018'
+- doi: 10.24963/ijcai.2019/403
+- article-title: Adversarial examples in the physical world
+  author: kurakin
+  journal-title: ICLR Workshop
+  year: '2017'
+- doi: 10.1109/ICCV.2017.56
+- doi: 10.1109/TCYB.2021.3085744
+- article-title: Theoretically principled trade-off between robustness and accuracy
+  author: zhang
+  first-page: '7472'
+  journal-title: ICML
+  year: '2019'
+- article-title: Theoretically principled trade-off between robustness and accuracy
+  author: zhang
+  journal-title: ICML
+  year: '2019'
+- doi: 10.1109/CVPR.2016.319
+- doi: 10.1109/ICCV.2019.00665
+- article-title: Reliable evaluation of adversarial robustness with an ensemble of
+    diverse parameter-free attacks
+  author: croce
+  first-page: '2206'
+  journal-title: ICML
+  year: '2020'
+- article-title: 'Mma training: Direct input space margin maximization through adversarial
+    training'
+  author: ding
+  journal-title: ICLRE
+  year: '2020'
+- article-title: Adversarial risk and the dangers of evaluating against weak attacks
+  author: uesato
+  first-page: '5025'
+  journal-title: International Conference on Machine Learning
+  year: '2018'
+- doi: 10.1109/CVPR.2018.00957
+- doi: 10.1109/CVPR.2018.00175
+- doi: 10.5244/C.29.106
+- article-title: Measuring invariances in deep networks
+  author: goodfellow
+  first-page: '646'
+  journal-title: NeurIPS
+  year: '2009'
+- article-title: Explaining and harnessing adversarial examples
+  author: goodfellow
+  journal-title: ICLRE
+  year: '2015'
+- doi: 10.1109/MSP.2012.2205597
+- article-title: Distilling the knowledge in a neural network
+  author: hinton
+  journal-title: ArXiv 1503 02531
+  year: '2015'
+- doi: 10.1109/CVPR42600.2020.00080
+- doi: 10.1109/SP.2017.49
+- article-title: Improving adversarial robustness via channel-wise activation suppressing
+  author: bai
+  journal-title: ICLRE
+  year: '2021'
+- article-title: 'Cat: Customized adversarial training for improved robustness'
+  author: cheng
+  journal-title: arXiv 2002 06789
+  year: '2020'
+- article-title: Unlabeled data improves adversarial robustness
+  author: carmon
+  journal-title: NeurIPS
+  year: '2019'
+- doi: 10.1145/1390156.1390177
+- article-title: Certified adversarial robustness via randomized smoothing
+  author: cohen
+  first-page: '1310'
+  journal-title: ICML
+  year: '2019'
+- article-title: Defense against adversarial attacks using feature scattering-based
+    adversarial training
+  author: zhang
+  first-page: '1831'
+  journal-title: NeurIPS
+  year: '2019'
+- article-title: Minimally distorted adversarial examples with a fast adaptive boundary
+    attack
+  author: croce
+  first-page: '2196'
+  journal-title: ICML
+  year: '2020'
+- article-title: 'Feature squeezing: Detecting adversarial examples in deep neural
+    networks'
+  author: xu
+  journal-title: arXiv 1704 01155
+  year: '2017'
+- doi: 10.1109/CVPR.2019.00059
+- article-title: Wide residual networks
+  author: zagoruyko
+  first-page: '87.1'
+  journal-title: BMVC
+  year: '2016'
+- doi: 10.1109/CVPR42600.2020.00066
+- article-title: On the convergence and robustness of adversarial training
+  author: wang
+  journal-title: ICML
+  year: '2019'
+- doi: 10.1109/ICCV.2019.00673
+- doi: 10.1109/CVPR42600.2020.00090
+- article-title: Improving adversarial robustness requires revisiting misclassified
+    examples
+  author: wang
+  journal-title: ICLRE
+  year: '2019'
+doi: 10.1109/iccv48922.2021.00756
+files:
+- wang-agkd-bml-defense-against-adversarial-attack-by-attention-guided-knowledge-distillation-iccv-2021-paper.pdf
+journal: 2021 IEEE/CVF International Conference on Computer Vision (ICCV)
+month: 10
+publisher: IEEE
+ref: AgkdBmlDefenWang2021
+tags: ICCV2021 defence
+time-added: 2023-03-07-08:56:25
+title: 'AGKD-BML: Defense Against Adversarial Attack by Attention Guided Knowledge
+  Distillation and Bi-directional Metric Learning'
+type: inproceedings
+url: https://openaccess.thecvf.com/content/ICCV2021/papers/Wang_AGKD-BML_Defense_Against_Adversarial_Attack_by_Attention_Guided_Knowledge_Distillation_ICCV_2021_paper.pdf
+venue: Montreal, QC, Canada
+year: 2021
+notes: 'Propose a novel adversarial training-based model by Attention Guided
+  Knowledge Distillation and Bi-directional Metric Learning (AGKD-BML).
+  Extensive adversarial robustness experiments on  with different attacks
+  achieve SOTA.'
+code: 'https://github.com/hongw579/AGKD-BML'

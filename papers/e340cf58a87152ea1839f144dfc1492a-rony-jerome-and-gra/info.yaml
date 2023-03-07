@@ -1,0 +1,40 @@
+abstract: Adversarial attack algorithms are dominated by penalty methods, which are
+  slow in practice, or more efficient distance-customized methods, which are heavily
+  tailored to the properties of the distance considered. We propose a white-box attack
+  algorithm to generate minimally perturbed adversarial examples based on Augmented
+  Lagrangian principles. We bring several algorithmic modifications, which have a
+  crucial effect on performance. Our attack enjoys the generality of penalty methods
+  and the computational efficiency of distance-customized algorithms, and can be readily
+  used for a wide set of distances. We compare our attack to state-of-the-art methods
+  on three datasets and several models, and consistently obtain competitive performances
+  with similar or lower computational complexity.
+archiveprefix: arXiv
+author: Rony, Jérôme and Granger, Eric and Pedersoli, Marco and Ayed, Ismail Ben
+author_list:
+- family: Rony
+  given: Jérôme
+- family: Granger
+  given: Eric
+- family: Pedersoli
+  given: Marco
+- family: Ayed
+  given: Ismail Ben
+eprint: 2011.11857v2
+file: 2011.11857v2.pdf
+files:
+- tmpxjoeacc8.pdf
+month: Nov
+primaryclass: cs.LG
+ref: 2011.11857v2
+tags: ICCV2021
+time-added: 2023-03-07-08:44:38
+title: Augmented Lagrangian Adversarial Attacks
+type: article
+url: http://arxiv.org/abs/2011.11857v2
+year: '2020'
+notes: 'Propose a white-box attack algorithm to generate minimally perturbed
+  adversarial examples based on Augmented Lagrangian principles. Compare our
+  attack to state-of-the-art methods on three datasets (MNIST, CIFAR-10 and
+  ImageNet) and several models with competitive performances and with similar
+  or lower computational complexity.'
+code: 'https://github.com/jeromerony/augmented_lagrangian_adversarial_attacks'

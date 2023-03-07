@@ -1,0 +1,214 @@
+abstract: 'Universal adversarial perturbation (UAP), i.e. a single perturbation
+  to fool the network for most images, is widely recognized as a more practical
+  attack because the UAP can be generated beforehand and applied directly
+  during the at-tack stage. One intriguing phenomenon regarding untargeted UAP
+  is that most images are misclassified to a dominant label. This phenomenon
+  has been reported in previous works while lacking a justified explanation,
+  for which our work attempts to provide an alternative explanation. For a more
+  practical universal attack, our investigation of untargeted UAP focuses on
+  alleviating the dependence on the original training samples, from removing
+  the need for sample labels to limiting the sample size. Towards strictly
+  data-free untargeted UAP, our work proposes to exploit artificial Jigsaw
+  images as the training samples, demonstrating competitive performance. We
+  further investigate the possibility of exploiting the UAP for a data-free
+  black-box attack which is arguably the most practical yet challenging threat
+  model. We demonstrate that there exists optimization-free repetitive patterns
+  which can successfully attack deep models. Code is available at
+  https://bit.ly/3y0ZTIC.'
+author: Zhang, Chaoning and Benz, Philipp and Karjauv, Adil and Kweon, In So
+author_list:
+- affiliation:
+  - name: Korea Advanced Institute of Science and Technology (KAIST)
+  family: Zhang
+  given: Chaoning
+- affiliation:
+  - name: Korea Advanced Institute of Science and Technology (KAIST)
+  family: Benz
+  given: Philipp
+- affiliation:
+  - name: Korea Advanced Institute of Science and Technology (KAIST)
+  family: Karjauv
+  given: Adil
+- affiliation:
+  - name: Korea Advanced Institute of Science and Technology (KAIST)
+  family: Kweon
+  given: In So
+booktitle: 2021 IEEE/CVF International Conference on Computer Vision (ICCV)
+citations:
+- article-title: Analysis of universal adversarial perturbations
+  author: moosavi-dezfooli
+  year: '2017'
+- doi: 10.1109/CVPR.2017.17
+- doi: 10.1109/CVPR.2018.00191
+- doi: 10.1007/978-3-030-58621-8_46
+- article-title: Practical no-box adversarial attacks against dnns
+  author: li
+  journal-title: NeurIPS
+  year: '2020'
+- article-title: Universal adver-sarial perturbations generative network for speaker
+    recognition
+  author: li
+  journal-title: ICME
+  year: '2020'
+- doi: 10.1609/aaai.v33i01.33014536
+- article-title: Towards deep learning models resistant to adversarial attacks
+  author: madry
+  journal-title: ICLRE
+  year: '2018'
+- doi: 10.1109/CVPR.2015.7298965
+- doi: 10.1109/ICCV.2019.00303
+- doi: 10.1109/CVPR42600.2020.01453
+- doi: 10.24963/ijcai.2021/635
+- article-title: 'Universal adversarial perturbations through the lens of deep steganography:
+    Towards a fourier perspective'
+  author: zhang
+  journal-title: AAAI
+  year: '2021'
+- doi: 10.1038/nature14539
+- article-title: Adversarial examples in the physical world
+  author: kurakin
+  journal-title: ICLR Workshop
+  year: '2016'
+- doi: 10.1109/ICCV.2019.00500
+- article-title: 'Obfuscated gradients give a false sense of security: Circumventing
+    defenses to adversarial examples'
+  author: athalye
+  journal-title: ICML
+  year: '2018'
+- article-title: Universal adversarial audio perturbations
+  author: abdoli
+  year: '2019'
+- doi: 10.1109/SPW.2018.00015
+- doi: 10.1109/TPAMI.2015.2389824
+- doi: 10.1109/ICCV.2017.322
+- doi: 10.1186/s12880-020-00530-y
+- doi: 10.1109/ICCV.2017.300
+- article-title: Art of singular vectors and universal adversarial perturbations
+  author: khrulkov
+  journal-title: CVPR
+  year: '2018'
+- article-title: With friends like these, who needs adversaries?
+  author: jetley
+  journal-title: NeurIPS
+  year: '2018'
+- article-title: Are adversarial examples inevitable?
+  author: shafahi
+  journal-title: ICLRE
+  year: '2019'
+- doi: 10.1609/aaai.v34i04.6017
+- doi: 10.1109/CVPR.2019.00284
+- article-title: Mitigating adversarial effects through randomization
+  author: xie
+  journal-title: ICLRE
+  year: '2018'
+- doi: 10.1109/CVPR42600.2020.00871
+- article-title: Analysis of dominant classes in universal adversarial perturbations
+  author: vadillo
+  year: '2020'
+- article-title: Universal adversarial examples in speech command classification
+  author: vadillo
+  year: '2019'
+- article-title: A boundary tilting persepective on the phenomenon of adversarial
+    examples
+  author: tanay
+  year: '2016'
+- doi: 10.1109/IJCNN.2016.7727230
+- article-title: Intriguing properties of neural networks
+  author: szegedy
+  year: '2013'
+- doi: 10.1109/CVPR.2019.00444
+- article-title: Adversarial vulnerability for any classifier
+  author: fawzi
+  journal-title: NeurIPS
+  year: '2018'
+- doi: 10.1109/CVPR.2016.282
+- article-title: 'Robustness of classifiers: from adversarial to random noise'
+  author: fawzi
+  journal-title: NeurIPS
+  year: '2016'
+- article-title: Universal adversarial perturbation for text classification
+  author: gao
+  year: '2019'
+- article-title: Patch-wise attack for fooling deep neural network
+  author: gao
+  first-page: '307'
+  journal-title: ECCV
+  year: '2020'
+- article-title: Imagenet-trained cnns are biased towards texture; increasing shape
+    bias improves accuracy and robustness
+  author: geirhos
+  journal-title: ICLRE
+  year: '2019'
+- article-title: Adversarial examples are a natural consequence of test error in noise
+  author: gilmer
+  journal-title: ICML
+  year: '2019'
+- article-title: Adversarial spheres
+  author: gilmer
+  year: '2018'
+- article-title: Explaining and harnessing adversarial examples
+  author: goodfellow
+  journal-title: ICLRE
+  year: '2015'
+- article-title: Countering adversarial images using input transformations
+  author: guo
+  year: '2017'
+- doi: 10.1109/SP40000.2020.00045
+- doi: 10.1109/SP.2017.49
+- doi: 10.1145/3128572.3140448
+- article-title: Rethinking atrous convolution for semantic image segmentation
+  author: chen
+  year: '2017'
+- article-title: Certified adversarial robustness via randomized smoothing
+  author: cohen
+  journal-title: ICML
+  year: '2019'
+- article-title: Universal adversarial perturbations to understand robustness of texture
+    vs. shape-biased training
+  author: co
+  year: '2019'
+- article-title: Adversarially robust generalization requires more data
+  author: schmidt
+  journal-title: NeurIPS
+  year: '2018'
+- doi: 10.1109/CVPR.2018.00957
+- doi: 10.1109/CVPR.2018.00465
+- doi: 10.21437/Interspeech.2019-1353
+- article-title: 'Faster R-CNN: Towards real-time object detection with region proposal
+    networks'
+  author: ren
+  journal-title: NeurIPS
+  year: '2015'
+- article-title: 'Ask, acquire, and attack: Data-free uap generation using class impressions'
+  author: mopuri
+  journal-title: ECCV
+  year: '2018'
+- article-title: 'Fast feature fool: A data independent approach to universal adversarial
+    perturbations'
+  author: mopuri
+  journal-title: BMVC
+  year: '2017'
+- article-title: Generalizable data-free objective for crafting universal adversarial
+    perturbations
+  author: mopuri
+  journal-title: TPAMI
+  year: '2018'
+- doi: 10.1109/CVPRW.2017.172
+- doi: 10.1109/CVPR.2018.00084
+doi: 10.1109/iccv48922.2021.00777
+files:
+- zhang-data-free-universal-adversarial-perturbation-and-black-box-attack-iccv-2021-paper.pdf
+journal: 2021 IEEE/CVF International Conference on Computer Vision (ICCV)
+month: 10
+publisher: IEEE
+ref: DataFreeUniveZhang2021
+tags: ICCV2021
+time-added: 2023-03-07-08:23:13
+title: Data-free Universal Adversarial Perturbation and Black-box Attack
+type: inproceedings
+url: https://openaccess.thecvf.com/content/ICCV2021/papers/Zhang_Data-Free_Universal_Adversarial_Perturbation_and_Black-Box_Attack_ICCV_2021_paper.pdf
+venue: Montreal, QC, Canada
+year: 2021
+notes: 'Universal adversarial perturbation (UAP), i.e. a single perturbation to fool
+  the network for most images. Explanation why most images are misclassified to
+  a dominant label. No code available.'

@@ -1,0 +1,172 @@
+author: Gong, Chengyue and Ren, Tongzheng and Ye, Mao and Liu, Qiang
+author_list:
+- affiliation:
+  - name: University of Texas,Austin
+  family: Gong
+  given: Chengyue
+- affiliation:
+  - name: University of Texas,Austin
+  family: Ren
+  given: Tongzheng
+- affiliation:
+  - name: University of Texas,Austin
+  family: Ye
+  given: Mao
+- affiliation:
+  - name: University of Texas,Austin
+  family: Liu
+  given: Qiang
+booktitle: 2021 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+citations:
+- article-title: 'mixup: Beyond empirical risk minimization'
+  author: zhang
+  journal-title: ICLRE
+  year: '2018'
+- article-title: Wide residual networks
+  author: zagoruyko
+  first-page: '87.1'
+  journal-title: BMVC
+  year: '2016'
+- doi: 10.1109/ICCV.2019.00612
+- article-title: Rademacher complexity for adversarially robust generalization
+  author: yin
+  first-page: '7085'
+  journal-title: ICML
+  year: '2019'
+- article-title: 'Freelb: Enhanced adversarial training for language understanding'
+  author: zhu
+  journal-title: ICLRE
+  year: '2020'
+- article-title: Adversarial autoaugment
+  author: zhang
+  journal-title: ICLRE
+  year: '2020'
+- article-title: Theoretically principled trade-off between robustness and accuracy
+  author: zhang
+  first-page: '7472'
+  journal-title: ICML
+  year: '2019'
+- article-title: Explaining and harnessing adversarial examples
+  author: goodfellow
+  journal-title: ICLRE
+  year: '2014'
+- doi: 10.1109/CVPR.2016.90
+- article-title: Identity mappings in deep residual networks
+  author: he
+  first-page: '630'
+  journal-title: ECCV
+  year: '2016'
+- article-title: Bounds on the expectation of the maximum of samples from a gaussian
+  author: kamath
+  year: '2015'
+- article-title: 'Fractalnet: Ultra-deep neural networks without residuals'
+  author: larsson
+  journal-title: ICLRE
+  year: '2017'
+- doi: 10.1109/CVPRW.2019.00190
+- article-title: Towards deep learning models resistant to adversarial attacks
+  author: madry
+  journal-title: ICLRE
+  year: '2017'
+- article-title: Optimal non-asymptotic lower bound on the minimax regret of learning
+    with expert advice
+  author: orabona
+  year: '2015'
+- article-title: Provably robust deep learning via adversarially trained smoothed
+    classifiers
+  author: salman
+  journal-title: NeurIPS
+  year: '2019'
+- article-title: Adversarially robust generalization requires more data
+  author: schmidt
+  first-page: '5014'
+  journal-title: NeurIPS
+  year: '2018'
+- article-title: Certified adversarial robustness via random-ized smoothing
+  author: cohen
+  journal-title: ICML
+  year: '2019'
+- article-title: Adversarial examples improve image recognition
+  author: xie
+  year: '2019'
+- doi: 10.1109/CVPR42600.2020.00078
+- article-title: '3d shapenets: A deep representation for volumetric shapes'
+  author: wu
+  first-page: '1912'
+  journal-title: Proceedings of the IEEE Conference on Computer Vision and Pattern
+    Recognition
+  year: '2015'
+- article-title: 'Randaugment: Practical data augmentation with no separate search'
+  author: cubuk
+  year: '2019'
+- article-title: 'Autoaugment: Learning augmentation policies from data'
+  author: cubuk
+  journal-title: CVPR
+  year: '2019'
+- article-title: Spatial temporal graph convolutional networks for skeleton-based
+    action recognition
+  author: yan
+  year: '2018'
+- article-title: Improved regularization of convolutional neural networks with cutout
+  author: devries
+  year: '2017'
+- doi: 10.1109/CVPR.2009.5206848
+- article-title: Adversarial feature augmentation and normalization for visual recognition
+  author: chen
+  year: '2021'
+- article-title: 'Drop-block: A regularization method for convolutional networks'
+  author: ghiasi
+  first-page: '10727'
+  journal-title: NeurIPS
+  year: '2018'
+- article-title: 'Proxylessnas: Direct neural architecture search on target task and
+    hardware'
+  author: cai
+  journal-title: ICLRE
+  year: '2019'
+- doi: 10.1109/CVPR.2016.89
+- article-title: 'Efficientnet: Rethinking model scaling for convolutional neural
+    networks'
+  author: tan
+  journal-title: ICML
+  year: '2019'
+- article-title: 'Dropout: a simple way to prevent neural networks from overfitting'
+  author: srivastava
+  first-page: '1929'
+  journal-title: JMLR
+  year: '2014'
+- article-title: 'Ensemble adversarial training: Attacks and defenses'
+  author: tramèr
+  journal-title: ICLRE
+  year: '2018'
+- article-title: Fixing the train-test resolution discrepancy
+  author: touvron
+  year: '2019'
+- article-title: 'Manifold mixup: Encouraging meaningful on-manifold interpolation
+    as a regularizer'
+  author: verma
+  journal-title: ICML
+  year: '2019'
+- article-title: Robustness may be at odds with accuracy
+  author: tsipras
+  journal-title: ICLRE
+  year: '2019'
+doi: 10.1109/cvpr46437.2021.00250
+files:
+- gong-maxup-lightweight-adversarial-training-with-data-augmentation-improves-neural-network-cvpr-2021-paper.pdf
+journal: 2021 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+month: 6
+publisher: IEEE
+ref: MaxupLightweiGong2021
+tags: CVPR2021
+time-added: 2023-03-07-16:07:42
+title: 'MaxUp: Lightweight Adversarial Training with Data Augmentation Improves Neural
+  Network Training'
+type: inproceedings
+url: https://openaccess.thecvf.com/content/CVPR2021/papers/Gong_MaxUp_Lightweight_Adversarial_Training_With_Data_Augmentation_Improves_Neural_Network_CVPR_2021_paper.pdf
+venue: Nashville, TN, USA
+year: 2021
+notes: 'Embarrassingly simple, highly effective technique for improving the
+  generalization performance: generate a set of augmented data with some random
+  perturbations or transforms, and minimize the maximum, or worst case loss
+  over the augmented data. Tested on CIFAR-10.'

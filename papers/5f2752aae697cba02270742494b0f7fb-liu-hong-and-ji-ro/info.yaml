@@ -1,0 +1,153 @@
+abstract: 'Deep learning models have shown their vulnerabilities to universal
+  adversarial perturbations (UAP), which are quasi-imperceptible. Compared to the
+  conventional supervised UAPs that suffer from the knowledge of training data,
+  the data-independent unsupervised UAPs are more applicable. Existing
+  unsupervised methods fail to take advantage of the model uncertainty to produce
+  robust perturbations. In this paper, we propose a new unsupervised universal
+  adversarial perturbation method, termed as Prior Driven Uncertainty
+  Approximation (PD-UA), to generate a robust UAP by fully exploiting the model
+  uncertainty at each network layer. Specifically, a Monte Carlo sampling method
+  is deployed to activate more neurons to increase the model uncertainty for a
+  better adversarial perturbation. Thereafter, a textural bias prior to revealing
+  a statistical uncertainty is proposed, which helps to improve the attacking
+  performance. The UAP is crafted by the stochastic gradient descent algorithm
+  with a boosted momentum optimizer, and a Laplacian pyramid frequency model is
+  finally used to maintain the statistical uncertainty. Extensive experiments
+  demonstrate that our method achieves well attacking performances on the
+  ImageNet validation set, and significantly improves the fooling rate compared
+  with the state-of-the-art methods.'
+author: Liu, Hong and Ji, Rongrong and Li, Jie and Zhang, Baochang and Gao, Yue and
+  Wu, Yongjian and Huang, Feiyue
+author_list:
+- affiliation: []
+  family: Liu
+  given: Hong
+- affiliation: []
+  family: Ji
+  given: Rongrong
+- affiliation: []
+  family: Li
+  given: Jie
+- affiliation: []
+  family: Zhang
+  given: Baochang
+- affiliation: []
+  family: Gao
+  given: Yue
+- affiliation: []
+  family: Wu
+  given: Yongjian
+- affiliation: []
+  family: Huang
+  given: Feiyue
+booktitle: 2019 IEEE/CVF International Conference on Computer Vision (ICCV)
+citations:
+- author: szeliski
+  journal-title: Computer Vision Algorithms and Applications
+  year: '2010'
+- article-title: Intriguing Properties of Neural Networks
+  author: szegedy
+  journal-title: Proceedings of the ICLR
+  year: '2014'
+- article-title: Intriguing Properties of Neural Networks
+  author: szegedy
+  journal-title: Proceedings of the ICLR
+  year: '2014'
+- doi: 10.1109/CVPR.2015.7298594
+- article-title: 0001. Interpretable Basis Decomposition for Visual Explanation
+  author: zhou
+  journal-title: Proceedings of the ECCV
+  year: '2018'
+- article-title: 'ImageNet-trained CNNs are Biased Towards Texture: Increasing Shape
+    Bias Improves Accuracy and Robustness'
+  author: geirhos
+  journal-title: Proceedings of the ICLR
+  year: '2019'
+- author: goodfellow
+  journal-title: Deep Learning
+  year: '2016'
+- article-title: Explaining and Harnessing Adversarial Examples
+  author: goodfellow
+  journal-title: Proceedings of the ICLR
+  year: '2015'
+- doi: 10.7551/mitpress/10761.001.0001
+- doi: 10.1109/CVPR.2016.90
+- article-title: Art of Singular Vectors and Universal Adversarial Perturbations
+  author: khrulkov
+  journal-title: Proceedings of the CVPR
+  year: '2018'
+- article-title: Adversarial Examples in The Physical World
+  author: kurakin
+  journal-title: Proceedings of the ICLR
+  year: '2017'
+- doi: 10.1109/ICCV.2019.00500
+- article-title: Dropout Inference in Bayesian Neural Networks with Alpha-divergences
+  author: li
+  journal-title: Proceedings of the ICML
+  year: '2017'
+- article-title: Delving into Transferable Adversarial Examples and Black-box Attacks
+  author: liu
+  journal-title: Proceedings of ICL
+  year: '2017'
+- article-title: Very Deep Convolutional Networks for Large-scale Image Recognition
+  author: simonyan
+  journal-title: Proceedings of the ICLR
+  year: '2015'
+- doi: 10.1016/j.strusafe.2008.06.020
+- doi: 10.1007/s11263-015-0816-y
+- doi: 10.1109/CVPR.2009.5206848
+- article-title: Shifting more attention to video salient object detection
+  author: fan
+  journal-title: Proceedings of the CVPR
+  year: '2019'
+- article-title: Understanding measures of uncertainty for adversarial example detection
+  author: smith
+  journal-title: Proc UAI
+  year: '2018'
+- doi: 10.1109/CVPR.2018.00957
+- article-title: Dropout as a Bayesian Approximation-Representing Model Uncertainty
+    in Deep Learning
+  author: gal
+  journal-title: Proceedings of the ICML
+  year: '2016'
+- author: gal
+  journal-title: Uncertainty in deep learning
+  year: '2016'
+- doi: 10.1109/SP.2017.49
+- article-title: Texture Synthesis Using Convolutional Neural Networks
+  author: gatys
+  journal-title: Proc NeurIPS
+  year: '2015'
+- doi: 10.1109/ACCESS.2018.2807385
+- doi: 10.1109/CVPR.2015.7298965
+- doi: 10.1109/CVPR.2016.282
+- doi: 10.1109/CVPR.2017.17
+- article-title: Fast feature fool - a data independent approach to universal adversarial
+    perturbations
+  author: mopuri
+  journal-title: Proceedings of the BMVC
+  year: '2017'
+- article-title: Generalizable Data-free Objective for Crafting Universal Adversarial
+    Perturbations
+  author: mopuri
+  journal-title: IEE TPAMI
+  year: '2018'
+- doi: 10.1145/3052973.3053009
+- doi: 10.1109/CVPR.2018.00084
+doi: 10.1109/iccv.2019.00303
+files:
+- liu-universal-adversarial-perturbation-via-prior-driven-uncertainty-approximation-iccv-2019-paper.pdf
+journal: 2019 IEEE/CVF International Conference on Computer Vision (ICCV)
+month: 10
+publisher: IEEE
+ref: UniversalAdverLiuH2019
+tags: ICCV2019 attack
+time-added: 2023-03-07-11:27:07
+title: Universal Adversarial Perturbation via Prior Driven Uncertainty Approximation
+type: inproceedings
+url: https://openaccess.thecvf.com/content_ICCV_2019/papers/Liu_Universal_Adversarial_Perturbation_via_Prior_Driven_Uncertainty_Approximation_ICCV_2019_paper.pdf
+venue: Seoul, Korea (South)
+year: 2019
+notes: 'New unsupervised universal adversarial perturbation method, termed as
+  Prior Driven Uncertainty Approximation (PD-UA), to generate a robust UAP by
+  fully exploiting the model uncertainty at each network layer.'

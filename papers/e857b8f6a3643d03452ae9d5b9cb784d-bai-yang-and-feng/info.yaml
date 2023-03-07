@@ -1,0 +1,163 @@
+abstract: 'Adversarial perturbations of clean images are usually imperceptible
+  for human eyes, but can confidently fool deep neural networks (DNNs) to make
+  incorrect predictions. Such vulnerability of DNNs raises serious security
+  concerns about their practicability in security-sensitive applications. To
+  defend against such adversarial perturbations, recently developed PixelDefend
+  purifies a perturbed image based on PixelCNN in a raster scan order
+  (row/column by row/column). However, such scan mode insufficiently exploits
+  the correlations between pixels, which further limits its robustness
+  performance. Therefore, we propose a more advanced Hilbert curve scan order
+  to model the pixel dependencies in this paper. Hilbert curve could well
+  preserve local consistency when mapping from 2-D image to 1-D vector, thus
+  the local features in neighboring pixels can be more effectively modeled.
+  Moreover, the defensive power can be further improved via ensembles of
+  Hilbert curve with different orientations. Experimental results demonstrate
+  the superiority of our method over the state-of-the-art defenses against
+  various adversarial attacks.'
+author: Bai, Yang and Feng, Yan and Wang, Yisen and Dai, Tao and Xia, Shutao and Jiang,
+  Yong
+author_list:
+- affiliation: []
+  family: Bai
+  given: Yang
+- affiliation: []
+  family: Feng
+  given: Yan
+- affiliation: []
+  family: Wang
+  given: Yisen
+- affiliation: []
+  family: Dai
+  given: Tao
+- affiliation: []
+  family: Xia
+  given: Shutao
+- affiliation: []
+  family: Jiang
+  given: Yong
+booktitle: 2019 IEEE/CVF International Conference on Computer Vision (ICCV)
+citations:
+- doi: 10.1093/ietfec/e90-a.3.682
+- doi: 10.1145/3128572.3140449
+- article-title: On the convergence and robustness of adversarial training
+  author: wang
+  journal-title: ICML
+  year: '2019'
+- article-title: Pixel recurrent neural networks
+  author: van den oord
+  journal-title: ICML
+  year: '2016'
+- doi: 10.1109/CVPR.2016.319
+- article-title: Countering adversarial images using input transformations
+  author: guo
+  journal-title: ICLRE
+  year: '2018'
+- doi: 10.1109/CVPR.2016.90
+- doi: 10.1016/S0020-0190(97)00014-8
+- article-title: Adversarial examples in the physical world
+  author: kurakin
+  journal-title: ICLRE
+  year: '2017'
+- article-title: Adversarial machine learning at scale
+  author: kurakin
+  journal-title: ICLRE
+  year: '2017'
+- article-title: Detecting adversarial image examples in deep neural networks with
+    adaptive noise reduction
+  author: liang
+  journal-title: IEEE Transactions on Dependable and Secure Computing
+  year: '2018'
+- doi: 10.1023/B:VISI.0000029664.99615.94
+- article-title: Characterizing adversarial sub-spaces using local intrinsic dimensionality
+  author: ma
+  journal-title: ICLRE
+  year: '2018'
+- article-title: Towards deep learning models resistant to adversarial attacks
+  author: madry
+  journal-title: ICLRE
+  year: '2018'
+- doi: 10.1109/LMWC.2003.822571
+- article-title: Intriguing properties of neural networks
+  author: szegedy
+  journal-title: ICLRE
+  year: '2014'
+- doi: 10.1109/SP.2017.49
+- article-title: 'Pixeldefend: Leveraging generative models to understand and defend
+    against adversarial examples'
+  author: song
+  journal-title: ICLRE
+  year: '2018'
+- article-title: Approximating cnns with bag-of-local-features models works surprisingly
+    well on imagenet
+  author: brendel
+  journal-title: ICLRE
+  year: '2019'
+- article-title: Adversarial spheres
+  author: gilmer
+  journal-title: arXiv preprint arXiv 1801 00257
+  year: '2018'
+- article-title: 'Ensemble adversarial training: Attacks and defenses'
+  author: tramèr
+  journal-title: arXiv preprint arXiv 1705 07204
+  year: '2017'
+- doi: 10.1145/3219819.3219910
+- article-title: Explaining and harnessing adversarial examples
+  author: goodfellow
+  journal-title: ICLRE
+  year: '2015'
+- article-title: Generative adversarial nets
+  author: goodfellow
+  journal-title: NeurIPS
+  year: '2014'
+- article-title: 'Obfuscated gradients give a false sense of security: Circumventing
+    defenses to adversarial examples'
+  author: athalye
+  journal-title: ICML
+  year: '2018'
+- article-title: Explaining and harnessing adversarial examples
+  author: goodfellow
+  journal-title: Computer Science
+  year: '2014'
+- article-title: Wasserstein generative adversarial networks
+  author: arjovsky
+  journal-title: ICML
+  year: '2017'
+- doi: 10.1109/69.908985
+- doi: 10.1145/3052973.3053009
+- article-title: 'Transferability in machine learning: from phenomena to black-box
+    attacks using adversarial samples'
+  author: papernot
+  journal-title: arXiv preprint arXiv 1605 09090
+  year: '2016'
+- article-title: 'Pixelcnn ++: Improving the pixelcnn with discretized logistic mixture
+    likelihood and other modifications'
+  author: salimans
+  journal-title: ICLRE
+  year: '2017'
+- doi: 10.1109/SP.2016.41
+- article-title: Very deep convolutional networks for large-scale image recognition
+  author: simonyan
+  journal-title: ICLRE
+  year: '2015'
+- article-title: 'Defense-gan: Protecting classifiers against adversarial attacks
+    using generative models'
+  author: samangouei
+  journal-title: ICLRE
+  year: '2018'
+doi: 10.1109/iccv.2019.00488
+files:
+- bai-hilbert-based-generative-defense-for-adversarial-examples-iccv-2019-paper.pdf
+journal: 2019 IEEE/CVF International Conference on Computer Vision (ICCV)
+month: 10
+publisher: IEEE
+ref: HilbertBasedGBaiY2019
+tags: ICCV2019 defence
+time-added: 2023-03-07-11:56:37
+title: Hilbert-Based Generative Defense for Adversarial Examples
+type: inproceedings
+url: http://dx.doi.org/10.1109/iccv.2019.00488
+venue: Seoul, Korea (South)
+year: 2019
+notes: 'Improve upon PixelDefend by flatteing 2D image into 1D vector using
+  Hilbert curve, thus the local features in neighboring pixels can be more
+  effectively modeled.'

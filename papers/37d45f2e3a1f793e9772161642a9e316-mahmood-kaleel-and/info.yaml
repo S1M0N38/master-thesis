@@ -1,0 +1,46 @@
+abstract: Recent advances in attention-based networks have shown that Vision Transformers
+  can achieve state-of-the-art or near state-of-the-art results on many image classification
+  tasks. This puts transformers in the unique position of being a promising alternative
+  to traditional convolutional neural networks (CNNs). While CNNs have been carefully
+  studied with respect to adversarial attacks, the same cannot be said of Vision Transformers.
+  In this paper, we study the robustness of Vision Transformers to adversarial examples.
+  Our analyses of transformer security is divided into three parts. First, we test
+  the transformer under standard white-box and black-box attacks. Second, we study
+  the transferability of adversarial examples between CNNs and transformers. We show
+  that adversarial examples do not readily transfer between CNNs and transformers.
+  Based on this finding, we analyze the security of a simple ensemble defense of CNNs
+  and transformers. By creating a new attack, the self-attention blended gradient
+  attack, we show that such an ensemble is not secure under a white-box adversary.
+  However, under a black-box adversary, we show that an ensemble can achieve unprecedented
+  robustness without sacrificing clean accuracy. Our analysis for this work is done
+  using six types of white-box attacks and two types of black-box attacks. Our study
+  encompasses multiple Vision Transformers, Big Transfer Models and CNN architectures
+  trained on CIFAR-10, CIFAR-100 and ImageNet.
+archiveprefix: arXiv
+author: Mahmood, Kaleel and Mahmood, Rigel and van Dijk, Marten
+author_list:
+- family: Mahmood
+  given: Kaleel
+- family: Mahmood
+  given: Rigel
+- family: van Dijk
+  given: Marten
+eprint: 2104.02610v2
+file: 2104.02610v2.pdf
+files:
+- tmpneia0622.pdf
+month: Mar
+primaryclass: cs.CV
+ref: 2104.02610v2
+tags: ICCV2021
+time-added: 2023-03-07-08:33:12
+title: On the Robustness of Vision Transformers to Adversarial Examples
+type: article
+url: http://arxiv.org/abs/2104.02610v2
+year: '2021'
+notes: 'Test the transformer under standard white-box and black-box attacks.
+  Transferability of adversarial examples between CNNs and transformers.
+  Security of a simple ensemble defense of CNNs and transformers. This Study
+  encompasses multiple Vision Transformers, Big Transfer Models and CNN
+  architectures trained on CIFAR-10, CIFAR-100 and ImageNet.'
+code: 'https://github.com/MetaMain/ViTRobust'

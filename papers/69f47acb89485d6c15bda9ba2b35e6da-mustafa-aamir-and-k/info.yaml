@@ -1,0 +1,51 @@
+abstract: Deep neural networks are vulnerable to adversarial attacks, which can fool
+  them by adding minuscule perturbations to the input images. The robustness of existing
+  defenses suffers greatly under white-box attack settings, where an adversary has
+  full knowledge about the network and can iterate several times to find strong perturbations.
+  We observe that the main reason for the existence of such perturbations is the close
+  proximity of different class samples in the learned feature space. This allows model
+  decisions to be totally changed by adding an imperceptible perturbation in the inputs.
+  To counter this, we propose to class-wise disentangle the intermediate feature representations
+  of deep networks. Specifically, we force the features for each class to lie inside
+  a convex polytope that is maximally separated from the polytopes of other classes.
+  In this manner, the network is forced to learn distinct and distant decision regions
+  for each class. We observe that this simple constraint on the features greatly enhances
+  the robustness of learned models, even against the strongest white-box attacks,
+  without degrading the classification performance on clean images. We report extensive
+  evaluations in both black-box and white-box attack scenarios and show significant
+  gains in comparison to state-of-the art defenses.
+archiveprefix: arXiv
+author: Mustafa, Aamir and Khan, Salman and Hayat, Munawar and Goecke, Roland and
+  Shen, Jianbing and Shao, Ling
+author_list:
+- family: Mustafa
+  given: Aamir
+- family: Khan
+  given: Salman
+- family: Hayat
+  given: Munawar
+- family: Goecke
+  given: Roland
+- family: Shen
+  given: Jianbing
+- family: Shao
+  given: Ling
+eprint: 1904.00887v4
+file: 1904.00887v4.pdf
+files:
+- tmpnl7hpm9i.pdf
+month: Apr
+primaryclass: cs.CV
+ref: 1904.00887v4
+tags: ICCV2019 defence
+time-added: 2023-03-07-11:36:54
+title: Adversarial Defense by Restricting the Hidden Space of Deep Neural   Networks
+type: article
+url: http://arxiv.org/abs/1904.00887v4
+year: '2019'
+notes: 'propose to class-wise disentangle the intermediate feature
+  representations of deep networks. Specifically, we force the features for
+  each class to lie inside a convex polytope that is maximally separated from
+  the polytopes of other classes. In this manner, the network is forced to
+  learn distinct and distant decision regions for each class.'
+code: 'https://github.com/aamir-mustafa/pcl-adversarial-defense'

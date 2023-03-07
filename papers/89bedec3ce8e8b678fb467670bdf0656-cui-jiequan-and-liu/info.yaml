@@ -1,0 +1,45 @@
+abstract: Previous adversarial training raises model robustness under the compromise
+  of accuracy on natural data. In this paper, we reduce natural accuracy degradation.
+  We use the model logits from one clean model to guide learning of another one robust
+  model, taking into consideration that logits from the well trained clean model embed
+  the most discriminative features of natural data, e.g., generalizable classifier
+  boundary. Our solution is to constrain logits from the robust model that takes adversarial
+  examples as input and makes it similar to those from the clean model fed with corresponding
+  natural data. It lets the robust model inherit the classifier boundary of the clean
+  model. Moreover, we observe such boundary guidance can not only preserve high natural
+  accuracy but also benefit model robustness, which gives new insights and facilitates
+  progress for the adversarial community. Finally, extensive experiments on CIFAR-10,
+  CIFAR-100, and Tiny ImageNet testify to the effectiveness of our method. We achieve
+  new state-of-the-art robustness on CIFAR-100 without additional real or synthetic
+  data with auto-attack benchmark.
+archiveprefix: arXiv
+author: Cui, Jiequan and Liu, Shu and Wang, Liwei and Jia, Jiaya
+author_list:
+- family: Cui
+  given: Jiequan
+- family: Liu
+  given: Shu
+- family: Wang
+  given: Liwei
+- family: Jia
+  given: Jiaya
+eprint: 2011.11164v2
+file: 2011.11164v2.pdf
+files:
+- tmpcilu9t97.pdf
+month: Nov
+primaryclass: cs.CV
+ref: 2011.11164v2
+tags: ICCV2021
+time-added: 2023-03-07-08:38:32
+title: Learnable Boundary Guided Adversarial Training
+type: article
+url: http://arxiv.org/abs/2011.11164v2
+year: '2020'
+notes: 'We use the model logits from one clean model to guide learning of another one
+  robust model. Constrain logits from the robust model that takes adversarial
+  examples as input and makes it similar to those from the clean model fed with
+  corresponding natural data. This approach preserve high natural accuracy and
+  also benefit model robustness. Experiments on CIFAR-10, CIFAR-100, and Tiny
+  ImageNet. SOTA robustness on CIFAR-100.'
+code: 'https://github.com/dvlab-research/LBGAT'
