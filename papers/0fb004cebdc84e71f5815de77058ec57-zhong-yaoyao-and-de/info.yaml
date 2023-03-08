@@ -22,7 +22,7 @@ files:
 month: Sep
 primaryclass: cs.CV
 ref: 1909.09481v1
-tags: ICCV2019 defence
+tags: ICCV2019 defence selected
 time-added: 2023-03-07-12:30:58
 title: Adversarial Learning with Margin-based Triplet Embedding Regularization
 type: article

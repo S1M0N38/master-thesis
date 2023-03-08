@@ -30,7 +30,7 @@ files:
 month: Nov
 primaryclass: cs.CV
 ref: 2011.11164v2
-tags: ICCV2021
+tags: ICCV2021 selected
 time-added: 2023-03-07-08:38:32
 title: Learnable Boundary Guided Adversarial Training
 type: article

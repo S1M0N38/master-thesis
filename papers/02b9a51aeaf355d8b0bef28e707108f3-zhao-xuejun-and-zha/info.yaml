@@ -35,7 +35,7 @@ files:
 month: Apr
 primaryclass: cs.CV
 ref: 2104.12669v3
-tags: ICCV2021
+tags: ICCV2021 selected
 time-added: 2023-03-07-14:03:40
 title: Exploiting Explanations for Model Inversion Attacks
 type: article

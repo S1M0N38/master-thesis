@@ -36,7 +36,7 @@ files:
 month: Aug
 primaryclass: cs.CR
 ref: 2108.07969v1
-tags: ICCV2021 distillation adversarial-training
+tags: ICCV2021 distillation adversarial-training selected
 time-added: 2023-03-06-19:14:31
 title: 'Revisiting Adversarial Robustness Distillation: Robust Soft Labels Make
   Student Better'

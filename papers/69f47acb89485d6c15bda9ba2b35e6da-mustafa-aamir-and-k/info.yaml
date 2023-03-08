@@ -37,9 +37,9 @@ files:
 month: Apr
 primaryclass: cs.CV
 ref: 1904.00887v4
-tags: ICCV2019 defence
+tags: ICCV2019 defence selected
 time-added: 2023-03-07-11:36:54
-title: Adversarial Defense by Restricting the Hidden Space of Deep Neural   Networks
+title: Adversarial Defense by Restricting the Hidden Space of Deep Neural Networks
 type: article
 url: http://arxiv.org/abs/1904.00887v4
 year: '2019'
