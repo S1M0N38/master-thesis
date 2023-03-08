@@ -9,8 +9,8 @@ here = pathlib.Path(__file__).parent
 md = "> This file was generated from papis library using papers.py script\n\n"
 md += (
     "This is a collection of papers from *ICCV2021*, *ICCV2019*, *CVPR2022*, "
-    "*CVPR2021*, *CVPR2020* and (TODO *CVPR2019 ?*, *NeurIPS2022*, "
-    "*NeurIPS2021*, *NeurIPS2020*) "
+    "*CVPR2021*, *CVPR2020* and  *NeurIPS2022*, *NeurIPS2021*, *NeurIPS2020* "
+    "(TODO *CVPR2019* ?) "
     "regarding adversarial attack/defence.\n"
     "\n---------------------------------------------------------------------\n"
 )
