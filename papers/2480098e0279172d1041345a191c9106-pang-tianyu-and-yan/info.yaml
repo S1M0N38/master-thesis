@@ -1,0 +1,41 @@
+abstract: Adversarial training (AT) is one of the most effective defenses against
+  adversarial attacks for deep learning models. In this work, we advocate incorporating
+  the hypersphere embedding (HE) mechanism into the AT procedure by regularizing the
+  features onto compact manifolds, which constitutes a lightweight yet effective module
+  to blend in the strength of representation learning. Our extensive analyses reveal
+  that AT and HE are well coupled to benefit the robustness of the adversarially trained
+  models from several aspects. We validate the effectiveness and adaptability of HE
+  by embedding it into the popular AT frameworks including PGD-AT, ALP, and TRADES,
+  as well as the FreeAT and FastAT strategies. In the experiments, we evaluate our
+  methods under a wide range of adversarial attacks on the CIFAR-10 and ImageNet datasets,
+  which verifies that integrating HE can consistently enhance the model robustness
+  for each AT framework with little extra computation.
+archiveprefix: arXiv
+author: Pang, Tianyu and Yang, Xiao and Dong, Yinpeng and Xu, Kun and Zhu, Jun and
+  Su, Hang
+author_list:
+- family: Pang
+  given: Tianyu
+- family: Yang
+  given: Xiao
+- family: Dong
+  given: Yinpeng
+- family: Xu
+  given: Kun
+- family: Zhu
+  given: Jun
+- family: Su
+  given: Hang
+eprint: 2002.08619v3
+file: 2002.08619v3.pdf
+files:
+- tmpdv24k666.pdf
+month: Feb
+primaryclass: cs.LG
+ref: 2002.08619v3
+tags: NeurIPS2020
+time-added: 2023-03-08-12:02:30
+title: Boosting Adversarial Training with Hypersphere Embedding
+type: article
+url: http://arxiv.org/abs/2002.08619v3
+year: '2020'

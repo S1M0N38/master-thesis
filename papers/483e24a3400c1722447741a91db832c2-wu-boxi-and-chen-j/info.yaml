@@ -1,0 +1,44 @@
+abstract: 'Adversarial training is a powerful type of defense against adversarial
+  examples. Previous empirical results suggest that adversarial training requires
+  wider networks for better performances. However, it remains elusive how neural network
+  width affects model robustness. In this paper, we carefully examine the relationship
+  between network width and model robustness. Specifically, we show that the model
+  robustness is closely related to the tradeoff between natural accuracy and perturbation
+  stability, which is controlled by the robust regularization parameter $\lambda$.
+  With the same $\lambda$, wider networks can achieve better natural accuracy but
+  worse perturbation stability, leading to a potentially worse overall model robustness.
+  To understand the origin of this phenomenon, we further relate the perturbation
+  stability with the network''s local Lipschitzness. By leveraging recent results
+  on neural tangent kernels, we theoretically show that wider networks tend to have
+  worse perturbation stability. Our analyses suggest that: 1) the common strategy
+  of first fine-tuning $\lambda$ on small networks and then directly use it for wide
+  model training could lead to deteriorated model robustness; 2) one needs to properly
+  enlarge $\lambda$ to unleash the robustness potential of wider models fully. Finally,
+  we propose a new Width Adjusted Regularization (WAR) method that adaptively enlarges
+  $\lambda$ on wide models and significantly saves the tuning time.'
+archiveprefix: arXiv
+author: Wu, Boxi and Chen, Jinghui and Cai, Deng and He, Xiaofei and Gu, Quanquan
+author_list:
+- family: Wu
+  given: Boxi
+- family: Chen
+  given: Jinghui
+- family: Cai
+  given: Deng
+- family: He
+  given: Xiaofei
+- family: Gu
+  given: Quanquan
+eprint: 2010.01279v3
+file: 2010.01279v3.pdf
+files:
+- tmpo332cqt8.pdf
+month: Oct
+primaryclass: cs.LG
+ref: 2010.01279v3
+tags: NeurIPS2021
+time-added: 2023-03-08-12:21:17
+title: Do Wider Neural Networks Really Help Adversarial Robustness?
+type: article
+url: http://arxiv.org/abs/2010.01279v3
+year: '2020'
