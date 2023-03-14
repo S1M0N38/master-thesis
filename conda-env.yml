@@ -1,0 +1,11 @@
+name: master-thesis
+channels:
+  - defaults
+dependencies:
+  - torchaudio
+  - pytorch-cuda=11.6
+  - pytorch
+  - torchvision
+  - tqdm
+  - tensorboard
+prefix: /home/bertolotto/miniconda3/envs/master-thesis
