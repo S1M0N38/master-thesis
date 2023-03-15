@@ -1,0 +1,139 @@
+\documentclass[a4paper, 10pt]{article}
+
+\usepackage{titlesec}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+
+
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\titleformat{\section}
+{\vspace{2.5em}\titlerule\vspace{1em}\bfseries\centering}
+{}{0em}{}
+
+\addtolength{\topmargin}{-2.5cm}
+\addtolength{\textheight}{+2.5cm}
+\addtolength{\footskip}{+0.5cm}
+
+
+% use := for "is defined to be equal to"
+% http://projekte.dante.de/DanteFAQ/Symbole#20
+\mathchardef\ordinarycolon\mathcode`\:
+\mathcode`\:=\string"8000
+\begingroup \catcode`\:=\active
+  \gdef:{\mathrel{\mathop\ordinarycolon}}
+\endgroup
+
+% Custom Math Symbol
+\newcommand{\loss}{\ell}
+\newcommand{\Loss}{\mathcal{L}}
+\newcommand{\transpose}{\intercal}
+
+\begin{document}
+
+\section{Notation}
+
+\paragraph{Inputs} What are we feeding the model with. A single input is denote
+with $\bm{x}$, a batch of inputs with $\bm{X}$. For example in CIFAR-10
+$\bm{x}$ is single image $32 \times 32$ with 3 color channel (a tensor $3
+\times 32 \times 32$, channel $\times$ height $\times$ width). A batch of 64
+images will be denoted $\bm{X}$ and is a tensor $64 \times 3 \times 32 \times
+32$.
+
+\paragraph{Classes} We are concern with classification task. Let $K$ be the set
+of classes and $|K|$ its cardinality. For example in CIFAR-10 $K = \{
+  \textrm{airplane}, \ldots, \textrm{truck} \} = \{k_1, \ldots, k_{10}\}$ and
+$|K| = 10$. Let $g_{(\bm{x})} \in K$ be the class associated to the input
+$\bm{x}$ (ground--truth class). When the $\bm{x}$ is clear from the context the
+index for $g$ will be dropped.
+%TODO be more precise about ordering in a set. g is used as a index
+
+\paragraph{Labels} Labels are the numerical encoding of classes. Each $\bm{x}$
+belong to only one class $g$. In this setting one popular encoding scheme is
+\emph{one--hot encoding}.
+\begin{equation*}
+  \textrm{one--hot}: \,
+  K \longrightarrow \{0, 1\}^{|K|} \, : \,
+  g_{(\bm{x})} \longmapsto \bm{y}_{(\bm{x})} \quad \textrm{with components}
+  \quad \bm{y}_j := \delta_{g,j}\
+\end{equation*}
+Applying and encoding scheme to the batch of labels produce $\bm{Y}_{(\bm{X})}$.
+
+\paragraph{Outputs} What model return. Let $\bm{z}_{(\bm{x})} \in
+\mathbb{R}^{|K|}$ be the outputs of the model given the input $\bm{x}$. To
+output prediction as probability vector, usually denoted by $\hat{\bm{y}}$,
+$\bm{z}$ must be normalized.
+\begin{equation*}
+  P_K : \, \mathbb{R}^{|K|} \rightarrow [0, 1]^{|K|} \, : \,
+  \bm{z}_{(\bm{x})} \mapsto \hat{\bm{y}}_{(\bm{x})} = P_K(\bm{z}_{(\bm{x})})
+  \quad \textrm{with} \quad
+  P_K(\bm{z})_j := \frac{e^{\bm{z}_j}}{\sum_{k \in K} e^{\bm{z}_k}}
+\end{equation*}
+$P_K(.)$ is an alternative notation for the usual \emph{softmax} function. Be
+more explicit about the underlying give us more flexibility for constructing
+custom loss function.
+
+\paragraph{Losses} In the following losses are define as a pointwise operation
+that take $\bm{x}$ and its corresponding label $\bm{y}$ as input and return a
+scalar. Pointwise function apply to a batch can be combined with a reduction
+operator $\bigoplus$ (e.g. sum or mean).
+
+\begin{equation*}
+  \loss : (\bm{x}, \bm{y}) \longmapsto \loss(\bm{x}, \bm{y}) \qquad
+  \Loss : (\bm{X}, \bm{Y}) \longmapsto \Loss(\bm{X}, \bm{Y}) :=
+  \bigoplus_{(\bm{x}, \bm{y}) \in (\bm{X}, \bm{Y})} \loss(\bm{x}, \bm{y})
+\end{equation*}
+
+
+\section{Cross Entropy Loss (XE)}
+Standard Cross--Entropy only uses the output vector component corresponding to
+the ground--truth label (i.e. the $g$ component of the output vector). Training
+process force $\bm{y}_g$ to increase and, due to normalization, other
+components shrinks.
+\begin{equation}
+  \loss_{\textrm{XE}}(\bm{x}, \bm{y}):= - \bm{y}^{\transpose} \log{\hat{\bm{y}}}
+  = - \log{\hat{\bm{y}}_g}
+  \quad \longrightarrow \quad
+  \Loss_{\textrm{XE}} := \frac{-1}{|\bm{X}|}
+  \sum_{\bm{x} \in \bm{X}} \loss_{\textrm{XE}}(\bm{x}, \bm{y})
+\end{equation}
+
+\section{Complement Entropy Loss (CE)}
+%TODO cite
+Chen et al. Introduce \emph{Complement Entropy Loss}. CE take as input the
+output vector $\bm{z}$, remove its $g$ component and renormalise it  obtaining
+$P_{K\setminus\{g\}}(\bm{z})$. CE is minus the Shannon Entropy $H(.)$ of this
+new vector.
+\begin{equation}
+  \loss_{\textrm{CE}}(\bm{x}, \bm{y}):= - H(P_{K\setminus\{g\}}(\bm{z}))
+  \qquad \longrightarrow \qquad
+  \Loss_{\textrm{CE}} := \frac{-1}{|\bm{X}|}
+  \sum_{\bm{x} \in \bm{X}} \loss_{\textrm{CE}}(\bm{x}, \bm{y})
+\end{equation}
+Maximise the entropy of a distribution force it towards a flatter one (in these
+setting the distribution with maximum entropy is the uniform distribution). CE
+is paired with XE using a custom training loop:
+
+\begin{algorithm}
+\caption{Custom Training Loop for CE}
+\label{alg:CE}
+\begin{algorithmic}[1]
+  \For{$i = 1$ to $n_{train-steps}$}
+    \State Update parameters of the model using $\Loss_{\textrm{XE}}$
+    \State Update parameters of the model using $\Loss_{\textrm{CE}}$
+  \EndFor
+\end{algorithmic}
+\end{algorithm}
+
+It was propose an empirical modification to balance the contribution that came
+from CE.
+\begin{equation*}
+  \loss_{CE} \quad \longrightarrow \quad 
+  \loss_{CE}' := \frac{\loss_{CE}}{|K|-1}
+\end{equation*}
+
+\end{document}
