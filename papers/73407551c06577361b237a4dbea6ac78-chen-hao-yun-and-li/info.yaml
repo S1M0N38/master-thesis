@@ -31,25 +31,24 @@ author_list:
   given: Wei
 - family: Juan
   given: Da-Cheng
+code: https://github.com/henry8527/GCE
 eprint: 1903.09799v3
 file: 1903.09799v3.pdf
 files:
 - tmphzeu5yj0.pdf
 month: Mar
+notes: New training paradigm called Guided Complement Entropy (GCE) that is capable
+  of achieving "adversarial defense for free," which involves no additional procedures
+  in the process of improving adversarial robustness. In addition to maximizing model
+  probabilities on the ground-truth class like cross-entropy, we neutralize its probabilities
+  on the incorrect classes along with a "guided" term to balance between these two
+  terms. Better model robustness with even better performance compared to the commonly
+  used cross-entropy training objective.
 primaryclass: cs.LG
 ref: 1903.09799v3
-tags: ICCV2019 defence selected
+tags: ICCV2019 defence selected master-thesis
 time-added: 2023-03-07-12:12:15
 title: Improving Adversarial Robustness via Guided Complement Entropy
 type: article
 url: http://arxiv.org/abs/1903.09799v3
 year: '2019'
-notes: 'New training paradigm called Guided Complement Entropy (GCE) that is
-  capable of achieving "adversarial defense for free," which involves no
-  additional procedures in the process of improving adversarial robustness. In
-  addition to maximizing model probabilities on the ground-truth class like
-  cross-entropy, we neutralize its probabilities on the incorrect classes along
-  with a "guided" term to balance between these two terms. Better model
-  robustness with even better performance compared to the commonly used
-  cross-entropy training objective.'
-code: 'https://github.com/henry8527/GCE'

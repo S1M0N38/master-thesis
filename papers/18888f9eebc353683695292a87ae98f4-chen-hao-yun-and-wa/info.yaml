@@ -34,6 +34,7 @@ author_list:
   given: Wei
 - family: Juan
   given: Da-Cheng
+code: https://github.com/henry8527/COT/tree/master
 eprint: 1903.01182v2
 file: 1903.01182v2.pdf
 files:
@@ -41,10 +42,9 @@ files:
 month: Mar
 primaryclass: cs.LG
 ref: 1903.01182v2
-tags: ICRL2019
+tags: ICRL2019 master-thesis
 time-added: 2023-03-13-10:04:34
 title: Complement Objective Training
 type: article
 url: http://arxiv.org/abs/1903.01182v2
 year: '2019'
-code: 'https://github.com/henry8527/COT/tree/master'
