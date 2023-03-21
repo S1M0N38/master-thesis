@@ -8,4 +8,7 @@ dependencies:
   - torchvision
   - tqdm
   - tensorboard
+  - torchmetrics
+  - torchattacks
+  - scipy
 prefix: /home/bertolotto/miniconda3/envs/master-thesis
