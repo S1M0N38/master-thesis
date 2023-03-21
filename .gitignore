@@ -129,10 +129,10 @@ dmypy.json
 .pyre/
 
 # papers
-*.pdf
+papers/*/*.pdf
 
 # code
 code/datasets
 code/runs
-code/models/*.pth
+code/models
 code/sync.sh
