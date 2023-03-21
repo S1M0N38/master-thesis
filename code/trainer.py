@@ -22,33 +22,26 @@ class Trainer:
     training and validation metrics. Multiple steps are performed sequentially during
     training and validation.
 
-    Parameters:
-    -----------
-    model : torch.nn.Module
-        The PyTorch model to be trained.
-    criterions : list[torch.nn.Module]
-        The loss functions to be used during training.
-    optimizers : list[torch.optim.Optimizer]
-        The optimizers to be used during training.
-    lr_schedulers : list[torch.optim.lr_scheduler._LRScheduler]
-        The learning rate schedulers to be used during training.
-    epochs : int
-        The number of training epochs.
-    trainloader : DataLoader
-        The data loader for the training dataset.
-    testloader : DataLoader
-        The data loader for the validation dataset.
-    device : str, optional
-        The device to run the training on.
-        Defaults to "cuda" if CUDA is available, else "cpu".
-    val_per_epoch : int, optional
-        The number of times to perform validation per epoch. Defaults to 5.
-    save_epoch : int or None, optional
-        The number of epochs after which to save a model checkpoint.
-        If None, the model is not saved during training. Defaults to None.
-    tag : str, optional
-        A tag to add to the name of the model, for TensorBoard logging purposesself.
-        Defaults to "".
+    Args:
+        model (torch.nn.Module): The PyTorch model to be trained.
+        criterions (List[torch.nn.Module]): The loss functions to be used during
+            training.
+        optimizers (List[torch.optim.Optimizer]): The optimizers to be used during
+            training.
+        lr_schedulers (List[torch.optim.lr_scheduler._LRScheduler]):
+            The learning rate schedulers to be used during training.
+        epochs (int): The number of training epochs.
+        trainloader (DataLoader): The data loader for the training dataset.
+        testloader (DataLoader): The data loader for the validation dataset.
+        device (str, optional): The device to run the training on.
+            Defaults to "cuda" if CUDA is available, else "cpu".
+        val_per_epoch (int, optional): The number of times to perform validation per
+            epoch. Defaults to 5.
+        save_epoch (int or None, optional): The number of epochs after which to save a
+            model checkpoint. If None, the model is not saved during training.
+            Defaults to None.
+        tag (str, optional): A tag to add to the name of the model, for TensorBoard
+            logging purposes. Defaults to "".
     """
 
     def __init__(
