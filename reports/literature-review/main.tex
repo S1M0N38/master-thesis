@@ -202,6 +202,38 @@ The sum of HCE and XE is employed is a standard training loop:
 \end{algorithmic}
 \end{algorithm}
 
+\section{Results}
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{|l|r|r|}
+    \hline
+    \textbf{Model} & \textbf{Val Acc} & \textbf{Val Adv Acc} \\ \hline\hline
+    Che+19a\_ResNet110\_CIFAR10\_XE & 0.8698 & 0.5571 \\ \hline
+    Che+19a\_ResNet110\_CIFAR10\_XE,CE & \textbf{0.8836} & \textbf{0.5923} \\ \hline\hline
+    Che+19b\_ResNet56\_CIFAR10\_XE & 0.8983 & 0.5333 \\ \hline
+    Che+19b\_ResNet56\_CIFAR10\_GCE & \textbf{0.9005} & \textbf{0.6213} \\ \hline
+  \end{tabular}
+  \caption{CIFAR-10 experiments. Accuracy are calculate on validation dataset.
+  FGSM based on XE is used to produce adversarial inputs.}
+  \label{tab:CIFAR-10}
+\end{table}
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{|l|r|r|}
+    \hline
+    \textbf{Model} & \textbf{Val Acc} & \textbf{Val Adv Acc} \\ \hline\hline
+    Che+19a\_ResNet110\_CIFAR100\_XE & 0.6497 & 0.3128 \\ \hline
+    Che+19a\_ResNet110\_CIFAR100\_XE,CE & \textbf{0.6516} & \textbf{0.3214} \\ \hline\hline
+    Che+19b\_ResNet56\_CIFAR100\_XE & 0.6001 & 0.2744 \\ \hline
+    Che+19b\_ResNet56\_CIFAR100\_GCE & 0.6246 & \textbf{0.3674} \\ \hline
+    Che+19c\_ResNet56\_CIFAR100\_XE,CE & 0.6164 & 0.2674 \\ \hline
+    Che+19c\_ResNet56\_CIFAR100\_XE,HCE & 0.6164 & 0.3013 \\ \hline
+    Ours\_ResNet56\_CIFAR100\_HGCE & \textbf{0.6356} & 0.3603 \\ \hline
+  \end{tabular}
+  \caption{CIFAR-100 experiments. Accuracy are calculate on validation dataset.
+  FGSM based on XE is used to produce adversarial inputs.}
+  \label{tab:CIFAR-100}
+\end{table}
 
 \newpage
 \printbibliography
