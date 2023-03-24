@@ -8,158 +8,150 @@ from trainer import Trainer
 
 torch.manual_seed(0)
 
+print(
+    """
+Table of Experiments:
++-----------------------------------------------------+
+| --tag   | --model   | --dataset | --loss | --epochs |
+|=====================================================|
+| Che+19a | ResNet110 | CIFAR10   | XE     | 200      |
+| Che+19a | ResNet110 | CIFAR10   | XE,CE  | 200      |
+| Che+19a | ResNet110 | CIFAR100  | XE     | 200      |
+| Che+19a | ResNet110 | CIFAR100  | XE,CE  | 200      |
+|---------+-----------+-----------+--------+----------|
+| Che+19b | ResNet56  | CIFAR10   | XE     | 200      |
+| Che+19b | ResNet56  | CIFAR10   | GCE    | 200      |
+| Che+19b | ResNet56  | CIFAR100  | XE     | 200      |
+| Che+19b | ResNet56  | CIFAR100  | GCE    | 200      |
+|---------+-----------+-----------+--------+----------|
+| Che+19c | ResNet56  | CIFAR100  | XE,CE  | 200      |
+| Che+19c | ResNet56  | CIFAR100  | XE,HCE | 200      |
+| Che+19c | ResNet56  | CIFAR100  | HGCE   | 200      |
++-----------------------------------------------------+
+Note: The optimizer[s] and lr_scheduler[s] are the same for all experiments
+
+Training process produce:
+  - models/[TAG_]{MODEL}_{DATASET}_{LOSS}_{EPOCHS}.pth
+  - runs/[TAG_]{MODEL}_{DATASET}_{LOSS}/*
+"""
+)
+
+
 # CLI ##################################################################################
 
 parser = argparse.ArgumentParser(
     description="Train pytorch models.",
-    formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     epilog="Source code: https://github.com/S1M0N38/master-thesis",
 )
 parser.add_argument(
     "-t",
-    "--trainer",
+    "--tag",
     type=str,
     action="store",
-    choices=[
-        "Che19a_XE",
-        "Che19a_XE_CE",
-        "Che19b_XE",
-        "Che19b_GCE",
-    ],
-    required=True,
-    help="Choose the Trainer to initialize and train",
+    default="",
 )
-
-# TODO: gpu selection is not working
-#
-# parser.add_argument(
-#     "-g",
-#     "--gpu",
-#     type=int,
-#     action="store",
-#     choices=[0, 1],
-#     default=0,
-#     help="Select the GPU device to use. 0 for the first GPU, 1 for the second GPU.",
-# )
+parser.add_argument(
+    "-m",
+    "--model",
+    type=str,
+    action="store",
+    choices=["ResNet56", "ResNet110"],
+    required=True,
+)
+parser.add_argument(
+    "-d",
+    "--dataset",
+    type=str,
+    action="store",
+    choices=["CIFAR10", "CIFAR100"],
+    required=True,
+)
+parser.add_argument(
+    "-l",
+    "--loss",
+    type=str,
+    action="store",
+    choices=["XE", "XE,CE", "GCE", "XE,HCE", "HGCE"],
+    required=True,
+)
+parser.add_argument(
+    "-e",
+    "--epochs",
+    type=int,
+    required=True,
+)
+# TODO: Add gpu selection
 
 args = parser.parse_args()
 
+
+# PROCESS FLAGS ########################################################################
+
+if args.dataset == "CIFAR10":
+    trainloader = data.trainloader_CIFAR10
+    testloader = data.testloader_CIFAR10
+elif args.dataset == "CIFAR100":
+    trainloader = data.trainloader_CIFAR100
+    testloader = data.testloader_CIFAR100
+    fine_to_coarse = data.fine_to_coarse_CIFAR100
+else:
+    raise NotImplementedError
+
+if args.model == "ResNet56":
+    model = models.ResNet56(
+        num_classes=len(trainloader.dataset.classes),  # type: ignore
+    )  # type: ignore
+elif args.model == "ResNet110":
+    model = models.ResNet110(
+        num_classes=len(trainloader.dataset.classes),  # type: ignore
+    )
+else:
+    raise NotImplementedError
+
+if args.loss == "XE":
+    criterions = [losses.XE()]
+elif args.loss == "XE,CE":
+    criterions = [losses.XE(), losses.CE()]
+elif args.loss == "GCE":
+    criterions = [losses.GCE()]
+elif args.loss == "XE,HCE":
+    criterions = [losses.XE(), losses.HCE(fine_to_coarse)]  # type: ignore
+elif args.loss == "HGCE":
+    criterions = [losses.HGCE(fine_to_coarse)]  # type: ignore
+else:
+    raise NotImplementedError
+
+if args.epochs > 0:
+    epochs = args.epochs
+else:
+    raise ValueError
+
+tag = f"{args.tag}_" if args.tag else args.tag
+name = f"{tag}{args.model}_{args.dataset}_{args.loss}"
+
+# Optimizers and Lr_schedulers hyperparams are fixed (no hyperparams search)
+# and follow the ones proposed in Che+19 papers.
+criterions: list[torch.nn.Module] = criterions
+optimizers: list[torch.optim.Optimizer] = [
+    torch.optim.SGD(model.parameters(), lr=0.1, momentum=0.9, weight_decay=0.0001)
+    for _ in criterions
+]
+lr_schedulers: list[torch.optim.lr_scheduler._LRScheduler] = [
+    torch.optim.lr_scheduler.MultiStepLR(o, milestones=[100, 150], gamma=0.1)
+    for o in optimizers
+]
+
 # TRAIN ################################################################################
 
-if args.trainer == "Che19a_XE":
-    model = models.ResNet110()
-    criterion = losses.CrossEntropyLoss()
-    optimizer = torch.optim.SGD(
-        model.parameters(),
-        lr=0.1,
-        momentum=0.9,
-        weight_decay=0.0001,
-    )
-    lr_scheduler = torch.optim.lr_scheduler.MultiStepLR(
-        optimizer,
-        milestones=[100, 150],
-        gamma=0.1,
-    )
-    trainer = Trainer(
-        model=model,
-        criterions=[criterion],
-        optimizers=[optimizer],
-        lr_schedulers=[lr_scheduler],
-        epochs=200,
-        trainloader=data.trainloader_CIFAR10,
-        testloader=data.testloader_CIFAR10,
-        save_epoch=10,
-        tag=args.trainer,
-    )
+trainer = Trainer(
+    name=name,
+    model=model,
+    criterions=criterions,
+    optimizers=optimizers,
+    lr_schedulers=lr_schedulers,
+    epochs=epochs,
+    trainloader=trainloader,
+    testloader=testloader,
+)
 
-elif args.trainer == "Che19a_XE_CE":
-    model = models.ResNet110()
-    criterion_xe = losses.CrossEntropyLoss()
-    optimizer_xe = torch.optim.SGD(
-        model.parameters(),
-        lr=0.1,
-        momentum=0.9,
-        weight_decay=0.0001,
-    )
-    lr_scheduler_xe = torch.optim.lr_scheduler.MultiStepLR(
-        optimizer_xe,
-        milestones=[100, 150],
-        gamma=0.1,
-    )
-    criterion_ce = losses.ComplementEntropyLoss()
-    optimizer_ce = torch.optim.SGD(
-        model.parameters(),
-        lr=0.1,
-        momentum=0.9,
-        weight_decay=0.0001,
-    )
-    lr_scheduler_ce = torch.optim.lr_scheduler.MultiStepLR(
-        optimizer_ce,
-        milestones=[100, 150],
-        gamma=0.1,
-    )
-    trainer = Trainer(
-        model=model,
-        criterions=[criterion_xe, criterion_ce],
-        optimizers=[optimizer_xe, optimizer_ce],
-        lr_schedulers=[lr_scheduler_xe, lr_scheduler_ce],
-        epochs=200,
-        trainloader=data.trainloader_CIFAR10,
-        testloader=data.testloader_CIFAR10,
-        save_epoch=10,
-        tag=args.trainer,
-    )
-
-elif args.trainer == "Che19b_XE":
-    model = models.ResNet56()
-    criterion = losses.CrossEntropyLoss()
-    optimizer = torch.optim.SGD(
-        model.parameters(),
-        lr=0.1,
-        momentum=0.9,
-        weight_decay=0.0001,
-    )
-    lr_scheduler = torch.optim.lr_scheduler.MultiStepLR(
-        optimizer,
-        milestones=[100, 150],
-        gamma=0.1,
-    )
-    trainer = Trainer(
-        model=model,
-        criterions=[criterion],
-        optimizers=[optimizer],
-        lr_schedulers=[lr_scheduler],
-        epochs=200,
-        trainloader=data.trainloader_CIFAR10,
-        testloader=data.testloader_CIFAR10,
-        save_epoch=10,
-        tag=args.trainer,
-    )
-
-elif args.trainer == "Che19b_GCE":
-    model = models.ResNet56()
-    criterion = losses.GuidedComplementEntropyLoss()
-    optimizer = torch.optim.SGD(
-        model.parameters(),
-        lr=0.1,
-        momentum=0.9,
-        weight_decay=0.0001,
-    )
-    lr_scheduler = torch.optim.lr_scheduler.MultiStepLR(
-        optimizer,
-        milestones=[100, 150],
-        gamma=0.1,
-    )
-    trainer = Trainer(
-        model=model,
-        criterions=[criterion],
-        optimizers=[optimizer],
-        lr_schedulers=[lr_scheduler],
-        epochs=200,
-        trainloader=data.trainloader_CIFAR10,
-        testloader=data.testloader_CIFAR10,
-        save_epoch=10,
-        tag=args.trainer,
-    )
-
-trainer.train()  # type: ignore
+trainer.train()
