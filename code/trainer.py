@@ -15,6 +15,8 @@ PATH_RUNS = PATH_HERE / "runs"
 PATH_MODELS.mkdir(exist_ok=True)
 PATH_RUNS.mkdir(exist_ok=True)
 
+# TODO: fix docs for Trainer
+
 
 class Trainer:
     """
@@ -46,6 +48,7 @@ class Trainer:
 
     def __init__(
         self,
+        name: str,
         model: torch.nn.Module,
         criterions: list[torch.nn.Module],
         optimizers: list[torch.optim.Optimizer],
@@ -56,10 +59,13 @@ class Trainer:
         device: str = "cuda" if torch.cuda.is_available() else "cpu",
         val_per_epoch: int = 5,
         save_epoch: int | None = None,
-        tag: str = "",
     ) -> None:
+        # Model
+        self.name = name
         self.device = device
         self.model = model.to(self.device)
+
+        # Train
         self.criterions = criterions
         self.optimizers = optimizers
         self.lr_schedulers = lr_schedulers
@@ -68,19 +74,22 @@ class Trainer:
         # Data
         self.trainloader = trainloader
         self.testloader = testloader
+        self.num_classes = len(self.trainloader.dataset.classes)  # type: ignore
 
         # Track experiments with TensorBoard
-        self.model_name = f"{NOW}_{self.model.__class__.__name__}_{tag}"
-        self.writer = SummaryWriter(log_dir=PATH_RUNS / self.model_name, flush_secs=30)
+        self.writer = SummaryWriter(log_dir=PATH_RUNS / self.name, flush_secs=30)
 
-        # TODO: remove num_classes
         # Metrics
         self.metrics = [
             {
                 "loss": MeanMetric().to(self.device),
                 "vloss": MeanMetric().to(self.device),
-                "acc": Accuracy("multiclass", num_classes=10).to(self.device),
-                "vacc": Accuracy("multiclass", num_classes=10).to(self.device),
+                "acc": Accuracy("multiclass", num_classes=self.num_classes).to(
+                    self.device
+                ),
+                "vacc": Accuracy("multiclass", num_classes=self.num_classes).to(
+                    self.device
+                ),
             }
             for _ in criterions
         ]
@@ -106,7 +115,6 @@ class Trainer:
                 # Forward propagation: make model prediction and calculate loss
                 outputs = self.model(inputs)
                 loss = criterion(outputs, labels)
-
                 # Update metrics: training loss and training accuracy
                 metrics["loss"](loss.item() / self.trainloader.batch_size)
                 metrics["acc"](outputs, labels)
@@ -163,11 +171,12 @@ class Trainer:
                 {"Training": scalars["acc"], "Validation": scalars["vacc"]},
                 epoch * len(self.trainloader) + batch,
             )
-            self.writer.add_scalars(
-                f"{criterion.__class__.__name__}_Error",
-                {"Training": 1 - scalars["acc"], "Validation": 1 - scalars["vacc"]},
-                epoch * len(self.trainloader) + batch,
-            )
+            # Clean a bit TensorBoard
+            # self.writer.add_scalars(
+            #     f"{criterion.__class__.__name__}_Error",
+            #     {"Training": 1 - scalars["acc"], "Validation": 1 - scalars["vacc"]},
+            #     epoch * len(self.trainloader) + batch,
+            # )
 
         self.writer.flush()
 
@@ -177,9 +186,9 @@ class Trainer:
             "optimizers": [o.state_dict() for o in self.optimizers],
             "lr_schedulers": [s.state_dict() for s in self.lr_schedulers],
         }
-        path = PATH_MODELS / f"{self.model_name}_{epoch:0>4}.pth"
+        path = PATH_MODELS / f"{self.name}_{epoch:0>4}.pth"
         torch.save(checkpoint, path)
-        print(f"Checkpoint saved at: {path.name}")
+        print(f"Checkpoint saved at {path.relative_to(PATH_HERE)}")
 
     def _load_checkpoint(self):
         raise NotImplementedError
