@@ -162,10 +162,10 @@ class ResNet(nn.Module):
 
 
 class ResNet110(ResNet):
-    def __init__(self):
-        super().__init__(BasicBlock, [18, 18, 18])
+    def __init__(self, num_classes=10):
+        super().__init__(BasicBlock, [18, 18, 18], num_classes=num_classes)
 
 
 class ResNet56(ResNet):
-    def __init__(self):
-        super().__init__(BasicBlock, [9, 9, 9])
+    def __init__(self, num_classes=10):
+        super().__init__(BasicBlock, [9, 9, 9], num_classes=num_classes)
