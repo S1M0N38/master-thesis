@@ -8,7 +8,6 @@ import torchattacks
 import torchvision.transforms as transforms
 from torch.utils.tensorboard.writer import SummaryWriter
 from torchmetrics import Accuracy
-from tqdm import tqdm
 
 PATH_HERE = pathlib.Path(__file__).parent
 PATH_MODELS = PATH_HERE / "models"
@@ -31,6 +30,13 @@ parser.add_argument(
     "--model",
     type=pathlib.Path,
     help="Select a model to use.",
+)
+parser.add_argument(
+    "-d",
+    "--dataset",
+    type=str,
+    action="store",
+    choices=["CIFAR10", "CIFAR100"],
 )
 parser.add_argument(
     "-s",
@@ -56,18 +62,28 @@ if not args.model.exists():
         "Use -l to get the list of available models."
     )
 
-# ATTACK ###############################################################################
+if args.dataset == "CIFAR10":
+    trainloader = data.trainloader_CIFAR10
+    testloader = data.testloader_CIFAR10
+    num_classes = 10
+elif args.dataset == "CIFAR100":
+    trainloader = data.trainloader_CIFAR100
+    testloader = data.testloader_CIFAR100
+    num_classes = 100
+else:
+    raise NotImplementedError
 
-# Set up the experiment
-writer = SummaryWriter(log_dir=PATH_RUNS / args.model.stem)
+if args.save:
+    writer = SummaryWriter(log_dir=PATH_RUNS / args.model.stem)
+
+# ATTACK ###############################################################################
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-# Example format for args.models.stem
-# {DATE}-{TIME}_{ARCHITECTURE}_{REF}_{LOSS}.pth
-
-architecture = getattr(models, str(args.model.stem).split("_")[1])
-model = architecture().to(device)
+# Example of model naming scheme
+# Che+19a_ResNet110_CIFAR100_XE_0200.pth
+architecture = getattr(models, str(args.model.stem).split("_")[-4])
+model = architecture(num_classes=num_classes).to(device)
 checkpoint = torch.load(args.model, map_location=device)
 model.load_state_dict(checkpoint["model"])
 
@@ -80,12 +96,11 @@ inverse_transform = transforms.Normalize(
     std=(1 / 0.2023, 1 / 0.1994, 1 / 0.2010),
 )
 
+accuracy = Accuracy("multiclass", num_classes=num_classes).to(device)
+accuracy_adv = Accuracy("multiclass", num_classes=num_classes).to(device)
+
+# FGMS attack use PyTorch CrossEntropy
 attack = torchattacks.FGSM(model, eps=8 / 255)
-
-accuracy = Accuracy("multiclass", num_classes=10).to(device)
-accuracy_adv = Accuracy("multiclass", num_classes=10).to(device)
-
-testloader = tqdm(data.testloader_CIFAR10)
 
 for batch, (inputs, labels) in enumerate(testloader):
     inputs, labels = inputs.to(device), labels.to(device)
@@ -101,12 +116,12 @@ for batch, (inputs, labels) in enumerate(testloader):
 
     # Add images from the first batch to TensorBoard
     if batch == 0 and args.save:
-        writer.add_images("Inputs", inverse_transform(inputs))
-        writer.add_images("Inputs Adversarial", inputs_adv)
+        writer.add_images("Inputs", inverse_transform(inputs))  # type: ignore
+        writer.add_images("Inputs Adversarial", inputs_adv)  # type: ignore
 
     # Only first batch when using CPU
     if device == "cpu":
         break
 
-print(f"Test Clean Accuracy: {accuracy.compute().item():.4f}")
-print(f"Test Adversarial Accuracy: {accuracy_adv.compute().item():.4f}")
+print(f"{args.model.stem} Val Clean Accuracy: {accuracy.compute().item():.4f}")
+print(f"{args.model.stem} Val Adver Accuracy: {accuracy_adv.compute().item():.4f}")
