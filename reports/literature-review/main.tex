@@ -133,8 +133,8 @@ is paired with XE using a custom training loop:
 
 They also proposed an empirical modification to balance the contribution that
 came from CE~\footnote{In the paper they propose a rescaling factor of $|K| -
-1$ but in the source code they use $|K|$. The same inconsistency appers for
-$\Loss_{\textrm{GCE}}'.$}.
+1$ but in the source code they use $|K|$. The similar inconsistencies appear in
+others normalized loss functions.}
 \begin{equation*}
   \loss_{\textrm{CE}}' := \frac{\loss_{\textrm{CE}}}{|K|-1}
   \qquad \longrightarrow \qquad
@@ -182,7 +182,7 @@ for the number of classes
 be a set that contains the siblings classes that belong to the same parental
 class of the ground--truth class, that is $g \in G$ and $G \subseteq K$. The
 \emph{Hierarchical Complement Entropy} is
-\begin{equation}
+\begin{equation}\label{eq:HCE}
   \loss_{\textrm{HCE}} :=
   - H(P_{G\setminus\{g\}}(\bm{z}))
   - H(P_{K\setminus\{G\}}(\bm{z}))
@@ -190,49 +190,120 @@ class of the ground--truth class, that is $g \in G$ and $G \subseteq K$. The
   \Loss_{\textrm{HCE}} := \frac{1}{|\bm{X}|} \sum \loss_{\textrm{HCE}}
 \end{equation}
 
-The sum of HCE and XE is employed is a standard training loop:
+\cite{1911.07257v1} empolyed HCE in two training loops: the classic single step
+training loop and in the double steps training loop for direct comparison with
+\cite{1903.01182v2}
 \begin{algorithm}
 \caption{Standard Training Loop for XE + HCE}
-\label{alg:GCE}
+\label{alg:XE+HCE}
 \begin{algorithmic}[1]
   \For{$step$ in $steps$}
-    \State Update parameters of the model using 
+    \State Update parameters of the model using
     $\Loss_{\textrm{XE}} + \Loss_{\textrm{HCE}}$
   \EndFor
 \end{algorithmic}
 \end{algorithm}
+\begin{algorithm}
+\caption{Custom Training Loop for HCE}
+\label{alg:XE.HCE}
+\begin{algorithmic}[1]
+  \For{$step$ in $steps$}
+    \State Update parameters of the model using $\Loss_{\textrm{XE}}$
+    \State Update parameters of the model using $\Loss_{\textrm{HCE}}$
+  \EndFor
+\end{algorithmic}
+\end{algorithm}
+
+Normalized version of $\loss_{\textrm{HCE}}$ can be obtained dividing each
+$H(.)$ in \eqref{eq:HCE} by the number of classes involved
+\begin{equation*}
+  \loss_{\textrm{HCE}}' :=
+  - \frac{H(P_{G\setminus\{g\}}(\bm{z}))}{|G| - 1}
+  - \frac{H(P_{K\setminus\{G\}}(\bm{z}))}{|K| - |G|}
+  \qquad \longrightarrow \qquad
+  \Loss_{\textrm{HCE}}' := \frac{1}{|\bm{X}|} \sum \loss_{\textrm{HCE}}'
+\end{equation*}
+
+\section{Hierarchical Guided Complement Entropy Loss (HGCE)}
+Following the same reasoning in \cite{1903.09799v3}, we take HCE and add
+the guiding factor ${\left[ \hat{\bm{y}}_g \right]}^{\alpha}$.
+\begin{equation}
+  \loss_{\textrm{HGCE}} := 
+  {\left[ \hat{\bm{y}}_g \right]}^{\alpha} \, \loss_{\textrm{HCE}}
+  \quad \longrightarrow \quad
+  \Loss_{\textrm{HGCE}} := \frac{1}{|\bm{X}|} \sum \loss_{\textrm{HGCE}}
+\end{equation}
+
+Standard (single step) training loop is employed using HGCE as the only criterion
+\begin{algorithm}
+\caption{Standard Training Loop for HGCE}
+\label{alg:HGCE}
+\begin{algorithmic}[1]
+  \For{$step$ in $steps$}
+    \State Update parameters of the model using $\Loss_{\textrm{HGCE}}$
+  \EndFor
+\end{algorithmic}
+\end{algorithm}
+
+Combining ideas in GCE and HCE the normalized version will be
+\begin{equation*}
+  \Loss_{\textrm{HGCE}}' := \frac{1}{|\bm{X}|} \sum
+  {\left[ \hat{\bm{y}}_g \right]}^{\alpha} \,
+  \left(
+  - \frac{H(P_{G\setminus\{g\}}(\bm{z}))}{\log(|G| - 1)}
+  - \frac{H(P_{K\setminus\{G\}}(\bm{z}))}{\log(|K| - |G|)}
+  \right)
+\end{equation*}
 
 \section{Results}
-\begin{table}[h!]
+Missing results are not available at the moment due to a bug in the training script.
+
+\begin{table}[!h]
   \centering
-  \begin{tabular}{|l|r|r|}
-    \hline
-    \textbf{Model} & \textbf{Val Acc} & \textbf{Val Adv Acc} \\ \hline\hline
-    Che+19a\_ResNet110\_CIFAR10\_XE & 0.8698 & 0.5571 \\ \hline
-    Che+19a\_ResNet110\_CIFAR10\_XE,CE & \textbf{0.8836} & \textbf{0.5923} \\ \hline\hline
-    Che+19b\_ResNet56\_CIFAR10\_XE & 0.8983 & 0.5333 \\ \hline
-    Che+19b\_ResNet56\_CIFAR10\_GCE & \textbf{0.9005} & \textbf{0.6213} \\ \hline
+  \begin{tabular}{|l|l|c|c|c|c|}
+  \hline
+  \textbf{Ref} & \textbf{Loss} & \textbf{Baseline} & \textbf{FGSM} & \textbf{I-FGSM} & \textbf{PGD} \\ \hline
+  Che+19a & XE & 0.9176/1.0000 & 0.1044/1.0000 & 0.0795/1.0000 & 0.0173/1.0000 \\
+  Che+19a & XE,CE & - & - & - & - \\ \hline
   \end{tabular}
-  \caption{CIFAR-10 experiments. Accuracy are calculate on validation dataset.
-  FGSM based on XE is used to produce adversarial inputs.}
-  \label{tab:CIFAR-10}
+  \label{tab:ResNet110_CIFAR-10}
+  \caption{ResNet110 on CIFAR-10, Accuracy/LCA.}
 \end{table}
-\begin{table}[h!]
+\begin{table}[!h]
   \centering
-  \begin{tabular}{|l|r|r|}
-    \hline
-    \textbf{Model} & \textbf{Val Acc} & \textbf{Val Adv Acc} \\ \hline\hline
-    Che+19a\_ResNet110\_CIFAR100\_XE & 0.6497 & 0.3128 \\ \hline
-    Che+19a\_ResNet110\_CIFAR100\_XE,CE & \textbf{0.6516} & \textbf{0.3214} \\ \hline\hline
-    Che+19b\_ResNet56\_CIFAR100\_XE & 0.6001 & 0.2744 \\ \hline
-    Che+19b\_ResNet56\_CIFAR100\_GCE & 0.6246 & \textbf{0.3674} \\ \hline
-    Che+19c\_ResNet56\_CIFAR100\_XE,CE & 0.6164 & 0.2674 \\ \hline
-    Che+19c\_ResNet56\_CIFAR100\_XE,HCE & 0.6164 & 0.3013 \\ \hline
-    Ours\_ResNet56\_CIFAR100\_HGCE & \textbf{0.6356} & 0.3603 \\ \hline
+  \begin{tabular}{|l|l|c|c|c|c|}
+  \hline
+  \textbf{Ref} & \textbf{Loss} & \textbf{Baseline} & \textbf{FGSM} & \textbf{I-FGSM} & \textbf{PGD} \\ \hline
+  Che+19a & XE & 0.7011/1.6577 & 0.0112/1.9649 & 0.0260/1.9175 & 0.0077/1.9438 \\
+  Che+19a & XE,CE & - & - & - & - \\ \hline
   \end{tabular}
-  \caption{CIFAR-100 experiments. Accuracy are calculate on validation dataset.
-  FGSM based on XE is used to produce adversarial inputs.}
-  \label{tab:CIFAR-100}
+  \label{tab:ResNet110_CIFAR-100}
+  \caption{ResNet110 on CIFAR-100, Accuracy/LCA.}
+\end{table}
+\begin{table}[!h]
+  \centering
+  \begin{tabular}{|l|l|c|c|c|c|}
+  \hline
+  \textbf{Ref} & \textbf{Loss} & \textbf{Baseline} & \textbf{FGSM} & \textbf{I-FGSM} & \textbf{PGD} \\ \hline
+  Che+19b & XE & 0.9269/1.0000 & 0.0991/1.0000 & 0.0426/1.0000 & 0.0038/1.0000 \\
+  Che+19b & GCE & 0.9297/1.0000 & 0.1195/1.0000 & 0.1306/1.0000 & 0.0959/1.0000 \\ \hline
+  \end{tabular}
+  \label{tab:ResNet56_CIFAR-10}
+  \caption{ResNet56 on CIFAR-10, Accuracy/LCA.}
+\end{table}
+\begin{table}[!h]
+  \centering
+  \begin{tabular}{|l|l|c|c|c|c|}
+  \hline
+  \textbf{Ref} & \textbf{Loss} & \textbf{Baseline} & \textbf{FGSM} & \textbf{I-FGSM} & \textbf{PGD} \\ \hline
+  Che+19b & XE & 0.6677/1.6759 & 0.0128/1.9599 & 0.0259/1.9255 & 0.0097/1.9555 \\
+  Che+19c & XE,CE & 0.6866/1.6643 & 0.0102/1.9580 & 0.0258/1.9431 & 0.0102/1.9592 \\
+  Che+19b & GCE & 0.6749/1.6626 & 0.0153/1.9503 & 0.0669/1.9130 & 0.0315/1.9394 \\
+  Che+19c & XE,HCE & 0.6971/1.6418 & 0.0098/1.9655 & 0.0278/1.9355 & 0.0126/1.9600 \\
+  Che+19c & HGCE & 0.6777/1.6131 & 0.0165/1.9514 & 0.0741/1.9155 & 0.0313/1.9270 \\ \hline
+  \end{tabular}
+  \label{tab:ResNet56_CIFAR-100}
+  \caption{ResNet56 on CIFAR-100, Accuracy/LCA.}
 \end{table}
 
 \newpage
