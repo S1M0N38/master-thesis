@@ -31,6 +31,20 @@ def seed_worker(_):
 g = torch.Generator()
 g.manual_seed(0)
 
+
+# TODO: add type hints and conver hier from dict to Tensor
+# Generate LCA matrix from a given hierarchy
+def LCA(hierarchy) -> torch.Tensor:
+    width, depth = len(hierarchy[0]), len(hierarchy)
+    LCA_tensor = torch.full((width, width), depth)
+    for mapping in hierarchy.values():
+        for row, coarse in zip(LCA_tensor, mapping):
+            for index, value in enumerate(mapping):
+                if coarse == value:
+                    row[index] -= 1
+    return LCA_tensor
+
+
 # CIFAR-10 #############################################################################
 
 batch_size_CIFAR10 = 128
@@ -47,6 +61,10 @@ classes_CIFAR10 = (
     "ship",
     "truck",
 )
+
+# Trivial hierarchy for CIFAR10
+hierarchy_CIFAR10 = {0: [i for i in range(10)]}
+LCA_CIFAR10 = LCA(hierarchy_CIFAR10)
 
 # Trasnformations of train and test datasets follow ChenMar19a
 transform_train_CIFAR10 = transforms.Compose(
@@ -122,13 +140,26 @@ classes_CIFAR100 = (
 )
 
 # fmt: off
-fine_to_coarse_CIFAR100 = [
-     4,  1, 14,  8,  0,  6,  7,  7, 18,  3,  3, 14,  9, 18,  7, 11,  3,  9,  7, 11,
-     6, 11,  5, 10,  7,  6, 13, 15,  3, 15,  0, 11,  1, 10, 12, 14, 16,  9, 11,  5,
-     5, 19,  8,  8, 15, 13, 14, 17, 18, 10, 16,  4, 17,  4,  2,  0, 17,  4, 18, 17,
-    10,  3,  2, 12, 12, 16, 12,  1,  9, 19,  2, 10,  0,  1, 16, 12,  9, 13, 15, 13,
-    16, 19,  2,  4,  6, 19,  5,  5,  8, 19, 18,  1,  2, 15,  6,  0, 17,  8, 14, 13,
-]
+hierarchy_CIFAR100 = {
+    # 0 to 1
+    1: [
+        4,  1, 14,  8,  0,  6,  7,  7, 18,  3,  3, 14,  9, 18,  7, 11,  3,  9,  7, 11,
+        6, 11,  5, 10,  7,  6, 13, 15,  3, 15,  0, 11,  1, 10, 12, 14, 16,  9, 11,  5,
+        5, 19,  8,  8, 15, 13, 14, 17, 18, 10, 16,  4, 17,  4,  2,  0, 17,  4, 18, 17,
+        10,  3,  2, 12, 12, 16, 12,  1,  9, 19,  2, 10,  0,  1, 16, 12,  9, 13, 15, 13,
+        16, 19,  2,  4,  6, 19,  5,  5,  8, 19, 18,  1,  2, 15,  6,  0, 17,  8, 14, 13,
+    ],
+    # 0 to 0, they maps to themselves
+    0: [i for i in range(100)],
+
+    # Here it's a simple way to implement hierarchy for any datasets:
+    # a set of mapping from the finer_classes to level-l classes.
+    # Values or the list corespond to level-l classes
+    # while their corresponing indexes are the finer_classes.
+    # l : [...]
+}
+fine_to_coarse_CIFAR100 = hierarchy_CIFAR100[1]
+LCA_CIFAR100 = LCA(hierarchy_CIFAR100)
 # fmt: on
 
 # Keep using Che+19a normalization
@@ -172,9 +203,9 @@ trainloader_CIFAR100 = DataLoader(
 testloader_CIFAR100 = DataLoader(
     testset_CIFAR100,
     batch_size=batch_size_CIFAR100,
-    num_workers=NUM_WORKERS,
-    worker_init_fn=seed_worker,
-    generator=g,
+    # num_workers=NUM_WORKERS,
+    # worker_init_fn=seed_worker,
+    # generator=g,
 )
 
 if __name__ == "__main__":
