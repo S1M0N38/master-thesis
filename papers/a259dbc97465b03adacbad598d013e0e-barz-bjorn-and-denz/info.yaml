@@ -1,0 +1,35 @@
+abstract: Deep neural networks trained for classification have been found to learn
+  powerful image representations, which are also often used for other tasks such as
+  comparing images w.r.t. their visual similarity. However, visual similarity does
+  not imply semantic similarity. In order to learn semantically discriminative features,
+  we propose to map images onto class embeddings whose pair-wise dot products correspond
+  to a measure of semantic similarity between classes. Such an embedding does not
+  only improve image retrieval results, but could also facilitate integrating semantics
+  for other tasks, e.g., novelty detection or few-shot learning. We introduce a deterministic
+  algorithm for computing the class centroids directly based on prior world-knowledge
+  encoded in a hierarchy of classes such as WordNet. Experiments on CIFAR-100, NABirds,
+  and ImageNet show that our learned semantic image embeddings improve the semantic
+  consistency of image retrieval results by a large margin.
+archiveprefix: arXiv
+author: Barz, Björn and Denzler, Joachim
+author_list:
+- family: Barz
+  given: Björn
+- family: Denzler
+  given: Joachim
+doi: 10.1109/WACV.2019.00073
+eprint: 1809.09924v4
+file: 1809.09924v4.pdf
+files:
+- tmpgo5mvu4x.pdf
+month: Sep
+note: 2019 IEEE Winter Conference on Applications of Computer Vision   (WACV), Waikoloa
+  Village, HI, USA, 2019, pp. 638-647
+papis_id: 960935a9ce24112c2877c0a68c8f407a
+primaryclass: cs.CV
+ref: HierarchyBasedBarz2018
+time-added: 2023-05-15-09:19:24
+title: Hierarchy-based Image Embeddings for Semantic Image Retrieval
+type: article
+url: http://arxiv.org/abs/1809.09924v4
+year: '2018'

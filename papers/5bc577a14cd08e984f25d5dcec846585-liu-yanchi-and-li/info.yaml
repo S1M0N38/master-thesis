@@ -1,0 +1,88 @@
+author: Liu, Yanchi and Li, Zhongmou and Xiong, Hui and Gao, Xuedong and Wu, Junjie
+author_list:
+- affiliation: []
+  family: Liu
+  given: Yanchi
+- affiliation: []
+  family: Li
+  given: Zhongmou
+- affiliation: []
+  family: Xiong
+  given: Hui
+- affiliation: []
+  family: Gao
+  given: Xuedong
+- affiliation: []
+  family: Wu
+  given: Junjie
+booktitle: 2010 IEEE 10th International Conference on Data Mining (ICDM)
+citations:
+- doi: 10.1080/01969727408546059
+- doi: 10.1016/0377-0427(87)90125-7
+- doi: 10.1109/TPAMI.1979.4766909
+- doi: 10.1109/34.85677
+- doi: 10.1016/j.patrec.2005.04.007
+- article-title: Quality scheme assessment in the clustering process
+  author: halkidi
+  first-page: '265'
+  journal-title: PKDD
+  year: '2000'
+- doi: 10.1109/ICDM.2001.989517
+- article-title: Application of a new symmetry-based cluster validity index for satellite
+    image segmentation
+  author: saha
+  journal-title: IEEE GRSL
+  year: '2002'
+- article-title: Clustering validity assessment using multi-representatives
+  author: halkidi
+  journal-title: SETN
+  year: '2002'
+- doi: 10.1111/1467-9868.00293
+- author: tan
+  journal-title: Introduction to Data Mining
+  year: '2005'
+- doi: 10.1145/1557019.1557115
+- author: sharma
+  journal-title: Applied Multivariate Techniques
+  year: '1996'
+- doi: 10.1145/584792.584877
+- doi: 10.1007/BF01908075
+- doi: 10.1023/A:1012801612483
+- author: jain
+  journal-title: Algorithms for clustering data Upper Saddle River
+  year: '1988'
+- doi: 10.1080/03610927408827101
+- doi: 10.1109/TPAMI.2002.1114856
+- doi: 10.1109/ICSMC.2005.1571244
+- author: karypis
+  journal-title: Cluto &#x2014;software for clustering high-dimentional datasets version
+    2 1 2
+  year: '2006'
+- article-title: Some methods for classification and analysis of multivariate observations
+  author: macqueen
+  first-page: '281'
+  journal-title: Proc BSMSP
+  year: '1967'
+- article-title: A density-based algorithm for discovering clusters in large spatial
+    databases with noise
+  author: ester
+  first-page: '226'
+  journal-title: KDD
+  year: '1996'
+- doi: 10.1145/1150402.1150503
+- doi: 10.1109/2.781637
+doc_url: http://xplorestaging.ieee.org/ielx5/5690658/5693950/05694060.pdf?arnumber=5694060
+doi: 10.1109/icdm.2010.35
+files:
+- internalmeasures-a.pdf
+journal: 2010 IEEE International Conference on Data Mining
+month: 12
+papis_id: 622ddf6c8f1b12c3b2a68fa0263d0342
+publisher: IEEE
+ref: UnderstandingOLiuY2010
+time-added: 2023-06-07-16:35:15
+title: Understanding of Internal Clustering Validation Measures
+type: inproceedings
+url: http://dx.doi.org/10.1109/icdm.2010.35
+venue: Sydney, Australia
+year: 2010

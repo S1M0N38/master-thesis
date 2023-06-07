@@ -1,0 +1,48 @@
+abstract: 'Modern visual recognition systems are often limited in their ability
+  to scale to large numbers of object categories. This limitation is in part due
+  to the increasing difficulty of acquiring sufficient training data in the form
+  of labeled images as the number of object categories grows. One remedy is to
+  leverage data from other sources - such as text data - both to train visual
+  models and to constrain their predictions. In this paper we present a new deep
+  visual-semantic embedding model trained to identify visual objects using both
+  labeled image data as well as semantic information gleaned from unannotated
+  text. We demonstrate that this model matches state-of-the-art performance on
+  the 1000-class ImageNet object recognition challenge while making more
+  semantically reasonable errors, and also show that the semantic information can
+  be exploited to make predictions about tens of thousands of image labels not
+  observed during training. Semantic knowledge improves such zero-shot
+  predictions achieving hit rates of up to 18% across thousands of novel labels
+  never seen by the visual model.'
+address: Red Hook, NY, USA
+author: Frome, Andrea and Corrado, Greg S. and Shlens, Jonathon and Bengio, Samy and
+  Dean, Jeffrey and Ranzato, Marc'Aurelio and Mikolov, Tomas
+author_list:
+- family: Frome
+  given: Andrea
+- family: Corrado
+  given: Greg S.
+- family: Shlens
+  given: Jonathon
+- family: Bengio
+  given: Samy
+- family: Dean
+  given: Jeffrey
+- family: Ranzato
+  given: Marc'Aurelio
+- family: Mikolov
+  given: Tomas
+booktitle: 'Proceedings of the 26th International Conference on Neural
+  Information Processing Systems - Volume 2'
+files:
+- nips-2013-devise-a-deep-visual-semantic-embedding-model-paper-a.pdf
+location: Lake Tahoe, Nevada
+numpages: '9'
+pages: 2121–2129
+papis_id: 64476d24c1a06f540ee8c6d91d1ef855
+publisher: Curran Associates Inc.
+ref: DeviseADeepFrome2013
+series: NIPS'13
+time-added: 2023-06-07-16:47:43
+title: 'DeViSE: A Deep Visual-Semantic Embedding Model'
+type: inproceedings
+year: '2013'

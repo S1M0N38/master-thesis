@@ -1,0 +1,34 @@
+abstract: 'Several machine learning models, including neural networks, consistently
+  misclassify adversarial examples---inputs formed by applying small but intentionally
+  worst-case perturbations to examples from the dataset, such that the perturbed input
+  results in the model outputting an incorrect answer with high confidence. Early
+  attempts at explaining this phenomenon focused on nonlinearity and overfitting.
+  We argue instead that the primary cause of neural networks'' vulnerability to adversarial
+  perturbation is their linear nature. This explanation is supported by new quantitative
+  results while giving the first explanation of the most intriguing fact about them:
+  their generalization across architectures and training sets. Moreover, this view
+  yields a simple and fast method of generating adversarial examples. Using this approach
+  to provide examples for adversarial training, we reduce the test set error of a
+  maxout network on the MNIST dataset.'
+archiveprefix: arXiv
+author: Goodfellow, Ian J. and Shlens, Jonathon and Szegedy, Christian
+author_list:
+- family: Goodfellow
+  given: Ian J.
+- family: Shlens
+  given: Jonathon
+- family: Szegedy
+  given: Christian
+eprint: 1412.6572v3
+file: 1412.6572v3.pdf
+files:
+- tmprtvmrszb.pdf
+month: Dec
+papis_id: f927c0edc9b14f37f1eee029f6b154a2
+primaryclass: stat.ML
+ref: 1412.6572v3
+time-added: 2023-03-20-16:58:59
+title: Explaining and Harnessing Adversarial Examples
+type: article
+url: http://arxiv.org/abs/1412.6572v3
+year: '2014'

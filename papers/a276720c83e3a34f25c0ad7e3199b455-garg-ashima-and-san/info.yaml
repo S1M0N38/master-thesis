@@ -1,0 +1,36 @@
+abstract: Label hierarchies are often available apriori as part of biological taxonomy
+  or language datasets WordNet. Several works exploit these to learn hierarchy aware
+  features in order to improve the classifier to make semantically meaningful mistakes
+  while maintaining or reducing the overall error. In this paper, we propose a novel
+  approach for learning Hierarchy Aware Features (HAF) that leverages classifiers
+  at each level of the hierarchy that are constrained to generate predictions consistent
+  with the label hierarchy. The classifiers are trained by minimizing a Jensen-Shannon
+  Divergence with target soft labels obtained from the fine-grained classifiers. Additionally,
+  we employ a simple geometric loss that constrains the feature space geometry to
+  capture the semantic structure of the label space. HAF is a training time approach
+  that improves the mistakes while maintaining top-1 error, thereby, addressing the
+  problem of cross-entropy loss that treats all mistakes as equal. We evaluate HAF
+  on three hierarchical datasets and achieve state-of-the-art results on the iNaturalist-19
+  and CIFAR-100 datasets. The source code is available at https://github.com/07Agarg/HAF
+archiveprefix: arXiv
+author: Garg, Ashima and Sani, Depanshu and Anand, Saket
+author_list:
+- family: Garg
+  given: Ashima
+- family: Sani
+  given: Depanshu
+- family: Anand
+  given: Saket
+eprint: 2207.12646v1
+file: 2207.12646v1.pdf
+files:
+- tmp-seuoys9.pdf
+month: Jul
+papis_id: 0a7d6598ed0fb078b51dc12460c49f2e
+primaryclass: cs.CV
+ref: LearningHierarGarg2022
+time-added: 2023-06-07-16:25:57
+title: Learning Hierarchy Aware Features for Reducing Mistake Severity
+type: article
+url: http://arxiv.org/abs/2207.12646v1
+year: '2022'

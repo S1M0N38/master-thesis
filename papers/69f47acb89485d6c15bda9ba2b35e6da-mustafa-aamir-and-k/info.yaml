@@ -1,4 +1,4 @@
-abstract: 'Deep neural networks are vulnerable to adversarial attacks, which can fool
+abstract: Deep neural networks are vulnerable to adversarial attacks, which can fool
   them by adding minuscule perturbations to the input images. The robustness of existing
   defenses suffers greatly under white-box attack settings, where an adversary has
   full knowledge about the network and can iterate several times to find strong perturbations.
@@ -13,7 +13,7 @@ abstract: 'Deep neural networks are vulnerable to adversarial attacks, which can
   the robustness of learned models, even against the strongest white-box attacks,
   without degrading the classification performance on clean images. We report extensive
   evaluations in both black-box and white-box attack scenarios and show significant
-  gains in comparison to state-of-the art defenses.'
+  gains in comparison to state-of-the art defenses.
 archiveprefix: arXiv
 author: Mustafa, Aamir and Khan, Salman and Hayat, Munawar and Goecke, Roland and
   Shen, Jianbing and Shao, Ling
@@ -30,6 +30,7 @@ author_list:
   given: Jianbing
 - family: Shao
   given: Ling
+code: https://github.com/aamir-mustafa/pcl-adversarial-defense
 eprint: 1904.00887v4
 file: 1904.00887v4.pdf
 files:
@@ -40,6 +41,7 @@ notes: propose to class-wise disentangle the intermediate feature representation
   a convex polytope that is maximally separated from the polytopes of other classes.
   In this manner, the network is forced to learn distinct and distant decision regions
   for each class.
+papis_id: 8ba9b42381038a6808c454872649a106
 primaryclass: cs.CV
 ref: 1904.00887v4
 tags: ICCV2019 defence selected master-thesis
@@ -48,4 +50,3 @@ title: Adversarial Defense by Restricting the Hidden Space of Deep Neural Networ
 type: article
 url: http://arxiv.org/abs/1904.00887v4
 year: '2019'
-code: 'https://github.com/aamir-mustafa/pcl-adversarial-defense'

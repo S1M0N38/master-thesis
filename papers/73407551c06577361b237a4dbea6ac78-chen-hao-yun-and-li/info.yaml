@@ -44,6 +44,7 @@ notes: New training paradigm called Guided Complement Entropy (GCE) that is capa
   on the incorrect classes along with a "guided" term to balance between these two
   terms. Better model robustness with even better performance compared to the commonly
   used cross-entropy training objective.
+papis_id: 44fdb7f87d033469f0a780fc612c98ae
 primaryclass: cs.LG
 ref: 1903.09799v3
 tags: ICCV2019 defence selected master-thesis
