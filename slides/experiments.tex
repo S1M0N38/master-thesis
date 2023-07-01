@@ -1,0 +1,135 @@
+\begin{frame}{Experiments | Datasets}
+  \begin{columns}
+    \begin{column}{0.35\textwidth}
+      \alert{{\large CIFAR-100}}
+      \begin{itemize}
+        \item 100 classes
+        \item 6 hierarchy levels
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.2\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=.7\linewidth]{figures/CIFAR100/example_1.jpg}
+        \captionsetup{labelformat=empty, justification=centering, font=scriptsize}
+        \caption{\emph{Apple}}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.2\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=.7\linewidth]{figures/CIFAR100/example_2.jpg}
+        \captionsetup{labelformat=empty, justification=centering, font=scriptsize}
+        \caption{\emph{Chair}}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.2\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=.7\linewidth]{figures/CIFAR100/example_3.jpg}
+        \captionsetup{labelformat=empty, justification=centering, font=scriptsize}
+        \caption{\emph{Lobster}}
+      \end{figure}
+    \end{column}
+  \end{columns}
+
+  \rule{\linewidth}{0.4pt}
+
+  \begin{columns}
+    \begin{column}{0.35\textwidth}
+      \alert{{\large iNaturalist19}}
+      \begin{itemize}
+        \item 1010 classes
+        \item 8 hierarchy levels
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.2\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=.7\linewidth]{figures/iNaturalist19/example_1.jpg}
+        \captionsetup{labelformat=empty, justification=centering, font=scriptsize}
+        \caption{\emph{Amanita Muscaria}}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.2\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=.7\linewidth]{figures/iNaturalist19/example_2.jpg}
+        \captionsetup{labelformat=empty, justification=centering, font=scriptsize}
+        \caption{\emph{Junonia Orithya}}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.2\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=.7\linewidth]{figures/iNaturalist19/example_3.jpg}
+        \captionsetup{labelformat=empty, justification=centering, font=scriptsize}
+        \caption{\emph{Tringa Ochropus}}
+      \end{figure}
+    \end{column}
+  \end{columns}
+
+  \rule{\linewidth}{0.4pt}
+
+  \begin{columns}
+    \begin{column}{0.35\textwidth}
+      \alert{{\large tieredImageNet}}
+      \begin{itemize}
+        \item 608 classes
+        \item 13 hierarchy levels
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.2\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=.7\linewidth]{figures/tieredImageNet/example_1.jpg}
+        \captionsetup{labelformat=empty, justification=centering, font=scriptsize}
+        \caption{\emph{Hammerhead}}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.2\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=.7\linewidth]{figures/tieredImageNet/example_2.jpg}
+        \captionsetup{labelformat=empty, justification=centering, font=scriptsize}
+        \caption{\emph{Basketball}}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.2\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=.7\linewidth]{figures/tieredImageNet/example_3.jpg}
+        \captionsetup{labelformat=empty, justification=centering, font=scriptsize}
+        \caption{\emph{Cliff}}
+      \end{figure}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+
+\begin{frame}{Experiments | Cross Entropy \& One-hot Encoding}
+  \input{../../../Developer/master-thesis-code/notebooks/figures/iNaturalist19/xe-onehot/top-1_accuracy.pgf}
+\end{frame}
+
+\begin{frame}{Experiments | Cross Entropy \& One-hot Encoding}
+  \input{../../../Developer/master-thesis-code/notebooks/figures/iNaturalist19/xe-onehot/loss.pgf}
+\end{frame}
+
+\begin{frame}{Experiments | Cosine Distance \& Description Encoding}
+  \input{../../../Developer/master-thesis-code/notebooks/figures/iNaturalist19/cd-gpt_st_tsne/top-1_accuracy.pgf}
+\end{frame}
+
+\begin{frame}{Experiments | Cosine Similarity \& Description Encoding}
+  \input{../../../Developer/master-thesis-code/notebooks/figures/iNaturalist19/cd-gpt_st_tsne/loss.pgf}
+\end{frame}
+
+\begin{frame}{Experiments | Comparison}
+  Scatter plot: Error vs Mistake Severity
+  \begin{itemize}
+    \item CrossEntropy + One-hot Encoding (Baseline)
+    \item CrossEntropy + Hierarchical Encoding (Proposed in the Paper)
+    \item Cosine Distance + Description Encoding (New)
+    \item More?
+  \end{itemize}
+\end{frame}

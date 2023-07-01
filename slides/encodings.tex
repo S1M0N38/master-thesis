@@ -1,0 +1,242 @@
+\begin{frame}{Alternative Encondings | Hierarchical}
+  Hierarchical encodings are derived from \alert{hierarchical trees}.
+
+  \metroset{block=fill}
+  \begin{block}{Example}
+    \begin{align*}
+      \mathcal{C} &= [
+        &\texttt{lemon} &,  &\texttt{pear} &,  &\texttt{apple} &,
+        &\texttt{dog} &, &\texttt{cat} &, &\texttt{car} &\
+      ]
+    \end{align*}
+    \tikzfig{figures/example_hierarchical_tree}
+  \end{block}
+
+  \note[item]{Una gererchia tra le classi è un'informazione che possiamo
+  sfruttare per costruire una funzione di encoding che tenga conto delle
+  relazioni tra queste.}
+  \note[item]{Un modo di rappresentare una gerachia è con una struttura ad
+  albero.}
+  \note[item]{Limone, pera e mela sono frutti, cane e gatto animali mentre l'auto è
+  un veicolo. Frutti e animali sono presenti in natura, i veicoli sono
+  oggetti artificiali.}
+  \note[item]{Questo è un esempio di gerarchia dalla quale possiamo
+  derivare un embedding gerarchico.}
+\end{frame}
+
+\begin{frame}{Alternative Encondings | Hierarchical}
+  \begin{columns}
+    \column{0.7\textwidth}
+    \only<1>{\tikzfig{figures/example_lca}}
+    \only<2>{\tikzfig{figures/example_similarity}}
+    \only<3>{\tikzfig{figures/example_probability}}
+    \only<4>{\tikzfig{figures/example_probability_apple}}
+
+    \column{0.3\textwidth}
+    \begin{enumerate}[<+- | alert@+>]
+      \item distance
+      \item similarity
+      \item probability
+    \end{enumerate}
+  \end{columns}
+
+  \note[item]{Iniziamo costruendo una matrice di distanza tra le classi per
+  esempio usando l'altezza dell'ultimo antenato comune. Ogni classe ha distanza
+  0 da se stessa. I frutti hanno distanza 1 tra loro, 2 con gli animali e 3,
+  distanza massima con i veicoli.}
+  \note[item]{Dalla distanza construiamo una matrice di similarità. 1 -
+  distanza normalizzata. Le classi avranno similarità 1 con se stesse e 0 con
+  quelle con cui non hanno niente in comune.}
+  \note[item]{Infine, otteniamo una probability mass function sulle classi
+  applicando la softmax lungo le righe. Ogni righa corrisponde all'encoding di
+  una classe.}
+  \note[item]{NEXT}
+  \note[item]{Consideriamo l'encoding per la classe "mela".}
+\end{frame}
+
+\begin{frame}{Alternative Encondings | Hierarchical}
+  \only<1>{
+    \centering
+    similarity $\longrightarrow$ probability
+    \vspace{-0.0cm}
+    \input{../../../Developer/master-thesis-code/notebooks/figures/hier_cross-entropy_1.pgf}
+  }
+  \only<2>{
+    \centering
+    similarity + hyperparam $\longrightarrow$ probability
+    \vspace{-0.0cm}
+    \input{../../../Developer/master-thesis-code/notebooks/figures/hier_cross-entropy_2.pgf}
+  }
+  \only<3>{
+    \centering
+    $\mathcal{L} = - \phi\left(\texttt{apple}\right) \cdot \log \psi_\theta\left(x\right)$
+    \vspace{-0.0cm}
+    \input{../../../Developer/master-thesis-code/notebooks/figures/hier_cross-entropy_3.pgf}
+  }
+  \only<4>{
+    \centering
+    $\mathcal{L} = - \phi\left(\texttt{apple}\right) \cdot \log \psi_\theta\left(x\right)$
+    \vspace{-0.0cm}
+    \input{../../../Developer/master-thesis-code/notebooks/figures/hier_cross-entropy_4.pgf}
+  }
+ 
+  \note[item]{Il risulato della softmax è una distruibuzione di probabilità in
+    cui non è particolarmente evidente la classe di partenza e ciò ostacola il
+    training.}
+  \note[item]{NEXT}
+  \note[item]{Per ovviare a questo problema possiamo introdurre un
+    iperparamentro che riscalando le similarià procude un encoding che risualta
+    più efficiace nel training.}
+  \note[item]{NEXT}
+  \note[item]{Come prima partiamo da una inizializzazione casuale del modello e
+    usiamo la cross entropy come funzione di loss.}
+  \note[item]{NEXT}
+  \note[item]{Stavolta, tutte le componenti di $\psi$ contribuiscono e, agendo
+    i paramentri $\theta$, sono aumentate o ridotte per allinersi all'encoding.}
+\end{frame}
+
+\begin{frame}{Alternative Encondings | Description}
+  Reciepe:
+  \begin{enumerate}
+    \item Use Language Model (e.g. chatGPT) to \alert{generate descriptions}\\
+      for each class.
+    \item Use Embedding Model (e.g. BERT-like) to \alert{generate embeddings}\\
+      for each description.
+    \item Use Dimensionality Reduction (e.g. t-SNE) to \alert{generate encodings}\\
+      for each embedding.
+  \end{enumerate}
+
+  \note[item]{Introduciamo ora un altro tipo di encoding basato sulle
+    descrizioni delle classi. La ricetta per generarli è la seguente.}
+  \note[item]{"Uno": usare modelli di testo generativi di testo per produrre
+    delle descrizioni delle classi.}
+  \note[item]{"Due": usate modelli di embeddings che convertano le descrizioni
+    testuali in un vettore di numeri reali detto embeddings. Descrizioni simili
+    avranno embeddings simili.}
+  \note[item]{"Tre": usare un algoritmo di riduzione della dimensionalità
+    mappare gli embeddings in uno spazio di dimensionalità inferiore. Inoltre
+    modificando gli iperparametri di tali algoritmi e possibile modificare la
+    distiribuzione spaziale, preservando le relazioni di similarità.}
+  \note[item]{Il risulato sono i Description Encodings.}
+\end{frame}
+
+\begin{frame}{Alternative Encondings | Description}
+  \begin{itemize}
+    \item \texttt{lemon}: \emph{\small``Lemons are \alert{oval-shaped} fruits
+      known for their \alert{bright yellow} color and acidic juice.''}
+    \item \texttt{pear}: \emph{\small``Pears are fruits a with \alert{rounded
+      bottom} and a narrower, \alert{elongated top}.''}
+    \item \texttt{apple}: \emph{\small``Apples are \alert{round} fruits that
+      come in a variety of colors, including \alert{red}, \alert{green}, and
+      \alert{yellow}.''}
+  \end{itemize}
+  \note[item]{Queste sono esempi di parti di descrizioni di alcune delle
+    classi ottenute da un modello generativo.}
+  \note[item]{I limoni sono frutti ovali di un giallo brillante, le pere
+    hanno la base rotonda e la parte superiore allungata, le mele sono
+    tondeggianti rosse, verdi e gialle. Tutte carattiristiche che aiutano a
+    distingure visivamente le diverse classi.}
+\end{frame}
+
+\begin{frame}{Alternative Encondings | Description}
+  \begin{columns}
+    \column{0.65\textwidth}
+    \tikzfig{figures/example_embeddings}
+
+    \column{0.35\textwidth}
+    \textbf{\textsc{Desideratum}}\\
+    \vspace{0.2cm}
+    \emph{Distinctive features in the descriptions translate to
+    an hierarchy-like structure in the encodings space}
+  \end{columns}
+
+  \note[item]{Dalle descrizioni passiamo agli embedding e da questi agli
+    encoding. Questa è una rappresentazione 2D semplificata degli encoding.}
+  \note[item]{La speranza è che le caratteristiche distintive presenti nelle
+    descrizioni si traduca in una struttura gerarchica nello spazio degli
+    encoding. Ciò è una conferma che i descriptions encoding riescono a
+    ricavare una gerarchia tra le classi dal significato delle descrizioni.}
+  \note[item]{Tuttavia gerarchia e similarità tra classi sono concetti
+    soggettivi e non necessariamente collegati.}
+  \note[item]{Come misura di similarità tra due encodings utilizziamo l'angolo
+    tra i due vettori. Mela e pera sono più simili di mela e cane.}
+\end{frame}
+
+\begin{frame}{Alternative Encondings | Description}
+  \begin{columns}
+    \column{0.65\textwidth}
+    \only<1>{\tikzfig{figures/example_embeddings_apple1}}
+    \only<2>{\tikzfig{figures/example_embeddings_apple2}}
+
+    \column{0.35\textwidth}
+    Align $\psi_\theta$ to $\phi$ with
+    \alert{Cosine Distance}.
+    \begin{align*}
+      \phi &:
+      \mathcal{C} \rightarrow \mathbb{R}^{d} \\
+      \psi_\theta &:
+      \mathcal{X} \rightarrow \mathbb{R}^{d}
+    \end{align*}
+    \begin{equation*}
+      \mathcal{L} := 1 -
+      \frac{
+        \psi_\theta \cdot \phi
+      }{
+        \left|\psi_\theta\right|_2
+        \left|\phi\right|_2
+      }
+    \end{equation*}
+  \end{columns}
+
+  \note[item]{Consideriamo l'encoding per mela (in blu) e l'output del
+    modello non addestrato (arancione).}
+  \note[item]{Ora $\phi$ mappa dall'inisieme delle classi a $\mathbb{R}^d$ dove
+    la dimensione $d$ e stabilita dall'algoritmo di riduzione di
+    dimensionalità. $\mathbb{R}^d$ è anche lo spazio degli output del modello
+    che non sono più distribuzioni di probabilità ma semplici vettori con
+    componeti reali.}
+  \note[item]{Il training consiste nel modificare i parametri $\theta$ in modo
+    tale da allineare l'output all'encoding, quindi minimizzare l'angolo compreso.}
+  \note[item]{NEXT}
+  \note[item]{In questo caso la funzione di loss è la Cosine Distance.}
+  \note[item]{La classe predetta dal modello sarà quindi quella associata al
+    vettore di encoding più vicino all'output del modello.}
+\end{frame}
+
+\begin{frame}{Alternative Encondings | Comparison}
+  \begin{block}{\textsc{One-hot Encoding + Cross Entropy Loss}}
+    \begin{itemize}
+      \item[\cmark] Battle tested
+      \item[\xmark] Ignore classes similarities
+    \end{itemize}
+  \end{block}
+  \begin{block}{\textsc{Hierarchical Encoding + Cross Entropy Loss}}
+    \begin{itemize}
+      \item[\cmark] Exploit classes similarities
+      \item[\xmark] Require an hierarchy
+    \end{itemize}
+  \end{block}
+  \begin{block}{\textsc{Description Encoding + Cosine Distance Loss}}
+    \begin{itemize}
+      \item[\cmark] Exploit classes similarities
+      \item[\cmark] Best performance (in our experiments)
+    \end{itemize}
+  \end{block}
+
+  \note[item]{Riassumendo. One-hot encoding è largamente utilizzato e dà buoni
+  risulati. È semplice da implemntare e non necessita di informazione extra.
+  Tuttavia non tiene conto delle relazioni tra le cassi con la conseguenza che
+  scambiare una mela con una pera è equivalente a scambiare una mela con un
+  automobile.}
+  \note[item]{Hierarchical encoding è una codifica che sfrutta le relazioni tra
+  classi basandosi su un'esplicita gerarchia. È quindi applicaile a qui dataset
+  per i quali esite o è possibile costruire una gerarchia. Sperimentalmente si
+  verifica che è sensibile agli iperparametri conivolti e alla scelta delle
+  funzioni che costruiscono le distanze e le probabilità.}
+  \note[item]{Infine i modelli che fanno uso di Description Encodings sfruttano
+  la relazioni tra classi senza richedere una gerarchica. Costruiscono tali
+  relazioni basandosi le conoscenze semantiche apprese dai modelli generativi e
+  di embeedings. Dagli esperimenti è emerso come talvolta le performance
+  ottenute con questo metodo superino quelle dei metodi tradizionali tipo
+  One-hot encoding.}
+\end{frame}

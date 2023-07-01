@@ -1,0 +1,126 @@
+\begin{frame}{Introduction | Framework}
+  \begin{center}
+    \huge{Models for images classification\\}
+    \only<1>{\huge{ignore\\}}
+    \only<2>{\huge{\alert{exploit}\\}}
+    \huge{relashionships between classes}
+  \end{center}
+  \note[item]{I modelli per la classificatione di immagini generamente ignorano
+  le relazioni tra le classi.}
+  \note[item]{NEXT}
+  \note[item]{Noi abbiamo studiato e sviluppato modelli che
+  invece le sfruttano.}
+\end{frame}
+
+\begin{frame}{Introduction | Framework}
+  \tikzfig{figures/framework}
+  \vspace{1.5em}
+  \pause
+  \begin{center}
+    \large{We fix $\psi$ and play with $\phi$ and $\mathcal{L}$}
+  \end{center}
+
+  \note[item]{Un modello per la classificatione di immagini è un funzione
+  $\psi_\theta$ che prende come input un'immagine e restituisce un vettore di
+  output. La classe associata all'immagine è convertita da testo a numeri dalla
+  funzione $\phi$ producendo il vettore di encoding. La funzione di Loss
+  $\mathcal{L}$ quantifica con un numero la dissimilarità tra output del
+  modello e corrispondente encoding, minimizzarla significa avviciare l'output
+  del modello alla codifica della classe corretta e quindi migliorare la
+  classificazione del modello. L'argoritmo di backpropagation minimizza in modo
+  iterativo $\mathcal{L}$ agendo sui i parametri del modello $\theta$.}
+  \note[item]{Generalmente si sperimenta modificando l'architettura del modello
+  ovvero cambiando la forma funzionale di $\psi$.}
+  \note[item]{NEXT}
+  \note[item]{Noi invece abbiamo fissato $\psi$ e variato $\phi$ e
+  $\mathcal{L}$.}
+\end{frame}
+
+\begin{frame}{Introduction | One-hot Enconding}
+  \begin{align*}
+    \phi &:
+    \mathcal{C} \rightarrow {\left\{0, 1\right\}}^{|\mathcal{C}|} :
+    c_i \mapsto \phi \, (c_i)
+    \quad &\text{where}& \quad
+    {\phi \, (c_i)}_j := \delta_{i,j} \\
+    \psi_\theta &:
+    \mathcal{X} \rightarrow {\left[0, 1\right]}^{|\mathcal{C}|} :
+    x \mapsto \psi_\theta \, (x)
+    \quad &\text{where}& \quad 
+    \sum_{j=1}^{|\mathcal{C}|} {\psi_\theta \, (x)}_j = 1
+  \end{align*}
+
+  \metroset{block=fill}
+  \begin{block}{Example}
+    \begin{align*}
+      \mathcal{C} &= [
+        &\texttt{lemon} &,  &\texttt{pear} &,  &\texttt{apple} &,
+        &\texttt{dog} &, &\texttt{cat} &, &\texttt{car} &\
+      ] \\
+      \phi\,\left(\texttt{apple}\right) &= [
+        & 0 &, & 0 &, & 1 &,
+        & 0 &, & 0 &, & 0 &\
+      ] \\
+      \psi_\theta \,\left(x\right) &= [
+        & 0.2 &, & 0.3 &, & 0.1 &,
+        & 0.15 &, & 0.05 &, & 0.2 &\
+      ]
+    \end{align*}
+
+    \note[item]{La più semplice e diffusa funzione di encoding è One-hot
+    encoding, una funzione $\phi$ che mappa dalla lista delle classi a un
+    vettore binario le cui componenti sono nulle ad eccezione di quella il cui
+    indice coincide con l'indice della classe mappata.}
+    \note[item]{Introducendo un esempio che ci accompagnerà nel proseguio, se
+    le classi del dataset sono "limone", "pera", "mela", "cane", "gatto" e
+    "auto", $\phi(\texttt{apple})$, l'encoding della classe "mela", sarà un
+    vettore di zeri con un "uno" nella terza componente.}
+    \note[item]{Il modello mappa invece dallo spazio delle immagini a una
+    "probability mass function" sull'iniseme delle classi.}
+    \note[item]{L'indice della componente maggiore del output è la classe
+    predetta dal modello.}
+    \note[item]{Inizialmente non c'è correlazione tra input e classe predetta,
+    in quanto in parametri sono inizializzati in modo casuale. Solo in seguito
+    ad un processo di training è possibile produrre una corretta
+    classificazione.}
+  \end{block}
+
+
+\end{frame}
+
+\begin{frame}{Introduction | Cross Entropy}
+
+  \begin{equation*}
+    \mathcal{L} \, \left(p, q\right) := - q \cdot \log p
+    \quad \Longrightarrow \quad
+    \mathcal{L} \, \left(\psi_\theta(x), \phi(c_i)\right) =
+    - \log \left({\psi_\theta(x)}_i\right)
+  \end{equation*}
+
+  \pause
+
+  \only<2>{
+    \vspace{-0.0cm}
+    \input{../../../Developer/master-thesis-code/notebooks/figures/one-hot_cross-entropy_1.pgf}
+  }
+  \only<3>{
+    \vspace{-0.0cm}
+    \input{../../../Developer/master-thesis-code/notebooks/figures/one-hot_cross-entropy_2.pgf}
+  }
+  \only<4>{
+    \vspace{-0.0cm}
+    \input{../../../Developer/master-thesis-code/notebooks/figures/one-hot_cross-entropy_3.pgf}
+  }
+
+  \note[item]{Una funzione di Loss largamente impiegata nel training di modelli
+  è la Cross Entropy. Definita per $p$ e $q$ distribuzioni di probabilità, è
+  meno di prodotto scalare tra $q$ e il logaritmo di $p$. Nel nostro caso $p$
+  è l'output del modello e $q$ l'encoding della classe.}
+  \note[item]{Se $phi$ è One-hot encoding solo una componente di $p$ da
+  contributo, quella associata alla classe corretta}
+  \note[item]{NEXT}
+  \note[item]{Minimizzare $\mathcal{L}$ corrisponde ad alzare la probabilità
+  relativa alla classe corretta e causa della normalizzazione di $\psi$ le
+  probabilità associate alle altre classi saranno necessariamente ridotte.}
+  \note[item]{NEXT, NEXT}
+\end{frame}

@@ -1,6 +1,6 @@
 \documentclass[10pt]{beamer}
 
-% Packages --------------------------------------------------------------------------- %
+% Packages ------------------------------------------------------------------- %
 
 % Set the language of the document (e.g. title, section, abstract, …)
 \usepackage[english]{babel}
@@ -20,8 +20,44 @@
 \usepackage{amssymb}
 \usepackage{bm}
 
+% strikeout
+\usepackage[normalem]{ulem}
 
-% Title ------------------------------------------------------------------------------ %
+% Checkmark and X mark
+\usepackage{pifont}
+
+% Inspect layout dimensions
+\usepackage{layouts}
+
+% Include graphics
+\usepackage{graphicx}
+
+% Include diagrams in tikz
+\usepackage{tikzit}
+
+% import tikzstyle
+\input{metropolis.tikzstyles}
+
+% use := for "is defined to be equal to"
+% http://projekte.dante.de/DanteFAQ/Symbole#20
+\mathchardef\ordinarycolon\mathcode`\:
+\mathcode`\:=\string"8000
+\begingroup \catcode`\:=\active
+  \gdef:{\mathrel{\mathop\ordinarycolon}}
+\endgroup
+
+% Checkmark and X mark
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+
+
+% \setbeameroption{hide notes} % Only slides
+\setbeameroption{show only notes} % Only notes
+% \setbeameroption{show notes on second screen=right}
+
+
+% Title ---------------------------------------------------------------------- %
 
 \title{Semantic Transfer Learning (½ Thesis)}
 
@@ -42,13 +78,29 @@
 }
 
 
-% Slides ----------------------------------------------------------------------------- %
+% Slides --------------------------------------------------------------------- %
 
 \begin{document}
 
   \begin{frame}
     \titlepage
+    \note{Buongiorno, sono Simone Bertolotto e oggi presento la prima parte
+    della tesi di laurea svolta presso CENTAI institute, un istituto di ricerca
+    torinese. I relatori sono il professor André Panisson e il
+    dottor Alan Perotti.}
   \end{frame}
+
+  \section{Introduction}
+  \include{introduction}
+
+  \section{Alternative Encodings}
+  \include{encodings}
+
+  \section{Experiments}
+  \include{experiments}
+
+  \section{Future Developments}
+  \include{future_developments}
 
   % \begin{frame}[standout]
   %   Thank you!
