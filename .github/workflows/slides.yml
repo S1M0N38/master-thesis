@@ -16,6 +16,7 @@ jobs:
       - name: Install tectonic
         run: |
           curl --proto '=https' --tlsv1.2 -fsSL https://drop-sh.fullyjustified.net |sh
+          sudo mv tectonic /usr/local/bin/
 
       - name: Install Fonts
         run: |
