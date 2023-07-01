@@ -23,10 +23,13 @@ jobs:
           sudo apt-get update && sudo apt-get install -y fonts-firacode
 
       - name: Build PDF
-        run: tectonic slides/main.tex --print
+        run: |
+          cd slides
+          tectonic main.tex --print
+          cd ..
 
       - name: Copy PDF to artifacts
-        run: cp main.pdf $GITHUB_WORKSPACE
+        run: cp slides/main.pdf $GITHUB_WORKSPACE
 
       - name: Publish to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
