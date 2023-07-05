@@ -21,9 +21,6 @@
 \usepackage{bm}
 \usepackage{mathtools}
 
-% strikeout
-\usepackage[normalem]{ulem}
-
 % Checkmark and X mark
 \usepackage{pifont}
 
@@ -39,6 +36,9 @@
 % import tikzstyle
 \input{metropolis.tikzstyles}
 
+
+% Custom commands ------------------------------------------------------------- %
+
 % use := for "is defined to be equal to"
 % http://projekte.dante.de/DanteFAQ/Symbole#20
 \mathchardef\ordinarycolon\mathcode`\:
@@ -52,6 +52,7 @@
 \newcommand{\xmark}{\ding{55}}%
 
 
+% Build Options -------------------------------------------------------------- %
 
 \setbeameroption{hide notes} % Only slides
 % \setbeameroption{show only notes} % Only notes
