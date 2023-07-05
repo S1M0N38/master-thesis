@@ -1,107 +1,5 @@
-\begin{frame}{Alternative Encondings | Hierarchical}
-  Hierarchical encodings are derived from \alert{hierarchical trees}.
-
-  \metroset{block=fill}
-  \begin{block}{Example}
-    \begin{align*}
-      \mathcal{C} &= [
-        &\texttt{lemon} &,  &\texttt{pear} &,  &\texttt{apple} &,
-        &\texttt{dog} &, &\texttt{cat} &, &\texttt{car} &\
-      ]
-    \end{align*}
-    \tikzfig{figures/example_hierarchical_tree}
-  \end{block}
-
-  \note[item]{Una gererchia tra le classi è un'informazione che possiamo
-  sfruttare per costruire una funzione di encoding che tenga conto delle
-  relazioni tra queste.}
-  \note[item]{Un modo di rappresentare una gerachia è con una struttura ad
-  albero.}
-  \note[item]{Limone, pera e mela sono frutti, cane e gatto animali mentre l'auto è
-  un veicolo. Frutti e animali sono presenti in natura, i veicoli sono
-  oggetti artificiali.}
-  \note[item]{Questo è un esempio di gerarchia dalla quale possiamo
-  derivare un embedding gerarchico.}
-\end{frame}
-
-\begin{frame}{Alternative Encondings | Hierarchical}
-  \begin{columns}
-    \column{0.7\textwidth}
-    \only<1>{\tikzfig{figures/example_lca}}
-    \only<2>{\tikzfig{figures/example_similarity}}
-    \only<3>{\tikzfig{figures/example_probability}}
-    \only<4>{\tikzfig{figures/example_probability_apple}}
-
-    \column{0.3\textwidth}
-    \begin{enumerate}[<+- | alert@+>]
-      \item distance
-      \item similarity
-      \item probability
-    \end{enumerate}
-  \end{columns}
-
-  \note[item]{Iniziamo costruendo una matrice di distanza tra le classi per
-  esempio usando l'altezza dell'ultimo antenato comune. Ogni classe ha distanza
-  0 da se stessa. I frutti hanno distanza 1 tra loro, 2 con gli animali e 3,
-  distanza massima con i veicoli.}
-  \note[item]{Dalla distanza construiamo una matrice di similarità. 1 -
-  distanza normalizzata. Le classi avranno similarità 1 con se stesse e 0 con
-  quelle con cui non hanno niente in comune.}
-  \note[item]{Infine, otteniamo una probability mass function sulle classi
-  applicando la softmax lungo le righe. Ogni righa corrisponde all'encoding di
-  una classe.}
-  \note[item]{NEXT}
-  \note[item]{Consideriamo l'encoding per la classe "mela".}
-\end{frame}
-
-\begin{frame}{Alternative Encondings | Hierarchical}
-  \only<1>{
-    \centering
-    similarity $\longrightarrow$ probability
-    \vspace{-0.0cm}
-    \input{figures/hier_cross-entropy_1.pgf}
-  }
-  \only<2>{
-    \centering
-    similarity + hyperparam $\longrightarrow$ probability
-    \vspace{-0.0cm}
-    \input{figures/hier_cross-entropy_2.pgf}
-  }
-  \only<3>{
-    \centering
-    $\mathcal{L} = - \phi\left(\texttt{apple}\right) \cdot \log \psi_\theta\left(x\right)$
-    \vspace{-0.0cm}
-    \input{figures/hier_cross-entropy_3.pgf}
-  }
-  \only<4>{
-    \centering
-    $\mathcal{L} = - \phi\left(\texttt{apple}\right) \cdot \log \psi_\theta\left(x\right)$
-    \vspace{-0.0cm}
-    \input{figures/hier_cross-entropy_4.pgf}
-  }
- 
-  \note[item]{Il risulato della softmax è una distruibuzione di probabilità in
-    cui non è particolarmente evidente la classe di partenza e ciò ostacola il
-    training.}
-  \note[item]{NEXT}
-  \note[item]{Per ovviare a questo problema possiamo introdurre un
-    iperparamentro che riscalando le similarià procude un encoding che risualta
-    più efficiace nel training.}
-  \note[item]{NEXT}
-  \note[item]{Come prima partiamo da una inizializzazione casuale del modello e
-    usiamo la cross entropy come funzione di loss.}
-  \note[item]{NEXT}
-  \note[item]{Stavolta, tutte le componenti di $\psi$ contribuiscono e, agendo
-    i paramentri $\theta$, sono aumentate o ridotte per allinersi all'encoding.}
-  \note[item]{Questa tecnica per sfruttare le reazioni tra classi usando un
-    esplicita gerarchia, è stata già descritta in alcune pubblicazioni di cui una
-    sono stato coautore. E lavorarndo concretamente su un problema emergono, sì i
-    limiti di un approccio, ma anche soluzioni per superarli. Da qui nasce l'idea
-    dei Description encodings.}
-\end{frame}
-
-\begin{frame}{Alternative Encondings | Description}
-  Reciepe:
+\begin{frame}{Description Encodings}
+  Recipe:
   \begin{enumerate}
     \item Use Language Model (e.g. chatGPT) to \alert{generate descriptions}\\
       for each class.
@@ -125,7 +23,7 @@
   \note[item]{Il risulato sono i Description Encodings.}
 \end{frame}
 
-\begin{frame}{Alternative Encondings | Description}
+\begin{frame}{Description Encodings}
   \begin{itemize}
     \item \texttt{lemon}: \emph{\small``Lemons are \alert{oval-shaped} fruits
       known for their \alert{bright yellow} color and acidic juice.''}
@@ -143,7 +41,7 @@
     distingure visivamente le diverse classi.}
 \end{frame}
 
-\begin{frame}{Alternative Encondings | Description}
+\begin{frame}{Description Encodings}
   \begin{columns}
     \column{0.65\textwidth}
     \tikzfig{figures/example_embeddings}
@@ -152,7 +50,7 @@
     \textbf{\textsc{Desideratum}}\\
     \vspace{0.2cm}
     \emph{Distinctive features in the descriptions translate to
-    an hierarchy-like structure in the encodings space}
+    a hierarchy-like structure in the encodings space}
   \end{columns}
 
   \note[item]{Dalle descrizioni passiamo agli embedding e da questi agli
@@ -167,7 +65,7 @@
     tra i due vettori. Mela e pera sono più simili di mela e cane.}
 \end{frame}
 
-\begin{frame}{Alternative Encondings | Description}
+\begin{frame}{Description Encodings}
   \begin{columns}
     \column{0.65\textwidth}
     \only<1>{\tikzfig{figures/example_embeddings_apple1}}
@@ -208,7 +106,7 @@
     vettore di encoding più vicino all'output del modello.}
 \end{frame}
 
-\begin{frame}{Alternative Encondings | Comparison}
+\begin{frame}{Encondings Comparison}
   \begin{block}{\textsc{One-hot Encoding + Cross Entropy Loss}}
     \begin{itemize}
       \item[\cmark] Battle tested
@@ -218,13 +116,13 @@
   \begin{block}{\textsc{Hierarchical Encoding + Cross Entropy Loss}}
     \begin{itemize}
       \item[\cmark] Exploit classes similarities
-      \item[\xmark] Require an hierarchy
+      \item[\xmark] Require a hierarchy
     \end{itemize}
   \end{block}
   \begin{block}{\textsc{Description Encoding + Cosine Distance Loss}}
     \begin{itemize}
       \item[\cmark] Exploit classes similarities
-      \item[\cmark] Do not require an hierarchy
+      \item[\cmark] Do not require a hierarchy
     \end{itemize}
   \end{block}
 
