@@ -10,30 +10,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Install tectonic
-        run: |
-          curl --proto '=https' --tlsv1.2 -fsSL https://drop-sh.fullyjustified.net |sh
-          sudo mv tectonic /usr/local/bin/
-
-      - name: Install Fonts
-        run: |
-          sudo apt-get update && sudo apt-get install -y fonts-firacode
-
-      - name: Build PDF
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - uses: actions/cache@v3
+        name: Tectonic Cache
+        with:
+          path: ~/.cache/Tectonic
+          key: ${{ runner.os }}-tectonic-${{ hashFiles('**/*.tex') }}
+          restore-keys: |
+            ${{ runner.os }}-tectonic-
+            
+      - uses: wtfjoke/setup-tectonic@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Build
         run: |
           cd slides
-          tectonic main.tex --print
+          tectonic main.tex
           cd ..
-
-      - name: Copy PDF to artifacts
-        run: cp slides/main.pdf $GITHUB_WORKSPACE
-
-      - name: Publish to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        
+      - name: Publish
+        uses: actions/upload-artifact@v3
         with:
-          personal_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
-          publish_branch: gh-pages
+          name: slides
+          path: slides/main.pdf
