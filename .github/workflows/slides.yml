@@ -12,7 +12,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        
+
+      - uses: actions/cache@v3
+        name: Fira Fonts Cache
+        with:
+          path: ~/.local/share/fonts
+          key: ${{ runner.os }}-fira-fonts-${{ hashFiles('**/fonts-firacode') }}
+          restore-keys: |
+            ${{ runner.os }}-fira-fonts-
+
+      - name: Install Fira font
+        run: |
+          sudo apt update
+          sudo apt install -y fonts-firacode
+
       - uses: actions/cache@v3
         name: Tectonic Cache
         with:
@@ -20,17 +33,17 @@ jobs:
           key: ${{ runner.os }}-tectonic-${{ hashFiles('**/*.tex') }}
           restore-keys: |
             ${{ runner.os }}-tectonic-
-            
+
       - uses: wtfjoke/setup-tectonic@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - name: Build
         run: |
           cd slides
           tectonic main.tex
           cd ..
-        
+
       - name: Publish
         uses: actions/upload-artifact@v3
         with:
