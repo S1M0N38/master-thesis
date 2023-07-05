@@ -13,19 +13,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - uses: actions/cache@v3
-        name: Fira Fonts Cache
-        with:
-          path: ~/.local/share/fonts
-          key: ${{ runner.os }}-fira-fonts-${{ hashFiles('**/fonts-firacode') }}
-          restore-keys: |
-            ${{ runner.os }}-fira-fonts-
-
-      - name: Install Fira font
+      - name: Install Fira Font
         run: |
-          sudo apt update
-          sudo apt install -y fonts-firacode
-
+          curl -o FiraSans.zip "https://fonts.google.com/download?family=Fira%20Sans"
+          unzip FiraSans.zip
+          sudo mkdir -p /usr/local/share/fonts/FiraSans
+          sudo cp FiraSans-*.ttf /usr/local/share/fonts/FiraSans
+          sudo fc-cache -fv
+          
       - uses: actions/cache@v3
         name: Tectonic Cache
         with:
