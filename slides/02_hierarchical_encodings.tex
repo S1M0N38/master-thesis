@@ -48,8 +48,8 @@
   distanza normalizzata. Le classi avranno similarità 1 con se stesse e 0 con
   quelle con cui non hanno niente in comune.}
   \note[item]{Infine, otteniamo una probability mass function sulle classi
-  applicando la softmax lungo le righe. Ogni righa corrisponde all'encoding di
-  una classe.}
+  applicando la softmax lungo le righe. E ora ogni righa corrisponde
+  all'encoding di una classe.}
   \note[item]{NEXT}
   \note[item]{Consideriamo l'encoding per la classe "mela".}
 \end{frame}
@@ -85,7 +85,7 @@
     training.}
   \note[item]{NEXT}
   \note[item]{Per ovviare a questo problema possiamo introdurre un
-    iperparamentro che riscalando le similarià procude un encoding che risualta
+    iperparamentro che riscalando le similarià procude un encoding che risulta
     più efficiace nel training.}
   \note[item]{NEXT}
   \note[item]{Come prima partiamo da una inizializzazione casuale del modello e
@@ -93,9 +93,44 @@
   \note[item]{NEXT}
   \note[item]{Stavolta, tutte le componenti di $\psi$ contribuiscono e, agendo
     i paramentri $\theta$, sono aumentate o ridotte per allinersi all'encoding.}
-  \note[item]{Questa tecnica per sfruttare le reazioni tra classi usando un
-    esplicita gerarchia, è stata già descritta in alcune pubblicazioni di cui una
-    sono stato coautore. E lavorarndo concretamente su un problema emergono, sì i
-    limiti di un approccio, ma anche soluzioni per superarli. Da qui nasce l'idea
-    dei Description encodings.}
+\end{frame}
+
+\begin{frame}{Hierarchical Encondings}
+  \begin{figure}
+    \centering
+    \includegraphics[width=.8\linewidth]{figures/paper/title.pdf}
+  \end{figure}
+  \begin{figure}
+    \centering
+    \includegraphics[width=.8\linewidth]{figures/paper/errors.pdf}
+  \end{figure}
+  \begin{figure}
+    \centering
+    \includegraphics[width=.8\linewidth]{figures/paper/features.pdf}
+  \end{figure}
+
+  \note{\scriptsize{Questa tecnica per sfruttare le reazioni tra classi usando un
+    esplicita gerarchia, è stata già descritta in alcune pubblicazioni.
+    Una di queste è un articolo che sarà presentato a xAI 2023.}}
+  \note[item]{Abbiamo applicato una simile tecnica per produrre un embedding
+    gerarchico e confrontato le performance dei modelli con quelle ottenute
+    che sfruttano e non la gerachica tra le classi.}
+  \note[item]{Per performance intendo la quatità di errori, asse orizzontale, e
+    la qualità degli errori, asse verticale, a diversi livelli della gerarchica.
+    Questi plots saranno ripresi in seguito.}
+  \note[item]{Abbiamo inoltre studiato la disposizione spaziale dei features
+    vectors, ovvero come sono organizzati nello spazio i vettori dal penultimo
+    livello del modello associati alle varie immaginni ottenuti}
+  \note[item]{Proiettarli nel piano dà un'indicazione su quali immagini il
+    modello pensa siano simili. Ciò che ci attendiamo è la comparsa di cluster
+    relativi alle varie classi.}
+  \note[item]{Abbiamo usato delle metriche di clustering per quantificare il
+    raggruppamento dei features vectors e capire quali modelli producevano una
+    rappresentazione interna più strutturata.}
+  \note[item]{Un limite di tale approccio è la necessità di avere o poter
+    costruire una gerarchica tra le classi. Uno degli approcci presentati supera
+    tale limite ricavando gli encoding dai word embeddings delle classi. Ma ciò
+    introduce un altro problema, non tutte le parole hanno un'embedding e una
+    parola può avere diversi un significati.}
+  \note[item]{Da qui l'idea per i descriptions encodings.}
 \end{frame}
