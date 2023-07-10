@@ -108,11 +108,15 @@
   \note[item]{I datasets utilizzati negli esperimenti sono CIFAR-100,
     iNaturalist19, tieredImageNet.}
   \note[item]{CIFAR-100 è un dataset di immagini a bassa risoluzione, 100
-    classi per le quali è definita una gerarchia a 6 livelli.}
+    classi per le quali è definita una gerarchia a 6 livelli. }
   \note[item]{iNaturaluralist sono foto di soggetti nautarali e le etichette
     associate sono il nome scientifico. 1010 classi e gerarchia a 8 livelli}
   \note[item]{tieredImageNet è un sotto insieme di ImageNet, 608 classi e 13
     livelli di gerarchia.}
+  \note[item]{Questi dataset muniti di gerarchia tra i più utilizzati nella
+  classificazione di immagini e danno modo di testare i modelli sotto diversi
+  aspetti: diversa risoluzione delle immagini, diversa lingua per i nomi delle
+  classi, diversi soggetti, diverso numero di classi.}
 \end{frame}
 
 
@@ -132,23 +136,61 @@
   \end{spreadlines}
 
   \note[Item]{Per misurare le performance del modello abbiamo fatto riscorso a
-  3 metriche: Error Rate, Hiearchical Distance e Hiearchical Distance Mistake.}
+  3 metriche: Error Rate, Hierarchical Distance e Hierarchical Distance Mistake.}
   \note[item]{Queste possono essere definite a partire dalla matrice di
   confusione M e dalla matrice delle distaze D (tipo quella precedentemente
   introdotta).}
-  \note[item]{L'Error Rate Il numero di errori commessi diviso il numero di
+  \note[item]{L'Error Rate è il numero di errori commessi diviso il numero di
   esempi nel dataset di Test.}
   \note[item]{Hierarchical Distace la si ottiene moltiplicando M con D elemento
   per elemento, sommando le entrate della matrice risultante e dividendo per il
   totale degli esempi.}
   \note[item]{In Hierarchical distance Mistake nel denominatore è il numero di errori.}
   \note[item]{Error Rate è un indicatore di quanti errori il modello commette,
-  mentre Hieararchical Distance Mistake quantifica la gravità di tali errori
+  mentre Hierarchical Distance Mistake quantifica la gravità di tali errori
   utilizzando come pesi le distanze nella gerarchia.}
 \end{frame}
 
 
-\begin{frame}{Experiments | Results}
-  \input{figures/iNaturalist19/scatter.pgf}
-  \note[item]{TODO}
+\begin{frame}{Experiments | CIFAR100 --- Performance}
+  \input{figures/CIFAR100/scatter.pgf}
+
+  \note[item]{Usando Error rate e Hierarchical Distance Mistake is può
+    costruire il seguente scatter plot}
+  \note[item]{Più un modello è a destra più errori commette, più è in alto più
+    gli errori saranno gravi.}
+  \note[item]{Questi sono i risultati ottenuti per CIFAR100 e i modelli che
+    sfruttano la gerarchia commettono errori meno gravi.}
+\end{frame}
+
+\begin{frame}{Experiments | CIFAR100 --- Description Encodings}
+  \input{figures/CIFAR100/encodings-level2.pgf}
+  \note[item]{Si può anche verificare che per CIFAR100 la struttura gerachica è
+    catturata con successo dai description encodings.}
+  \note[item]{Proiettandoli nel piano e colorandoli con diversi colori associati a
+    diverse classi del secondo livello della gerarchia emerge una chiara struttura.
+    Gli description encoding di una stessa classe sono vicini tra loro e i
+    colori nel plot rimangono separati.}
+  \note[item]{Non solo, sono presenti informazioni non presenti nella gerarchia. I 5
+    punti azzuro chiari separati del resto sono le classi "uomo", "donna",
+    "ragazzo", "ragazza" e "bambino". Queste sono più vicine ai veicoli e alle
+    costruzioni di quanto non lo siano gli altri mammiferi terrestri.}
+  \note[item]{O ancora i mammiferi acquatici sono i 5 punti azzurro scuro vicino ai
+    mammiferi terrestri.}
+\end{frame}
+
+\begin{frame}{Experiments | CIFAR100 --- Description Encodings}
+  \input{figures/CIFAR100/encodings-level3.pgf}
+
+  \note[item]{Tale struttura viene preservata a diversi livelli della gerarchia.}
+  \note[item]{Al terzo, tutti gli animali sono raggruppati sotto un unica
+    classe: Fauna. I veicoli, le costruzioni e gli atricoli della casa sono
+    oggetti fabbricati dell'uomo.}
+\end{frame}
+
+\begin{frame}{Experiments | CIFAR100 --- Description Encodings}
+  \input{figures/CIFAR100/encodings-level4.pgf}
+
+  \note[item]{Infine l'ultimo livello divide gli oggetti inanimati dagli
+    esseri viventi.}
 \end{frame}
