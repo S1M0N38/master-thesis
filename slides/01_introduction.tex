@@ -1,15 +1,11 @@
 \begin{frame}{Introduction | Framework}
   \begin{center}
     \huge{Models for images classification\\}
-    \only<1>{\huge{ignore\\}}
-    \only<2>{\huge{\alert{exploit}\\}}
+    \huge{ignore\\}
     \huge{relationships between classes}
   \end{center}
-  \note[item]{I modelli per la classificatione di immagini generamente ignorano
+  \note[item]{I modelli per la classificatione di immagini generalmente ignorano
   le relazioni tra le classi.}
-  \note[item]{NEXT}
-  \note[item]{Noi abbiamo studiato e sviluppato modelli che
-  invece le sfruttano.}
 \end{frame}
 
 \begin{frame}{Introduction | Framework}
@@ -20,21 +16,36 @@
     \large{We fix $\psi$ and play with $\phi$ and $\mathcal{L}$}
   \end{center}
 
-  \note[item]{Un modello per la classificatione di immagini è un funzione
+  \note[item]{\footnotesize{Un modello per la classificatione di immagini è un funzione
   $\psi_\theta$ che prende come input un'immagine e restituisce un vettore di
-  output. La classe associata all'immagine è convertita da testo a numeri dalla
-  funzione $\phi$ producendo il vettore di encoding. La funzione di Loss
-  $\mathcal{L}$ quantifica con un numero la dissimilarità tra output del
-  modello e corrispondente encoding, minimizzarla significa avviciare l'output
-  del modello alla codifica della classe corretta e quindi migliorare la
-  classificazione del modello. L'argoritmo di backpropagation minimizza in modo
-  iterativo $\mathcal{L}$ agendo sui i parametri del modello $\theta$.}
+  output.}}
+  \note[item]{La classe associata all'immagine è convertita da testo a numeri
+  dalla funzione $\phi$ producendo il vettore di encoding. Spesso tale funzione
+  è triviale, una semplice lookup table, tanto da non venir esplicitamente
+  rappresentata nei diagrammi tipo quello mostrato.}
+  \note[item]{La funzione di Loss $\mathcal{L}$ quantifica con un numero la
+  dissimilarità tra output del modello e corrispondente encoding, minimizzarla
+  significa avviciare l'output del modello alla codifica della classe corretta
+  e quindi migliorare la classificazione del modello. L'argoritmo di
+  backpropagation minimizza in modo iterativo $\mathcal{L}$ agendo sui i
+  parametri del modello $\theta$.}
   \note[item]{Generalmente si sperimenta modificando l'architettura del modello
   ovvero cambiando la forma funzionale di $\psi$.}
   \note[item]{NEXT}
   \note[item]{Noi invece abbiamo fissato $\psi$ e variato $\phi$ e
   $\mathcal{L}$.}
 \end{frame}
+
+\begin{frame}{Introduction | Framework}
+  \begin{center}
+    \huge{Models for images classification\\}
+    \huge{\alert{exploit}\\}
+    \huge{relationships between classes}
+  \end{center}
+  \note[item]{con l'obiettivo di construire modelli che sfruttino le relazioni
+  tra le classi.}
+\end{frame}
+
 
 \begin{frame}{Introduction | One-hot Enconding}
   \begin{align*}
@@ -67,21 +78,21 @@
       ]
     \end{align*}
 
-    \note[item]{La più semplice e diffusa funzione di encoding è One-hot
+    \note{\footnotesize{La più semplice e diffusa funzione di encoding è One-hot
     encoding, una funzione $\phi$ che mappa dalla lista delle classi a un
     vettore binario le cui componenti sono nulle ad eccezione di quella il cui
-    indice coincide con l'indice della classe mappata.}
+    indice coincide con l'indice della classe mappata.}}
     \note[item]{Introducendo un esempio che ci accompagnerà nel proseguio, se
     le classi del dataset sono "limone", "pera", "mela", "cane", "gatto" e
     "auto", $\phi(\texttt{apple})$, l'encoding della classe "mela", sarà un
     vettore di zeri con un "uno" nella terza componente.}
     \note[item]{Il modello mappa invece dallo spazio delle immagini a una
     "probability mass function" sull'iniseme delle classi.}
-    \note[item]{L'indice della componente maggiore del output è la classe
-    predetta dal modello.}
-    \note[item]{Inizialmente non c'è correlazione tra input e classe predetta,
-    in quanto in parametri sono inizializzati in modo casuale. Solo in seguito
-    ad un processo di training è possibile produrre una corretta
+    \note[item]{L'indice della componente maggiore del output è ciò che
+    consideriamo la classe predetta dal modello.}
+    \note[item]{Inizialmente non c'è correlazione tra classe predetta e classe
+    reale, in quanto in parametri sono inizializzati in modo casuale. Solo in
+    seguito ad un processo di training è possibile produrre una corretta
     classificazione.}
   \end{block}
 
@@ -113,7 +124,7 @@
 
   \note[item]{Una funzione di Loss largamente impiegata nel training di modelli
   è la Cross Entropy. Definita per $p$ e $q$ distribuzioni di probabilità, è
-  meno di prodotto scalare tra $q$ e il logaritmo di $p$. Nel nostro caso $p$
+  meno il prodotto scalare tra $q$ e il logaritmo di $p$. Nel nostro caso $p$
   è l'output del modello e $q$ l'encoding della classe.}
   \note[item]{Se $\phi$ è One-hot encoding solo una componente di $p$ da
   contributo, quella associata alla classe corretta}
