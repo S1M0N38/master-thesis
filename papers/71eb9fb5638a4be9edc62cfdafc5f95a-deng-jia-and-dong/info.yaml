@@ -1,0 +1,107 @@
+author: Deng, Jia and Dong, Wei and Socher, Richard and Li, Li-Jia and Kai Li, None
+  and Li Fei-Fei, None
+author_list:
+- affiliation: []
+  family: Deng
+  given: Jia
+- affiliation: []
+  family: Dong
+  given: Wei
+- affiliation: []
+  family: Socher
+  given: Richard
+- affiliation: []
+  family: Li
+  given: Li-Jia
+- affiliation: []
+  family: Kai Li
+  given: null
+- affiliation: []
+  family: Li Fei-Fei
+  given: null
+booktitle: 2009 IEEE Computer Society Conference on Computer Vision and Pattern Recognition
+  Workshops (CVPR Workshops)
+citations:
+- doi: 10.1109/ICCV.2005.142
+- doi: 10.1007/s11263-007-0066-8
+- article-title: Caltech-256 object category dataset
+  author: griffin
+  journal-title: Technical Report 7694 Caltech
+  year: '2007'
+- article-title: 'Miller. Labeled faces in the wild: A database for studying face
+    recognition in unconstrained environments'
+  author: huang
+  journal-title: Technical Report 07-49 UMass
+  year: '2007'
+- doi: 10.1109/CVPR.2007.383048
+- doi: 10.1023/B:VISI.0000029664.99615.94
+- doi: 10.1109/CVPR.2007.383272
+- article-title: Constructing category hierarchies for visual recognition
+  author: marszalek
+  first-page: 'iv: 479'
+  journal-title: ECCV08
+  year: '2008'
+- doi: 10.1109/CVPR.2006.264
+- doi: 10.1016/S0262-8856(97)00070-X
+- doi: 10.1109/ICCV.2007.4409064
+- doi: 10.1007/3-540-63576-9_121
+- article-title: 'Introduction to a large-scale general purpose ground truth database:
+    Methodology, annotation tool and benchmarks'
+  author: yao
+  first-page: '169'
+  journal-title: EMMCVPR
+  year: '2007'
+- journal-title: The Spanish WordNet
+  year: '0'
+- article-title: 'Towards scalable dataset construction: An active learning approach'
+  author: collins
+  first-page: i:86
+  journal-title: ECCV08
+  year: '2008'
+- doi: 10.1109/CVPR.2008.4587598
+- doi: 10.1109/TPAMI.2006.79
+- article-title: The PASCAL Visual Object Classes Challenge 2008 (VOC 2008) Results
+  author: everingham
+  year: '0'
+- journal-title: Chinese WordNet
+  year: '0'
+- article-title: Bradford Books
+  author: fellbaum
+  journal-title: WordNet An Electronic Lexical Database
+  year: '1998'
+- year: '0'
+- article-title: Principles of categorization
+  author: rosch
+  first-page: '27'
+  journal-title: Cognition and Categorization
+  year: '1978'
+- article-title: 'Textonboost: Joint appearance, shape and context modeling for multi-class
+    object recognition and segmentation'
+  author: shotton
+  first-page: i:1
+  journal-title: ECCV06
+  year: '2006'
+- doi: 10.1007/s11263-007-0090-8
+- doi: 10.1109/TPAMI.2008.128
+- doi: 10.1109/CVPRW.2008.4562953
+- article-title: 'The Cornetto database: Architecture and user-scenarios'
+  author: vossen
+  first-page: '89'
+  journal-title: Proceedings DIR 2007
+  year: '2007'
+- doi: 10.1145/985692.985733
+doc_url: http://xplorestaging.ieee.org/ielx5/5191365/5206488/05206848.pdf?arnumber=5206848
+doi: 10.1109/cvpr.2009.5206848
+files:
+- imagenet-cvpr09-a.pdf
+journal: 2009 IEEE Conference on Computer Vision and Pattern Recognition
+month: 6
+papis_id: a78a603b075d92a2035359da601c9802
+publisher: IEEE
+ref: ImagenetALarDeng2009
+time-added: 2023-08-03-12:57:49
+title: 'ImageNet: A large-scale hierarchical image database'
+type: inproceedings
+url: http://dx.doi.org/10.1109/cvpr.2009.5206848
+venue: Miami, FL
+year: 2009

@@ -1,3 +1,13 @@
+abstract: Clustering validation has long been recognized as one of the vital
+  issues essential to the success of clustering applications. In general,
+  clustering validation can be categorized into two classes, external clustering
+  validation and internal clustering validation. In this paper, we focus on
+  internal clustering validation and present a detailed study of 11 widely used
+  internal clustering validation measures for crisp clustering. From five
+  conventional aspects of clustering, we investigate their validation properties.
+  Experiment results show that S_Dbw is the only internal validation measure
+  which performs well in all five aspects, while other measures have certain
+  limitations in different application scenarios.
 author: Liu, Yanchi and Li, Zhongmou and Xiong, Hui and Gao, Xuedong and Wu, Junjie
 author_list:
 - affiliation: []

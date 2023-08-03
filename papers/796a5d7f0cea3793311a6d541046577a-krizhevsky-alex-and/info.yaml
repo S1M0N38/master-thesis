@@ -1,0 +1,113 @@
+abstract: We trained a large, deep convolutional neural network to classify
+  the 1.2 million high-resolution images in the ImageNet LSVRC-2010 contest into the
+  1000 different classes. On the test data, we achieved top-1 and top-5 error rates
+  of 37.5% and 17.0%, respectively, which is considerably better than the previous
+  state-of-the-art. The neural network, which has 60 million parameters and 650,000
+  neurons, consists of five convolutional layers, some of which are followed by max-pooling
+  layers, and three fully connected layers with a final 1000-way softmax. To make
+  training faster, we used non-saturating neurons and a very efficient GPU implementation
+  of the convolution operation. To reduce overfitting in the fully connected layers
+  we employed a recently developed regularization method called "dropout" that proved
+  to be very effective. We also entered a variant of this model in the ILSVRC-2012
+  competition and achieved a winning top-5 test error rate of 15.3%, compared to 26.2%
+  achieved by the second-best entry.
+author: Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E.
+author_list:
+- affiliation:
+  - name: Google Inc
+  family: Krizhevsky
+  given: Alex
+- affiliation:
+  - name: Google Inc
+  family: Sutskever
+  given: Ilya
+- affiliation:
+  - name: OpenAI
+  family: Hinton
+  given: Geoffrey E.
+citations:
+- doi: 10.1145/1345448.1345465
+- author: Berg A.
+  volume-title: Large scale visual recognition challenge
+  year: '2010'
+- doi: 10.1023/A:1010933404324
+- author: Cireşan D.
+  volume-title: High-performance neural networks for visual object classification.
+    Arxiv preprint arXiv:1102.0183
+  year: '2011'
+- author: Cireşan D.
+  volume-title: Multi-column deep neural networks for image classification. Arxiv
+    preprint arXiv:1202.2745
+  year: '2012'
+- unstructured: Deng J. Berg A. Satheesh S. Su H. Khosla A. Fei-Fei L. In ILSVRC-2012
+    (2012).  Deng J. Berg A. Satheesh S. Su H. Khosla A. Fei-Fei L. In ILSVRC-2012
+    (2012).
+- author: Deng J.
+  volume-title: CVPR09
+  year: '2009'
+- doi: 10.1016/j.cviu.2005.09.012
+- doi: 10.1007/BF00344251
+- author: He K.
+  volume-title: Deep residual learning for image recognition. arXiv preprint arXiv:1512.03385
+  year: '2015'
+- author: Hinton G.
+  volume-title: Improving neural networks by preventing co-adaptation of feature detectors.
+    arXiv preprint arXiv:1207.0580
+  year: '2012'
+- doi: 10.1109/ICCV.2009.5459469
+- author: Krizhevsky A.
+  volume-title: Department of Computer Science
+  year: '2009'
+- author: Krizhevsky A.
+  volume-title: Convolutional deep belief networks on cifar-10. Unpublished manuscript
+  year: '2010'
+- author: Krizhevsky A.
+  volume-title: ESANN
+  year: '2011'
+- author: LeCun Y.
+  volume-title: Advances in Neural Information Processing Systems
+  year: '1990'
+- author: LeCun Y.
+  volume-title: Une procedure d'apprentissage pour reseau a seuil asymmetrique (a
+    learning scheme for asymmetric threshold networks)
+  year: '1985'
+- doi: 10.5555/1896300.1896315
+- doi: 10.1109/ISCAS.2010.5537907
+- doi: 10.1145/1553374.1553453
+- doi: 10.1007/BF01931367
+- author: Mensink T.
+  volume-title: Italy
+  year: '2012'
+- doi: 10.5555/3104322.3104425
+- doi: 10.1371/journal.pcbi.0040027
+- doi: 10.1371/journal.pcbi.1000579
+- author: Rumelhart D.E.
+  volume-title: DTIC Document
+  year: '1985'
+- doi: 10.1007/s11263-007-0090-8
+- doi: 10.1109/CVPR.2011.5995504
+- doi: 10.5555/938980.939477
+- doi: 10.1109/CVPR.2015.7298594
+- doi: 10.1162/neco.2009.10-08-881
+- author: Werbos P.
+  volume-title: 'Beyond regression: New tools for prediction and analysis in the behavioral
+    sciences'
+  year: '1974'
+doc_url: https://dl.acm.org/doi/pdf/10.1145/3065386
+doi: 10.1145/3065386
+files:
+- tmphhofimc5.pdf
+issue: '6'
+journal: Communications of the ACM
+language: en
+month: 5
+pages: 84--90
+papis_id: ee202661a034ccc4ea2f3818668d0497
+publisher: Association for Computing Machinery (ACM)
+ref: ImagenetClassiKrizhe2017
+time-added: 2023-08-03-12:56:17
+title: ImageNet classification with deep convolutional neural networks
+type: article
+url: http://dx.doi.org/10.1145/3065386
+volume: '60'
+year: 2017

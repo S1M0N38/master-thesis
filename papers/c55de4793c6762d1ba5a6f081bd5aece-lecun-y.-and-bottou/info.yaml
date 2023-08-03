@@ -1,0 +1,360 @@
+author: Lecun, Y. and Bottou, L. and Bengio, Y. and Haffner, P.
+author_list:
+- affiliation: []
+  family: Lecun
+  given: Y.
+- affiliation: []
+  family: Bottou
+  given: L.
+- affiliation: []
+  family: Bengio
+  given: Y.
+- affiliation: []
+  family: Haffner
+  given: P.
+citations:
+- doi: 10.1109/72.554195
+- doi: 10.1162/neco.1995.7.6.1289
+- author: mozer
+  journal-title: The perception of multiple objects A connectionist approach
+  year: '1991'
+- doi: 10.1016/0031-3203(82)90024-3
+- doi: 10.1007/BF00342633
+- doi: 10.1113/jphysiol.1962.sp006837
+- doi: 10.1109/ICNN.1993.298793
+- doi: 10.1162/neco.1993.5.3.419
+- article-title: Handwritten digit recognition with a back-propagation network
+  author: lecun
+  journal-title: Advances in Neural Information Processing Systems 2 (NIPS'89)
+  year: '1990'
+- author: lecun
+  journal-title: Connectionism in Perspective
+  year: '1989'
+- doi: 10.1109/5.18626
+- author: matan
+  journal-title: Neural Information Processing Systems
+  volume: '4'
+  year: '1992'
+- author: bourland
+  doi: 10.1007/978-1-4615-3210-1
+  journal-title: Connectionist Speech Recognition A Hybrid Approach
+  year: '1994'
+- author: lecun
+  journal-title: Mod�les Connexionnistes de l'Apprentissage (Connectionist Learning
+    Models)
+  year: '1987'
+- author: bottou
+  journal-title: Advances in neural information processing systems
+  volume: '3'
+  year: '1991'
+- article-title: A theoretical framework for back-propagation
+  author: lecun
+  first-page: '21'
+  journal-title: Proc 1988 Connectionist Models Summer School
+  year: '1988'
+- doi: 10.1109/5.156474
+- doi: 10.1109/5.156477
+- article-title: Finite-state transducers in language and speech processing
+  author: mohri
+  first-page: '269'
+  journal-title: Computational Linguistics
+  volume: '23'
+  year: '1997'
+- author: keeler
+  first-page: '557'
+  journal-title: Neural Information Processing Systems
+  volume: '3'
+  year: '1991'
+- author: pereira
+  journal-title: Finite State Devices for Natural Language Processing
+  year: '1997'
+- article-title: 'Handwritten digit recognition: Applications of neural net chips
+    and automatic learning'
+  author: lecun
+  first-page: '41'
+  journal-title: IEEE Trans Commun
+  volume: '37'
+  year: '1989'
+- doi: 10.1109/78.175747
+- article-title: Comparison of learning algorithms for handwritten digit recognition
+  author: lecun
+  first-page: '53'
+  journal-title: Int Conf Artificial Neural Networks
+  year: '1995'
+- doi: 10.1007/BF00116037
+- doi: 10.1162/neco.1992.4.6.888
+- doi: 10.1007/BF02551274
+- author: saad
+  first-page: '302'
+  journal-title: Advances in neural information processing systems
+  volume: '8'
+  year: '1996'
+- doi: 10.1162/neco.1991.3.3.440
+- doi: 10.1109/TC.1978.1675179
+- article-title: Construction of quadratic polynomial classifiers
+  author: ott
+  first-page: '161'
+  journal-title: Proc IEEE Int Conf Pattern Recognition
+  year: '1976'
+- article-title: Comparing different neural net architectures for classifying handwritten
+    digits
+  author: guyon
+  first-page: '127'
+  journal-title: Proc IEEE IJCNN
+  volume: ii
+  year: '1989'
+- author: lang
+  journal-title: A time-delay neural-network architecture for speech recognition
+  year: '1988'
+- doi: 10.1162/neco.1994.6.5.851
+- doi: 10.1103/PhysRevA.45.6056
+- doi: 10.1007/978-1-4757-2440-0
+- author: cortes
+  first-page: '327'
+  journal-title: Advances in Neural Information Processing Systems 6
+  year: '1994'
+- author: press
+  journal-title: Numerical Recipes The Art of Scientific Computing
+  year: '1986'
+- doi: 10.1016/0885-2308(87)90010-6
+- author: vapnik
+  journal-title: Statistical Learning Theory
+  year: '1998'
+- doi: 10.1109/PGEC.1967.264666
+- doi: 10.1103/PhysRevLett.66.2396
+- doi: 10.1142/S0218001493000339
+- doi: 10.1109/ICASSP.1986.1169179
+- article-title: Solving multiclass learning problems via error-correcting output
+    codes
+  author: dietterich
+  doi: 10.1613/jair.105
+  first-page: '263'
+  journal-title: J Artificial Intell Res
+  volume: '2'
+  year: '1995'
+- doi: 10.1016/0893-6080(90)90028-J
+- doi: 10.1109/29.21701
+- doi: 10.1016/0031-3203(91)90081-F
+- article-title: 'Time-delay neural networks embedding time alignment: A performance
+    analysis'
+  author: haffner
+  journal-title: Proc Eurospeech 91 2nd European Conf Speech Communication and Technology
+  year: '0'
+- doi: 10.1016/0167-6393(90)90049-F
+- doi: 10.1109/ICASSP.1989.266355
+- article-title: Neural-net classifiers useful for speech recognition
+  author: lippmann
+  first-page: '417'
+  journal-title: Proc IEEE 1st Int Conf Neural Networks
+  year: '1987'
+- doi: 10.1109/TIT.1967.1054010
+- article-title: 'MLP, LVQ and DP: Comparison &#38; cooperation'
+  author: driancourt
+  first-page: '815'
+  journal-title: Proc Int Joint Conf Neural Networks
+  volume: '2'
+  year: '1991'
+- doi: 10.1109/72.125866
+- doi: 10.1109/ICASSP.1990.115733
+- doi: 10.1109/ICASSP.1990.115724
+- author: haffner
+  first-page: '579'
+  journal-title: Advances in neural information processing systems
+  volume: '4'
+  year: '1992'
+- doi: 10.1109/72.279181
+- author: drucker
+  first-page: '42'
+  journal-title: Advances in Neural Information Processing Systems 5
+  year: '1993'
+- doi: 10.1145/130385.130401
+- author: simard
+  journal-title: Advances in neural information processing systems
+  volume: '5'
+  year: '1993'
+- author: burges
+  journal-title: Advances in Neural Information Processing Systems 9
+  year: '1997'
+- doi: 10.1109/72.129422
+- author: bridle
+  journal-title: Neurocomputing Algorithms Architectures and Applications
+  year: '1989'
+- article-title: Reading checks with graph transformer networks
+  author: lecun
+  first-page: '151'
+  journal-title: Proc IEEE Int Conf Acoustics Speech Signal Processing
+  volume: '1'
+  year: '1997'
+- author: bengio
+  journal-title: Neural Networks for Speech and Sequence Recognition
+  year: '1996'
+- doi: 10.1109/IJCNN.1992.227175
+- doi: 10.1162/neco.1989.1.4.541
+- doi: 10.1109/ICPR.1994.576889
+- author: duda
+  journal-title: Pattern Classification and Scene Analysis
+  year: '1973'
+- article-title: An EM algorithm for asynchronous input/output hidden Markov models
+  author: bengio
+  first-page: '328'
+  journal-title: Proc Int Conf Neural Information Processing
+  year: '1996'
+- author: nowlan
+  first-page: '901'
+  journal-title: Advances in neural information processing systems
+  volume: '7'
+  year: '1995'
+- article-title: Discriminative feature and model design for automatic speech recognition
+  author: rahim
+  journal-title: Proc Eurospeech '97
+  year: '0'
+- author: wolf
+  first-page: '745'
+  journal-title: Advances in neural information processing systems
+  volume: '6'
+  year: '1994'
+- doi: 10.1109/89.568733
+- doi: 10.1049/ip-vis:19941301
+- author: mohri
+  journal-title: A Rational Design for a Weighted Finite-State Transducer Library
+  year: '1997'
+- article-title: Word normalization for on-line handwritten word recognition
+  author: bengio
+  doi: 10.1109/ICPR.1994.576966
+  journal-title: Proc IEEE Int Conf Pattern Recognition
+  year: '1994'
+- doi: 10.1109/72.536317
+- doi: 10.1109/2.144441
+- author: bengio
+  first-page: '427'
+  journal-title: Advances in neural information processing systems
+  volume: '7'
+  year: '1996'
+- doi: 10.1109/89.260364
+- article-title: Weighted determinization and minimization for large vocabulary recognition
+  author: mohri
+  first-page: '131'
+  journal-title: Proc Eurospeech '97
+  year: '0'
+- author: guyon
+  journal-title: In Handbook of Character Recognition and Document Image Analysis
+  year: '1996'
+- doi: 10.1109/ICASSP.1994.389576
+- article-title: Recognition of cursive script amounts on postal checks
+  author: gilloux
+  first-page: '705'
+  journal-title: Proc Europ Conf Postal Technol
+  year: '1993'
+- doi: 10.1109/34.57669
+- author: bourlard
+  first-page: '186'
+  journal-title: Advances in neural information processing systems
+  volume: '1'
+  year: '1989'
+- author: bengio
+  first-page: '175'
+  journal-title: Advances in neural information processing systems
+  volume: '4'
+  year: '1992'
+- doi: 10.1109/CVPR.1996.517075
+- doi: 10.1109/CVPR.1997.609310
+- author: tsypkin
+  journal-title: Adaptation and Learning in Automatic Systems
+  year: '1971'
+- author: tsypkin
+  journal-title: Foundations of the Theory of Learning Systems
+  year: '1973'
+- article-title: Learning in random nets
+  author: minsky
+  first-page: '335'
+  journal-title: Proc 4th London Symp Information Theory
+  year: '1961'
+- doi: 10.1207/s15516709cog0901_7
+- author: hinton
+  journal-title: Parallel Distributed Processing Explorations in the Microstructure
+    of Cognition Volume 1 Foundations
+  year: '1986'
+- author: rumelhart
+  first-page: '318'
+  journal-title: Parallel Distributed Processing Explorations in the Microstructure
+    of Cognition
+  volume: i
+  year: '1986'
+- doi: 10.1162/neco.1992.4.2.141
+- author: bryson
+  journal-title: Applied Optimal Control
+  year: '1969'
+- author: denker
+  journal-title: The Mathematics of Induction
+  year: '1995'
+- doi: 10.1109/72.363436
+- article-title: A learning scheme for asymmetric threshold networks
+  author: lecun
+  first-page: '599'
+  journal-title: Proc of COGNITIVA'85
+  year: '1985'
+- article-title: Connectionist speech recognition with a global MMI algorithm
+  author: haffner
+  first-page: '1929'
+  journal-title: Proc Eurospeech 93 3rd Europ Conf Speech Communication and Technology
+  year: '0'
+- doi: 10.1007/978-3-642-82657-3_24
+- article-title: Disriminative feature and model design for automatic speech recognition
+  author: rahim
+  first-page: '75'
+  journal-title: Proc EUROSPEECH
+  year: '1997'
+- author: kramer
+  first-page: '40'
+  journal-title: Advances in neural information processing systems
+  volume: '1'
+  year: '1988'
+- author: parker
+  journal-title: Learning-logic
+  year: '1985'
+- author: bottou
+  journal-title: Une approche th�orique de l'Apprentissage Connexionniste Applications
+    � la reconnaissance de la Parole
+  year: '1991'
+- doi: 10.1109/ICSMC.1995.538133
+- doi: 10.1109/ICDAR.1995.598933
+- article-title: 'On-line handwriting recognition with neural networks: Spatial representation
+    versus temporal representation'
+  author: lecun
+  journal-title: Proceedings of the 6th International Conference on Handwriting and
+    Drawing
+  year: '1993'
+- doi: 10.1109/ICNN.1988.23829
+- doi: 10.1142/S0218001493000340
+- author: moller
+  journal-title: '"Efficient Training of Feed-Forward Neural Networks "'
+  year: '1993'
+- author: schenkel
+  first-page: '723'
+  journal-title: Advances in neural information processing systems
+  volume: '5'
+  year: '1993'
+- author: becker
+  journal-title: Improving the convergence of back-propagation learning with second-order
+    methods
+  year: '1988'
+- doi: 10.1109/ICASSP.1993.319196
+- doi: 10.3115/1075812.1075870
+- doi: 10.1109/12.210173
+- doi: 10.1109/4.104196
+doc_url: http://xplorestaging.ieee.org/ielx4/5/15641/00726791.pdf?arnumber=726791
+doi: 10.1109/5.726791
+files:
+- gradient-based-learning-applied-to-document-lecun-a.pdf
+issue: '11'
+journal: Proceedings of the IEEE
+pages: 2278--2324
+papis_id: 3bb603ae65f8de32c4c3100854447c30
+publisher: Institute of Electrical and Electronics Engineers (IEEE)
+ref: GradientBasedLecun1998
+time-added: 2023-08-03-14:29:02
+title: Gradient-based learning applied to document recognition
+type: article
+url: http://dx.doi.org/10.1109/5.726791
+volume: '86'
+year: 1998

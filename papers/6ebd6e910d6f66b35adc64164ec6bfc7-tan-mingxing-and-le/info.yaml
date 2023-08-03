@@ -1,0 +1,37 @@
+abstract: This paper introduces EfficientNetV2, a new family of convolutional networks
+  that have faster training speed and better parameter efficiency than previous models.
+  To develop this family of models, we use a combination of training-aware neural
+  architecture search and scaling, to jointly optimize training speed and parameter
+  efficiency. The models were searched from the search space enriched with new ops
+  such as Fused-MBConv. Our experiments show that EfficientNetV2 models train much
+  faster than state-of-the-art models while being up to 6.8x smaller.   Our training
+  can be further sped up by progressively increasing the image size during training,
+  but it often causes a drop in accuracy. To compensate for this accuracy drop, we
+  propose to adaptively adjust regularization (e.g., dropout and data augmentation)
+  as well, such that we can achieve both fast training and good accuracy.   With progressive
+  learning, our EfficientNetV2 significantly outperforms previous models on ImageNet
+  and CIFAR/Cars/Flowers datasets. By pretraining on the same ImageNet21k, our EfficientNetV2
+  achieves 87.3% top-1 accuracy on ImageNet ILSVRC2012, outperforming the recent ViT
+  by 2.0% accuracy while training 5x-11x faster using the same computing resources.
+  Code will be available at https://github.com/google/automl/tree/master/efficientnetv2.
+archiveprefix: arXiv
+author: Tan, Mingxing and Le, Quoc V.
+author_list:
+- family: Tan
+  given: Mingxing
+- family: Le
+  given: Quoc V.
+eprint: 2104.00298v3
+file: 2104.00298v3.pdf
+files:
+- tmp19n-6q83.pdf
+month: Apr
+note: International Conference on Machine Learning, 2021
+papis_id: c75599b1fb77e5b638f10b757c744c05
+primaryclass: cs.CV
+ref: Efficientnetv2TanM2021
+time-added: 2023-08-03-14:46:33
+title: 'EfficientNetV2: Smaller Models and Faster Training'
+type: article
+url: http://arxiv.org/abs/2104.00298v3
+year: '2021'
