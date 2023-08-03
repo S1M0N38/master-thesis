@@ -1,0 +1,59 @@
+\documentclass{report}
+
+% Packages -------------------------------------------------------------------
+
+% math symbols, fonts, environments
+\usepackage{amsfonts, amsmath, amssymb, bm}
+
+% page layout
+\usepackage{geometry}
+
+% graphics (images, plots)
+\usepackage{graphicx}
+
+% diagrams in tikz
+\usepackage{tikzit}
+
+% bibliography
+\usepackage[backend=biber, style=alphabetic]{biblatex}
+\addbibresource{bibliography.bib}
+
+% references
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+
+
+% Commands -------------------------------------------------------------------
+
+% use := for "is defined to be equal to"
+\mathchardef\ordinarycolon\mathcode`\:
+\mathcode`\:=\string"8000
+\begingroup \catcode`\:=\active
+  \gdef:{\mathrel{\mathop\ordinarycolon}}
+\endgroup
+
+% loss function
+\newcommand{\Loss}{\mathcal{L}}
+
+
+% Documnent ------------------------------------------------------------------
+
+\begin{document}
+
+\include{chapters/0_abstract}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\include{chapters/1_introduction}
+\include{chapters/2_related_work}
+\include{chapters/3_injecting_semantic_information}
+\include{chapters/4_model_evaluation}
+\include{chapters/5_experiment_setup}
+\include{chapters/6_results_and_discussion}
+\include{chapters/7_conclusion}
+
+\printbibliography
+
+\end{document}

@@ -1,0 +1,36 @@
+\chapter{Related Work}
+\label{ch:related-work}
+
+% TODO: Image classification
+% TODO: XAI
+% TODO: Read papers
+
+\section{Image Classification with Neural Network}
+\label{sec:image-classification-with-neural-network}
+
+One of the first instances where Neural Network were employed for image
+classification was in 1998 by Lecun et al.~\cite{GradientBasedLecun1998}. Their
+model, LeNet, was able to indentify handwritten digit with higher accuracy than
+previous methods which relyed on manual fetures extraction such edges detection
+and hardcoded pattern recognition. A raw image of a digit is passed as input to LeNet and
+the model spits out a number from 0 to 9. Some foundational ideas were at the
+core of the architecture (convolutional operations, gradient based
+optimization, pooling layers) stood the test of time and proved to be highly
+sucessful.
+
+Fastforwanding to 2012. AlexNet~\cite{ImagenetClassiKrizhe2017}, a Convolution
+Neural Network (CNN) similar in spirit to LeNet, annihilated competitions at
+ImageNet Large Scale Visual Recognition Challenge~\cite{ImagenetALarDeng2009}
+with a whopping 10.8 \% gap on the runner up in top-5 error metric. This result
+proved the potential of CNNs to process bigger color images (224 x 224 x 3) and
+this sparked interest in the field which abbandoned the idea of manual
+featueres extraction in favour of the end-to-end approach.
+
+
+
+% LeNet (MNIST) first CNN applyed successfully to image classification
+% AlexNet (ImageNet) first CNN to win the ImageNet challenge
+% GoogLeNet and VGGNet popularized the idea of going deeper using fix block (e.g. inceptions)
+% ResNet introduce the idea of skip connections
+% EfficientNet formalized scaling direcitons width vs depth for Squeeze-Extitaion block (SENet)
+% RegNet improve skip connections by introduciong regulator module hybrid approach.
