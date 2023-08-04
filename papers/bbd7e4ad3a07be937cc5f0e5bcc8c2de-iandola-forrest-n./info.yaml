@@ -1,0 +1,42 @@
+abstract: 'Recent research on deep neural networks has focused primarily on improving
+  accuracy. For a given accuracy level, it is typically possible to identify multiple
+  DNN architectures that achieve that accuracy level. With equivalent accuracy, smaller
+  DNN architectures offer at least three advantages: (1) Smaller DNNs require less
+  communication across servers during distributed training. (2) Smaller DNNs require
+  less bandwidth to export a new model from the cloud to an autonomous car. (3) Smaller
+  DNNs are more feasible to deploy on FPGAs and other hardware with limited memory.
+  To provide all of these advantages, we propose a small DNN architecture called SqueezeNet.
+  SqueezeNet achieves AlexNet-level accuracy on ImageNet with 50x fewer parameters.
+  Additionally, with model compression techniques we are able to compress SqueezeNet
+  to less than 0.5MB (510x smaller than AlexNet).   The SqueezeNet architecture is
+  available for download here: https://github.com/DeepScale/SqueezeNet'
+archiveprefix: arXiv
+author: Iandola, Forrest N. and Han, Song and Moskewicz, Matthew W. and Ashraf, Khalid
+  and Dally, William J. and Keutzer, Kurt
+author_list:
+- family: Iandola
+  given: Forrest N.
+- family: Han
+  given: Song
+- family: Moskewicz
+  given: Matthew W.
+- family: Ashraf
+  given: Khalid
+- family: Dally
+  given: William J.
+- family: Keutzer
+  given: Kurt
+eprint: 1602.07360v4
+file: 1602.07360v4.pdf
+files:
+- tmpxe7t-fet.pdf
+month: Feb
+papis_id: 16e7d3c1bb2a9c3a8957e6ac8d4632de
+primaryclass: cs.CV
+ref: SqueezenetAleIandol2016
+time-added: 2023-08-04-13:46:08
+title: 'SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and <0.5MB   model
+  size'
+type: article
+url: http://arxiv.org/abs/1602.07360v4
+year: '2016'

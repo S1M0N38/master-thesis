@@ -1,0 +1,51 @@
+abstract: Designing convolutional neural networks (CNN) for mobile devices is challenging
+  because mobile models need to be small and fast, yet still accurate. Although significant
+  efforts have been dedicated to design and improve mobile CNNs on all dimensions,
+  it is very difficult to manually balance these trade-offs when there are so many
+  architectural possibilities to consider. In this paper, we propose an automated
+  mobile neural architecture search (MNAS) approach, which explicitly incorporate
+  model latency into the main objective so that the search can identify a model that
+  achieves a good trade-off between accuracy and latency. Unlike previous work, where
+  latency is considered via another, often inaccurate proxy (e.g., FLOPS), our approach
+  directly measures real-world inference latency by executing the model on mobile
+  phones. To further strike the right balance between flexibility and search space
+  size, we propose a novel factorized hierarchical search space that encourages layer
+  diversity throughout the network. Experimental results show that our approach consistently
+  outperforms state-of-the-art mobile CNN models across multiple vision tasks. On
+  the ImageNet classification task, our MnasNet achieves 75.2% top-1 accuracy with
+  78ms latency on a Pixel phone, which is 1.8x faster than MobileNetV2 [29] with 0.5%
+  higher accuracy and 2.3x faster than NASNet [36] with 1.2% higher accuracy. Our
+  MnasNet also achieves better mAP quality than MobileNets for COCO object detection.
+  Code is at https://github.com/tensorflow/tpu/tree/master/models/official/mnasnet
+archiveprefix: arXiv
+author: Tan, Mingxing and Chen, Bo and Pang, Ruoming and Vasudevan, Vijay and Sandler,
+  Mark and Howard, Andrew and Le, Quoc V.
+author_list:
+- family: Tan
+  given: Mingxing
+- family: Chen
+  given: Bo
+- family: Pang
+  given: Ruoming
+- family: Vasudevan
+  given: Vijay
+- family: Sandler
+  given: Mark
+- family: Howard
+  given: Andrew
+- family: Le
+  given: Quoc V.
+eprint: 1807.11626v3
+file: 1807.11626v3.pdf
+files:
+- tmpg4x9po2.pdf
+month: Jul
+note: CVPR 2019
+papis_id: d3ebe9875fa87f4cb0a4d606c0de7ecd
+primaryclass: cs.CV
+ref: MnasnetPlatfoTanM2018
+time-added: 2023-08-04-13:49:45
+title: 'MnasNet: Platform-Aware Neural Architecture Search for Mobile'
+type: article
+url: http://arxiv.org/abs/1807.11626v3
+year: '2018'

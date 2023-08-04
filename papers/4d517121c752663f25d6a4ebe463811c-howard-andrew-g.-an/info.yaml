@@ -1,0 +1,44 @@
+abstract: We present a class of efficient models called MobileNets for mobile and
+  embedded vision applications. MobileNets are based on a streamlined architecture
+  that uses depth-wise separable convolutions to build light weight deep neural networks.
+  We introduce two simple global hyper-parameters that efficiently trade off between
+  latency and accuracy. These hyper-parameters allow the model builder to choose the
+  right sized model for their application based on the constraints of the problem.
+  We present extensive experiments on resource and accuracy tradeoffs and show strong
+  performance compared to other popular models on ImageNet classification. We then
+  demonstrate the effectiveness of MobileNets across a wide range of applications
+  and use cases including object detection, finegrain classification, face attributes
+  and large scale geo-localization.
+archiveprefix: arXiv
+author: Howard, Andrew G. and Zhu, Menglong and Chen, Bo and Kalenichenko, Dmitry
+  and Wang, Weijun and Weyand, Tobias and Andreetto, Marco and Adam, Hartwig
+author_list:
+- family: Howard
+  given: Andrew G.
+- family: Zhu
+  given: Menglong
+- family: Chen
+  given: Bo
+- family: Kalenichenko
+  given: Dmitry
+- family: Wang
+  given: Weijun
+- family: Weyand
+  given: Tobias
+- family: Andreetto
+  given: Marco
+- family: Adam
+  given: Hartwig
+eprint: 1704.04861v1
+file: 1704.04861v1.pdf
+files:
+- tmpjsu1jzgi.pdf
+month: Apr
+papis_id: fd62982740cddf3091719b56cdea6c14
+primaryclass: cs.CV
+ref: MobilenetsEffHoward2017
+time-added: 2023-08-04-13:47:05
+title: 'MobileNets: Efficient Convolutional Neural Networks for Mobile Vision   Applications'
+type: article
+url: http://arxiv.org/abs/1704.04861v1
+year: '2017'
