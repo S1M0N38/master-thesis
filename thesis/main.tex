@@ -10,6 +10,7 @@
 
 % graphics (images, plots)
 \usepackage{graphicx}
+\graphicspath{{figures/}}
 
 % diagrams in tikz
 \usepackage{tikzit}
@@ -19,8 +20,14 @@
 \addbibresource{bibliography.bib}
 
 % references
-\usepackage[hidelinks]{hyperref}
+\usepackage{hyperref}
 \usepackage{cleveref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,      % Color of internal links (e.g., table of contents)
+    citecolor=black,      % Color of citation links (e.g., in-text references)
+    urlcolor=red,         % Color of URLs and external links
+}
 
 
 % Commands -------------------------------------------------------------------
@@ -39,6 +46,8 @@
 % Documnent ------------------------------------------------------------------
 
 \begin{document}
+
+\include{title}
 
 \include{chapters/0_abstract}
 
