@@ -1,0 +1,29 @@
+abstract: Because meaningful sentences are composed of meaningful words, any system that
+  hopes to process natural languages as people do must have information about
+  words and their meanings. This information is traditionally provided through
+  dictionaries, and machine-readable dictionaries are now widely available. But
+  dictionary entries evolved for the convenience of human readers, not for
+  machines. WordNet provides a more effective combination of traditional
+  lexicographic information and modern computing. WordNet is an online lexical
+  database designed for use under program control. English nouns, verbs,
+  adjectives, and adverbs are organized into sets of synonyms, each representing
+  a lexicalized concept. Semantic relations link the synonym sets
+author: Miller, George A.
+author_list:
+- affiliation: []
+  family: Miller
+  given: George A.
+date: '1995-11-01'
+doi: 10.1145/219717.219748
+files: []
+journal: Communications of the ACM
+pages: 39–41
+language: EN
+papis_id: 92064d8d1d7adf545c13e3bea98545d8
+ref: WordnetMi1995
+time-added: 2023-08-08-12:33:52
+title: 'WordNet: a lexical database for English'
+type: article
+url: https://dl.acm.org/doi/10.1145/219717.219748
+month: Nov
+year: '1995'

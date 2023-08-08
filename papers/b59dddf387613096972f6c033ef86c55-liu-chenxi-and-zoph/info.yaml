@@ -1,0 +1,48 @@
+abstract: We propose a new method for learning the structure of convolutional neural
+  networks (CNNs) that is more efficient than recent state-of-the-art methods based
+  on reinforcement learning and evolutionary algorithms. Our approach uses a sequential
+  model-based optimization (SMBO) strategy, in which we search for structures in order
+  of increasing complexity, while simultaneously learning a surrogate model to guide
+  the search through structure space. Direct comparison under the same search space
+  shows that our method is up to 5 times more efficient than the RL method of Zoph
+  et al. (2018) in terms of number of models evaluated, and 8 times faster in terms
+  of total compute. The structures we discover in this way achieve state of the art
+  classification accuracies on CIFAR-10 and ImageNet.
+archiveprefix: arXiv
+author: Liu, Chenxi and Zoph, Barret and Neumann, Maxim and Shlens, Jonathon and Hua,
+  Wei and Li, Li-Jia and Fei-Fei, Li and Yuille, Alan and Huang, Jonathan and Murphy,
+  Kevin
+author_list:
+- family: Liu
+  given: Chenxi
+- family: Zoph
+  given: Barret
+- family: Neumann
+  given: Maxim
+- family: Shlens
+  given: Jonathon
+- family: Hua
+  given: Wei
+- family: Li
+  given: Li-Jia
+- family: Fei-Fei
+  given: Li
+- family: Yuille
+  given: Alan
+- family: Huang
+  given: Jonathan
+- family: Murphy
+  given: Kevin
+eprint: 1712.00559v3
+file: 1712.00559v3.pdf
+files:
+- tmpcoa-j5d7.pdf
+month: Dec
+papis_id: 4901638f3f730989230127118dc7da56
+primaryclass: cs.CV
+ref: ProgressiveNeuLiuC2017
+time-added: 2023-08-08-09:51:08
+title: Progressive Neural Architecture Search
+type: article
+url: http://arxiv.org/abs/1712.00559v3
+year: '2017'

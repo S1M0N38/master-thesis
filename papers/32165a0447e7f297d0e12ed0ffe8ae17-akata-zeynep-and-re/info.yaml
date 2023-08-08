@@ -1,0 +1,43 @@
+abstract: Image classification has advanced significantly in recent years with the
+  availability of large-scale image sets. However, fine-grained classification remains
+  a major challenge due to the annotation cost of large numbers of fine-grained categories.
+  This project shows that compelling classification performance can be achieved on
+  such categories even without labeled training data. Given image and class embeddings,
+  we learn a compatibility function such that matching embeddings are assigned a higher
+  score than mismatching ones; zero-shot classification of an image proceeds by finding
+  the label yielding the highest joint compatibility score. We use state-of-the-art
+  image features and focus on different supervised attributes and unsupervised output
+  embeddings either derived from hierarchies or learned from unlabeled text corpora.
+  We establish a substantially improved state-of-the-art on the Animals with Attributes
+  and Caltech-UCSD Birds datasets. Most encouragingly, we demonstrate that purely
+  unsupervised output embeddings (learned from Wikipedia and improved with fine-grained
+  text) achieve compelling results, even outperforming the previous supervised state-of-the-art.
+  By combining different output embeddings, we further improve results.
+archiveprefix: arXiv
+author: Akata, Zeynep and Reed, Scott and Walter, Daniel and Lee, Honglak and Schiele,
+  Bernt
+author_list:
+- family: Akata
+  given: Zeynep
+- family: Reed
+  given: Scott
+- family: Walter
+  given: Daniel
+- family: Lee
+  given: Honglak
+- family: Schiele
+  given: Bernt
+doi: 10.1109/CVPR.2015.7298911
+eprint: 1409.8403v2
+file: 1409.8403v2.pdf
+files:
+- tmpjrawd066.pdf
+month: Sep
+papis_id: 7ccf95e9b69e7b007b8f3a5600ac32f9
+primaryclass: cs.CV
+ref: EvaluationOfOAkata2014
+time-added: 2023-08-08-15:36:22
+title: Evaluation of Output Embeddings for Fine-Grained Image Classification
+type: article
+url: http://arxiv.org/abs/1409.8403v2
+year: '2014'

@@ -1,0 +1,155 @@
+author: Cao, Chunshui and Liu, Xianming and Yang, Yi and Yu, Yinan and Wang, Jiang
+  and Wang, Zilei and Huang, Yongzhen and Wang, Liang and Huang, Chang and Xu, Wei
+  and Ramanan, Deva and Huang, Thomas S.
+author_list:
+- affiliation: []
+  family: Cao
+  given: Chunshui
+- affiliation: []
+  family: Liu
+  given: Xianming
+- affiliation: []
+  family: Yang
+  given: Yi
+- affiliation: []
+  family: Yu
+  given: Yinan
+- affiliation: []
+  family: Wang
+  given: Jiang
+- affiliation: []
+  family: Wang
+  given: Zilei
+- affiliation: []
+  family: Huang
+  given: Yongzhen
+- affiliation: []
+  family: Wang
+  given: Liang
+- affiliation: []
+  family: Huang
+  given: Chang
+- affiliation: []
+  family: Xu
+  given: Wei
+- affiliation: []
+  family: Ramanan
+  given: Deva
+- affiliation: []
+  family: Huang
+  given: Thomas S.
+booktitle: 2015 IEEE International Conference on Computer Vision (ICCV)
+citations:
+- doi: 10.1007/978-3-319-10590-1_53
+- article-title: Interactive graph cuts for optimal boundary and region segmentation
+    of objects in nd images
+  author: yuri
+  journal-title: IEEE International Conference on Computer Vision
+  volume: '112'
+  year: '2001'
+- article-title: 'Attentional neural network: Feature selection using cognitive feedback'
+  author: wang
+  first-page: '2033'
+  journal-title: Advances in neural information processing systems
+  year: '2014'
+- doi: 10.1007/s11263-013-0620-5
+- doi: 10.1109/ICCV.2011.6126474
+- article-title: 'Draw: A recurrent neural network for image generation'
+  author: gregor
+  journal-title: arXiv preprint arXiv 1502 01032
+  year: '2015'
+- doi: 10.1109/ICCV.2015.123
+- doi: 10.1162/neco.1997.9.8.1735
+- article-title: 'Batch normalization: Accelerating deep network training by reducing
+    internal covariate shift'
+  author: ioffe
+  journal-title: arXiv preprint arXiv 1502 01032
+  year: '2015'
+- doi: 10.1145/2647868.2654889
+- author: krizhevsky
+  journal-title: ImageNet Classification with Deep Convolutional Neural Networks
+  year: '2012'
+- author: kruger
+  first-page: '1847'
+  journal-title: Deep Hierarchies in the Primate Visual Cortex What Can We Learn for
+    Computer Vision?
+  volume: '35'
+  year: '0'
+- doi: 10.1109/ICASSP.2013.6639343
+- doi: 10.1109/5.726791
+- doi: 10.1364/JOSAA.20.001434
+- article-title: 'Imagenet: A large-scale hierarchical image database'
+  author: deng
+  doi: 10.1109/CVPR.2009.5206848
+  first-page: '248'
+  journal-title: Computer Vision and Pattern Recognition 2009 CVPR 2009 IEEE Conference
+    on
+  year: '2009'
+- article-title: Deep Networks with Internal Selective Attention through Feedback
+    Connections
+  author: stollenga
+  journal-title: ArXiv org
+  year: '2014'
+- doi: 10.1038/nn.3635
+- article-title: 'Dropout: A simple way to prevent neural networks from overfitting'
+  author: srivastava
+  first-page: '1929'
+  journal-title: The Journal of Machine Learning Research
+  volume: '15'
+  year: '2014'
+- doi: 10.1146/annurev.ne.18.030195.001205
+- doi: 10.1098/rstb.1998.0280
+- article-title: Going Deeper with Convolutions
+  author: szegedy
+  journal-title: ArXiv org
+  year: '2014'
+- doi: 10.1109/TPAMI.2009.167
+- doi: 10.1109/CVPR.2014.276
+- doi: 10.1109/TPAMI.2013.50
+- doi: 10.1016/j.visres.2008.07.012
+- doi: 10.1109/CVPR.2014.81
+- article-title: Network in network
+  author: lin
+  journal-title: arXiv preprint arXiv 1312 4400
+  year: '2013'
+- doi: 10.1523/JNEUROSCI.0179-10.2010
+- article-title: Recurrent Models of Visual Attention
+  author: mnih
+  journal-title: NIPS
+  year: '2014'
+- article-title: 'Deep inside convolutional networks: Visualising image classification
+    models and saliency maps'
+  author: simonyan
+  journal-title: arXiv preprint arXiv 1312 6034
+  year: '2013'
+- article-title: Deep boltzmann machines
+  author: salakhutdinov
+  first-page: '448'
+  journal-title: International Conference on Artificial Intelligence and Statistics
+  year: '2009'
+- article-title: Learning and selecting features jointly with point-wise gated {B}
+    oltzmann machines
+  author: sohn
+  first-page: '217'
+  journal-title: Proceedings of the 30th International Conference on Machine Learning
+  year: '2013'
+- article-title: Very Deep Convolutional Networks for Large-Scale Image Recognition
+  author: simonyan
+  journal-title: ArXiv org
+  year: '2014'
+doc_url: http://xplorestaging.ieee.org/ielx7/7407725/7410356/07410695.pdf?arnumber=7410695
+doi: 10.1109/iccv.2015.338
+files:
+- ieee-2015-ieee-international-conference-on-vision-a.pdf
+journal: 2015 IEEE International Conference on Computer Vision (ICCV)
+month: 12
+papis_id: 8e579101d241f14ca3e4c917ace4f584
+publisher: IEEE
+ref: LookAndThinkCaoC2015
+time-added: 2023-08-08-10:46:13
+title: 'Look and Think Twice: Capturing Top-Down Visual Attention with Feedback Convolutional
+  Neural Networks'
+type: inproceedings
+url: http://dx.doi.org/10.1109/iccv.2015.338
+venue: Santiago, Chile
+year: 2015

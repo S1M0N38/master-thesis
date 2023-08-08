@@ -1,0 +1,47 @@
+abstract: 'Visual attention has been successfully applied in structural prediction
+  tasks such as visual captioning and question answering. Existing visual attention
+  models are generally spatial, i.e., the attention is modeled as spatial probabilities
+  that re-weight the last conv-layer feature map of a CNN encoding an input image.
+  However, we argue that such spatial attention does not necessarily conform to the
+  attention mechanism --- a dynamic feature extractor that combines contextual fixations
+  over time, as CNN features are naturally spatial, channel-wise and multi-layer.
+  In this paper, we introduce a novel convolutional neural network dubbed SCA-CNN
+  that incorporates Spatial and Channel-wise Attentions in a CNN. In the task of image
+  captioning, SCA-CNN dynamically modulates the sentence generation context in multi-layer
+  feature maps, encoding where (i.e., attentive spatial locations at multiple layers)
+  and what (i.e., attentive channels) the visual attention is. We evaluate the proposed
+  SCA-CNN architecture on three benchmark image captioning datasets: Flickr8K, Flickr30K,
+  and MSCOCO. It is consistently observed that SCA-CNN significantly outperforms state-of-the-art
+  visual attention-based image captioning methods.'
+archiveprefix: arXiv
+author: Chen, Long and Zhang, Hanwang and Xiao, Jun and Nie, Liqiang and Shao, Jian
+  and Liu, Wei and Chua, Tat-Seng
+author_list:
+- family: Chen
+  given: Long
+- family: Zhang
+  given: Hanwang
+- family: Xiao
+  given: Jun
+- family: Nie
+  given: Liqiang
+- family: Shao
+  given: Jian
+- family: Liu
+  given: Wei
+- family: Chua
+  given: Tat-Seng
+eprint: 1611.05594v2
+file: 1611.05594v2.pdf
+files:
+- tmpdylicg-a.pdf
+month: Nov
+papis_id: 443c392c9159dc2e837076fe33c35f49
+primaryclass: cs.CV
+ref: ScaCnnSpatiaChen2016
+time-added: 2023-08-08-10:50:07
+title: 'SCA-CNN: Spatial and Channel-wise Attention in Convolutional Networks   for
+  Image Captioning'
+type: article
+url: http://arxiv.org/abs/1611.05594v2
+year: '2016'

@@ -1,0 +1,53 @@
+abstract: Recently Transformer and Convolution neural network (CNN) based models have
+  shown promising results in Automatic Speech Recognition (ASR), outperforming Recurrent
+  neural networks (RNNs). Transformer models are good at capturing content-based global
+  interactions, while CNNs exploit local features effectively. In this work, we achieve
+  the best of both worlds by studying how to combine convolution neural networks and
+  transformers to model both local and global dependencies of an audio sequence in
+  a parameter-efficient way. To this regard, we propose the convolution-augmented
+  transformer for speech recognition, named Conformer. Conformer significantly outperforms
+  the previous Transformer and CNN based models achieving state-of-the-art accuracies.
+  On the widely used LibriSpeech benchmark, our model achieves WER of 2.1%/4.3% without
+  using a language model and 1.9%/3.9% with an external language model on test/testother.
+  We also observe competitive performance of 2.7%/6.3% with a small model of only
+  10M parameters.
+archiveprefix: arXiv
+author: Gulati, Anmol and Qin, James and Chiu, Chung-Cheng and Parmar, Niki and Zhang,
+  Yu and Yu, Jiahui and Han, Wei and Wang, Shibo and Zhang, Zhengdong and Wu, Yonghui
+  and Pang, Ruoming
+author_list:
+- family: Gulati
+  given: Anmol
+- family: Qin
+  given: James
+- family: Chiu
+  given: Chung-Cheng
+- family: Parmar
+  given: Niki
+- family: Zhang
+  given: Yu
+- family: Yu
+  given: Jiahui
+- family: Han
+  given: Wei
+- family: Wang
+  given: Shibo
+- family: Zhang
+  given: Zhengdong
+- family: Wu
+  given: Yonghui
+- family: Pang
+  given: Ruoming
+eprint: 2005.08100v1
+file: 2005.08100v1.pdf
+files:
+- tmprauwf25z.pdf
+month: May
+papis_id: 7b150cb1f8991f8dfd3386c3102a02fc
+primaryclass: eess.AS
+ref: ConformerConvGulati2020
+time-added: 2023-08-08-11:32:16
+title: 'Conformer: Convolution-augmented Transformer for Speech Recognition'
+type: article
+url: http://arxiv.org/abs/2005.08100v1
+year: '2020'

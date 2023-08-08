@@ -1,0 +1,66 @@
+abstract: An important question in neuroevolution is how to gain an advantage
+  from evolving neural network topologies along with weights. We present a method,
+  NeuroEvolution of Augmenting Topologies (NEAT), which outperforms the best fixed-topology
+  method on a challenging benchmark reinforcement learning task. We claim that the
+  increased efficiency is due to (1) employing a principled method of crossover of
+  different topologies, (2) protecting structural innovation using speciation, and
+  (3) incrementally growing from minimal structure. We test this claim through a series
+  of ablation studies that demonstrate that each component is necessary to the system
+  as a whole and to each other. What results is signicantly faster learning. NEAT
+  is also an important contribution to GAs because it shows how it is possible for
+  evolution to both optimize and complexify solutions simultaneously, offering the
+  possibility of evolving increasingly complex solutions over generations, and strengthening
+  the analogy with biological evolution.
+author: Stanley, Kenneth O. and Miikkulainen, Risto
+author_list:
+- affiliation:
+  - name: Department of Computer Sciences, The University of Texas at Austin, Austin,
+      TX 78712, USA
+  family: Stanley
+  given: Kenneth O.
+- affiliation:
+  - name: Department of Computer Sciences, The University of Texas at Austin, Austin,
+      TX 78712, USA
+  family: Miikkulainen
+  given: Risto
+citations:
+- doi: 10.1109/37.24809
+- doi: 10.1109/72.265960
+- doi: 10.1007/BF02551274
+- doi: 10.1073/pnas.83.5.1271
+- doi: 10.1177/105971239700500305
+- doi: 10.1613/jair.301
+- doi: 10.1109/72.265959
+- doi: 10.1007/BF00114722
+- doi: 10.1613/jair.368
+- doi: 10.1023/A:1008272615525
+- doi: 10.1007/BF01411376
+- doi: 10.1146/annurev.ge.16.120182.002201
+- doi: 10.1162/evco.1997.5.1.1
+- doi: 10.1109/64.393139
+- doi: 10.1016/S0022-2836(72)80039-1
+- doi: 10.1023/A:1022674030396
+- doi: 10.1109/5.784219
+- doi: 10.1016/S0096-3003(97)10005-4
+- author: Zhang B.-T.
+  first-page: '199'
+  journal-title: Complex Systems
+  volume: '7'
+  year: '1993'
+doc_url: https://www.mitpressjournals.org/doi/pdf/10.1162/106365602320169811
+doi: 10.1162/106365602320169811
+files: []
+issue: '2'
+journal: Evolutionary Computation
+language: en
+month: 6
+pages: 99--127
+papis_id: 73bfe7037d34b0bf4bdb1f80432169b3
+publisher: MIT Press - Journals
+ref: EvolvingNeuralStanle2002
+time-added: 2023-08-08-10:13:27
+title: Evolving Neural Networks through Augmenting Topologies
+type: article
+url: http://dx.doi.org/10.1162/106365602320169811
+volume: '10'
+year: 2002

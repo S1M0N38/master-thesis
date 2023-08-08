@@ -1,0 +1,46 @@
+abstract: In this work, we present a simple, highly efficient and modularized Dual
+  Path Network (DPN) for image classification which presents a new topology of connection
+  paths internally. By revealing the equivalence of the state-of-the-art Residual
+  Network (ResNet) and Densely Convolutional Network (DenseNet) within the HORNN framework,
+  we find that ResNet enables feature re-usage while DenseNet enables new features
+  exploration which are both important for learning good representations. To enjoy
+  the benefits from both path topologies, our proposed Dual Path Network shares common
+  features while maintaining the flexibility to explore new features through dual
+  path architectures. Extensive experiments on three benchmark datasets, ImagNet-1k,
+  Places365 and PASCAL VOC, clearly demonstrate superior performance of the proposed
+  DPN over state-of-the-arts. In particular, on the ImagNet-1k dataset, a shallow
+  DPN surpasses the best ResNeXt-101(64x4d) with 26% smaller model size, 25% less
+  computational cost and 8% lower memory consumption, and a deeper DPN (DPN-131) further
+  pushes the state-of-the-art single model performance with about 2 times faster training
+  speed. Experiments on the Places365 large-scale scene dataset, PASCAL VOC detection
+  dataset, and PASCAL VOC segmentation dataset also demonstrate its consistently better
+  performance than DenseNet, ResNet and the latest ResNeXt model over various applications.
+archiveprefix: arXiv
+author: Chen, Yunpeng and Li, Jianan and Xiao, Huaxin and Jin, Xiaojie and Yan, Shuicheng
+  and Feng, Jiashi
+author_list:
+- family: Chen
+  given: Yunpeng
+- family: Li
+  given: Jianan
+- family: Xiao
+  given: Huaxin
+- family: Jin
+  given: Xiaojie
+- family: Yan
+  given: Shuicheng
+- family: Feng
+  given: Jiashi
+eprint: 1707.01629v2
+file: 1707.01629v2.pdf
+files:
+- tmp2qdm0ha3.pdf
+month: Jul
+papis_id: 35959f4b590e76d29fbd6b97681c0756
+primaryclass: cs.CV
+ref: DualPathNetwoChen2017
+time-added: 2023-08-08-10:02:31
+title: Dual Path Networks
+type: article
+url: http://arxiv.org/abs/1707.01629v2
+year: '2017'

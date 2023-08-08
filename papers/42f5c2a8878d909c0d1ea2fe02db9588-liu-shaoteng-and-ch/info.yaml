@@ -1,0 +1,119 @@
+author: Liu, Shaoteng and Chen, Jingjing and Pan, Liangming and Ngo, Chong-Wah and
+  Chua, Tat-Seng and Jiang, Yu-Gang
+author_list:
+- affiliation: []
+  family: Liu
+  given: Shaoteng
+- affiliation: []
+  family: Chen
+  given: Jingjing
+- affiliation: []
+  family: Pan
+  given: Liangming
+- affiliation: []
+  family: Ngo
+  given: Chong-Wah
+- affiliation: []
+  family: Chua
+  given: Tat-Seng
+- affiliation: []
+  family: Jiang
+  given: Yu-Gang
+booktitle: 2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+citations:
+- doi: 10.1109/CVPR.2019.00311
+- article-title: 'Poincare glove: Hyperbolic word embeddings'
+  author: tifrea
+  journal-title: ICLRE
+  year: '2019'
+- article-title: Zero-shot learning through cross-modal transfer
+  author: richard
+  journal-title: NIPS
+  year: '2013'
+- article-title: Zero-shot learning through cross-modal transfer
+  author: richard
+  journal-title: NIPS
+  year: '2013'
+- doi: 10.1109/CVPR.2011.5995720
+- article-title: 'Msplit lbi: Realizing feature selection and dense estimation simultaneously
+    in few-shot and zero-shot learning'
+  author: zhao
+  journal-title: ArXiv Preprint
+  year: '2018'
+- doi: 10.1109/ICCV.2015.474
+- doi: 10.1109/CVPR.2017.328
+- doi: 10.1109/CVPR.2018.00717
+- article-title: Attribute learning for understanding unstructured social activity
+  author: yanwei
+  journal-title: ECCV
+  year: '2012'
+- doi: 10.1109/CVPR.2016.576
+- doi: 10.1109/TPAMI.2019.2922175
+- article-title: Hyperbolic entailment cones for learning hierarchical embeddings
+  author: ganea
+  journal-title: ICML
+  year: '2018'
+- doi: 10.1109/CVPR.2019.00978
+- doi: 10.1109/CVPR.2016.90
+- article-title: Generative dual adversarial network for generalized zero-shot learning
+  author: he
+  journal-title: CVPR
+  year: '2019'
+- doi: 10.1109/CVPR.2019.01175
+- doi: 10.1109/CVPR.2009.5206594
+- doi: 10.1109/TPAMI.2013.140
+- doi: 10.3115/v1/D14-1162
+- doi: 10.1109/ICCV.2017.376
+- article-title: Zero-shot learning by convex combination of semantic embeddings
+  author: norouzi
+  journal-title: ICLRE
+  year: '2014'
+- doi: 10.1109/CVPR.2016.575
+- article-title: Large-scale object classification using label relation graphs
+  author: deng
+  journal-title: ECCV
+  year: '2014'
+- article-title: An embarrassingly simple approach to zero-shot learning
+  author: romera-paredes
+  journal-title: ICML
+  year: '2015'
+- doi: 10.1109/CVPR.2018.00115
+- doi: 10.1109/CVPR.2019.00635
+- doi: 10.1109/CVPR.2009.5206848
+- doi: 10.1109/TAC.2013.2254619
+- article-title: 'Devise: A deep visual-semantic embedding model'
+  author: andrea
+  journal-title: NIPS
+  year: '2013'
+- article-title: Riemannian adaptive optimization methods
+  author: bécigneul
+  journal-title: ICLRE
+  year: '2019'
+- doi: 10.3115/v1/W14-1618
+- doi: 10.1109/CVPR.2019.00561
+- doi: 10.1162/tacl_a_00134
+- article-title: Distributed representations of words and phrases and their compositionality
+  author: tomas
+  journal-title: NIPS
+  year: '2013'
+- doi: 10.1109/CVPR.2011.5995353
+- article-title: Poincare embeddings for learning hierarchical representations
+  author: nickel
+  journal-title: NIPS
+  year: '2017'
+- doi: 10.1145/219717.219748
+doc_url: http://xplorestaging.ieee.org/ielx7/9142308/9156271/09157359.pdf?arnumber=9157359
+doi: 10.1109/cvpr42600.2020.00929
+files:
+- liu-hyperbolic-visual-embedding-learning-for-zero-shot-recognition-cvpr-2020-paper-a.pdf
+journal: 2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+month: 6
+papis_id: 51bb4a4c9288abf84844140122d83ab0
+publisher: IEEE
+ref: HyperbolicVisuLiuS2020
+time-added: 2023-08-08-16:09:32
+title: Hyperbolic Visual Embedding Learning for Zero-Shot Recognition
+type: inproceedings
+url: http://dx.doi.org/10.1109/cvpr42600.2020.00929
+venue: Seattle, WA, USA
+year: 2020

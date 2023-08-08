@@ -1,0 +1,46 @@
+abstract: Neural networks have proven effective at solving difficult problems but
+  designing their architectures can be challenging, even for image classification
+  problems alone. Our goal is to minimize human participation, so we employ evolutionary
+  algorithms to discover such networks automatically. Despite significant computational
+  requirements, we show that it is now possible to evolve models with accuracies within
+  the range of those published in the last year. Specifically, we employ simple evolutionary
+  techniques at unprecedented scales to discover models for the CIFAR-10 and CIFAR-100
+  datasets, starting from trivial initial conditions and reaching accuracies of 94.6%
+  (95.6% for ensemble) and 77.0%, respectively. To do this, we use novel and intuitive
+  mutation operators that navigate large search spaces; we stress that no human participation
+  is required once evolution starts and that the output is a fully-trained model.
+  Throughout this work, we place special emphasis on the repeatability of results,
+  the variability in the outcomes and the computational requirements.
+archiveprefix: arXiv
+author: Real, Esteban and Moore, Sherry and Selle, Andrew and Saxena, Saurabh and
+  Suematsu, Yutaka Leon and Tan, Jie and Le, Quoc and Kurakin, Alex
+author_list:
+- family: Real
+  given: Esteban
+- family: Moore
+  given: Sherry
+- family: Selle
+  given: Andrew
+- family: Saxena
+  given: Saurabh
+- family: Suematsu
+  given: Yutaka Leon
+- family: Tan
+  given: Jie
+- family: Le
+  given: Quoc
+- family: Kurakin
+  given: Alex
+eprint: 1703.01041v2
+file: 1703.01041v2.pdf
+files:
+- tmpx-i8gg6h.pdf
+month: Mar
+papis_id: f8b6219c1bcce8df286d67726e2f180d
+primaryclass: cs.NE
+ref: LargeScaleEvoReal2017
+time-added: 2023-08-08-09:54:31
+title: Large-Scale Evolution of Image Classifiers
+type: article
+url: http://arxiv.org/abs/1703.01041v2
+year: '2017'

@@ -1,0 +1,46 @@
+abstract: Adversarial robustness has emerged as an important topic in deep learning
+  as carefully crafted attack samples can significantly disturb the performance of
+  a model. Many recent methods have proposed to improve adversarial robustness by
+  utilizing adversarial training or model distillation, which adds additional procedures
+  to model training. In this paper, we propose a new training paradigm called Guided
+  Complement Entropy (GCE) that is capable of achieving "adversarial defense for free,"
+  which involves no additional procedures in the process of improving adversarial
+  robustness. In addition to maximizing model probabilities on the ground-truth class
+  like cross-entropy, we neutralize its probabilities on the incorrect classes along
+  with a "guided" term to balance between these two terms. We show in the experiments
+  that our method achieves better model robustness with even better performance compared
+  to the commonly used cross-entropy training objective. We also show that our method
+  can be used orthogonal to adversarial training across well-known methods with noticeable
+  robustness gain. To the best of our knowledge, our approach is the first one that
+  improves model robustness without compromising performance.
+archiveprefix: arXiv
+author: Chen, Hao-Yun and Liang, Jhao-Hong and Chang, Shih-Chieh and Pan, Jia-Yu and
+  Chen, Yu-Ting and Wei, Wei and Juan, Da-Cheng
+author_list:
+- family: Chen
+  given: Hao-Yun
+- family: Liang
+  given: Jhao-Hong
+- family: Chang
+  given: Shih-Chieh
+- family: Pan
+  given: Jia-Yu
+- family: Chen
+  given: Yu-Ting
+- family: Wei
+  given: Wei
+- family: Juan
+  given: Da-Cheng
+eprint: 1903.09799v3
+file: 1903.09799v3.pdf
+files:
+- tmp3seufh0k.pdf
+month: Mar
+papis_id: 1a23af43c571d70163cd6ce27697ab75
+primaryclass: cs.LG
+ref: ImprovingAdverChen2019
+time-added: 2023-08-05-12:25:42
+title: Improving Adversarial Robustness via Guided Complement Entropy
+type: article
+url: http://arxiv.org/abs/1903.09799v3
+year: '2019'

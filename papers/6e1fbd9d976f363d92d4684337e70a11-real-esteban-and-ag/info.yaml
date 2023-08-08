@@ -1,0 +1,39 @@
+abstract: The effort devoted to hand-crafting neural network image classifiers has
+  motivated the use of architecture search to discover them automatically. Although
+  evolutionary algorithms have been repeatedly applied to neural network topologies,
+  the image classifiers thus discovered have remained inferior to human-crafted ones.
+  Here, we evolve an image classifier---AmoebaNet-A---that surpasses hand-designs
+  for the first time. To do this, we modify the tournament selection evolutionary
+  algorithm by introducing an age property to favor the younger genotypes. Matching
+  size, AmoebaNet-A has comparable accuracy to current state-of-the-art ImageNet models
+  discovered with more complex architecture-search methods. Scaled to larger size,
+  AmoebaNet-A sets a new state-of-the-art 83.9% / 96.6% top-5 ImageNet accuracy. In
+  a controlled comparison against a well known reinforcement learning algorithm, we
+  give evidence that evolution can obtain results faster with the same hardware, especially
+  at the earlier stages of the search. This is relevant when fewer compute resources
+  are available. Evolution is, thus, a simple method to effectively discover high-quality
+  architectures.
+archiveprefix: arXiv
+author: Real, Esteban and Aggarwal, Alok and Huang, Yanping and Le, Quoc V
+author_list:
+- family: Real
+  given: Esteban
+- family: Aggarwal
+  given: Alok
+- family: Huang
+  given: Yanping
+- family: Le
+  given: Quoc V
+eprint: 1802.01548v7
+file: 1802.01548v7.pdf
+files:
+- tmp-zjhcllk.pdf
+month: Feb
+papis_id: a93d108ef01ca5c575fd1d441c655fa4
+primaryclass: cs.NE
+ref: RegularizedEvoReal2018
+time-added: 2023-08-08-09:48:05
+title: Regularized Evolution for Image Classifier Architecture Search
+type: article
+url: http://arxiv.org/abs/1802.01548v7
+year: '2018'

@@ -1,0 +1,37 @@
+abstract: Convolutional Neural Networks define an exceptionally powerful class of
+  models, but are still limited by the lack of ability to be spatially invariant to
+  the input data in a computationally and parameter efficient manner. In this work
+  we introduce a new learnable module, the Spatial Transformer, which explicitly allows
+  the spatial manipulation of data within the network. This differentiable module
+  can be inserted into existing convolutional architectures, giving neural networks
+  the ability to actively spatially transform feature maps, conditional on the feature
+  map itself, without any extra training supervision or modification to the optimisation
+  process. We show that the use of spatial transformers results in models which learn
+  invariance to translation, scale, rotation and more generic warping, resulting in
+  state-of-the-art performance on several benchmarks, and for a number of classes
+  of transformations.
+archiveprefix: arXiv
+author: Jaderberg, Max and Simonyan, Karen and Zisserman, Andrew and Kavukcuoglu,
+  Koray
+author_list:
+- family: Jaderberg
+  given: Max
+- family: Simonyan
+  given: Karen
+- family: Zisserman
+  given: Andrew
+- family: Kavukcuoglu
+  given: Koray
+eprint: 1506.02025v3
+file: 1506.02025v3.pdf
+files:
+- tmpswu7ct2j.pdf
+month: Jun
+papis_id: 4bef1d4a0ef18077c12f1989a83a9e9b
+primaryclass: cs.CV
+ref: SpatialTransfoJaderb2015
+time-added: 2023-08-08-09:29:37
+title: Spatial Transformer Networks
+type: article
+url: http://arxiv.org/abs/1506.02025v3
+year: '2015'

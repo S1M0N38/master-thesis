@@ -1,0 +1,90 @@
+author: Verma, Nakul and Mahajan, Dhruv and Sellamanickam, Sundararajan and Nair,
+  Vinod
+author_list:
+- affiliation: []
+  family: Verma
+  given: Nakul
+- affiliation: []
+  family: Mahajan
+  given: Dhruv
+- affiliation: []
+  family: Sellamanickam
+  given: Sundararajan
+- affiliation: []
+  family: Nair
+  given: Vinod
+booktitle: 2012 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)
+citations:
+- doi: 10.1109/CVPR.2011.5995720
+- article-title: Distance metric learning for large margin nearest neighbor classification
+  author: weinberger
+  journal-title: JMLR
+  year: '2009'
+- article-title: Metric learning to rank
+  author: mcfee
+  journal-title: ICML
+  year: '2010'
+- doi: 10.1109/ICCV.2007.4409064
+- doi: 10.1109/ICCV.2009.5459265
+- doi: 10.1109/CVPR.2007.383272
+- article-title: Constructing category hierarchies for visual recognition
+  author: marsza?ek
+  journal-title: ECCV
+  year: '2008'
+- doi: 10.1109/CVPR.2009.5206594
+- doi: 10.1109/CVPR.2010.5540027
+- doi: 10.1109/CVPR.2006.100
+- doi: 10.1109/CVPR.2008.4587841
+- article-title: Large margin taxonomy embedding with an application to document categorization
+  author: weinberger
+  journal-title: NIPS
+  year: '2009'
+- article-title: Cond. prob. tree estimation analysis and algorithms
+  author: beygelzimer
+  journal-title: UAI
+  year: '2009'
+- author: shakhnarovich
+  journal-title: Learning Task-Specific Similarity
+  year: '2006'
+- article-title: Label embedding trees for large multi-class tasks
+  author: bengio
+  journal-title: NIPS
+  year: '2010'
+- article-title: 'Similarity metrics for categorization: From mono. to category specific'
+  author: babenko
+  journal-title: ECCV
+  year: '2009'
+- doi: 10.1109/CVPR.2008.4587410
+- article-title: Semantic label sharing for learning with many categories
+  author: fergus
+  journal-title: ECCV
+  year: '2010'
+- article-title: 'ImageNet: A large-scale hierarchical image database'
+  author: dengw dong
+  journal-title: CVPR
+  year: '2009'
+- doi: 10.1109/CVPR.2011.5995516
+- doi: 10.1145/1031171.1031186
+- article-title: Neighbourhood components analysis
+  author: goldberger
+  journal-title: NIPS
+  year: '2004'
+- article-title: Metric learning by collapsing classes
+  author: globerson
+  journal-title: NIPS
+  year: '2005'
+doc_url: http://xplorestaging.ieee.org/ielx5/6235193/6247647/06247938.pdf?arnumber=6247938
+doi: 10.1109/cvpr.2012.6247938
+files:
+- hier-embd-a.pdf
+journal: 2012 IEEE Conference on Computer Vision and Pattern Recognition
+month: 6
+papis_id: 4a11cf212aa9249410f616a6dfe1894d
+publisher: IEEE
+ref: LearningHierarVerma2012
+time-added: 2023-08-08-16:17:31
+title: Learning hierarchical similarity metrics
+type: inproceedings
+url: http://dx.doi.org/10.1109/cvpr.2012.6247938
+venue: Providence, RI
+year: 2012

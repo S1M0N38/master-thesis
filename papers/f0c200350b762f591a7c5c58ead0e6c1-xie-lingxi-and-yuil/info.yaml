@@ -1,0 +1,37 @@
+abstract: The deep Convolutional Neural Network (CNN) is the state-of-the-art solution
+  for large-scale visual recognition. Following basic principles such as increasing
+  the depth and constructing highway connections, researchers have manually designed
+  a lot of fixed network structures and verified their effectiveness.   In this paper,
+  we discuss the possibility of learning deep network structures automatically. Note
+  that the number of possible network structures increases exponentially with the
+  number of layers in the network, which inspires us to adopt the genetic algorithm
+  to efficiently traverse this large search space. We first propose an encoding method
+  to represent each network structure in a fixed-length binary string, and initialize
+  the genetic algorithm by generating a set of randomized individuals. In each generation,
+  we define standard genetic operations, e.g., selection, mutation and crossover,
+  to eliminate weak individuals and then generate more competitive ones. The competitiveness
+  of each individual is defined as its recognition accuracy, which is obtained via
+  training the network from scratch and evaluating it on a validation set. We run
+  the genetic process on two small datasets, i.e., MNIST and CIFAR10, demonstrating
+  its ability to evolve and find high-quality structures which are little studied
+  before. These structures are also transferrable to the large-scale ILSVRC2012 dataset.
+archiveprefix: arXiv
+author: Xie, Lingxi and Yuille, Alan
+author_list:
+- family: Xie
+  given: Lingxi
+- family: Yuille
+  given: Alan
+eprint: 1703.01513v1
+file: 1703.01513v1.pdf
+files:
+- tmpqfcjpl2b.pdf
+month: Mar
+papis_id: a055d75393ad959b390668024d8b3f85
+primaryclass: cs.CV
+ref: GeneticCnnXieL2017
+time-added: 2023-08-08-09:46:16
+title: Genetic CNN
+type: article
+url: http://arxiv.org/abs/1703.01513v1
+year: '2017'

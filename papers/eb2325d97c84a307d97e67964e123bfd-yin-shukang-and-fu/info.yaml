@@ -1,0 +1,45 @@
+abstract: Multimodal Large Language Model (MLLM) recently has been a new rising research
+  hotspot, which uses powerful Large Language Models (LLMs) as a brain to perform
+  multimodal tasks. The surprising emergent capabilities of MLLM, such as writing
+  stories based on images and OCR-free math reasoning, are rare in traditional methods,
+  suggesting a potential path to artificial general intelligence. In this paper, we
+  aim to trace and summarize the recent progress of MLLM. First of all, we present
+  the formulation of MLLM and delineate its related concepts. Then, we discuss the
+  key techniques and applications, including Multimodal Instruction Tuning (M-IT),
+  Multimodal In-Context Learning (M-ICL), Multimodal Chain of Thought (M-CoT), and
+  LLM-Aided Visual Reasoning (LAVR). Finally, we discuss existing challenges and point
+  out promising research directions. In light of the fact that the era of MLLM has
+  only just begun, we will keep updating this survey and hope it can inspire more
+  research. An associated GitHub link collecting the latest papers is available at
+  https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models.
+archiveprefix: arXiv
+author: Yin, Shukang and Fu, Chaoyou and Zhao, Sirui and Li, Ke and Sun, Xing and
+  Xu, Tong and Chen, Enhong
+author_list:
+- family: Yin
+  given: Shukang
+- family: Fu
+  given: Chaoyou
+- family: Zhao
+  given: Sirui
+- family: Li
+  given: Ke
+- family: Sun
+  given: Xing
+- family: Xu
+  given: Tong
+- family: Chen
+  given: Enhong
+eprint: 2306.13549v1
+file: 2306.13549v1.pdf
+files:
+- tmp-5onuwp3.pdf
+month: Jun
+papis_id: b7ff8a55078625b5a9f6ace9f0e06774
+primaryclass: cs.CV
+ref: ASurveyOnMulYinS2023
+time-added: 2023-08-08-11:45:06
+title: A Survey on Multimodal Large Language Models
+type: article
+url: http://arxiv.org/abs/2306.13549v1
+year: '2023'

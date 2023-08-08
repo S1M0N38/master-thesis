@@ -1,0 +1,41 @@
+abstract: We present a novel latent embedding model for learning a compatibility function
+  between image and class embeddings, in the context of zero-shot classification.
+  The proposed method augments the state-of-the-art bilinear compatibility model by
+  incorporating latent variables. Instead of learning a single bilinear map, it learns
+  a collection of maps with the selection, of which map to use, being a latent variable
+  for the current image-class pair. We train the model with a ranking based objective
+  function which penalizes incorrect rankings of the true class for a given image.
+  We empirically demonstrate that our model improves the state-of-the-art for various
+  class embeddings consistently on three challenging publicly available datasets for
+  the zero-shot setting. Moreover, our method leads to visually highly interpretable
+  results with clear clusters of different fine-grained object properties that correspond
+  to different latent variable maps.
+archiveprefix: arXiv
+author: Xian, Yongqin and Akata, Zeynep and Sharma, Gaurav and Nguyen, Quynh and Hein,
+  Matthias and Schiele, Bernt
+author_list:
+- family: Xian
+  given: Yongqin
+- family: Akata
+  given: Zeynep
+- family: Sharma
+  given: Gaurav
+- family: Nguyen
+  given: Quynh
+- family: Hein
+  given: Matthias
+- family: Schiele
+  given: Bernt
+eprint: 1603.08895v2
+file: 1603.08895v2.pdf
+files:
+- tmpm2b3z03w.pdf
+month: Mar
+papis_id: 04de75c72eab3bf7a9650c2781abcb79
+primaryclass: cs.CV
+ref: LatentEmbeddinXian2016
+time-added: 2023-08-08-16:11:52
+title: Latent Embeddings for Zero-shot Classification
+type: article
+url: http://arxiv.org/abs/1603.08895v2
+year: '2016'

@@ -1,0 +1,28 @@
+abstract: 'We present a genetic algorithm method that evolves neural network
+  architectures for specific tasks. Each network architecture is represented as a
+  connection constraint matrix mapped directly into a bit-string genotype.
+  Modified standard genetic operators act on populations of these genotypes to
+  produce network architectures with higher fitness is assessed by training
+  particular network instantiations and recording their final performance error.
+  Three applications of this method to simple network mapping tasks are
+  discussed.'
+address: San Francisco, CA, USA
+author: Miller, Geoffrey F. and Todd, Peter M. and Hegde, Shailesh U.
+author_list:
+- family: Miller
+  given: Geoffrey F.
+- family: Todd
+  given: Peter M.
+- family: Hegde
+  given: Shailesh U.
+booktitle: Proceedings of the 3rd International Conference on Genetic Algorithms
+files: []
+isbn: '1558600663'
+numpages: '6'
+pages: 379–384
+papis_id: c5762a509ef4262942562f20e263473c
+publisher: Morgan Kaufmann Publishers Inc.
+ref: DesigningNeuraMiller1989
+title: Designing Neural Networks Using Genetic Algorithms
+type: inproceedings
+year: '1989'

@@ -1,0 +1,39 @@
+abstract: Image classification is a critical task for both humans and computers. One
+  of the challenges lies in the large scale of the semantic space. In particular,
+  humans can recognize tens of thousands of object classes and scenes. No computer
+  vision algorithm today has been tested at this scale. This paper presents a study
+  of large scale categorization including a series of challenging experiments on classification
+  with more than 10, 000 image classes. We find that a) computational issues become
+  crucial in algorithm design; b) conventional wisdom from a couple of hundred image
+  categories on relative performance of different classifiers does not necessarily
+  hold when the number of categories increases; c) there is a surprisingly strong
+  relationship between the structure of WordNet (developed for studying language)
+  and the difficulty of visual categorization; d) classification can be improved by
+  exploiting the semantic hierarchy. Toward the future goal of developing automatic
+  vision algorithms to recognize tens of thousands or even millions of image categories,
+  we make a series of observations and arguments about dataset scale, category density,
+  and image hierarchy.
+address: Berlin, Heidelberg
+author: Deng, Jia and Berg, Alexander C. and Li, Kai and Fei-Fei, Li
+author_list:
+- family: Deng
+  given: Jia
+- family: Berg
+  given: Alexander C.
+- family: Li
+  given: Kai
+- family: Fei-Fei
+  given: Li
+booktitle: 'Proceedings of the 11th European Conference on Computer Vision: Part V'
+files: []
+isbn: '3642155545'
+location: Heraklion, Crete, Greece
+numpages: '14'
+pages: 71–84
+papis_id: 677865a703dd180c137d1e4f6b460245
+publisher: Springer-Verlag
+ref: WhatDoesClassDeng2010
+series: ECCV'10
+title: What Does Classifying More than 10,000 Image Categories Tell Us?
+type: inproceedings
+year: '2010'

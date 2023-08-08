@@ -1,0 +1,130 @@
+author: Pasini, Andrea and Giobergia, Flavio and Pastor, Eliana and Baralis, Elena
+author_list:
+- affiliation:
+  - name: Department of Control and Computer Engineering, Politecnico di Torino, Turin,
+      Italy
+  family: Pasini
+  given: Andrea
+- affiliation:
+  - name: Department of Control and Computer Engineering, Politecnico di Torino, Turin,
+      Italy
+  family: Giobergia
+  given: Flavio
+- affiliation:
+  - name: Department of Control and Computer Engineering, Politecnico di Torino, Turin,
+      Italy
+  family: Pastor
+  given: Eliana
+- affiliation:
+  - name: Department of Control and Computer Engineering, Politecnico di Torino, Turin,
+      Italy
+  family: Baralis
+  given: Elena
+citations:
+- doi: 10.1109/CVPR.2015.7298752
+- doi: 10.24963/ijcai.2019/873
+- article-title: 'API design for machine learning software: Experiences from the scikit-learn
+    project'
+  author: buitinck
+  first-page: '108'
+  journal-title: Proc ECML PKDD Workshop Lang Data Mining Mach Learn
+  year: '2013'
+- doi: 10.1007/978-3-030-25797-2_3
+- article-title: 'Visualization, summarization and exploration of large collections
+    of images: State of the art'
+  author: camargo
+  journal-title: Proc Latin-Amer Conf Netw Electron Media (LACNEM)
+  year: '2009'
+- article-title: 'ROUGE: A package for automatic evaluation of summaries'
+  author: lin
+  first-page: '74'
+  journal-title: Proc Workshop ACL Text Summarization Branches Out
+  year: '2004'
+- doi: 10.1145/1963192.1963354
+- doi: 10.1109/CVPR.2019.00902
+- article-title: The cityscapes dataset
+  author: cordts
+  journal-title: Proc CVPR Workshop Future Datasets Vis
+  year: '2015'
+- doi: 10.1109/CVPR.2019.00656
+- doi: 10.1145/1873951.1874095
+- doi: 10.1016/j.patcog.2006.05.022
+- article-title: Learning mixtures of submodular functions for image collection summarization
+  author: tschiatschek
+  first-page: '1413'
+  journal-title: Proc Adv Neural Inf Process Syst
+  year: '2014'
+- doi: 10.1016/j.patcog.2012.07.011
+- doi: 10.1145/1141277.1141601
+- doi: 10.1109/IVL.1998.694467
+- doi: 10.1613/jair.43
+- doi: 10.3390/app8020230
+- doi: 10.1109/TKDE.2014.2345408
+- article-title: 'gSpan-H: An iterative mapreduce based frequent subgraph mining algorithm'
+  author: sangle
+  first-page: '169'
+  journal-title: Int J Adv Res Innov Ideas Educ
+  volume: '2'
+  year: '2016'
+- doi: 10.1109/ICDMW.2018.00143
+- doi: 10.1515/comp-2018-0018
+- doi: 10.1186/s13040-018-0181-9
+- doi: 10.1016/j.eswa.2018.04.010
+- doi: 10.1016/j.procs.2015.03.198
+- article-title: 'gSpan: Graph-based substructure pattern mining'
+  author: yan
+  first-page: '721'
+  journal-title: Proc IEEE Int Conf Data Mining
+  year: '2002'
+- doi: 10.1016/j.neucom.2014.09.095
+- doi: 10.1016/j.ins.2015.08.044
+- doi: 10.1109/CVPR.2019.00963
+- article-title: Cross-modal learning for multi-modal video categorization
+  author: goyal
+  journal-title: arXiv 2003 03501
+  year: '2020'
+- doi: 10.1109/BigData.2015.7363803
+- doi: 10.1109/CVPR.2017.544
+- doi: 10.1109/CVPR.2018.00132
+- doi: 10.1145/2382936.2383055
+- doi: 10.1109/CVPR.2018.00611
+- doi: 10.1007/978-3-030-01246-5_41
+- doi: 10.1017/S0269888912000331
+- doi: 10.1109/AIKE.2019.00047
+- doi: 10.1109/CVPRW.2019.00094
+- doi: 10.1109/ICCVW.2019.00221
+- doi: 10.1109/CVPR.2008.4587799
+- doi: 10.1007/s11263-016-0981-7
+- doi: 10.1109/ICCV.2007.4408863
+- doi: 10.1109/CVPR.2015.7298927
+- doi: 10.1007/s11042-017-5553-5
+- doi: 10.1109/ICDM.2001.989534
+- article-title: Applying semantic reasoning in image retrieval
+  author: de boer
+  first-page: '69'
+  journal-title: Proc 1st Int Conf Big Data Small Data Linked Data Open Data (ALLDATA)
+  year: '2015'
+- doi: 10.1145/1964921.1964929
+- doi: 10.1109/ICCV.2019.01042
+- doi: 10.18653/v1/W15-2812
+- doi: 10.1145/1460096.1460155
+- doi: 10.1109/CVPR.2015.7298990
+- doi: 10.1007/s11042-016-3840-1
+- doi: 10.1109/ICCV.2019.00466
+- doi: 10.1109/CVPR.2019.01094
+- doi: 10.1109/CVPR.2018.00133
+doc_url: http://xplorestaging.ieee.org/ielx7/6287639/9668973/09987488.pdf?arnumber=9987488
+doi: 10.1109/access.2022.3229654
+files:
+- tmpxll4g48n.pdf
+journal: IEEE Access
+pages: 131747--131764
+papis_id: e0d41aeb09614efbda9c0d5137126ab9
+publisher: Institute of Electrical and Electronics Engineers (IEEE)
+ref: SemanticImagePasini2022
+time-added: 2023-08-08-11:59:46
+title: Semantic Image Collection Summarization With Frequent Subgraph Mining
+type: article
+url: http://dx.doi.org/10.1109/access.2022.3229654
+volume: '10'
+year: 2022

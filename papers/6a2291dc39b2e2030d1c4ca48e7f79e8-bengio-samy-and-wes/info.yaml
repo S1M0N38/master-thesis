@@ -1,0 +1,33 @@
+abstract: Multi-class classification becomes challenging at test time when the number
+  of classes is very large and testing against every possible class can become computationally
+  infeasible. This problem can be alleviated by imposing (or learning) a structure
+  over the set of classes. We propose an algorithm for learning a tree-structure of
+  classifiers which, by optimizing the overall tree loss, provides superior accuracy
+  to existing tree labeling methods. We also propose a method that learns to embed
+  labels in a low dimensional space that is faster than non-embedding approaches and
+  has superior accuracy to existing embedding approaches. Finally we combine the two
+  ideas resulting in the label embedding tree that outperforms alternative methods
+  including One-vs-Rest while being orders of magnitude faster.
+address: Red Hook, NY, USA
+author: Bengio, Samy and Weston, Jason and Grangier, David
+author_list:
+- family: Bengio
+  given: Samy
+- family: Weston
+  given: Jason
+- family: Grangier
+  given: David
+booktitle: Proceedings of the 23rd International Conference on Neural Information
+  Processing Systems - Volume 1
+files:
+- nips-2010-label-embedding-trees-for-large-multi-class-tasks-paper-a.pdf
+location: Vancouver, British Columbia, Canada
+numpages: '9'
+pages: 163–171
+papis_id: d7d31889fb6287ed9a07515f71c480da
+publisher: Curran Associates Inc.
+ref: LabelEmbeddingBengio2010
+series: NIPS'10
+title: Label Embedding Trees for Large Multi-Class Tasks
+type: inproceedings
+year: '2010'

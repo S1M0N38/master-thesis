@@ -1,0 +1,50 @@
+abstract: Existing image classification datasets used in computer vision tend to have
+  a uniform distribution of images across object categories. In contrast, the natural
+  world is heavily imbalanced, as some species are more abundant and easier to photograph
+  than others. To encourage further progress in challenging real world conditions
+  we present the iNaturalist species classification and detection dataset, consisting
+  of 859,000 images from over 5,000 different species of plants and animals. It features
+  visually similar species, captured in a wide variety of situations, from all over
+  the world. Images were collected with different camera types, have varying image
+  quality, feature a large class imbalance, and have been verified by multiple citizen
+  scientists. We discuss the collection of the dataset and present extensive baseline
+  experiments using state-of-the-art computer vision classification and detection
+  models. Results show that current non-ensemble based methods achieve only 67% top
+  one classification accuracy, illustrating the difficulty of the dataset. Specifically,
+  we observe poor results for classes with small numbers of training examples suggesting
+  more attention is needed in low-shot learning.
+archiveprefix: arXiv
+author: Horn, Grant Van and Aodha, Oisin Mac and Song, Yang and Cui, Yin and Sun,
+  Chen and Shepard, Alex and Adam, Hartwig and Perona, Pietro and Belongie, Serge
+author_list:
+- family: Horn
+  given: Grant Van
+- family: Aodha
+  given: Oisin Mac
+- family: Song
+  given: Yang
+- family: Cui
+  given: Yin
+- family: Sun
+  given: Chen
+- family: Shepard
+  given: Alex
+- family: Adam
+  given: Hartwig
+- family: Perona
+  given: Pietro
+- family: Belongie
+  given: Serge
+eprint: 1707.06642v2
+file: 1707.06642v2.pdf
+files:
+- tmppsiute5x.pdf
+month: Jul
+papis_id: 9808b17c2b083cae8a36b9670b64745b
+primaryclass: cs.CV
+ref: TheInaturalistHorn2017
+time-added: 2023-08-08-15:06:43
+title: The iNaturalist Species Classification and Detection Dataset
+type: article
+url: http://arxiv.org/abs/1707.06642v2
+year: '2017'

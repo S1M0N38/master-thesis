@@ -1,0 +1,38 @@
+abstract: The current research focus on Content-Based Video Retrieval requires higher-level
+  video representation describing the long-range semantic dependencies of relevant
+  incidents, events, etc. However, existing methods commonly process the frames of
+  a video as individual images or short clips, making the modeling of long-range semantic
+  dependencies difficult. In this paper, we propose TCA (Temporal Context Aggregation
+  for Video Retrieval), a video representation learning framework that incorporates
+  long-range temporal information between frame-level features using the self-attention
+  mechanism. To train it on video retrieval datasets, we propose a supervised contrastive
+  learning method that performs automatic hard negative mining and utilizes the memory
+  bank mechanism to increase the capacity of negative samples. Extensive experiments
+  are conducted on multiple video retrieval tasks, such as CC_WEB_VIDEO, FIVR-200K,
+  and EVVE. The proposed method shows a significant performance advantage (~17% mAP
+  on FIVR-200K) over state-of-the-art methods with video-level features, and deliver
+  competitive results with 22x faster inference time comparing with frame-level features.
+archiveprefix: arXiv
+author: Shao, Jie and Wen, Xin and Zhao, Bingchen and Xue, Xiangyang
+author_list:
+- family: Shao
+  given: Jie
+- family: Wen
+  given: Xin
+- family: Zhao
+  given: Bingchen
+- family: Xue
+  given: Xiangyang
+eprint: 2008.01334v2
+file: 2008.01334v2.pdf
+files:
+- tmpwg4xwujo.pdf
+month: Aug
+papis_id: ca2a90e547a59b601820d1766853036c
+primaryclass: cs.CV
+ref: TemporalContexShao2020
+time-added: 2023-08-08-11:26:20
+title: Temporal Context Aggregation for Video Retrieval with Contrastive   Learning
+type: article
+url: http://arxiv.org/abs/2008.01334v2
+year: '2020'

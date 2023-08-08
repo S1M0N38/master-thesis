@@ -1,0 +1,92 @@
+author: Dong, Linhao and Xu, Shuang and Xu, Bo
+author_list:
+- affiliation: []
+  family: Dong
+  given: Linhao
+- affiliation: []
+  family: Xu
+  given: Shuang
+- affiliation: []
+  family: Xu
+  given: Bo
+booktitle: ICASSP 2018 - 2018 IEEE International Conference on Acoustics, Speech and
+  Signal Processing (ICASSP)
+citations:
+- author: graves
+  journal-title: Sequence transduction with recurrent neural networks
+  year: '2012'
+- author: battenberg
+  journal-title: Exploring neural transducers for end-to-end speech recognition
+  year: '2017'
+- author: colin
+  journal-title: Online and linear-time attention by enforcing monotonic alignments
+  year: '2017'
+- doi: 10.1109/JAS.2017.7510508
+- doi: 10.1109/ICASSP.2013.6638947
+- article-title: Long short-term memory recurrent neural network architectures for
+    large scale acoustic modeling
+  author: ha?imsak
+  journal-title: Fifteenth Annual Conference of the International Speech Communication
+    Association
+  year: '2014'
+- author: chung
+  journal-title: Empirical evaluation of gated recurrent neural networks on sequence
+    modeling
+  year: '2014'
+- author: vaswani
+  journal-title: Attention is all you need
+  year: '2017'
+- doi: 10.1109/ICASSP.2016.7472617
+- author: kingma
+  journal-title: Adam A method for stochastic optimization
+  year: '2014'
+- author: chorowski
+  journal-title: Towards better decoding and language model integration in sequence
+    to sequence models
+  year: '2016'
+- doi: 10.1109/ICASSP.2016.7472621
+- author: chan
+  journal-title: Latent sequence decompositions
+  year: '2016'
+- doi: 10.1109/ICASSP.2017.7953077
+- author: tjandra
+  journal-title: Local monotonic attention mechanism for end-to-end speech recognition
+  year: '2017'
+- doi: 10.1109/ICASSP.2017.7953075
+- doi: 10.1109/ICASSP.2016.7472618
+- article-title: Attention-based models for speech recognition
+  author: chorowski
+  first-page: '577'
+  journal-title: Advances in neural information processing systems
+  year: '2015'
+- doi: 10.1109/5.18626
+- author: abadi
+  journal-title: Tensorfiow Large-scale machine learning on heterogeneous distributed
+    systems
+  year: '2016'
+- article-title: Towards end-to-end speech recognition with recurrent neural networks
+  author: graves
+  first-page: '1764'
+  journal-title: Proceedings of the 31st International Conference on Machine Learning
+    (ICML-14)
+  year: '2014'
+- author: yonghui
+  journal-title: Google's neural machine translation system Bridging the gap between
+    human and machine translation
+  year: '2016'
+doc_url: http://xplorestaging.ieee.org/ielx7/8450881/8461260/08462506.pdf?arnumber=8462506
+doi: 10.1109/icassp.2018.8462506
+files: []
+journal: 2018 IEEE International Conference on Acoustics, Speech and Signal Processing
+  (ICASSP)
+month: 4
+papis_id: 9f5e3833a5c280dc8df63b879d5a92ba
+publisher: IEEE
+ref: SpeechTransforDong2018
+time-added: 2023-08-08-11:32:35
+title: 'Speech-Transformer: A No-Recurrence Sequence-to-Sequence Model for Speech
+  Recognition'
+type: inproceedings
+url: http://dx.doi.org/10.1109/icassp.2018.8462506
+venue: Calgary, AB
+year: 2018

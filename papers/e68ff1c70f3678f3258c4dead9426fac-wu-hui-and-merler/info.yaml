@@ -1,0 +1,40 @@
+abstract: We propose a visual food recognition framework that integrates the inherent
+  semantic relationships among fine-grained classes. Our method learns semantics-aware
+  features by formulating a multi-task loss function on top of a convolutional neural
+  network (CNN) architecture. It then refines the CNN predictions using a random walk
+  based smoothing procedure, which further exploits the rich semantic information.
+  We evaluate our algorithm on a large "food-in-the-wild" benchmark, as well as a
+  challenging dataset of restaurant food dishes with very few training images. The
+  proposed method achieves higher classification accuracy than a baseline which directly
+  fine-tunes a deep learning network on the target dataset. Furthermore, we analyze
+  the consistency of the learned model with the inherent semantic relationships among
+  food categories. Results show that the proposed approach provides more semantically
+  meaningful results than the baseline method, even in cases of mispredictions.
+address: New York, NY, USA
+author: Wu, Hui and Merler, Michele and Uceda-Sosa, Rosario and Smith, John R.
+author_list:
+- family: Wu
+  given: Hui
+- family: Merler
+  given: Michele
+- family: Uceda-Sosa
+  given: Rosario
+- family: Smith
+  given: John R.
+booktitle: Proceedings of the 24th ACM International Conference on Multimedia
+doi: 10.1145/2964284.2967205
+files:
+- acm-press-the-2016-acm-amsterdam-the-netherlands-a.pdf
+isbn: '9781450336031'
+keywords: food recognition, multi-task learning
+location: Amsterdam, The Netherlands
+numpages: '5'
+pages: 172–176
+papis_id: f5ac35af7627c22ca3f0c61112e97360
+publisher: Association for Computing Machinery
+ref: LearningToMakWuHu2016
+series: MM '16
+title: 'Learning to Make Better Mistakes: Semantics-Aware Visual Food Recognition'
+type: inproceedings
+url: https://doi.org/10.1145/2964284.2967205
+year: '2016'
