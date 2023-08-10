@@ -1,0 +1,32 @@
+abstract: Learning graph representations via low-dimensional embeddings that preserve
+  relevant network properties is an important class of problems in machine learning.
+  We here present a novel method to embed directed acyclic graphs. Following prior
+  work, we first advocate for using hyperbolic spaces which provably model tree-like
+  structures better than Euclidean geometry. Second, we view hierarchical relations
+  as partial orders defined using a family of nested geodesically convex cones. We
+  prove that these entailment cones admit an optimal shape with a closed form expression
+  both in the Euclidean and hyperbolic spaces, and they canonically define the embedding
+  learning process. Experiments show significant improvements of our method over strong
+  recent baselines both in terms of representational capacity and generalization.
+archiveprefix: arXiv
+author: Ganea, Octavian-Eugen and Bécigneul, Gary and Hofmann, Thomas
+author_list:
+- family: Ganea
+  given: Octavian-Eugen
+- family: Bécigneul
+  given: Gary
+- family: Hofmann
+  given: Thomas
+eprint: 1804.01882v3
+file: 1804.01882v3.pdf
+files:
+- tmpxoihjt-m.pdf
+month: Apr
+papis_id: e6497d55adb271c17107bab56c4a8f20
+primaryclass: cs.LG
+ref: HyperbolicEntaGanea2018
+time-added: 2023-08-10-10:45:38
+title: Hyperbolic Entailment Cones for Learning Hierarchical Embeddings
+type: article
+url: http://arxiv.org/abs/1804.01882v3
+year: '2018'

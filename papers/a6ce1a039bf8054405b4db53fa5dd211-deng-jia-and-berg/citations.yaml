@@ -1,0 +1,695 @@
+author: Deng, Jia and Dong, Wei and Socher, Richard and Li, Li-Jia and Kai Li, None
+  and Li Fei-Fei, None
+author_list:
+- affiliation: []
+  family: Deng
+  given: Jia
+- affiliation: []
+  family: Dong
+  given: Wei
+- affiliation: []
+  family: Socher
+  given: Richard
+- affiliation: []
+  family: Li
+  given: Li-Jia
+- affiliation: []
+  family: Kai Li
+  given: null
+- affiliation: []
+  family: Li Fei-Fei
+  given: null
+booktitle: 2009 IEEE Computer Society Conference on Computer Vision and Pattern Recognition
+  Workshops (CVPR Workshops)
+doc_url: http://xplorestaging.ieee.org/ielx5/5191365/5206488/05206848.pdf?arnumber=5206848
+doi: 10.1109/cvpr.2009.5206848
+files:
+- imagenet-cvpr09-a.pdf
+journal: 2009 IEEE Conference on Computer Vision and Pattern Recognition
+month: 6
+papis_id: a78a603b075d92a2035359da601c9802
+publisher: IEEE
+ref: ImagenetALarDeng2009
+time-added: 2023-08-03-12:57:49
+title: 'ImageNet: A large-scale hierarchical image database'
+type: inproceedings
+url: http://dx.doi.org/10.1109/cvpr.2009.5206848
+venue: Miami, FL
+year: 2009
+---
+author: Grauman, K. and Darrell, T.
+author_list:
+- affiliation: []
+  family: Grauman
+  given: K.
+- affiliation: []
+  family: Darrell
+  given: T.
+booktitle: Tenth IEEE International Conference on Computer Vision (ICCV'05) Volume
+  1
+doc_url: http://xplorestaging.ieee.org/ielx5/10347/32976/01544890.pdf?arnumber=1544890
+doi: 10.1109/iccv.2005.239
+journal: Tenth IEEE International Conference on Computer Vision (ICCV'05) Volume 1
+month: 10
+publisher: IEEE
+title: 'The pyramid match kernel: discriminative classification with sets of image
+  features'
+type: inproceedings
+url: http://dx.doi.org/10.1109/iccv.2005.239
+venue: Beijing, China
+year: 2005
+---
+author: Varma, Manik and Ray, Debajyoti
+author_list:
+- affiliation: []
+  family: Varma
+  given: Manik
+- affiliation: []
+  family: Ray
+  given: Debajyoti
+booktitle: 2007 IEEE 11th International Conference on Computer Vision
+doc_url: http://xplorestaging.ieee.org/ielx5/4408818/4408819/04408875.pdf?arnumber=4408875
+doi: 10.1109/iccv.2007.4408875
+journal: 2007 IEEE 11th International Conference on Computer Vision
+month: 10
+publisher: IEEE
+title: Learning The Discriminative Power-Invariance Trade-Off
+type: inproceedings
+url: http://dx.doi.org/10.1109/iccv.2007.4408875
+venue: Rio de Janeiro, Brazil
+year: 2007
+---
+author: Torralba, A. and Fergus, R. and Freeman, W.T.
+author_list:
+- affiliation: []
+  family: Torralba
+  given: A.
+- affiliation: []
+  family: Fergus
+  given: R.
+- affiliation: []
+  family: Freeman
+  given: W.T.
+doc_url: http://xplorestaging.ieee.org/ielx5/34/4626901/04531741.pdf?arnumber=4531741
+doi: 10.1109/tpami.2008.128
+issue: '11'
+journal: IEEE Transactions on Pattern Analysis and Machine Intelligence
+month: 11
+pages: 1958--1970
+publisher: Institute of Electrical and Electronics Engineers (IEEE)
+title: '80 Million Tiny Images: A Large Data Set for Nonparametric Object and Scene
+  Recognition'
+type: article
+url: http://dx.doi.org/10.1109/tpami.2008.128
+volume: '30'
+year: 2008
+---
+author: Felzenszwalb, Pedro and McAllester, David and Ramanan, Deva
+author_list:
+- affiliation: []
+  family: Felzenszwalb
+  given: Pedro
+- affiliation: []
+  family: McAllester
+  given: David
+- affiliation: []
+  family: Ramanan
+  given: Deva
+booktitle: 2008 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)
+doc_url: http://xplorestaging.ieee.org/ielx5/4558014/4587335/04587597.pdf?arnumber=4587597
+doi: 10.1109/cvpr.2008.4587597
+journal: 2008 IEEE Conference on Computer Vision and Pattern Recognition
+month: 6
+publisher: IEEE
+title: A discriminatively trained, multiscale, deformable part model
+type: inproceedings
+url: http://dx.doi.org/10.1109/cvpr.2008.4587597
+venue: Anchorage, AK, USA
+year: 2008
+---
+author: Tuytelaars, Tinne and Mikolajczyk, Krystian
+author_list:
+- affiliation: []
+  family: Tuytelaars
+  given: Tinne
+- affiliation: []
+  family: Mikolajczyk
+  given: Krystian
+doc_url: http://www.nowpublishers.com/article/Download/CGV-017
+doi: 10.1561/0600000017
+issue: '3'
+journal: Foundations and Trends® in Computer Graphics and Vision
+language: en
+pages: 177--280
+publisher: Now Publishers
+title: 'Local Invariant Feature Detectors: A Survey'
+type: article
+url: http://dx.doi.org/10.1561/0600000017
+volume: '3'
+year: 2007
+---
+author: Rosch, Eleanor and Mervis, Carolyn B and Gray, Wayne D and Johnson, David
+  M and Boyes-Braem, Penny
+author_list:
+- affiliation: []
+  family: Rosch
+  given: Eleanor
+- affiliation: []
+  family: Mervis
+  given: Carolyn B
+- affiliation: []
+  family: Gray
+  given: Wayne D
+- affiliation: []
+  family: Johnson
+  given: David M
+- affiliation: []
+  family: Boyes-Braem
+  given: Penny
+doi: 10.1016/0010-0285(76)90013-x
+issue: '3'
+journal: Cognitive Psychology
+language: en
+month: 7
+pages: 382--439
+publisher: Elsevier BV
+title: Basic objects in natural categories
+type: article
+url: http://dx.doi.org/10.1016/0010-0285(76)90013-x
+volume: '8'
+year: 1976
+---
+author: Everingham, Mark and Zisserman, Andrew and Williams, Christopher K. I. and
+  Van Gool, Luc and Allan, Moray and Bishop, Christopher M. and Chapelle, Olivier
+  and Dalal, Navneet and Deselaers, Thomas and Dorkó, Gyuri and Duffner, Stefan and
+  Eichhorn, Jan and Farquhar, Jason D. R. and Fritz, Mario and Garcia, Christophe
+  and Griffiths, Tom and Jurie, Frederic and Keysers, Daniel and Koskela, Markus and
+  Laaksonen, Jorma and Larlus, Diane and Leibe, Bastian and Meng, Hongying and Ney,
+  Hermann and Schiele, Bernt and Schmid, Cordelia and Seemann, Edgar and Shawe-Taylor,
+  John and Storkey, Amos and Szedmak, Sandor and Triggs, Bill and Ulusoy, Ilkay and
+  Viitaniemi, Ville and Zhang, Jianguo
+author_list:
+- affiliation: []
+  family: Everingham
+  given: Mark
+- affiliation: []
+  family: Zisserman
+  given: Andrew
+- affiliation: []
+  family: Williams
+  given: Christopher K. I.
+- affiliation: []
+  family: Van Gool
+  given: Luc
+- affiliation: []
+  family: Allan
+  given: Moray
+- affiliation: []
+  family: Bishop
+  given: Christopher M.
+- affiliation: []
+  family: Chapelle
+  given: Olivier
+- affiliation: []
+  family: Dalal
+  given: Navneet
+- affiliation: []
+  family: Deselaers
+  given: Thomas
+- affiliation: []
+  family: Dorkó
+  given: Gyuri
+- affiliation: []
+  family: Duffner
+  given: Stefan
+- affiliation: []
+  family: Eichhorn
+  given: Jan
+- affiliation: []
+  family: Farquhar
+  given: Jason D. R.
+- affiliation: []
+  family: Fritz
+  given: Mario
+- affiliation: []
+  family: Garcia
+  given: Christophe
+- affiliation: []
+  family: Griffiths
+  given: Tom
+- affiliation: []
+  family: Jurie
+  given: Frederic
+- affiliation: []
+  family: Keysers
+  given: Daniel
+- affiliation: []
+  family: Koskela
+  given: Markus
+- affiliation: []
+  family: Laaksonen
+  given: Jorma
+- affiliation: []
+  family: Larlus
+  given: Diane
+- affiliation: []
+  family: Leibe
+  given: Bastian
+- affiliation: []
+  family: Meng
+  given: Hongying
+- affiliation: []
+  family: Ney
+  given: Hermann
+- affiliation: []
+  family: Schiele
+  given: Bernt
+- affiliation: []
+  family: Schmid
+  given: Cordelia
+- affiliation: []
+  family: Seemann
+  given: Edgar
+- affiliation: []
+  family: Shawe-Taylor
+  given: John
+- affiliation: []
+  family: Storkey
+  given: Amos
+- affiliation: []
+  family: Szedmak
+  given: Sandor
+- affiliation: []
+  family: Triggs
+  given: Bill
+- affiliation: []
+  family: Ulusoy
+  given: Ilkay
+- affiliation: []
+  family: Viitaniemi
+  given: Ville
+- affiliation: []
+  family: Zhang
+  given: Jianguo
+doc_url: http://link.springer.com/content/pdf/10.1007/11736790_8
+doi: 10.1007/11736790_8
+isbn:
+- '9783540334279'
+- '9783540334286'
+journal: Machine Learning Challenges. Evaluating Predictive Uncertainty, Visual Object
+  Classification, and Recognising Tectual Entailment
+pages: 117--176
+publisher: Springer Berlin Heidelberg
+title: The 2005 PASCAL Visual Object Classes Challenge
+type: inbook
+url: http://dx.doi.org/10.1007/11736790_8
+year: 2006
+---
+author: Li Fei-Fei, None and Fergus, R. and Perona, P.
+author_list:
+- affiliation: []
+  family: Li Fei-Fei
+  given: null
+- affiliation: []
+  family: Fergus
+  given: R.
+- affiliation: []
+  family: Perona
+  given: P.
+doc_url: http://xplorestaging.ieee.org/ielx5/34/33587/01597116.pdf?arnumber=1597116
+doi: 10.1109/tpami.2006.79
+issue: '4'
+journal: IEEE Transactions on Pattern Analysis and Machine Intelligence
+month: 4
+pages: 594--611
+publisher: Institute of Electrical and Electronics Engineers (IEEE)
+title: One-shot learning of object categories
+type: article
+url: http://dx.doi.org/10.1109/tpami.2006.79
+volume: '28'
+year: 2006
+---
+author: ''
+doi: 10.7551/mitpress/7287.001.0001
+isbn:
+- '9780262272551'
+publisher: The MIT Press
+title: WordNet
+type: book
+url: http://dx.doi.org/10.7551/mitpress/7287.001.0001
+year: 1998
+---
+author: Lowe, David G.
+author_list:
+- affiliation: []
+  family: Lowe
+  given: David G.
+doi: 10.1023/b:visi.0000029664.99615.94
+issue: '2'
+journal: International Journal of Computer Vision
+language: en
+month: 11
+pages: 91--110
+publisher: Springer Science and Business Media LLC
+title: Distinctive Image Features from Scale-Invariant Keypoints
+type: article
+url: http://dx.doi.org/10.1023/b:visi.0000029664.99615.94
+volume: '60'
+year: 2004
+---
+author: Chum, Ondrej and Zisserman, Andrew
+author_list:
+- affiliation: []
+  family: Chum
+  given: Ondrej
+- affiliation: []
+  family: Zisserman
+  given: Andrew
+booktitle: 2007 IEEE Conference on Computer Vision and Pattern Recognition
+doc_url: http://xplorestaging.ieee.org/ielx5/4269955/4269956/04270075.pdf?arnumber=4270075
+doi: 10.1109/cvpr.2007.383050
+journal: 2007 IEEE Conference on Computer Vision and Pattern Recognition
+month: 6
+publisher: IEEE
+title: An Exemplar Model for Learning Object Classes
+type: inproceedings
+url: http://dx.doi.org/10.1109/cvpr.2007.383050
+venue: Minneapolis, MN, USA
+year: 2007
+---
+author: Vedaldi, Andrea and Gulshan, Varun and Varma, Manik and Zisserman, Andrew
+author_list:
+- affiliation: []
+  family: Vedaldi
+  given: Andrea
+- affiliation: []
+  family: Gulshan
+  given: Varun
+- affiliation: []
+  family: Varma
+  given: Manik
+- affiliation: []
+  family: Zisserman
+  given: Andrew
+booktitle: 2009 IEEE 12th International Conference on Computer Vision (ICCV)
+doc_url: http://xplorestaging.ieee.org/ielx5/5453389/5459144/05459183.pdf?arnumber=5459183
+doi: 10.1109/iccv.2009.5459183
+journal: 2009 IEEE 12th International Conference on Computer Vision
+month: 9
+publisher: IEEE
+title: Multiple kernels for object detection
+type: inproceedings
+url: http://dx.doi.org/10.1109/iccv.2009.5459183
+venue: Kyoto
+year: 2009
+---
+author: Gehler, Peter and Nowozin, Sebastian
+author_list:
+- affiliation: []
+  family: Gehler
+  given: Peter
+- affiliation: []
+  family: Nowozin
+  given: Sebastian
+booktitle: 2009 IEEE 12th International Conference on Computer Vision (ICCV)
+doc_url: http://xplorestaging.ieee.org/ielx5/5453389/5459144/05459169.pdf?arnumber=5459169
+doi: 10.1109/iccv.2009.5459169
+journal: 2009 IEEE 12th International Conference on Computer Vision
+month: 9
+publisher: IEEE
+title: On feature combination for multiclass object classification
+type: inproceedings
+url: http://dx.doi.org/10.1109/iccv.2009.5459169
+venue: Kyoto
+year: 2009
+---
+author: Maji, Subhransu and Berg, Alexander C
+author_list:
+- affiliation: []
+  family: Maji
+  given: Subhransu
+- affiliation: []
+  family: Berg
+  given: Alexander C
+booktitle: 2009 IEEE 12th International Conference on Computer Vision (ICCV)
+doc_url: http://xplorestaging.ieee.org/ielx5/5453389/5459144/05459203.pdf?arnumber=5459203
+doi: 10.1109/iccv.2009.5459203
+journal: 2009 IEEE 12th International Conference on Computer Vision
+month: 9
+publisher: IEEE
+title: Max-margin additive classifiers for detection
+type: inproceedings
+url: http://dx.doi.org/10.1109/iccv.2009.5459203
+venue: Kyoto
+year: 2009
+---
+author: Wang, Changhu and Shuicheng Yan, None and Zhang, Hong-Jiang
+author_list:
+- affiliation: []
+  family: Wang
+  given: Changhu
+- affiliation: []
+  family: Shuicheng Yan
+  given: null
+- affiliation: []
+  family: Zhang
+  given: Hong-Jiang
+booktitle: ICASSP 2009 - 2009 IEEE International Conference on Acoustics, Speech and
+  Signal Processing
+doc_url: http://xplorestaging.ieee.org/ielx5/4912736/4959496/04960432.pdf?arnumber=4960432
+doi: 10.1109/icassp.2009.4960432
+journal: 2009 IEEE International Conference on Acoustics, Speech and Signal Processing
+month: 4
+publisher: IEEE
+title: Large scale natural image classification by sparsity exploration
+type: inproceedings
+url: http://dx.doi.org/10.1109/icassp.2009.4960432
+venue: Taipei, Taiwan
+year: 2009
+---
+author: Marszalek, Marcin and Schmid, Cordelia
+author_list:
+- affiliation: []
+  family: Marszalek
+  given: Marcin
+- affiliation: []
+  family: Schmid
+  given: Cordelia
+booktitle: 2007 IEEE Conference on Computer Vision and Pattern Recognition
+doc_url: http://xplorestaging.ieee.org/ielx5/4269955/4269956/04270297.pdf?arnumber=4270297
+doi: 10.1109/cvpr.2007.383272
+journal: 2007 IEEE Conference on Computer Vision and Pattern Recognition
+month: 6
+publisher: IEEE
+title: Semantic Hierarchies for Visual Object Recognition
+type: inproceedings
+url: http://dx.doi.org/10.1109/cvpr.2007.383272
+venue: Minneapolis, MN, USA
+year: 2007
+---
+author: Zweig, Alon and Weinshall, Daphna
+author_list:
+- affiliation: []
+  family: Zweig
+  given: Alon
+- affiliation: []
+  family: Weinshall
+  given: Daphna
+booktitle: 2007 IEEE 11th International Conference on Computer Vision
+doc_url: http://xplorestaging.ieee.org/ielx5/4408818/4408819/04409064.pdf?arnumber=4409064
+doi: 10.1109/iccv.2007.4409064
+journal: 2007 IEEE 11th International Conference on Computer Vision
+month: 10
+publisher: IEEE
+title: 'Exploiting Object Hierarchy: Combining Models from Different Category Levels'
+type: inproceedings
+url: http://dx.doi.org/10.1109/iccv.2007.4409064
+venue: Rio de Janeiro, Brazil
+year: 2007
+---
+author: Griffin, Gregory and Perona, Pietro
+author_list:
+- affiliation: []
+  family: Griffin
+  given: Gregory
+- affiliation: []
+  family: Perona
+  given: Pietro
+booktitle: 2008 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)
+doc_url: http://xplorestaging.ieee.org/ielx5/4558014/4587335/04587410.pdf?arnumber=4587410
+doi: 10.1109/cvpr.2008.4587410
+journal: 2008 IEEE Conference on Computer Vision and Pattern Recognition
+month: 6
+publisher: IEEE
+title: Learning and using taxonomies for fast visual categorization
+type: inproceedings
+url: http://dx.doi.org/10.1109/cvpr.2008.4587410
+venue: Anchorage, AK, USA
+year: 2008
+---
+author: Everingham, Mark and Van Gool, Luc and Williams, Christopher K. I. and Winn,
+  John and Zisserman, Andrew
+author_list:
+- affiliation: []
+  family: Everingham
+  given: Mark
+- affiliation: []
+  family: Van Gool
+  given: Luc
+- affiliation: []
+  family: Williams
+  given: Christopher K. I.
+- affiliation: []
+  family: Winn
+  given: John
+- affiliation: []
+  family: Zisserman
+  given: Andrew
+doc_url: http://link.springer.com/content/pdf/10.1007/s11263-009-0275-4
+doi: 10.1007/s11263-009-0275-4
+issue: '2'
+journal: International Journal of Computer Vision
+language: en
+month: 6
+pages: 303--338
+publisher: Springer Science and Business Media LLC
+title: The Pascal Visual Object Classes (VOC) Challenge
+type: article
+url: http://dx.doi.org/10.1007/s11263-009-0275-4
+volume: '88'
+year: 2010
+---
+author: Oliva, Aude and Torralba, Antonio
+author_list:
+- affiliation: []
+  family: Oliva
+  given: Aude
+- affiliation: []
+  family: Torralba
+  given: Antonio
+doi: 10.1023/a:1011139631724
+issue: '3'
+journal: International Journal of Computer Vision
+pages: 145--175
+publisher: Springer Science and Business Media LLC
+type: article
+url: http://dx.doi.org/10.1023/a:1011139631724
+volume: '42'
+year: 2001
+---
+author: Andoni, Alexandr and Indyk, Piotr
+author_list:
+- affiliation: []
+  family: Andoni
+  given: Alexandr
+- affiliation: []
+  family: Indyk
+  given: Piotr
+booktitle: 2006 47th Annual IEEE Symposium on Foundations of Computer Science (FOCS'06)
+doc_url: http://xplorestaging.ieee.org/ielx5/4031329/4031330/04031381.pdf?arnumber=4031381
+doi: 10.1109/focs.2006.49
+journal: 2006 47th Annual IEEE Symposium on Foundations of Computer Science (FOCS'06)
+month: 10
+publisher: IEEE
+title: Near-Optimal Hashing Algorithms for Approximate Nearest Neighbor in High Dimensions
+type: inproceedings
+url: http://dx.doi.org/10.1109/focs.2006.49
+venue: Berkeley, CA, USA
+year: 2006
+---
+author: Boiman, Oren and Shechtman, Eli and Irani, Michal
+author_list:
+- affiliation: []
+  family: Boiman
+  given: Oren
+- affiliation: []
+  family: Shechtman
+  given: Eli
+- affiliation: []
+  family: Irani
+  given: Michal
+booktitle: 2008 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)
+doc_url: http://xplorestaging.ieee.org/ielx5/4558014/4587335/04587598.pdf?arnumber=4587598
+doi: 10.1109/cvpr.2008.4587598
+journal: 2008 IEEE Conference on Computer Vision and Pattern Recognition
+month: 6
+publisher: IEEE
+title: In defense of Nearest-Neighbor based image classification
+type: inproceedings
+url: http://dx.doi.org/10.1109/cvpr.2008.4587598
+venue: Anchorage, AK, USA
+year: 2008
+---
+author: Thorpe, Simon and Fize, Denis and Marlot, Catherine
+author_list:
+- affiliation: []
+  family: Thorpe
+  given: Simon
+- affiliation: []
+  family: Fize
+  given: Denis
+- affiliation: []
+  family: Marlot
+  given: Catherine
+doc_url: http://www.nature.com/articles/381520a0.pdf
+doi: 10.1038/381520a0
+issue: '6582'
+journal: Nature
+language: en
+month: 6
+pages: 520--522
+publisher: Springer Science and Business Media LLC
+title: Speed of processing in the human visual system
+type: article
+url: http://dx.doi.org/10.1038/381520a0
+volume: '381'
+year: 1996
+---
+author: Ferencz, A. and Learned-Miller, E.G. and Malik, J.
+author_list:
+- affiliation: []
+  family: Ferencz
+  given: A.
+- affiliation: []
+  family: Learned-Miller
+  given: E.G.
+- affiliation: []
+  family: Malik
+  given: J.
+booktitle: Tenth IEEE International Conference on Computer Vision (ICCV'05) Volume
+  1
+doc_url: http://xplorestaging.ieee.org/ielx5/10347/32910/01541269.pdf?arnumber=1541269
+doi: 10.1109/iccv.2005.52
+journal: Tenth IEEE International Conference on Computer Vision (ICCV'05) Volume 1
+month: 10
+publisher: IEEE
+title: Building a classification cascade for visual identification from one example
+type: inproceedings
+url: http://dx.doi.org/10.1109/iccv.2005.52
+venue: Beijing, China
+year: 2005
+---
+author: Lin, Hsuan-Tien and Lin, Chih-Jen and Weng, Ruby C.
+author_list:
+- affiliation: []
+  family: Lin
+  given: Hsuan-Tien
+- affiliation: []
+  family: Lin
+  given: Chih-Jen
+- affiliation: []
+  family: Weng
+  given: Ruby C.
+doc_url: http://link.springer.com/content/pdf/10.1007/s10994-007-5018-6
+doi: 10.1007/s10994-007-5018-6
+issue: '3'
+journal: Machine Learning
+language: en
+month: 8
+pages: 267--276
+publisher: Springer Science and Business Media LLC
+title: A note on Platt’s probabilistic outputs for support vector machines
+type: article
+url: http://dx.doi.org/10.1007/s10994-007-5018-6
+volume: '68'
+year: 2007

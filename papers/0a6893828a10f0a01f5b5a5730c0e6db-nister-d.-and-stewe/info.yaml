@@ -1,0 +1,52 @@
+author: Nister, D. and Stewenius, H.
+author_list:
+- affiliation: []
+  family: Nister
+  given: D.
+- affiliation: []
+  family: Stewenius
+  given: H.
+booktitle: 2006 IEEE Computer Society Conference on Computer Vision and Pattern Recognition
+  - Volume 2 (CVPR'06)
+citations:
+- doi: 10.1109/ICCV.2003.1238663
+- doi: 10.1023/B:VISI.0000020671.28016.e8
+- doi: 10.1007/s11263-005-3674-1
+- doi: 10.1023/A:1008199403446
+- doi: 10.1007/s11263-005-3848-x
+- doi: 10.5244/C.19.3
+- doi: 10.1023/B:VISI.0000027790.02288.f2
+- doi: 10.1109/TPAMI.2005.188
+- doi: 10.1145/997817.997857
+- doi: 10.1109/CVPR.2005.320
+- doi: 10.1109/CVPR.2000.855899
+- doi: 10.1016/j.imavis.2004.02.006
+- doi: 10.1109/CVPR.2005.288
+- doi: 10.1145/276698.276876
+- doi: 10.1109/ICCV.2005.239
+- article-title: Evaluation of local detectors on non-planar scenes
+  author: fraundorfer
+  first-page: '125'
+  journal-title: Proc 28th Workshop of the Austrian Association for Pattern Recognition
+  year: '2004'
+- doi: 10.1023/B:VISI.0000029664.99615.94
+- article-title: Shape-adapted smoothing in estimation of 3-d depth cues from affine
+    distortions of local 2-d brightness structure
+  author: lindeberg
+  first-page: '389'
+  journal-title: ECCV
+  year: '1994'
+doc_url: http://xplorestaging.ieee.org/ielx5/10924/34374/01641018.pdf?arnumber=1641018
+doi: 10.1109/cvpr.2006.264
+files: []
+journal: 2006 IEEE Computer Society Conference on Computer Vision and Pattern Recognition
+  - Volume 2 (CVPR'06)
+papis_id: e799260838167de58e6ad3da1f116d0d
+publisher: IEEE
+ref: ScalableRecognNister2006
+time-added: 2023-08-09-12:17:21
+title: Scalable Recognition with a Vocabulary Tree
+type: inproceedings
+url: http://dx.doi.org/10.1109/cvpr.2006.264
+venue: New York, NY, USA
+year: 2006

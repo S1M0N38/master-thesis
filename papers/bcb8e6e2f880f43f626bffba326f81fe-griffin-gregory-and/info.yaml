@@ -1,0 +1,83 @@
+author: Griffin, Gregory and Perona, Pietro
+author_list:
+- affiliation: []
+  family: Griffin
+  given: Gregory
+- affiliation: []
+  family: Perona
+  given: Pietro
+booktitle: 2008 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)
+citations:
+- year: '0'
+- doi: 10.1145/1089815.1089821
+- doi: 10.1023/B:VISI.0000029664.99615.94
+- author: li
+  journal-title: Learning generative visual models from few training examples An incremental
+    bayesian approach tested on 101 object categories
+  year: '2004'
+- year: '0'
+- doi: 10.1109/CVPR.2006.68
+- article-title: scale-invariant object categorization using a scale-adaptive mean-shift
+    search
+  author: leibe
+  first-page: '145'
+  journal-title: DAGM-Symposium
+  year: '2004'
+- doi: 10.1109/CVPR.2006.322
+- article-title: caltech-256 image dataset
+  author: griffin
+  year: '0'
+- doi: 10.1109/CVPR.2006.200
+- doi: 10.1007/s11263-005-3848-x
+- doi: 10.1109/CVPR.2005.254
+- doi: 10.1109/ICCV.2007.4408875
+- doi: 10.1109/ICCV.2001.937709
+- doi: 10.1023/B:VISI.0000013087.49260.fb
+- doi: 10.1007/3-540-45054-8_2
+- article-title: self-tuning spectral clustering
+  author: zelnik-manor
+  journal-title: Eighteenth Annual Conference on Neural Information Processing Systems
+    (NIPS)
+  year: '2004'
+- article-title: 'svm-knn: discriminative nearest neighbor classification for visual
+    category recognition'
+  author: zhang
+  first-page: '2126'
+  journal-title: CVPR
+  volume: '2'
+  year: '2006'
+- doi: 10.1109/ICCV.2007.4409064
+- doi: 10.1037//0033-295X.94.2.115
+- doi: 10.1109/CVPR.1997.609451
+- doi: 10.1109/ICCV.2005.239
+- doi: 10.1109/TPAMI.2004.111
+- journal-title: WordNet An Electronic Lexical Database (Language Speech and Communication)
+  year: '1998'
+- article-title: efficient multiclass object detection by a hierarchy of classifiers
+  author: fan
+  first-page: '716'
+  journal-title: CVPR
+  volume: '1'
+  year: '2005'
+- article-title: the 2005 pascal visual object classes challenge
+  author: everingham
+  first-page: '117'
+  journal-title: MLCW
+  year: '2005'
+- doi: 10.1109/CVPR.1996.517078
+- doi: 10.1023/A:1011113216584
+- doi: 10.1109/CVPR.2003.1211479
+doc_url: http://xplorestaging.ieee.org/ielx5/4558014/4587335/04587410.pdf?arnumber=4587410
+doi: 10.1109/cvpr.2008.4587410
+files: []
+journal: 2008 IEEE Conference on Computer Vision and Pattern Recognition
+month: 6
+papis_id: 9ed84ed54edca8a41f8d6e68d26590ef
+publisher: IEEE
+ref: LearningAndUsGriffi2008
+time-added: 2023-08-09-12:19:53
+title: Learning and using taxonomies for fast visual categorization
+type: inproceedings
+url: http://dx.doi.org/10.1109/cvpr.2008.4587410
+venue: Anchorage, AK, USA
+year: 2008

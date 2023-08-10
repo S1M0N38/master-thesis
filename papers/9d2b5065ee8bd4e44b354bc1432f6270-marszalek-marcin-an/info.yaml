@@ -1,0 +1,73 @@
+author: Marszalek, Marcin and Schmid, Cordelia
+author_list:
+- affiliation: []
+  family: Marszalek
+  given: Marcin
+- affiliation: []
+  family: Schmid
+  given: Cordelia
+booktitle: 2007 IEEE Conference on Computer Vision and Pattern Recognition
+citations:
+- article-title: Learning the semantics in image retrieval - a natural language processing
+    approach
+  author: yang
+  journal-title: cvprw
+  year: '2004'
+- doi: 10.1007/s11263-006-9794-4
+- article-title: Coloring local feature extraction
+  author: van de weijer
+  journal-title: ECCV
+  year: '2006'
+- article-title: Categorizing nine visual classes using local appearance descriptors
+  author: willamowski
+  journal-title: IWLAVS
+  year: '2004'
+- author: scho?lkopf
+  journal-title: Learning With Kernels Support Vector Machines Regularization Optimization
+    and Beyond
+  year: '2002'
+- doi: 10.1145/1076034.1076128
+- doi: 10.1023/B:VISI.0000029664.99615.94
+- doi: 10.1023/B:VISI.0000027790.02288.f2
+- author: cormen
+  journal-title: Introduction to Algorithms
+  year: '2001'
+- year: '0'
+- doi: 10.1145/258525.258591
+- article-title: Feature detection with automatic scale selection
+  author: lindeberg
+  journal-title: IJCV
+  year: '1998'
+- article-title: Spectral grouping using the Nystro?m method
+  author: fowlkes
+  doi: 10.1109/TPAMI.2004.1262185
+  journal-title: PAMI
+  year: '2004'
+- journal-title: WordNet An Electronic Lexical Database
+  year: '1998'
+- article-title: The 2005 PASCAL visual object classes challenge
+  author: everingham
+  journal-title: Proc First PASCAL Challenges Workshop
+  year: '2005'
+- article-title: The 2006 PASCAL visual object classes challenge
+  author: everingham
+  journal-title: The PASCAL Visual Object Classes challenge
+  year: '2006'
+- doi: 10.1016/0010-0285(84)90009-4
+- author: hopcroft
+  journal-title: Introduction to Automata Theory Languages and Computation
+  year: '1979'
+doc_url: http://xplorestaging.ieee.org/ielx5/4269955/4269956/04270297.pdf?arnumber=4270297
+doi: 10.1109/cvpr.2007.383272
+files: []
+journal: 2007 IEEE Conference on Computer Vision and Pattern Recognition
+month: 6
+papis_id: 18ffcbeada6f57f54fd4fc415db14772
+publisher: IEEE
+ref: SemanticHierarMarsza2007
+time-added: 2023-08-09-12:18:24
+title: Semantic Hierarchies for Visual Object Recognition
+type: inproceedings
+url: http://dx.doi.org/10.1109/cvpr.2007.383272
+venue: Minneapolis, MN, USA
+year: 2007

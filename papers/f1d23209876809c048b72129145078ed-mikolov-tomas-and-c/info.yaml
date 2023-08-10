@@ -1,0 +1,33 @@
+abstract: Methods, systems, and apparatus, including computer programs encoded
+  on computer storage media, for computing numeric representations of words. One
+  of the methods includes obtaining a set of training data, wherein the set of
+  training data comprises sequences of words; training a classifier and an
+  embedding function on the set of training data, wherein training the embedding
+  function comprises obtained trained values of the embedding function
+  parameters; processing each word in the vocabulary using the embedding function
+  in accordance with the trained values of the embedding function parameters to
+  generate a respective numerical representation of each word in the vocabulary
+  in the high-dimensional space; and associating each word in the vocabulary with
+  the respective numeric representation of the word in the high-dimensional
+  space.
+author: Mikolov, Tomas and Chen, Kai and Corrado, Gregory S. and Dean, Jeffrey A.
+author_list:
+- family: Mikolov
+  given: Tomas
+- family: Chen
+  given: Kai
+- family: Corrado
+  given: Gregory S.
+- family: Dean
+  given: Jeffrey A.
+files:
+- us9037464-a.pdf
+holder: GOOGLE INC.
+month: '03'
+number: US9037464B1
+papis_id: d4a144007388a252c5de77cddd37593f
+ref: ComputingNumerMikolo2013
+title: Computing numeric representations of words in a high-dimensional space
+type: patent
+url: https://patents.google.com/patent/US9037464B1/en
+year: '2013'

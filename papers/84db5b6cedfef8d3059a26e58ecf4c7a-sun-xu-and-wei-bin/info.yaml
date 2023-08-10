@@ -1,0 +1,36 @@
+abstract: We propose a method, called Label Embedding Network, which can learn label
+  representation (label embedding) during the training process of deep networks. With
+  the proposed method, the label embedding is adaptively and automatically learned
+  through back propagation. The original one-hot represented loss function is converted
+  into a new loss function with soft distributions, such that the originally unrelated
+  labels have continuous interactions with each other during the training process.
+  As a result, the trained model can achieve substantially higher accuracy and with
+  faster convergence speed. Experimental results based on competitive tasks demonstrate
+  the effectiveness of the proposed method, and the learned label embedding is reasonable
+  and interpretable. The proposed method achieves comparable or even better results
+  than the state-of-the-art systems. The source code is available at \url{https://github.com/lancopku/LabelEmb}.
+archiveprefix: arXiv
+author: Sun, Xu and Wei, Bingzhen and Ren, Xuancheng and Ma, Shuming
+author_list:
+- family: Sun
+  given: Xu
+- family: Wei
+  given: Bingzhen
+- family: Ren
+  given: Xuancheng
+- family: Ma
+  given: Shuming
+eprint: 1710.10393v1
+file: 1710.10393v1.pdf
+files:
+- tmpu6a3f45q.pdf
+month: Oct
+papis_id: 43a6e56da9d672199c7a063770b4d52a
+primaryclass: cs.LG
+ref: LabelEmbeddingSunX2017
+time-added: 2023-08-09-09:50:13
+title: 'Label Embedding Network: Learning Label Representation for Soft Training   of
+  Deep Networks'
+type: article
+url: http://arxiv.org/abs/1710.10393v1
+year: '2017'

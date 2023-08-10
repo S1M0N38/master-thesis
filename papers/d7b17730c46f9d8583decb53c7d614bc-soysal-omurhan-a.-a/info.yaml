@@ -1,0 +1,93 @@
+author: Soysal, Omurhan A. and Serdar Guzel, Mehmet
+author_list:
+- affiliation: []
+  family: Soysal
+  given: Omurhan A.
+- affiliation: []
+  family: Serdar Guzel
+  given: Mehmet
+booktitle: 2020 International Congress on Human-Computer Interaction, Optimization
+  and Robotic Applications (HORA)
+citations:
+- article-title: Image Captioning with Unseen Objects
+  author: demirel
+  journal-title: ArXiv abs/1908 00047
+  year: '2019'
+- doi: 10.1007/978-3-030-20887-5_34
+- article-title: Polarity Loss for Zero-shot Object Detection
+  author: rahman
+  journal-title: ArXiv abs/1811 08982
+  year: '2018'
+- article-title: Zero-Shot Object Detection by Hybrid Region Embedding
+  author: demirel
+  journal-title: ArXiv abs/1805 06157
+  year: '2018'
+- doi: 10.1007/978-3-030-01246-5_24
+- article-title: 'LSDA: Large Scale Detection Through Adaptation'
+  author: hoffman
+  journal-title: ArXiv abs/1407 5035
+  year: '2014'
+- doi: 10.1109/CVPR.2017.690
+- doi: 10.1109/CVPR.2011.5995627
+- doi: 10.1016/j.knosys.2017.12.022
+- article-title: Label-Embedding for AttributeBased Classification
+  author: akata
+  journal-title: IEEE Computer Vision and Pattern Recognition (CVPR)
+  year: '2013'
+- article-title: Visualizing and Understanding Convolutional Networks
+  author: zeiler
+  first-page: '818'
+  journal-title: Computer Vision - ECCV
+  year: '2014'
+- article-title: Derin Ogrenme ile Kalabalik Analizi Uzerine Detayli Bir Arastirma
+  author: merve
+  first-page: '263'
+  journal-title: Bilis?im Teknolojileri Dergisi
+  volume: '11'
+  year: '0'
+- doi: 10.1109/CVPR.2016.90
+- doi: 10.1109/CVPR.2015.7298594
+- author: say
+  journal-title: 50 Soruda Yapay Zeka Bilim ve Gelecek
+  year: '2018'
+- doi: 10.1038/nature16961
+- article-title: ImageNet Classification with Deep Convolutional Neural Networks
+  author: krizhevsky
+  journal-title: Neural Information Processing Systems
+  volume: '25'
+  year: '2012'
+- doi: 10.1109/TGRS.2017.2754648
+- article-title: Derin Ogrenme ve Goruntu Analizinde Kullanilan Derin Ogrenme Modelleri
+  author: inik
+  first-page: '85'
+  journal-title: Gaziosmanpasa Bilimsel Arastirma Dergisi
+  volume: '6'
+  year: '2017'
+- doi: 10.1109/WACV.2015.116
+- article-title: Creativity Inspired Zero-Shot Learning
+  author: mohamed
+  journal-title: Proceedings of the IEEE International Conference on Computer Vision
+  year: '2019'
+- doi: 10.1109/CVPR.2015.7298911
+- doi: 10.1155/2018/3145947
+- article-title: Generalized zero-shot recognition based on visually semantic embedding
+  author: pengkai
+  journal-title: Proceedings of the IEEE Conference on Computer Vision and Pattern
+    Recognition
+  year: '2019'
+- doi: 10.1016/j.bbe.2018.11.004
+doc_url: http://xplorestaging.ieee.org/ielx7/9144309/9152597/09152859.pdf?arnumber=9152859
+doi: 10.1109/hora49412.2020.9152859
+files: []
+journal: 2020 International Congress on Human-Computer Interaction, Optimization and
+  Robotic Applications (HORA)
+month: 6
+papis_id: 2fe614304949818efa514312b388c2f1
+publisher: IEEE
+ref: AnIntroductionSoysal2020
+time-added: 2023-08-10-09:25:16
+title: 'An Introduction to Zero-Shot Learning: An Essential Review'
+type: inproceedings
+url: http://dx.doi.org/10.1109/hora49412.2020.9152859
+venue: Ankara, Turkey
+year: 2020

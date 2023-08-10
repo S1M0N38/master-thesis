@@ -1,0 +1,32 @@
+abstract: Representation learning has become an invaluable approach for learning from
+  symbolic data such as text and graphs. However, while complex symbolic datasets
+  often exhibit a latent hierarchical structure, state-of-the-art methods typically
+  learn embeddings in Euclidean vector spaces, which do not account for this property.
+  For this purpose, we introduce a new approach for learning hierarchical representations
+  of symbolic data by embedding them into hyperbolic space -- or more precisely into
+  an n-dimensional Poincar\'e ball. Due to the underlying hyperbolic geometry, this
+  allows us to learn parsimonious representations of symbolic data by simultaneously
+  capturing hierarchy and similarity. We introduce an efficient algorithm to learn
+  the embeddings based on Riemannian optimization and show experimentally that Poincar\'e
+  embeddings outperform Euclidean embeddings significantly on data with latent hierarchies,
+  both in terms of representation capacity and in terms of generalization ability.
+archiveprefix: arXiv
+author: Nickel, Maximilian and Kiela, Douwe
+author_list:
+- family: Nickel
+  given: Maximilian
+- family: Kiela
+  given: Douwe
+eprint: 1705.08039v2
+file: 1705.08039v2.pdf
+files:
+- tmpdt1wfcpt.pdf
+month: May
+papis_id: 9f6080ce2e09f2e844d65a6e80da816d
+primaryclass: cs.AI
+ref: PoincareEmbeddNickel2017
+time-added: 2023-08-10-10:44:38
+title: Poincaré Embeddings for Learning Hierarchical Representations
+type: article
+url: http://arxiv.org/abs/1705.08039v2
+year: '2017'
