@@ -1,11 +1,11 @@
-name: Build and Publish Slides
+name: Build and Publish Thesis
 
 on:
   push:
     branches:
       - main
     paths:
-      - 'slides/**'
+      - 'thesis/**'
 
 jobs:
   build:
@@ -14,22 +14,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Install Fira Font
-        id: install-font
-        run: |
-          curl -o FiraSans.zip "https://fonts.google.com/download?family=Fira%20Sans"
-          unzip FiraSans.zip
-          sudo mkdir -p /usr/local/share/fonts/FiraSans
-          sudo cp FiraSans-*.ttf /usr/local/share/fonts/FiraSans
-          sudo fc-cache -fv
-          
-      - uses: actions/cache@v3
-        id: font-cache
-        with:
-          path: /usr/local/share/fonts/FiraSans
-          key: ${{ runner.os }}-font-cache-${{ hashFiles('FiraSans-*.ttf') }}
-
+      
       - uses: actions/cache@v3
         name: Tectonic Cache
         with:
@@ -41,15 +26,16 @@ jobs:
       - uses: wtfjoke/setup-tectonic@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          biber-version: 'latest'
 
       - name: Build
         run: |
-          cd slides
+          cd thesis
           tectonic main.tex
           cd ..
 
       - name: Publish
         uses: actions/upload-artifact@v3
         with:
-          name: slides
-          path: slides/main.pdf
+          name: thesis
+          path: thesis/main.pdf
