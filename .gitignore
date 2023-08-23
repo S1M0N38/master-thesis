@@ -1,4 +1,2 @@
-# papers and reports
-slides/*.pdf
-thesis/*.pdf
-papers/*/*.pdf
+# papers, thesis and slides
+*.pdf
