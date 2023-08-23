@@ -6,7 +6,8 @@ on:
       - main
     paths:
       - 'slides/**'
-
+  workflow_dispatch:
+  
 jobs:
   build:
     runs-on: ubuntu-latest
