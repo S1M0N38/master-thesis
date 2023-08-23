@@ -29,10 +29,13 @@ training and testing models. The code is based on \[🔥\]
 ## Thesis
 
 This directory contains the LaTeX source files, figures, plots, tables.
-[Download](https://nightly.link/S1M0N38/master-thesis/workflows/thesis/main/thesis.zip)
+
+- [Download](https://nightly.link/S1M0N38/master-thesis/workflows/thesis/main/thesis.zip)
 
 ## Slides
 
 Slides are produced using LaTeX + Beamer, using the [metropolis
 theme](https://github.com/matze/mtheme).
-[Download](https://nightly.link/S1M0N38/master-thesis/workflows/slides/main/slides.zip)
+
+- [Download](https://nightly.link/S1M0N38/master-thesis/workflows/slides/main/slides.zip)
+- [Overleaf](https://www.overleaf.com/read/ndfnpkxbpgsw)
