@@ -1,0 +1,45 @@
+abstract: Convolutional Neural Networks (CNNs) currently achieve state-of-the-art
+  accuracy in image classification. With a growing number of classes, the accuracy
+  usually drops as the possibilities of confusion increase. Interestingly, the class
+  confusion patterns follow a hierarchical structure over the classes. We present
+  visual-analytics methods to reveal and analyze this hierarchy of similar classes
+  in relation with CNN-internal data. We found that this hierarchy not only dictates
+  the confusion patterns between the classes, it furthermore dictates the learning
+  behavior of CNNs. In particular, the early layers in these networks develop feature
+  detectors that can separate high-level groups of classes quite well, even after
+  a few training epochs. In contrast, the latter layers require substantially more
+  epochs to develop specialized feature detectors that can separate individual classes.
+  We demonstrate how these insights are key to significant improvement in accuracy
+  by designing hierarchy-aware CNNs that accelerate model convergence and alleviate
+  overfitting. We further demonstrate how our methods help in identifying various
+  quality issues in the training data.
+archiveprefix: arXiv
+author: Alsallakh, Bilal and Jourabloo, Amin and Ye, Mao and Liu, Xiaoming and Ren,
+  Liu
+author_list:
+- family: Alsallakh
+  given: Bilal
+- family: Jourabloo
+  given: Amin
+- family: Ye
+  given: Mao
+- family: Liu
+  given: Xiaoming
+- family: Ren
+  given: Liu
+doi: 10.1109/TVCG.2017.2744683
+eprint: 1710.06501v1
+file: 1710.06501v1.pdf
+files:
+- tmp-inyv-or.pdf
+month: Oct
+note: 'IEEE Transactions on Visualization and Computer Graphics, Volume:   24, Issue:
+  1 (2018)'
+papis_id: daf1c9a2992f853283ea68c9c5fa5944
+primaryclass: cs.CV
+ref: DoConvolutionaAlsall2017
+time-added: 2023-08-11-13:17:51
+title: Do Convolutional Neural Networks Learn Class Hierarchy?
+type: article
+url: http://arxiv.org/abs/1710.06501v1
+year: '2017'

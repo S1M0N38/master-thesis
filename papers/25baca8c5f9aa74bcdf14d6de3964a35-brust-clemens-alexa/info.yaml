@@ -1,0 +1,34 @@
+abstract: One of the most prominent problems in machine learning in the age of deep
+  learning is the availability of sufficiently large annotated datasets. For specific
+  domains, e.g. animal species, a long-tail distribution means that some classes are
+  observed and annotated insufficiently. Additional labels can be prohibitively expensive,
+  e.g. because domain experts need to be involved. However, there is more information
+  available that is to the best of our knowledge not exploited accordingly. In this
+  paper, we propose to make use of preexisting class hierarchies like WordNet to integrate
+  additional domain knowledge into classification. We encode the properties of such
+  a class hierarchy into a probabilistic model. From there, we derive a novel label
+  encoding and a corresponding loss function. On the ImageNet and NABirds datasets
+  our method offers a relative improvement of 10.4% and 9.6% in accuracy over the
+  baseline respectively. After less than a third of training time, it is already able
+  to match the baseline's fine-grained recognition performance. Both results show
+  that our suggested method is efficient and effective.
+archiveprefix: arXiv
+author: Brust, Clemens-Alexander and Denzler, Joachim
+author_list:
+- family: Brust
+  given: Clemens-Alexander
+- family: Denzler
+  given: Joachim
+eprint: 1811.07125v2
+file: 1811.07125v2.pdf
+files:
+- tmp-yb5b8ql.pdf
+month: Nov
+papis_id: e07264038afd97cae5e773819fabefa5
+primaryclass: cs.CV
+ref: IntegratingDomBrust2018
+time-added: 2023-08-11-17:16:40
+title: 'Integrating domain knowledge: using hierarchies to improve deep   classifiers'
+type: article
+url: http://arxiv.org/abs/1811.07125v2
+year: '2018'

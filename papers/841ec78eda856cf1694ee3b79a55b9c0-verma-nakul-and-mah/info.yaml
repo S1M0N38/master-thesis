@@ -1,3 +1,14 @@
+abstract: 'Categories in multi-class data are often part of an underlying
+  semantic taxonomy. Recent work in object classification has found interesting
+  ways to use this taxonomy structure to develop better recognition algorithms.
+  Here we propose a novel framework to learn similarity metrics using the class
+  taxonomy. We show that a nearest neighbor classifier using the learned metrics
+  gets improved performance over the best discriminative methods. Moreover, by
+  incorporating the taxonomy, our learned metrics can also help in some taxonomy
+  specific applications. We show that the metrics can help determine the correct
+  placement of a new category that was not part of the original taxonomy, and can
+  provide effective classification amongst categories local to specific subtrees
+  of the taxonomy.'
 author: Verma, Nakul and Mahajan, Dhruv and Sellamanickam, Sundararajan and Nair,
   Vinod
 author_list:

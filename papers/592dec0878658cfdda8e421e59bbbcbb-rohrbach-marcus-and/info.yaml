@@ -1,0 +1,114 @@
+abstract: 'While knowledge transfer (KT) between object classes has been
+  accepted as a promising route towards scalable recognition, most experimental
+  KT studies are surprisingly limited in the number of object classes considered.
+  To support claims of KT w.r.t. scalability we thus advocate to evaluate KT in a
+  large-scale setting. To this end, we provide an extensive evaluation of three
+  popular approaches to KT on a recently proposed large-scale data set, the
+  ImageNet Large Scale Visual Recognition Competition 2010 data set. In a first
+  setting they are directly compared to one-vs-all classification often neglected
+  in KT papers and in a second setting we evaluate their ability to enable
+  zero-shot learning. While none of the KT methods can improve over one-vs-all
+  classification they prove valuable for zero-shot learning, especially
+  hierarchical and direct similarity based KT. We also propose and describe
+  several extensions of the evaluated approaches that are necessary for this
+  large-scale study.'
+author: Rohrbach, Marcus and Stark, Michael and Schiele, Bernt
+author_list:
+- affiliation: []
+  family: Rohrbach
+  given: Marcus
+- affiliation: []
+  family: Stark
+  given: Michael
+- affiliation: []
+  family: Schiele
+  given: Bernt
+booktitle: 2011 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)
+citations:
+- article-title: Improving the fisher kernel for large-scale image classification
+  author: perronnin
+  journal-title: ECCV'10
+  year: '0'
+- doi: 10.1109/CVPR.2007.383272
+- doi: 10.1145/219717.219748
+- doi: 10.1109/CVPR.2006.68
+- doi: 10.1109/CVPR.2011.5995477
+- doi: 10.1109/CVPR.2010.5540039
+- doi: 10.1109/CVPR.2009.5206594
+- article-title: Caltech-256 object category dataset
+  author: griffin
+  journal-title: Tech Rep 7694
+  year: '2007'
+- doi: 10.1109/CVPR.2008.4587410
+- article-title: In defense of one-vs-all classication
+  author: rifkin
+  journal-title: JMLR
+  year: '2004'
+- doi: 10.1137/0330046
+- doi: 10.1109/CVPR.2010.5540121
+- doi: 10.1007/978-3-642-35749-7_2
+- article-title: Attribute learning in large-scale datasets
+  author: russakovsky
+  journal-title: ECCV-PnA'10
+  year: '0'
+- author: sa?nches
+  journal-title: Improved Fisher Vector for Large Scale Image Classification
+  year: '2010'
+- doi: 10.1007/978-3-642-19400-9_23
+- article-title: '80 million tiny images: A large dataset for non-parametric object
+    and scene recognition'
+  author: torralba
+  doi: 10.1109/TPAMI.2008.128
+  journal-title: PAMI
+  year: '2008'
+- doi: 10.1109/TPAMI.2007.1055
+- doi: 10.1109/TPAMI.2009.154
+- article-title: 'Sgd-qn: Careful quasi-newton stochastic gradient descent'
+  author: bordes
+  journal-title: JMLR
+  year: '2009'
+- author: berg
+  journal-title: Large Scale Visual Recognition Challenge
+  year: '2010'
+- article-title: Object classification from a single example utilizing class relevance
+    pseudo-metrics
+  author: fink
+  journal-title: NIPS
+  year: '2004'
+- doi: 10.5244/C.19.82
+- doi: 10.1109/CVPR.2010.5540018
+- article-title: 'Imagenet: A large-scale hierarchical image database'
+  author: deng
+  journal-title: CVPR
+  year: '2009'
+- article-title: What does classifying more than 10, 000 image categories tell us?
+  author: deng
+  journal-title: ECCV'10
+  year: '0'
+- doi: 10.1109/ICCV.2007.4409064
+- doi: 10.1145/1646396.1646452
+- article-title: Image classification using super-vector coding of local image descriptors
+  author: xi zhou
+  journal-title: ECCV
+  year: '2010'
+- year: '0'
+- article-title: One-shot learning of object categories
+  author: fei-fei
+  journal-title: PAMI
+  year: '2006'
+- doi: 10.1109/CVPR.2010.5539924
+doc_url: http://xplorestaging.ieee.org/ielx5/5968010/5995307/05995627.pdf?arnumber=5995627
+doi: 10.1109/cvpr.2011.5995627
+files:
+- tmpk1gnlrc-a.pdf
+journal: CVPR 2011
+month: 6
+papis_id: e94fd2e1a9d179e2f8be6e3dc1b060d2
+publisher: IEEE
+ref: EvaluatingKnowRohrba2011
+time-added: 2023-08-11-10:36:16
+title: Evaluating knowledge transfer and zero-shot learning in a large-scale setting
+type: inproceedings
+url: http://dx.doi.org/10.1109/cvpr.2011.5995627
+venue: Colorado Springs, CO, USA
+year: 2011
