@@ -1,2 +1,12 @@
 # papers, thesis and slides
 *.pdf
+
+# Latex intermediate files
+main.ddn
+main.dld
+main.sdn
+main.sld
+main.tdn
+main.tld
+main.tlg
+main.ist
