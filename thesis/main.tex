@@ -1,4 +1,4 @@
-\documentclass{report}
+\documentclass[twosides]{report}
 
 % Packages -------------------------------------------------------------------
 
@@ -15,8 +15,15 @@
 % diagrams in tikz
 \usepackage{tikzit}
 
+% import tikzstyle
+\input{metropolis.tikzstyles}
+
 % bibliography
-\usepackage[backend=biber, style=numeric, sorting=none]{biblatex}
+\usepackage[
+  backend=biber,
+  style=numeric,
+  sorting=none,
+]{biblatex}
 \addbibresource{bibliography.bib}
 
 % references
@@ -28,6 +35,12 @@
     citecolor=gray,       % Color of citation links (e.g., in-text references)
     urlcolor=black,       % Color of URLs and external links
 }
+
+% glossary
+\usepackage[toc, acronym]{glossaries}
+
+% improved toc
+\usepackage{tocbibind}
 
 
 % Commands -------------------------------------------------------------------
@@ -42,6 +55,9 @@
 % loss function
 \newcommand{\Loss}{\mathcal{L}}
 
+% glossary
+\input{glossary.tex}
+
 
 % Documnent ------------------------------------------------------------------
 
@@ -50,8 +66,8 @@
 \include{title}
 
 \include{chapters/0_abstract}
-
 \tableofcontents
+
 \listoffigures
 \listoftables
 
@@ -63,6 +79,9 @@
 \include{chapters/6_results_and_discussion}
 \include{chapters/7_conclusion}
 
-\printbibliography
+\printglossary[nonumberlist, type=symbols]
+\printglossary[nonumberlist, type=dimensions]
+\printglossary[nonumberlist, type=acronym]
+\printbibliography[heading=bibintoc]
 
 \end{document}
