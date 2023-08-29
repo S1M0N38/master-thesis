@@ -1,0 +1,61 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (1) at (-11.5, 4.75) {};
+		\node [style=none] (3) at (-8.25, 4.75) {};
+		\node [style=none] (4) at (-5, 4.75) {};
+		\node [style=none] (5) at (-11.5, 5.25) {};
+		\node [style=none] (6) at (-8.25, 5.25) {};
+		\node [style=none] (7) at (-5, 5.25) {};
+		\node [style=none] (8) at (-2, 4.75) {};
+		\node [style=none] (9) at (0.5, 4.75) {};
+		\node [style=none] (10) at (-2, 5.25) {};
+		\node [style=none] (11) at (0.5, 5.25) {};
+		\node [style=none] (12) at (3, 4.75) {};
+		\node [style=none] (13) at (3, 5.25) {};
+		\node [style=align-bottom] (14) at (-8.25, 4) {{\small Fruits}};
+		\node [style=align-bottom] (15) at (-0.75, 4) {{\small Animals}};
+		\node [style=align-bottom] (16) at (3, 4) {{\small Vehicles}};
+		\node [style=none] (17) at (-8.25, 2.75) {};
+		\node [style=none] (18) at (-0.75, 2.75) {};
+		\node [style=none] (19) at (-8.25, 3.25) {};
+		\node [style=none] (20) at (-0.75, 3.25) {};
+		\node [style=none] (21) at (3, 2.75) {};
+		\node [style=none] (22) at (3, 3.25) {};
+		\node [style=align-bottom] (23) at (-4, 2) {{\small Natural}};
+		\node [style=align-bottom] (24) at (3, 2) {{\small Artificial}};
+		\node [style=none] (25) at (-4, 0.75) {};
+		\node [style=none] (26) at (3, 0.75) {};
+		\node [style=none] (27) at (-4, 1.25) {};
+		\node [style=none] (28) at (3, 1.25) {};
+		\node [style=align-bottom] (29) at (0, 0) {{\small Everything}};
+		\node [style=align-bottom] (30) at (-11.5, 6) {\texttt{lemon}};
+		\node [style=align-bottom] (31) at (-8.25, 6) {\texttt{pear}};
+		\node [style=align-bottom] (32) at (-5, 6) {\texttt{apple}};
+		\node [style=align-bottom] (33) at (-2, 6) {\texttt{dog}};
+		\node [style=align-bottom] (34) at (0.5, 6) {\texttt{cat}};
+		\node [style=align-bottom] (35) at (3, 6) {\texttt{car}};
+		\node [style=none] (36) at (0, 7) {};
+		\node [style=align-bottom] (37) at (7, 6) {{\small\textit{level 0}}};
+		\node [style=align-bottom] (38) at (7, 4) {{\small\textit{level 1}}};
+		\node [style=align-bottom] (39) at (7, 2) {{\small\textit{level 2}}};
+		\node [style=align-bottom] (40) at (7, 0) {{\small\textit{level 3}}};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (5.center) to (1.center);
+		\draw (1.center) to (3.center);
+		\draw (3.center) to (6.center);
+		\draw (7.center) to (4.center);
+		\draw (4.center) to (3.center);
+		\draw (10.center) to (8.center);
+		\draw (8.center) to (9.center);
+		\draw (9.center) to (11.center);
+		\draw (12.center) to (13.center);
+		\draw (19.center) to (17.center);
+		\draw (17.center) to (18.center);
+		\draw (18.center) to (20.center);
+		\draw (21.center) to (22.center);
+		\draw (27.center) to (25.center);
+		\draw (25.center) to (26.center);
+		\draw (26.center) to (28.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

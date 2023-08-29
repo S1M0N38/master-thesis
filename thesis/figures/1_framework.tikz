@@ -1,0 +1,170 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (206) at (-4.25, 0) {};
+		\node [style=none] (208) at (-3.5, 0) {};
+		\node [style=none] (14) at (-1, 2.25) {};
+		\node [style=none] (15) at (-0.75, 2.5) {};
+		\node [style=none] (16) at (-0.5, 2.25) {};
+		\node [style=none] (17) at (-1, -2.25) {};
+		\node [style=none] (18) at (-0.75, -2.5) {};
+		\node [style=none] (19) at (-0.5, -2.25) {};
+		\node [style=none] (26) at (-1.75, 2.5) {};
+		\node [style=none] (27) at (-1.75, -2.5) {};
+		\node [style=none] (28) at (-3.25, -1) {};
+		\node [style=none] (29) at (-3.25, 1) {};
+		\node [style=none] (51) at (1, 2.25) {};
+		\node [style=none] (52) at (0.75, 2.5) {};
+		\node [style=none] (53) at (0.5, 2.25) {};
+		\node [style=none] (54) at (1, -2.25) {};
+		\node [style=none] (55) at (0.75, -2.5) {};
+		\node [style=none] (56) at (0.5, -2.25) {};
+		\node [style=none] (57) at (1.75, 2.5) {};
+		\node [style=none] (58) at (1.75, -2.5) {};
+		\node [style=none] (59) at (3.25, -0.5) {};
+		\node [style=none] (60) at (3.25, 0.5) {};
+		\node [style=none] (67) at (5.75, 0) {\texttt{\small{apple}}};
+		\node [style=none] (68) at (2.5, 0) {$\phi$};
+		\node [style=none] (69) at (-2.5, 0) {$\psi_\theta$};
+		\node [style=none] (71) at (-6, -0.5) {};
+		\node [style=none] (81) at (-5, -0.5) {};
+		\node [style=none] (82) at (-5.5, 0.25) {};
+		\node [style=none] (83) at (-5.5, -0.75) {};
+		\node [style=none] (84) at (-6, 1) {};
+		\node [style=none] (85) at (-6.5, 0.5) {};
+		\node [style=none] (86) at (-6.5, -0.5) {};
+		\node [style=none] (87) at (-6, -1) {};
+		\node [style=none] (88) at (-5, 1) {};
+		\node [style=none] (89) at (-4.5, 0.5) {};
+		\node [style=none] (90) at (-4.5, -0.5) {};
+		\node [style=none] (91) at (-5, -1) {};
+		\node [style=none] (100) at (-1, -3) {};
+		\node [style=none] (101) at (1, -3) {};
+		\node [style=none] (102) at (-0.25, -4) {};
+		\node [style=none] (103) at (0.25, -4) {};
+		\node [style=none] (104) at (0, -3.5) {$\mathcal{L}$};
+		\node [style=none] (79) at (-5.5, 0.25) {};
+		\node [style=none] (80) at (-5, 0.75) {};
+		\node [style=none] (109) at (0, -4.5) {};
+		\node [style=none] (110) at (-2.75, -1.75) {};
+		\node [style=none] (111) at (-2.75, -4.5) {};
+		\node [style=none] (112) at (-3.5, -3) {$\nabla_\theta$};
+		\node [style=none] (113) at (0, -4.25) {};
+		\node [style=none] (127) at (5, 0.5) {};
+		\node [style=none] (128) at (6.5, 0.5) {};
+		\node [style=none] (129) at (7, 0) {};
+		\node [style=none] (130) at (6.5, -0.5) {};
+		\node [style=none] (131) at (5, -0.5) {};
+		\node [style=none] (178) at (9.5, 1) {};
+		\node [style=none] (179) at (9.25, 1.25) {};
+		\node [style=none] (180) at (9.25, 0.75) {};
+		\node [style=none] (181) at (9, 1) {};
+		\node [style=none] (182) at (9, 1) {};
+		\node [style=none] (183) at (9.5, -2.5) {};
+		\node [style=none] (184) at (9.25, -2.25) {};
+		\node [style=none] (185) at (9.25, -2.75) {};
+		\node [style=none] (186) at (9, -2.5) {};
+		\node [style=none] (187) at (9, -2.5) {};
+		\node [style=none] (188) at (9.5, 2) {};
+		\node [style=none] (189) at (9.25, 2.25) {};
+		\node [style=none] (190) at (9.25, 1.75) {};
+		\node [style=none] (191) at (9, 2) {};
+		\node [style=none] (192) at (9, 2) {};
+		\node [style=none] (193) at (9.5, -1.5) {};
+		\node [style=none] (194) at (9.25, -1.25) {};
+		\node [style=none] (195) at (9.25, -1.75) {};
+		\node [style=none] (196) at (9, -1.5) {};
+		\node [style=none] (197) at (9, -1.5) {};
+		\node [style=anchor west] (198) at (10, -2.5) {\small{encoding}};
+		\node [style=anchor west] (203) at (10, -1.5) {\small{class}};
+		\node [style=anchor west] (204) at (10, 1) {\small{output}};
+		\node [style=anchor west] (205) at (10, 2) {\small{input}};
+		\node [style=none] (207) at (4.25, 0) {};
+		\node [style=none] (209) at (4.5, 0) {};
+		\node [style=none] (210) at (3.5, 0) {};
+		\node [style=anchor west] (216) at (10, 0) {\small{model}};
+		\node [style=none] (217) at (9.25, 0) {$\psi_\theta$};
+		\node [style=anchor west] (218) at (10, -3.5) {\small{encoder}};
+		\node [style=none] (219) at (9.25, -3.5) {$\phi$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=arrow] (208.center) to (206.center);
+		\draw [style=orange] (18.center)
+			 to [bend right=45, looseness=1.75] (19.center)
+			 to (16.center)
+			 to [bend right=45, looseness=1.75] (15.center)
+			 to [bend right=45, looseness=1.75] (14.center)
+			 to (17.center)
+			 to [bend right=45, looseness=1.75] cycle;
+		\draw (28.center)
+			 to (29.center)
+			 to (26.center)
+			 to (27.center)
+			 to cycle;
+		\draw [style=blue] (55.center)
+			 to [bend left=45, looseness=1.75] (56.center)
+			 to (53.center)
+			 to [bend left=45, looseness=1.75] (52.center)
+			 to [bend left=45, looseness=1.75] (51.center)
+			 to (54.center)
+			 to [bend left=45, looseness=1.75] cycle;
+		\draw (60.center)
+			 to (57.center)
+			 to (58.center)
+			 to (59.center)
+			 to cycle;
+		\draw [style=red] (83.center)
+			 to [in=-120, out=-15, looseness=1.75] (81.center)
+			 to [in=30, out=60, looseness=1.75] (82.center)
+			 to [in=120, out=150, looseness=1.75] (71.center)
+			 to [in=-165, out=-60, looseness=1.75] cycle;
+		\draw [style=orange-empty] (88.center)
+			 to [bend left=45, looseness=2.00] (89.center)
+			 to (90.center)
+			 to [bend left=45, looseness=2.00] (91.center)
+			 to (87.center)
+			 to [bend left=45, looseness=2.00] (86.center)
+			 to (85.center)
+			 to [bend right=315, looseness=2.00] (84.center)
+			 to cycle;
+		\draw (103.center)
+			 to (102.center)
+			 to (100.center)
+			 to (101.center)
+			 to cycle;
+		\draw [style=green] (80.center)
+			 to [bend left] (79.center)
+			 to [bend left=45, looseness=1.25] cycle;
+		\draw [style=arrow] (110.center)
+			 to (111.center)
+			 to (109.center);
+		\draw (113.center) to (109.center);
+		\draw [style=blue-empty] (131.center)
+			 to [bend left=45, looseness=2.00] (209.center)
+			 to [bend right=315, looseness=2.00] (127.center)
+			 to (128.center)
+			 to [bend left=45, looseness=2.00] (129.center)
+			 to [bend left=45, looseness=2.00] (130.center)
+			 to cycle;
+		\draw [style=orange] (178.center)
+			 to [bend right=45, looseness=2.00] (179.center)
+			 to [bend right=45, looseness=2.00] (181.center)
+			 to [bend right=45, looseness=2.00] (180.center)
+			 to [bend right=45, looseness=2.00] cycle;
+		\draw [style=blue] (184.center)
+			 to [bend right=45, looseness=2.00] (186.center)
+			 to [bend right=45, looseness=2.00] (185.center)
+			 to [bend right=45, looseness=2.00] (183.center)
+			 to [bend right=45, looseness=2.00] cycle;
+		\draw [style=orange-empty] (188.center)
+			 to [bend right=45, looseness=2.00] (189.center)
+			 to [bend right=45, looseness=2.00] (191.center)
+			 to [bend right=45, looseness=2.00] (190.center)
+			 to [bend right=45, looseness=2.00] cycle;
+		\draw [style=blue-empty] (193.center)
+			 to [bend right=45, looseness=2.00] (194.center)
+			 to [bend right=45, looseness=2.00] (196.center)
+			 to [bend right=45, looseness=2.00] (195.center)
+			 to [bend right=45, looseness=2.00] cycle;
+		\draw [style=arrow] (210.center) to (207.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
