@@ -3,4 +3,210 @@
 
 % TODO: Subections on various encodings.
 % TODO: Equivalence of losses and encodings.
+%
+Our goal is to inject semantic information into image classification models
+without drastically disrupt a well-run system architecture which has proven
+itself over time. After dissect a model in its components, we identify which
+parts could be enhanced by the addition of extra information. In that way the
+presented technique can be applied to other model architectures in a
+straightforward manner.
 
+\section{Framework}
+\label{sec:framework}
+
+In order to have a common ground for the following sections, we first need to
+introduce a framework for model for image classification and define its building
+blocks. Referring to \Cref{fig:1_framework} here are the components.
+
+\begin{figure}[htbp]
+  \ctikzfig{1_framework}
+  \caption{Image classification framework}
+  \label{fig:1_framework}
+\end{figure}
+
+\paragraph{input} Let \gls{input} be an image represented as a real-valued
+tensor\footnote{The deep learning community use the term ``tensor'' as a
+synonym for ``multidimensional array'', it is not equipped with additional
+structure founded in physics or in mathematics. Throughout this thesis we use
+the deep learning jargon} of shape \gls{channel_size} $\times$ \gls{height_size}
+$\times$ \gls{width_size} where \gls{channel_size} is the number of channels,
+\gls{height_size} is the height and \gls{width_size} is the width. Its entries
+are the intensity value of colors associated to a RGB channels.
+
+\paragraph{output} Let \gls{output} denote the output of the model, that is the
+outcome of the application of \gls{model} on \gls{input}. This is
+\gls{output_size}-dimensional real-valued vector. We use the more specific term
+``model's predictions'' when \gls{output_size} is equal to the number of
+classes and the vector is a \acrlong{pmf} over classes.
+
+\paragraph{model} Let \gls{model} be a function that takes as input an image
+and return a vector, i.e.
+\begin{equation}
+  \psi_\theta: \mathcal{X} \to \mathcal{Y}
+             : x \mapsto \hat{y} := \psi_\theta \left(x\right)
+  \label{eq:model}
+\end{equation}
+where $\mathcal{X} \subseteq \mathbb{R}^{C \times H \times W}$ is the set of
+images and $\mathcal{Y} \subseteq \mathbb{R}^{D}$ is the set of model's output.
+At the higher level of abstraction a deep learning model can be seen as a
+deterministic function of several real variables that output a real-valued
+vector. Internally it is a composition of functions like matrix
+multiplications, convolutions, non-linearities, etc. regulated by parameters
+$\theta$. Sometimes the term ``architecture'' is used as synonym of ``model''.
+
+\paragraph{parameters} Using \gls{parameters} as subscript of \gls{model}
+reminds that the functions that constitute the model are parametrized by a set
+of real number. These parameters are initially randomly initialized and then
+adjusted during the training phase steering the model in such a way to solve
+the given task.
+
+\paragraph{class} We use interchangeably the terms ``class'' and ``label'' to
+referring to the text associated to a given image. In the context of single
+label image classification the class \gls{class} is word which is an element of
+$\mathcal{C}$, the set of possible classes.
+
+\paragraph{encodings} Let \gls{encoding} denote a numerical representation of
+the class. It is a \gls{output_size}-dimensional real-valued vector. The term
+encoding must not be confused with the term embedding which can be regarded as
+a specific type of encoding. An example of encoding is the one-hot encoding.
+
+\paragraph{encoder} Let \gls{encoder} be a function that takes as input a class
+\gls{class} and return its encoding \gls{encoding}, i.e.
+\begin{equation}
+  \phi: \mathcal{C} \to \mathcal{Y} : c \mapsto y := \phi \left(x\right).
+  \label{eq:encoder}
+\end{equation}
+Usually the conversion from class text to numerical representation is not
+explicitly included in the descriptions of deep learning models. However, here
+we devote some attention to this aspect because it will be crucial in the
+following as place to inject semantic information. Moreover, it must not be
+confuse with the ``encoder block'' that can be found in some \acrshort{lm}
+architectures.
+
+\paragraph{loss} The loss or cost function, denote as \gls{loss}, is a function
+that takes as input the output of the model and the encoding of the
+corresponding class and return a scalar,
+\begin{equation}
+  \Loss: \mathcal{Y} \times \mathcal{Y} \to \mathbb{R}
+       : \left(\hat{y}, y\right) \mapsto \Loss \left(\hat{y}, y\right).
+  \label{eq:loss}
+\end{equation}
+It is a measure of how much the models' output and encodings differ, so lower
+is its value better is the model's performance. Depending on the task and the
+encoding different functional from can be used. An example of loss function is
+the cross-entropy loss.
+
+\medskip Assembling these components we obtain an end to end trainable model
+for image classification. At first model's output carry no information about
+classification for the input image. During training many images and their
+corresponding labels are fed into the system so that the parameters
+\gls{parameters} are tuned in such a way that the model's outputs become more
+and more similar to the encodings of the corresponding class, hence the
+emergence of classification capabilities. % TODO: explain a bit better
+optimization Taking advantage of \acrshort{gpu}s, the calculation can be
+parallelize along the batch dimension $B$, i.e. multiple images are
+concurrently pass as input to the model so, at the implementation level,
+\gls{input} will be a tensor \gls{batch_size} $\times$ \gls{channel_size}
+$\times$ \gls{height_size} $\times$ \gls{width_size} and consequently the
+output and the encoding will be tensors $B \times D$. \gls{model},
+\gls{encoder} and \gls{loss} must be extended accordingly.
+
+
+\section{Toy Dataset}
+\label{sec:toy-dataset}
+It is easier to explain and to understand hierarchical concepts with concrete
+example. So here we introduce a minimalistic example based on toy dataset that
+will come handy in the following. The classes are $\mathcal{C} = [\
+\texttt{lemon},\ \texttt{pear},\ \texttt{apple},\ \texttt{dog},\ \texttt{cat},\
+\texttt{car}\ ]$ and are arranged is a list-like structure so an index can be
+associated to each class, i.e. $c_i \to i$. For example, using a zero-based
+indexing, we have $\texttt{lemon} \to 0,\ \texttt{pear} \to 1,\ \ldots$. Theirs
+hierarchical relationships are given by the tree in~\Cref{fig:2_toy-dataset}. At
+the first level of the hierarchy we have the following partition:
+\texttt{Lemon}, \texttt{pear} and \texttt{apple} are fruits, \texttt{dog} and
+\texttt{cat} are animals while \texttt{car} is a vehicle. At the second level we
+have separation between Natural and Artificial objects. The root node include all
+the classes. The number of levels in this hierarchy is
+\gls{hierarchy_levels}$\,=4$.
+\begin{figure}[htbp]
+  \ctikzfig{2_toy-dataset}
+  \caption{Toy dataset hierarchical tree}
+  \label{fig:2_toy-dataset}
+\end{figure}
+
+\section{Encodings}
+\label{sec:encodings}
+
+Encodings are deterministic function that does not change during training, so
+we can compute the encoding for each label of each image in the dataset before
+training. So starting from a dataset $\mathcal{D} = \{ \left(x, c\right)_i
+\}_{i = 1, \ldots, N}$ of \gls{dataset_size} images and their corresponding
+classes, we obtain $\mathcal{D}' = \{ \left(x, y\right)_i \}_{i = 1, \ldots,
+N}$, a set of images and their corresponding encodings. Detaching the encoding
+procedure from training not only reduce the computational cost but also allow to
+inspect the encoding before training.
+%TODO: add refernce to future section about encoding projection and evaluation
+
+
+\subsection{One-hot Encoding}
+\label{subsec:one-hot-encoding}
+
+The one-hot encoding is a simple encoding that is usually coupled with the
+cross-entropy loss function (see later~\cref{subsec:cross-entropy-loss}). We
+consider this binomial our baseline and the following encoding-losses pairs are
+develop in order to improve on various aspects while keeping comparable
+performances. The encoder function \gls{encoder} that produce one-hot encoding is
+\begin{equation}
+  \phi: \mathcal{C} \to \{0, \,1\}^{D}
+      : c_i \mapsto y := \phi \left(c_i\right)
+  \quad \text{where} \quad
+  \phi{\left(c_i\right)}_j = \gls{kronecker_delta}_{ij}.
+  \label{eq:one-hot-encoding}
+\end{equation}
+Referring to the toy dataset we have that one-hot encoding for \texttt{apple}
+is $\left[0, 0, 1, 0, 0, 0\right]$. The resulting encodings will be sparse
+orthogonal binary vectors. Theirs orthogonality translates into a
+well-separated encoding space facilitating model training. Moreover, if it used
+in conjunction with the cross-entropy loss, neat optimization tricks can be
+employed. Speed, simplicity and effectiveness are the ingredients of its success.
+
+The elephant in the room is that one-hot encoding discard all hierarchical
+information accounting only for level zero of the hierarchy tree
+(\Cref{fig:2_toy-dataset}). This means that encoding-wise \texttt{lemon} and
+\texttt{pear} are as similar as \texttt{lemon} and \texttt{car} even though the
+former have the same ancestor in the tree while the latter do not share any
+node beside the root.
+
+\paragraph{cosine similarity} The notion of encoding similarity employed throughout
+this document is the \emph{cosine similarity}. Given two encoding $y_1$ and $y_2$,
+the cosine similarity (or simply their similarity) is defined as
+\begin{equation}
+  \gls{cosine_similarity}: \mathcal{Y} \times \mathcal{Y} \to \left[-1, +1\right]
+  : (y_1, y_2) \mapsto \gls{cosine_similarity}\,(y_1, y_2) :=
+  \frac{y_1 \cdot y_2}{\|y_1\| \, \|y_2\|}
+  \label{eq:cosine-simiarity}
+\end{equation}
+where \gls{dot_product} is the dot product and \gls{l2_norm} is the $L^2$ norm.
+If $y_1$ and $y_2$ have already been normalized, i.e. $\|y_1\| = \|y_2\| = 1$,
+then the cosine similarity reduce the dot product and it is proportional to
+Euclidean distance. Every one-hot encoding has cosine similarity equal to zero
+with other encoding except for itself (which has it equal to one).
+
+
+\subsection{Hierarchical Encodings}
+\label{subsec:hierarchical-encodings}
+
+\subsection{Word Encodings}
+\label{subsec:word-encoding}
+
+\subsection{Description Encodings}
+\label{subsec:description-encodings}
+
+\section{Loss Functions}
+\label{sec:losses}
+
+\subsection{Cross-entropy Loss}
+\label{subsec:cross-entropy-loss}
+
+\subsection{Cosine distance Loss}
+\label{subsec:cosine-distance-loss}
