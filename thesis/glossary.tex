@@ -1,0 +1,110 @@
+\newglossary[tlg]{dimensions}{dld}{ddn}{Dimensions}
+\newglossary[tlg]{symbols}{sld}{sdn}{Symbols}
+
+\makeglossaries
+
+% Dimensions
+\newglossaryentry{batch_size}{
+  type=dimensions,
+  name={\ensuremath{B}},
+  description={Batch size}
+}
+\newglossaryentry{channel_size}{
+  type=dimensions,
+  name={\ensuremath{C}},
+  description={Channel size}
+}
+\newglossaryentry{height_size}{
+  type=dimensions,
+  name={\ensuremath{H}},
+  description={Height size}
+}
+\newglossaryentry{width_size}{
+  type=dimensions,
+  name={\ensuremath{W}},
+  description={Width size}
+}
+\newglossaryentry{output_size}{
+  type=dimensions,
+  name={\ensuremath{D}},
+  description={Output and encoding size}
+}
+\newglossaryentry{hierarchy_levels}{
+  type=dimensions,
+  name={\ensuremath{L}},
+  description={Number of level in a hierarchy tree}
+}
+\newglossaryentry{dataset_size}{
+  type=dimensions,
+  name={\ensuremath{N}},
+  description={Number of images in the dataset}
+}
+
+% Symbols
+\newglossaryentry{input}{
+  type=symbols,
+  name={\ensuremath{x}},
+  description={Image given as input to the model}
+}
+\newglossaryentry{output}{
+  type=symbols,
+  name={\ensuremath{\hat{y}}},
+  description={Output of the model}
+}
+\newglossaryentry{parameters}{
+  type=symbols,
+  name={\ensuremath{\theta}},
+  description={Parameters of the model}
+}
+\newglossaryentry{class}{
+  type=symbols,
+  name={\ensuremath{c}},
+  description={Class, the text associated to a given image}
+}
+\newglossaryentry{encoding}{
+  type=symbols,
+  name={\ensuremath{y}},
+  description={Encoding, a numerical representation of the class}
+}
+\newglossaryentry{model}{
+  type=symbols,
+  name={\ensuremath{\psi_\theta}},
+  description={Deep learning model}
+}
+\newglossaryentry{encoder}{
+  type=symbols,
+  name={\ensuremath{\phi}},
+  description={Encoder, function that takes as input a class and return its encoding}
+}
+\newglossaryentry{loss}{
+  type=symbols,
+  name={\ensuremath{\Loss}},
+  description={Loss function of the model}
+}
+\newglossaryentry{kronecker_delta}{
+  type=symbols,
+  name={\ensuremath{\delta}},
+  description={Kronecker delta}
+}
+\newglossaryentry{cosine_similarity}{
+  type=symbols,
+  name={\ensuremath{\cos}},
+  description={Kronecker delta}
+}
+\newglossaryentry{dot_product}{
+  type=symbols,
+  name={\ensuremath{\cdot}},
+  description={Dot product}
+}
+\newglossaryentry{l2_norm}{
+  type=symbols,
+  name={\ensuremath{\|\cdot\|}},
+  description={\ensuremath{L^2} norm}
+}
+
+% Acronyms
+\newacronym{zsl}{ZSL}{zero-shot-learning}
+\newacronym{lm}{LM}{language model}
+\newacronym{pdf}{PDF}{probability density function}
+\newacronym{pmf}{PMF}{probability mass function}
+\newacronym{gpu}{GPU}{graphics processing unit}
