@@ -1,0 +1,60 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (27) at (-3.25, -3) {};
+		\node [style=none] (31) at (3, 3.25) {};
+		\node [style=rotated-align-bottom] (35) at (-2.5, 3.5) {{\small\texttt{lemon}}};
+		\node [style=rotated-align-bottom] (36) at (-1.5, 3.5) {{\small\texttt{pear}}};
+		\node [style=rotated-align-bottom] (37) at (-0.5, 3.5) {{\small\texttt{apple}}};
+		\node [style=rotated-align-bottom] (38) at (0.5, 3.5) {\texttt{dog}};
+		\node [style=rotated-align-bottom] (39) at (1.5, 3.5) {{\small\texttt{cat}}};
+		\node [style=rotated-align-bottom] (40) at (2.5, 3.5) {{\small\texttt{car}}};
+		\node [style=anchor east] (41) at (-3.5, 2.5) {{\small\texttt{lemon}}};
+		\node [style=anchor east] (42) at (-3.5, 1.5) {{\small\texttt{pear}}};
+		\node [style=anchor east] (43) at (-3.5, 0.5) {{\small\texttt{apple}}};
+		\node [style=anchor east] (44) at (-3.5, -0.5) {{\small\texttt{dog}}};
+		\node [style=anchor east] (45) at (-3.5, -1.5) {{\small\texttt{cat}}};
+		\node [style=anchor east] (46) at (-3.5, -2.5) {{\small\texttt{car}}};
+		\node [style=none] (47) at (-2.5, 2.5) {{\small 0}};
+		\node [style=none] (48) at (-1.5, 2.5) {{\small 1}};
+		\node [style=none] (49) at (-0.5, 2.5) {{\small 1}};
+		\node [style=none] (50) at (0.5, 2.5) {{\small 2}};
+		\node [style=none] (51) at (1.5, 2.5) {{\small 2}};
+		\node [style=none] (52) at (2.5, 2.5) {{\small 3}};
+		\node [style=none] (53) at (-2.5, 1.5) {{\small 1}};
+		\node [style=none] (54) at (-1.5, 1.5) {{\small 0}};
+		\node [style=none] (55) at (-0.5, 1.5) {{\small 1}};
+		\node [style=none] (56) at (0.5, 1.5) {{\small 2}};
+		\node [style=none] (57) at (1.5, 1.5) {{\small 2}};
+		\node [style=none] (58) at (2.5, 1.5) {{\small 3}};
+		\node [style=none] (59) at (-2.5, 0.5) {{\small 1}};
+		\node [style=none] (60) at (-1.5, 0.5) {{\small 1}};
+		\node [style=none] (61) at (-0.5, 0.5) {{\small 0}};
+		\node [style=none] (62) at (0.5, 0.5) {{\small 2}};
+		\node [style=none] (63) at (1.5, 0.5) {{\small 2}};
+		\node [style=none] (64) at (2.5, 0.5) {{\small 3}};
+		\node [style=none] (65) at (-2.5, -0.5) {{\small 2}};
+		\node [style=none] (66) at (-1.5, -0.5) {{\small 2}};
+		\node [style=none] (67) at (-0.5, -0.5) {{\small 2}};
+		\node [style=none] (68) at (0.5, -0.5) {{\small 0}};
+		\node [style=none] (69) at (1.5, -0.5) {{\small 1}};
+		\node [style=none] (70) at (2.5, -0.5) {{\small 3}};
+		\node [style=none] (71) at (-2.5, -1.5) {{\small 2}};
+		\node [style=none] (72) at (-1.5, -1.5) {{\small 2}};
+		\node [style=none] (73) at (-0.5, -1.5) {{\small 2}};
+		\node [style=none] (74) at (0.5, -1.5) {{\small 1}};
+		\node [style=none] (75) at (1.5, -1.5) {{\small 0}};
+		\node [style=none] (76) at (2.5, -1.5) {{\small 3}};
+		\node [style=none] (77) at (-2.5, -2.5) {{\small 3}};
+		\node [style=none] (78) at (-1.5, -2.5) {{\small 3}};
+		\node [style=none] (79) at (-0.5, -2.5) {{\small 3}};
+		\node [style=none] (80) at (0.5, -2.5) {{\small 3}};
+		\node [style=none] (81) at (1.5, -2.5) {{\small 3}};
+		\node [style=none] (82) at (2.5, -2.5) {{\small 0}};
+		\node [style=none] (83) at (-3.25, 5.5) {};
+		\node [style=none] (84) at (-5.5, 3.25) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (83.center) to (27.center);
+		\draw (84.center) to (31.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
