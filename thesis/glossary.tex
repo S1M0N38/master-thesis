@@ -1,5 +1,6 @@
-\newglossary[tlg]{dimensions}{dld}{ddn}{Dimensions}
-\newglossary[tlg]{symbols}{sld}{sdn}{Symbols}
+\newglossary[alg]{acronym}{acr}{acn}{\acronymname}
+\newglossary[dlg]{dimensions}{dld}{ddn}{Dimensions}
+\newglossary[slg]{symbols}{sld}{sdn}{Symbols}
 
 \makeglossaries
 
@@ -89,7 +90,7 @@
 \newglossaryentry{cosine_similarity}{
   type=symbols,
   name={\ensuremath{\cos}},
-  description={Kronecker delta}
+  description={Cosine similarity}
 }
 \newglossaryentry{dot_product}{
   type=symbols,
@@ -101,10 +102,46 @@
   name={\ensuremath{\|\cdot\|}},
   description={\ensuremath{L^2} norm}
 }
+\newglossaryentry{lca_fn}{
+  type=symbols,
+  name={\ensuremath{\lca}},
+  description={Lowest common ancestor}
+}
+\newglossaryentry{height_fn}{
+  type=symbols,
+  name={\ensuremath{\height}},
+  description={Height of a node in a tree}
+}
+
+
+% Sets
+\newglossaryentry{input_set}{
+  type=symbols,
+  name={\ensuremath{\mathcal{X}}},
+  description={Input space}
+}
+\newglossaryentry{output_set}{
+  type=symbols,
+  name={\ensuremath{\mathcal{Y}}},
+  description={Output space}
+}
+\newglossaryentry{classes_set}{
+  type=symbols,
+  name={\ensuremath{\mathcal{C}}},
+  description={Class set}
+}
+\newglossaryentry{vertices_set}{
+  type=symbols,
+  name={\ensuremath{\mathcal{V}}},
+  description={Hierarchical tree vertices set}
+}
+
 
 % Acronyms
+\newacronym{cnn}{CNN}{convolutional neural network}
 \newacronym{zsl}{ZSL}{zero-shot-learning}
 \newacronym{lm}{LM}{language model}
 \newacronym{pdf}{PDF}{probability density function}
 \newacronym{pmf}{PMF}{probability mass function}
 \newacronym{gpu}{GPU}{graphics processing unit}
+\newacronym{lca}{LCA}{lowest common ancestor}
