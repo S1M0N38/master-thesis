@@ -37,7 +37,7 @@
 }
 
 % glossary
-\usepackage[toc, nomain]{glossaries}
+\usepackage[toc, acronym]{glossaries}
 
 % improved toc
 \usepackage{tocbibind}
@@ -81,9 +81,10 @@
 \include{chapters/6_results_and_discussion}
 \include{chapters/7_conclusion}
 
-\printglossary[nonumberlist, type=symbols]
-\printglossary[nonumberlist, type=dimensions]
+\printglossary[nonumberlist]
 \printglossary[nonumberlist, type=acronym]
+% \printglossary[nonumberlist, type=symbols]
+% \printglossary[nonumberlist, type=dimensions]
 \printbibliography[heading=bibintoc]
 
 \end{document}

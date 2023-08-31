@@ -1,137 +1,140 @@
-\newglossary[alg]{acronym}{acr}{acn}{\acronymname}
-\newglossary[dlg]{dimensions}{dld}{ddn}{Dimensions}
-\newglossary[slg]{symbols}{sld}{sdn}{Symbols}
+% \newglossary[alg]{acronym}{acr}{acn}{\acronymname}
+% \newglossary[dlg]{dimensions}{dld}{ddn}{Dimensions}
+% \newglossary[slg]{symbols}{sld}{sdn}{Symbols}
 
 \makeglossaries
 
 % Dimensions
 \newglossaryentry{batch_size}{
-  type=dimensions,
+  sort=dimensions,
   name={\ensuremath{B}},
   description={Batch size}
 }
 \newglossaryentry{channel_size}{
-  type=dimensions,
+  sort=dimensions,
   name={\ensuremath{C}},
   description={Channel size}
 }
 \newglossaryentry{height_size}{
-  type=dimensions,
+  sort=dimensions,
   name={\ensuremath{H}},
   description={Height size}
 }
 \newglossaryentry{width_size}{
-  type=dimensions,
+  sort=dimensions,
   name={\ensuremath{W}},
   description={Width size}
 }
 \newglossaryentry{output_size}{
-  type=dimensions,
+  sort=dimensions,
   name={\ensuremath{D}},
   description={Output and encoding size}
 }
 \newglossaryentry{hierarchy_levels}{
-  type=dimensions,
+  sort=dimensions,
   name={\ensuremath{L}},
   description={Number of level in a hierarchy tree}
 }
 \newglossaryentry{dataset_size}{
-  type=dimensions,
+  sort=dimensions,
   name={\ensuremath{N}},
   description={Number of images in the dataset}
 }
 
-% Symbols
+% Variables
 \newglossaryentry{input}{
-  type=symbols,
+  sort=variables,
   name={\ensuremath{x}},
   description={Image given as input to the model}
 }
 \newglossaryentry{output}{
-  type=symbols,
+  sort=variables,
   name={\ensuremath{\hat{y}}},
   description={Output of the model}
 }
 \newglossaryentry{parameters}{
-  type=symbols,
+  sort=variables,
   name={\ensuremath{\theta}},
   description={Parameters of the model}
 }
 \newglossaryentry{class}{
-  type=symbols,
+  sort=variables,
   name={\ensuremath{c}},
   description={Class, the text associated to a given image}
 }
 \newglossaryentry{encoding}{
-  type=symbols,
+  sort=variables,
   name={\ensuremath{y}},
   description={Encoding, a numerical representation of the class}
 }
+
+% Function
 \newglossaryentry{model}{
-  type=symbols,
+  sort=functions,
   name={\ensuremath{\psi_\theta}},
   description={Deep learning model}
 }
 \newglossaryentry{encoder}{
-  type=symbols,
+  sort=functions,
   name={\ensuremath{\phi}},
   description={Encoder, function that takes as input a class and return its encoding}
 }
 \newglossaryentry{loss}{
-  type=symbols,
+  sort=functions,
   name={\ensuremath{\Loss}},
   description={Loss function of the model}
 }
-\newglossaryentry{kronecker_delta}{
-  type=symbols,
-  name={\ensuremath{\delta}},
-  description={Kronecker delta}
-}
 \newglossaryentry{cosine_similarity}{
-  type=symbols,
+  sort=functions,
   name={\ensuremath{\cos}},
   description={Cosine similarity}
 }
 \newglossaryentry{dot_product}{
-  type=symbols,
+  sort=functions,
   name={\ensuremath{\cdot}},
   description={Dot product}
 }
 \newglossaryentry{l2_norm}{
-  type=symbols,
+  sort=functions,
   name={\ensuremath{\|\cdot\|}},
   description={\ensuremath{L^2} norm}
 }
 \newglossaryentry{lca_fn}{
-  type=symbols,
+  sort=functions,
   name={\ensuremath{\lca}},
   description={Lowest common ancestor}
 }
 \newglossaryentry{height_fn}{
-  type=symbols,
+  sort=functions,
   name={\ensuremath{\height}},
   description={Height of a node in a tree}
 }
 
+% Symbols
+\newglossaryentry{kronecker_delta}{
+  sort=symbols,
+  name={\ensuremath{\delta}},
+  description={Kronecker delta}
+}
 
 % Sets
 \newglossaryentry{input_set}{
-  type=symbols,
+  sort=sets,
   name={\ensuremath{\mathcal{X}}},
   description={Input space}
 }
 \newglossaryentry{output_set}{
-  type=symbols,
+  sort=sets,
   name={\ensuremath{\mathcal{Y}}},
   description={Output space}
 }
 \newglossaryentry{classes_set}{
-  type=symbols,
+  sort=sets,
   name={\ensuremath{\mathcal{C}}},
   description={Class set}
 }
 \newglossaryentry{vertices_set}{
-  type=symbols,
+  sort=sets,
   name={\ensuremath{\mathcal{V}}},
   description={Hierarchical tree vertices set}
 }
