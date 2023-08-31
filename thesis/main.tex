@@ -3,13 +3,13 @@
 % Packages -------------------------------------------------------------------
 
 % math symbols, fonts, environments
-\usepackage{amsfonts, amsmath, amssymb, bm}
+\usepackage{amsfonts, amsmath, amssymb, bm, xfrac}
 
 % page layout
 \usepackage{geometry}
 
 % graphics (images, plots)
-\usepackage{graphicx}
+\usepackage{graphicx, subcaption}
 \graphicspath{{figures/}}
 
 % diagrams in tikz
@@ -37,7 +37,7 @@
 }
 
 % glossary
-\usepackage[toc, acronym]{glossaries}
+\usepackage[toc, nomain]{glossaries}
 
 % improved toc
 \usepackage{tocbibind}
@@ -52,8 +52,10 @@
   \gdef:{\mathrel{\mathop\ordinarycolon}}
 \endgroup
 
-% loss function
+% custom math operators
 \newcommand{\Loss}{\mathcal{L}}
+\newcommand{\lca}{\textrm{lca}}
+\newcommand{\height}{\textrm{height}}
 
 % glossary
 \input{glossary.tex}
