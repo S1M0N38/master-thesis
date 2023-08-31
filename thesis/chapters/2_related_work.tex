@@ -14,23 +14,23 @@ foundational ideas were at the core of the architecture (convolutional
 operations, gradient based optimization, pooling layers) stood the test of time
 and proved to be highly successful.
 
-Fast forwarding to 2012. AlexNet~\cite{ImagenetClassiKrizhe2017}, a Convolution
-Neural Network (CNN) similar in spirit to LeNet-5, annihilated competitions at
+Fast forwarding to 2012. AlexNet~\cite{ImagenetClassiKrizhe2017}, a
+\acrfull{cnn} similar in spirit to LeNet-5, annihilated competitions at
 ImageNet Large Scale Visual Recognition Challenge~\cite{ImagenetALarDeng2009}
 (ILSVRC) with a whopping 10.8 \% gap on the runner-up in top-5 error metric.
-This result proved the potential of CNNs to process bigger color images (224 ×
-224 × 3) and this sparked interest in the field which abandoned the idea of
-manual features extraction in favour of the end-to-end approach.
+This result proved the potential of \acrshort{cnn}s to process bigger color
+images (224 × 224 × 3) and this sparked interest in the field which abandoned
+the idea of manual features extraction in favour of the end-to-end approach.
 
-Researchers investigated various moving part of CNNs architecture: depth of the
-model, optimal kernel size, number of filters, pooling operations.
+Researchers investigated various moving part of \acrshort{cnn} architecture:
+depth of the model, optimal kernel size, number of filters, pooling operations.
 \cite{VeryDeepConvoSimony2014,GoingDeeperWiSzeged2014} focus on increasing the
 depth of the models and \cite{GoingDeeperWiSzeged2014} was able to do so by the
-introduction of a highly efficient ``Inception module'' which was able to increase
-the depth while keeping the FLOPs under control. Efficiency at inference time is
-crucial for embedding models into resource constrained devices such smartphones or
-IOTs~\cite{SqueezenetAleIandol2016, MnasnetPlatfoTanM2018,
-MobilenetsEffHoward2017}.
+introduction of a highly efficient ``Inception module'' which was able to
+increase the depth while keeping the FLOPs under control. Efficiency at
+inference time is crucial for embedding models into resource constrained
+devices such smartphones or IOTs~\cite{SqueezenetAleIandol2016,
+MnasnetPlatfoTanM2018, MobilenetsEffHoward2017}.
 
 A problem that arose with the increase in depth was the so-called ``vanishing
 gradient''. The gradient of the loss function with respect to the model's
@@ -54,14 +54,14 @@ are a well-known example of such approach that make use of
 Squeeze-and-Excitation module~\cite{SqueezeAndExcHuJi2017} as basic component.
 
 Stacks of convolution blocks followed by a fully connected layers start to
-reach the limit regarding classification accuracy. CNNs were equipped with an
-attention mechanism be able to effectively process global features in an image
-defining hybrid architecture~\cite{SpatialTransfoJaderb2015,
-LookAndThinkCaoC2015, ShowAttendAnXuKe2015, ScaCnnSpatiaChen2016}. Recently
-interest shifted towards Vision Transformers
-(ViT)~\cite{AnImageIsWorDosovi2020}, architecture that use solely attention
-mechanism for features extraction which are able to achieve state-of-the-art
-results in some well-established image classification
+reach the limit regarding classification accuracy. \acrshort{cnn}s were
+equipped with an attention mechanism be able to effectively process global
+features in an image defining hybrid
+architecture~\cite{SpatialTransfoJaderb2015, LookAndThinkCaoC2015,
+ShowAttendAnXuKe2015, ScaCnnSpatiaChen2016}. Recently interest shifted towards
+Vision Transformers (ViT)~\cite{AnImageIsWorDosovi2020}, architecture that use
+solely attention mechanism for features extraction which are able to achieve
+state-of-the-art results in some well-established image classification
 problems~\cite{TransformersInKhan2021, ASurveyOnVisHanK2023}. ViT required to
 be trained of huge datasets to achieve competitive performance and, at the
 moment of the writing, cannot run on consumer and low power devices due to high
@@ -77,7 +77,8 @@ interpretability~\cite{ImprovingInterDong2017}, image
 summarization~\cite{SemanticImagePasini2022} and image classification as
 well~\cite{MakingBetterMBertin2019}. Assuming that label a label of an image is
 an English word indicating what is depicted in the image, we can obtain extra
-information about a label by various sources which produce different representations.
+information about a label by various sources which produce different
+representations.
 
 \paragraph{Hierarchies (trees)}
 \label{par:hierarchies-tree}
@@ -99,11 +100,12 @@ knowledge such ontologies or taxonomies.
 The majority of times labels are just a set of words with no structure between,
 so semantic structure has to be constructed from bare words. A flexible
 approach is to resort to internal representation of a pre-trained \acrfull{lm}
-commonly knows as word embeddings~\cite{BeyondWordEmbIncitt2023}.
-The extracted semantic structure is organised as a vector space where words are
-represented as real-valued vectors. The input to a \acrshort{lm} can be the raw label or a
-detailed description of the label. Additionally, such a description can be written
-by human experts, scrape from the web or generated by a \acrshort{lm} itself.\medskip
+commonly knows as word embeddings~\cite{BeyondWordEmbIncitt2023}. The extracted
+semantic structure is organised as a vector space where words are represented
+as real-valued vectors. The input to a \acrshort{lm} can be the raw label or a
+detailed description of the label. Additionally, such a description can be
+written by human experts, scrape from the web or generated by a \acrshort{lm}
+itself.\medskip
 
 These two approaches produce different representations of semantic information
 (tree vs vectors) so exist different ways to inject it into a model. It is
@@ -148,26 +150,26 @@ all sysnsets that are hyponyms of the same concept.
 
 % Custom Loss
 Another approach consists in defining a custom loss function that takes into
-account the relationship between labels. The idea is that a properly constructed
-function can steer the model towards a more hierarchical structured internal
-representation. For nearest-neighbour classifiers, Verma et
+account the relationship between labels. The idea is that a properly
+constructed function can steer the model towards a more hierarchical structured
+internal representation. For nearest-neighbour classifiers, Verma et
 al.~\cite{LearningHierarVerma2012} learn distances metrics for each node of the
 hierarchy tree by using ``context sensitive loss'' accounting for distances
-between nodes. Wu et al.~\cite{LearningToMakWuHu2016} add on top of CNN parallel
-linked fully connected (FC) layers corresponding to hierarchy levels and used
-their outputs as regularized for standard cross entropy loss. Conversely,
-Alsallah et al.~\cite{DoConvolutionaAlsall2017} add FC heads at different depth
-of an AlexNet model each of which contributing to the total loss. Bertinetto et
-al.~\cite{MakingBetterMBertin2019} introduce ``hierarchical cross-entropy'', a
-loss function that incorporates class hierarchy information by factorizing the
-predicted class probabilities into conditional probabilities along the paths in
-the hierarchy tree, and weighting the cross entropy of each conditional
-probability based on the depth in the hierarchy. In a series of
-works~\cite{ComplementObjeChen2019, ImprovingAdverChen2019,
-LearningWithHChen2019}, Chen et al. introduce ``complement entropy loss
-function'' and its hierarchical version. That loss revolves around lowering the
-model probabilities of the wrong classes instead of increasing the one
-associated to the correct class.
+between nodes. Wu et al.~\cite{LearningToMakWuHu2016} add on top of
+\acrshort{cnn} parallel linked fully connected (FC) layers corresponding to
+hierarchy levels and used their outputs as regularized for standard cross
+entropy loss. Conversely, Alsallah et al.~\cite{DoConvolutionaAlsall2017} add
+FC heads at different depth of an AlexNet model each of which contributing to
+the total loss. Bertinetto et al.~\cite{MakingBetterMBertin2019} introduce
+``hierarchical cross-entropy'', a loss function that incorporates class
+hierarchy information by factorizing the predicted class probabilities into
+conditional probabilities along the paths in the hierarchy tree, and weighting
+the cross entropy of each conditional probability based on the depth in the
+hierarchy. In a series of works~\cite{ComplementObjeChen2019,
+ImprovingAdverChen2019, LearningWithHChen2019}, Chen et al. introduce
+``complement entropy loss function'' and its hierarchical version. That loss
+revolves around lowering the model probabilities of the wrong classes instead
+of increasing the one associated to the correct class.
 
 % Custom Architecture
 Some of the aforementioned works~\cite{LearningToMakWuHu2016,
