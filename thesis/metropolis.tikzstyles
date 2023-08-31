@@ -7,6 +7,7 @@
 \tikzstyle{align-left}=[fill=none, draw=none, shape=circle, align=left]
 \tikzstyle{align-bottom}=[text centered,text width = 0.25\textwidth, text depth = 0cm, text height = 0cm, anchor=north]
 \tikzstyle{rotated}=[fill=none, draw=none, shape=circle, rotate=90]
+\tikzstyle{rotated-align-bottom}=[fill=none, draw=none, shape=circle, rotate=90, anchor=west]
 \tikzstyle{green circle}=[fill={rgb,255: red,95; green,195; blue,120}, draw={rgb,255: red,15; green,133; blue,44}, shape=circle, line width=0.50mm]
 \tikzstyle{orange circle}=[fill={rgb,255: red,255; green,193; blue,135}, draw={rgb,255: red,235; green,129; blue,27}, shape=circle, line width=0.50mm]
 \tikzstyle{blue circle}=[fill={rgb,255: red,159; green,199; blue,255}, draw={rgb,255: red,76; green,114; blue,176}, shape=circle, line width=0.50mm]
@@ -14,6 +15,7 @@
 \tikzstyle{circle}=[fill=white, draw=black, shape=circle, line width=0.40mm]
 \tikzstyle{square}=[fill=white, draw=black, shape=rectangle, line width=0.40mm]
 \tikzstyle{anchor west}=[fill=none, draw=none, shape=circle, anchor=west]
+\tikzstyle{anchor east}=[fill=none, draw=none, shape=circle, anchor=east]
 \tikzstyle{grey circle}=[fill=none, draw={rgb,255: red,196; green,196; blue,196}, shape=circle, line width=0.50mm]
 
 % Edge styles
