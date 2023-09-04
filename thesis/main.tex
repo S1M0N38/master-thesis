@@ -52,10 +52,10 @@
   \gdef:{\mathrel{\mathop\ordinarycolon}}
 \endgroup
 
-% custom math operators
-\newcommand{\Loss}{\mathcal{L}}
-\newcommand{\lca}{\textrm{lca}}
-\newcommand{\height}{\textrm{height}}
+% math operators
+\DeclareMathOperator{\lca}{lca}
+\DeclareMathOperator{\Loss}{\mathcal{L}}
+\DeclareMathOperator{\height}{height}
 
 % glossary
 \input{glossary.tex}
@@ -81,10 +81,8 @@
 \include{chapters/6_results_and_discussion}
 \include{chapters/7_conclusion}
 
-\printglossary[nonumberlist]
+\printglossary[nonumberlist, title=Notation, style=mystyle]
 \printglossary[nonumberlist, type=acronym]
-% \printglossary[nonumberlist, type=symbols]
-% \printglossary[nonumberlist, type=dimensions]
 \printbibliography[heading=bibintoc]
 
 \end{document}
