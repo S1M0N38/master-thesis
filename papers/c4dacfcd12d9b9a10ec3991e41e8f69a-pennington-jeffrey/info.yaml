@@ -1,0 +1,28 @@
+author: Pennington, Jeffrey and Socher, Richard and Manning, Christopher
+author_list:
+- affiliation: []
+  family: Pennington
+  given: Jeffrey
+- affiliation: []
+  family: Socher
+  given: Richard
+- affiliation: []
+  family: Manning
+  given: Christopher
+booktitle: Proceedings of the 2014 Conference on Empirical Methods in Natural Language
+  Processing (EMNLP)
+doi: 10.3115/v1/d14-1162
+files:
+- tmpwrhyqe-h-a.pdf
+journal: Proceedings of the 2014 Conference on Empirical Methods in Natural Language
+  Processing (EMNLP)
+month: 10
+papis_id: 2089b33d162443673b33c979a19a74f2
+publisher: Association for Computational Linguistics
+ref: GloveGlobalVPennin2014
+time-added: 2023-09-04-16:39:00
+title: 'Glove: Global Vectors for Word Representation'
+type: inproceedings
+url: http://dx.doi.org/10.3115/v1/d14-1162
+venue: Doha, Qatar
+year: 2014
