@@ -308,13 +308,55 @@ following way:
 
 \subsection{Word Encodings}
 \label{subsec:word-encoding}
-For many datasets don't exist nor can be easily created hierarchies. However
-it is really common that the classes are words or short sentences. That is the
-information that \emph{word encodings} try to exploit.
+For many datasets don't exist nor can be easily created hierarchies. However it
+is really common that the classes are words or short sentences. That is the
+information that \emph{word encodings} try to exploit. Even without the explicit
+hierarchy provided in the toy dataset, every English speaker intuitively knows
+that \texttt{lemon} and \texttt{pear} are more similar than \texttt{lemon} and
+\texttt{car}. However, it is not clear what similar means in this context: is
+\texttt{lemon} more similar to \texttt{pear} than to \texttt{apple}? To pin
+point such measure we resort to \emph{word embeddings}, i.e. latent words
+representations of pre-trained \acrshort{lm}. These are real-valued
+$\gls{output_size}$-dimensional vectors on which we can applied the previously
+defined notion of cosine similarity.
+\begin{equation}
+  g : \gls{classes_set} \to \mathbb{R}^{\gls{output_size}} :
+  c_i \mapsto e_i \equiv g(c_i)
+  \label{eq:word-encoding}
+\end{equation}
+where the $f$ is the embedding function of the pre-trained \acrshort{lm}.
 
+Many of the works mentioned in the~\Cref{subsec:embeddings} relate to
+\acrshort{zsl} and train a word embedder alongside the image classifier. Perotti
+et al.~\cite{BeyondOneHotPerott2023} use GloVe~\cite{GloveGlobalVPennin2014} and
+as a pre-trained word embedder looking for model performance improvements
+regarding ``quality and quantity'' of errors. After training, the GloVe model
+can be though as a big dense matrix where each row correspond to a word in the
+training dictionary. Then they read out the corresponding rows and finally
+calculate pairwise cosine similarity obtaining $s_{ij}$. From $s_{ij}$, they
+again use~\Cref{eq:b3p-hierarchical-encoding} to get the encoding.
+
+However, upon closer examination, this approach has two obvious flaws. What if
+the dataset classes' words that are not in the GloVe dictionary? Is
+\texttt{apple} the fruit or the company? The first problem can sometimes be
+patch by the use of a synonym available in the GloVe dictionary. Other times,
+the words are so specific (e.g. scientific names in iNaturalist) that makes no
+sense substitute with similar words. In the worst case a new embedder $g$ can be
+trained from scratch making sure that the text corpora contain the relevant
+words. The second problem is far more rooted in the word embeddings themselves.
+Same word can have different meanings (homographs) and the single vector return
+by GloVe-like model does not make any distinction. They only way to overcome
+this issue is to provided more context about the embedded word, hence
+description encodings.
 
 \subsection{Description Encodings}
 \label{subsec:description-encodings}
+% Overcome homographs problem
+% Overcome out-of-dictionary problem
+% Exploit next gen language model aka LLM
+% Recently really good for compressing information
+% We have fine control on what to inject
+% Steerable
 
 \section{Loss Functions}
 \label{sec:losses}
