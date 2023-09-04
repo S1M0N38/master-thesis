@@ -43,7 +43,7 @@ classes and the vector is a \acrlong{pmf} over classes.
 and return a vector, i.e.
 \begin{equation}
   \psi_\theta: \mathcal{X} \to \mathcal{Y}
-             : x \mapsto \hat{y} := \psi_\theta \left(x\right)
+     : x \mapsto \hat{y} := \psi_\theta \left(x\right)
   \label{eq:model}
 \end{equation}
 where \gls{input_set} $\subseteq \mathbb{R}^{C \times H \times W}$ is the set of
@@ -145,7 +145,7 @@ classes, we obtain $\mathcal{D}' = \{ \left(x, y\right)_i \}_{i = 1, \ldots,
 N}$, a set of images and their corresponding encodings. Detaching the encoding
 procedure from training not only reduce the computational cost but also allow to
 inspect the encoding before training.
-%TODO: add refernce to future section about encoding projection and evaluation
+%TODO: add reference to future section about encoding projection and evaluation
 
 
 \subsection{One-hot Encoding}
@@ -198,7 +198,7 @@ with other encodings except for itself (which has it equal to one).
 \label{subsec:hierarchical-encodings}
 We use the term \emph{hierarchical encodings} to designate all the encodings
 that make use of semantic information coming from an hierarchy. As mentioned
-in~\cref{par:hierarchies-tree}, hierarchy can be represented as a tree data
+in~\cref{par:hierarchies-tree}, a hierarchy can be represented as a tree data
 structure, an example of which is given by the toy dataset
 in~\Cref{fig:2_toy-dataset}. Tree's leaves are the classes while the ancestors
 at various depth pack broader and broader concepts.
@@ -232,12 +232,12 @@ lca similarities~(\Cref{fig:lca-similarity-matrix}).
 \begin{figure}[htbp]
   \begin{subfigure}{0.45\textwidth}
     \ctikzfig{3_lca-heights}
-    \caption{LCA height matrix}
+    \caption{LCA height matrix: $h_{ij}$}
     \label{fig:lca-height-matrix}
   \end{subfigure}
   \begin{subfigure}{0.45\textwidth}
     \ctikzfig{4_lca-similarities}
-    \caption{LCA similarity matrix}
+    \caption{LCA similarity matrix: $s_{ij}$}
     \label{fig:lca-similarity-matrix}
   \end{subfigure}
   \caption{Matrix derived from \acrlong{lca}}
@@ -254,10 +254,10 @@ negative rescaling of the lca heights matrix, that is hi
   \label{eq:mbm-hierarchical-encoding}
 \end{equation}
 They used cross-entropy as loss function so the encoding must be a
-\acrshort{pmf} over classes. Moreover the introduce an hyper-parameter $\alpha
+\acrshort{pmf} over classes. Moreover they introduce an hyper-parameter $\alpha
 \in [0, +\infty)$ that peaks the distribution around the index corresponding to
 the encoded class. So, for small value of $\alpha$ the resulting encoding will
-be a flat \acrshort{pmf}, while for bigger value it approaches one-hot
+be a flat \acrshort{pmf}, while for bigger values it approaches one-hot
 encoding.
 
 \paragraph{Perotti et al.~\cite{BeyondOneHotPerott2023}} It's a similar
@@ -276,15 +276,42 @@ normalize row-wise. Finally a certain amount of one-hot encoding is added by
 weighting terms with $\beta \in [0, 1]$. For $\beta = 1$ we get back to one-hot
 encoding.
 
-\paragraph{Barz and Denzler~\cite{HierarchyBasedBarz2018}}
-% TODO: a bit different from the others
-% TODO: read the article and resume the system of equation to solve
-
-%TODO: 30/08
+\paragraph{Barz and Denzler~\cite{HierarchyBasedBarz2018}} This approach is
+different from the previous two. Instead of operating directly on the lca
+matrix, they propose an algorithm to calculate embeddings $\phi(c_i)$ such that
+\begin{equation}
+  \forall \, c_i, c_j \in \mathcal{C} \qquad
+  \phi(c_i) \cdot \phi(c_j) = s_{ij}.
+  \label{eq:bd-hierarchical-encoding}
+\end{equation}
+It starts by choosing a normalized embedding $\phi(c_0)$ and then recursively
+solve systems of linear equations to calculate the other embeddings.
+Applied on the toy dataset, Barz and Denzler embeddings are calculate in the
+following way:
+\begin{equation*}
+  \phi{\left(c_0\right)} := \left[1, 0, 0, 0, 0, 0\right]
+  \quad \rightarrow \quad
+  \begin{cases}
+    \phi{\left(c_0\right)} \cdot \phi{\left(c_1\right)} = \sfrac{2}{3} \\
+    \phi{\left(c_1\right)} \cdot \phi{\left(c_1\right)} = 1 \\
+    \Rightarrow  \phi{\left(c_1\right)}
+  \end{cases}
+  \quad \rightarrow \quad
+  \begin{cases}
+    \phi{\left(c_0\right)} \cdot \phi{\left(c_2\right)} = \sfrac{2}{3} \\
+    \phi{\left(c_1\right)} \cdot \phi{\left(c_2\right)} = \sfrac{2}{3} \\
+    \phi{\left(c_2\right)} \cdot \phi{\left(c_2\right)} = 1 \\
+    \Rightarrow \phi{\left(c_2\right)}
+  \end{cases}
+  \quad \rightarrow \quad \ldots
+\end{equation*}
 
 \subsection{Word Encodings}
 \label{subsec:word-encoding}
-%TODO: 30/08
+For many datasets don't exist nor can be easily created hierarchies. However
+it is really common that the classes are words or short sentences. That is the
+information that \emph{word encodings} try to exploit.
+
 
 \subsection{Description Encodings}
 \label{subsec:description-encodings}
