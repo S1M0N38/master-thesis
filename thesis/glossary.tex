@@ -1,7 +1,3 @@
-% \newglossary[alg]{acronym}{acr}{acn}{\acronymname}
-% \newglossary[dlg]{dimensions}{dld}{ddn}{Dimensions}
-% \newglossary[slg]{symbols}{sld}{sdn}{Symbols}
-
 \makeglossaries
 
 % Dimensions
@@ -41,63 +37,53 @@
   description={Number of images in the dataset}
 }
 
-% Variables
+% Model symbols
 \newglossaryentry{input}{
-  sort=variables,
+  sort=model,
   name={\ensuremath{x}},
   description={Image given as input to the model}
 }
 \newglossaryentry{output}{
-  sort=variables,
+  sort=model,
   name={\ensuremath{\hat{y}}},
   description={Output of the model}
 }
 \newglossaryentry{parameters}{
-  sort=variables,
+  sort=model,
   name={\ensuremath{\theta}},
   description={Parameters of the model}
 }
 \newglossaryentry{class}{
-  sort=variables,
+  sort=model,
   name={\ensuremath{c}},
   description={Class, the text associated to a given image}
 }
 \newglossaryentry{encoding}{
-  sort=variables,
+  sort=model,
   name={\ensuremath{y}},
   description={Encoding, a numerical representation of the class}
 }
-
-% Function
 \newglossaryentry{model}{
-  sort=functions,
+  sort=model,
   name={\ensuremath{\psi_\theta}},
-  description={Deep learning model}
+  description={CNN backbone}
 }
 \newglossaryentry{encoder}{
-  sort=functions,
+  sort=model,
   name={\ensuremath{\phi}},
-  description={Encoder, function that takes as input a class and return its encoding}
+  description={Encoder, function maps class to encoding}
 }
 \newglossaryentry{loss}{
-  sort=functions,
+  sort=model,
   name={\ensuremath{\Loss}},
   description={Loss function of the model}
 }
+
+% Function
 \newglossaryentry{cosine_similarity}{
   sort=functions,
   name={\ensuremath{\cos}},
   description={Cosine similarity}
-}
-\newglossaryentry{dot_product}{
-  sort=functions,
-  name={\ensuremath{\cdot}},
-  description={Dot product}
-}
-\newglossaryentry{l2_norm}{
-  sort=functions,
-  name={\ensuremath{\|\cdot\|}},
-  description={\ensuremath{L^2} norm}
 }
 \newglossaryentry{lca_fn}{
   sort=functions,
@@ -115,6 +101,16 @@
   sort=symbols,
   name={\ensuremath{\delta}},
   description={Kronecker delta}
+}
+\newglossaryentry{l2_norm}{
+  sort=symbols,
+  name={\ensuremath{\|\cdot\|}},
+  description={\ensuremath{L^2} norm}
+}
+\newglossaryentry{dot_product}{
+  sort=symbols,
+  name={\ensuremath{\cdot}},
+  description={Dot product}
 }
 
 % Sets
@@ -148,3 +144,12 @@
 \newacronym{pmf}{PMF}{probability mass function}
 \newacronym{gpu}{GPU}{graphics processing unit}
 \newacronym{lca}{LCA}{lowest common ancestor}
+
+% \setlength{\glslistdottedwidth}{.1\linewidth}
+\newglossarystyle{mystyle}{%
+  \setglossarystyle{list}%
+  \renewcommand*{\glossaryentryfield}[5]{%
+    \item[\glsentryitem{##1} \space \space\glstarget{##1}{##2}]%
+    \hspace{4em}##3\glspostdescription\space ##5%
+  }%
+}
