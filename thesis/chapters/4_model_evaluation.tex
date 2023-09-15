@@ -1,18 +1,226 @@
 \chapter{Model evaluation}
 \label{ch:model-evaluation}
 
-% TODO: Motivate why we are evalutaing all these diffent aspect
+In this chapter we will discuss all the parts involved in model's performance
+evaluation, i.e. how to derived the predicted class from the model's
+output~(\Cref{sec:decoding}), various metrics~(\Cref{sec:metrics}),
+output's projections~(\Cref{sec:output-projections}) and adversarial attacks
+(\Cref{sec:adversarial-attacks}).
+
+\section{Decoding}
+\label{sec:decoding}
+As stated in~\Cref{subsec:one-hot-encoding}, when using one-hot encoding and
+optimizing with cross-entropy loss, we force the model's output $\hat{y}$ to
+pump up the probability associated with the correct class disregarding the
+others. So the focus is only on a single component and, if model is well
+trained, its index correspond to the ground truth class. In this case, is
+sufficient to take the $\argmax$ over the model's output to obtained the
+predicted class. Due to the trivial nature of this operation, people usually
+gloss over it, but things are slightly different when using others
+encodings.\medskip
+
+Formally, getting the class from output can be thought as the inverse of the
+encoding function $\phi$, that is
+\begin{equation}
+  \gls{decoder} : \mathcal{Y} \to \mathcal{C}
+  : \hat{y} \mapsto \gls{predicted_class} := \gls{decoder}(\hat{y})
+  \label{eq:decoding}
+\end{equation}
+hence the name \emph{decoding}. For one-hot encoding $\phi^{-1} := \argmax$,
+i.e. a function that returns the index of the maximum value of the vector given
+as input. In contrast others encodings make use of multiple components in
+model's output during training so blindly taking the $\argmax$ throws away
+potentially useful information. Still both loss functions employed try to make
+the model's output similar to the ground truth encoding so it is reasonable to
+consider the predicted class to be the one corresponding to the encoding most
+similar to the model's output. To this end, we choose cosine similarity as
+measure for such quantity, i.e.
+\begin{equation}
+  \phi^{-1}(\hat{y}) := \argmax_{c \in \mathcal{C}}
+  \left( \gls{cosine_similarity} \left(\hat{y}, \phi(c) \right) \right)
+  \label{eq:decoding-cos-sim}
+\end{equation}
+If $\phi$ is one-hot encoding~\Cref{eq:decoding-cos-sim} is equivalent to simply
+take $\argmax$ over output vector.
+
+An advantage of defining a decoding function based on encoding similarity
+is that it works with different encoding schemes. For example selecting the
+highest component in model's output trained using description encodings makes no
+sense: the vector dimensions do not represent classes but are coordinates of a
+point in a high dimensional space. What matters is the relative distance of that
+point (class encoding) to others points (others class encodings). On the other
+hand if components directly represent a class (e.g. hierarchical encodings) the
+provided decoding function works as expected.
+Another benefit is to leverage information coming from all output's components:
+not only we can try to guess what class is present in the provided image but
+also what the model thinks the image is definitely not (e.g. the class with the
+encoding that differ the most from $\hat{y}$).\medskip
+
+The decoding concept could be straightforwardly extended to
+top-\gls{number_predicted_classes} predicted classes, that is instead of
+returning the class associated to the most similar encoding, return the
+top-\gls{number_predicted_classes} most similar ones.
+
+% Talk about how it defeat adversarial attacks (maybe, in theory
+% but not sure about practice)
+% \paragraph{Example}
+% Explain with example make the most sense
+
+
+\section{Metrics}
+\label{sec:metrics}
+Russakovsky et al.~\cite{ImagenetLargeRussak2014} propose \acrfull{ilsvrc} which
+become the de facto benchmark to evaluate image classification models. Even
+though they propose the use top-\gls{number_predicted_classes} and hierarchical
+measure to asses model's performance, they conclude ``[..] all three measures of
+error (top-5, top-1, and hierarchical) produced the same ordering of results.
+Thus, since \acrshort{ilsvrc} 2012 we have been exclusively using the top-5
+metric which is the simplest and most suitable to the dataset.'' The deep
+learning community stick to top-\gls{number_predicted_classes} accuracies which
+are easier and computable for every dataset.
+
+\paragraph {Quantity \& Quality}
+\label{par:metrics-quantity-quality}
+However this work focuses on developing not only models that produce the fewer
+error but also less severe ones. While the top-\gls{number_predicted_classes}
+accuracies are useful to capture the \emph{quantity} aspect, they do not provide
+any in information about their \emph{quality}. For example confusing a
+\texttt{dog} for a \texttt{cat} can be considered a milder error compared to
+\texttt{dog} - \texttt{car} misclassification; both are mammals and as such
+share some distinguishing features like fur, an head, a pairs of eyes, four
+paws, etc. Cars present straight lines, uniform coated surface, absence of
+typical traits of living things, etc. This notion of visual similarity is
+somewhat encoded in the classes' hierarchy, so make sense to use distances on
+hierarchical tree to quantify the mistake severity.\footnote{The assumption that
+  a hierarchy carries information about visual characteristics is indeed strong
+  and must be empirically checked for dataset-hierarchy pairs considered.
+Datasets used in this work satisfy the ansatz so hierarchical similarity is a
+good proxy for visual similarity.} In the following sections we introduce some
+performance metrics that enable this quantitative/qualitative errors assessment.
+
+\paragraph {Levels}
+\label{par:metrics-levels}
+Having access to datasets equipped with a hierarchy introduce a new dimension to
+evaluate models across: theirs performance at different levels of the hierarchy.
+With reference to toy dataset in~\Cref{fig:2_toy-dataset}, suppose we are
+interested in a coarser grained classification which distinguish between Fruits,
+Animals and Vehicles (level 1). In this case, after applying the decoding to
+\gls{output} to get \gls{predicted_class}, we need to map the predicted class to
+its ancestor in the hierarchy obtaining the \emph{level-1 predicted class}. Of
+course we can produce and even coarser classification discriminating Natural vs
+Artificial instances by mapping the level-1 predicted class to its ancestor
+obtaining the \emph{level-2 predicted class} and so on. We denote the predicted
+class at l-th level as $\hat{c}^l$ and $c^l$ its corresponding ground truth; the
+index $l$ is omitted at level zero.
+
+\subsection{Error Rate}
+\label{subsec:error-rate}
+No need to reinvent the wheel for give an estimate of the amount of error: top-1
+accuracy (or simply accuracy) provide such estimation. However for easier
+comparison with other metrics we use \emph{top-1 error rate} (or simply error
+rate) which is defined as $1 - \,$accuracy. The usage of \emph{confusion matrix}
+make the definition of error rate, and the subsequent metrics, straightforward
+at the cost of extensibility to top-\gls{number_predicted_classes} versions.
+
+\paragraph{Confusion Matrix}
+\label{par:confusion-matrix}
+It's a square matrix $|\mathcal{C}| \times |\mathcal{C}|$ which rows are
+ground-truth classes \gls{class} and columns predicted classes
+\gls{predicted_class}. It's entries $m_{ij}$ count the number of times a model
+produce the pair $(c_i, \hat{c}_j)$ when evaluated on a dataset. For example a
+model applied on the example dataset can produce the confusion matrices at
+different hierarchical level as in~\Cref{fig:5_confusion-matrices}
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.35\textwidth}
+    \ctikzfig{5_confusion-matrix-level-0}
+  \end{subfigure}
+  \begin{subfigure}{0.30\textwidth}
+    \ctikzfig{6_confusion-matrix-level-1}
+  \end{subfigure}
+  \begin{subfigure}{0.25\textwidth}
+    \ctikzfig{7_confusion-matrix-level-2}
+  \end{subfigure}
+  \caption{Example of confusion matrix: $m_{ij}^l$}
+  \label{fig:5_confusion-matrices}
+\end{figure}
+\medskip
+
+Using confusion matrix the error rate at l-th level is sum of the elements
+off-diagonal divided by the sum of all elements, i.e.
+\begin{equation}
+  \textrm{error rate} :=
+  \sum_{i \ne j} m_{ij}^l \bigg/ \sum_{i, \,j} m_{ij}^l.
+  \label{eq:error-rate}
+\end{equation}
+
+
+\subsection{Hierarchical Distance Mistake}
+\label{subsec:hierarchical-distance-mistake}
+\emph{Hierarchical distance mistake} is a metric that take into account the
+hierarchy to quantify the severity of a mistake, i.e. make use of the
+\acrshort{lca} height $h_{ij}$ as weighting factor
+(example~\Cref{fig:lca-height-matrix}). The Hierarchical distance mistake is
+define to be
+\begin{equation}
+  \textrm{hier.\ dist.\ mistake} :=
+  \sum_{i, \, j} m_{ij}^l \, h_{ij}^l \bigg/ \sum_{i \ne j} m_{ij}^l.
+  \label{eq:hierarchical-distance-mistake}
+\end{equation}
+So it is the average \acrshort{lca} height between predicted and ground-truth
+classes. Note that $h_{ii}$ are all zeros so we are effectively summing only
+weighted errors in the numerator while the denominator is the total number of
+errors. Due to his definition it's not related to error rate, i.e. it's possible
+to have a low error rate (few errors) but a high hierarchical distance mistake
+(those errors are severe).
+
+\paragraph{Error rate -- Hier.\ dist.\ mistake}
+\label{par:error-rate-hier-dist-mistake}
+In order to compare models at glance we can plot the error rate vs hierarchical
+distance mistake on a two dimensional scatter plot. The x-axis is the
+amount of error (error rate) while the y-axis is errors' severity. Each point of
+the scatter plot correspond to a trained model and the overall best model is the
+one in the bottom left corner. Moreover we can draw this plot for different
+level in the hierarchy highlighting the fact that milder errors in a lower
+levels usually results in less errors in higher ones.
+\begin{figure}[htbp]
+  \ctikzfig{8_error-rate-hier-dist-mistake}
+  \caption{Quadrants in error rate vs hier.\ dist.\ mistake plot}
+  \label{fig:error-rate-hier-dist-mistake}
+\end{figure}
+
+\subsection{Hierarchical Distance}
+\label{subsec:hierarchical-distance}
+\emph{Hierarchical distance} is somewhat hybrid: it account for both quality and
+quantity of error. It's definition it's almost identical to hierarchical
+distance mistake but instead of divining by the number of errors we divide by
+the total number of sample in the dataset, i.e.
+\begin{equation}
+  \textrm{hier.\ dist.\ } :=
+  \sum_{i, \, j} m_{ij}^l \, h_{ij}^l \bigg/ \sum_{i, \, j} m_{ij}^l.
+  \label{eq:hierarchical-distance}
+\end{equation}
+If the model produce few errors the values off-diagonal in the confusion matrix
+will be smaller which are the only ones multiply by non-zeros values, hence the
+numerator is smaller. The denominator always stays the same resulting in a lower
+value for hierarchical distance.
+
+\section{Output projections}
+\label{sec:output-projections}
+
+\section{Adversarial attacks}
+\label{sec:adversarial-attacks}
+
+% TODO: How to get predicted class from model's output. Explain the difference
+% between argmax and align+argmax For one-hot encoding the two approaches are
+% equivalent. For others encodings there is some difference. Explore and Explain
+% it This is a clever way to fully use information about what models predict,
+% not only this take into account the fact that the highest probability is the
+% correct class, but also what the model thinks the image is not. Effectively
+% denoising the prediction, a sort of top-\gls{number_predicted_classes}
+% approach with a single class as output.
+%
+% TODO: Motivate why we are evaluating all these different aspect
 % TODO: Metric definitions.
 % TODO: Features vector, clustering, plots ...
 % TODO: Adversarial attack: def, how they works, strength weakness
-
-Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim
-labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi
-anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est
-aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud
-officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat
-reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia
-voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt
-duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt
-velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est
-culpa et culpa duis.
