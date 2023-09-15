@@ -1,0 +1,32 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (27) at (-1.75, -1.5) {};
+		\node [style=none] (31) at (1.5, 1.75) {};
+		\node [style=rotated-align-bottom] (35) at (-1, 2) {{\small Fruits}};
+		\node [style=rotated-align-bottom] (38) at (0, 2) {{\small Animals}};
+		\node [style=rotated-align-bottom] (40) at (1, 2) {{\small Vehicles}};
+		\node [style=anchor east] (42) at (-2, 1) {{\small Fruits}};
+		\node [style=anchor east] (46) at (-2, -1) {{\small Vehicles}};
+		\node [style=none] (54) at (-1, 1) {{\small 28}};
+		\node [style=none] (58) at (1, 1) {{\small 1}};
+		\node [style=none] (78) at (-1, -1) {{\small 1}};
+		\node [style=none] (82) at (1, -1) {{\small 8}};
+		\node [style=none] (83) at (-1.75, 4.75) {};
+		\node [style=none] (84) at (-4.75, 1.75) {};
+		\node [style=none] (85) at (-2.25, 2.25) {};
+		\node [style=none] (86) at (-3.5, 3.5) {};
+		\node [style=none] (87) at (-2.5, 3.25) {{\small $\hat{c}^1$}};
+		\node [style=none] (88) at (-3.25, 2.5) {{\small $c^1$}};
+		\node [style=anchor east] (89) at (-2, 0) {{\small Animals}};
+		\node [style=none] (90) at (0, 1) {{\small 1}};
+		\node [style=none] (91) at (0, 0) {{\small 18}};
+		\node [style=none] (92) at (-1, 0) {{\small 2}};
+		\node [style=none] (93) at (1, 0) {{\small 0}};
+		\node [style=none] (94) at (0, -1) {{\small 1}};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (83.center) to (27.center);
+		\draw (84.center) to (31.center);
+		\draw (86.center) to (85.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
