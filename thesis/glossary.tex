@@ -36,6 +36,11 @@
   name={\ensuremath{N}},
   description={Number of images in the dataset}
 }
+\newglossaryentry{number_predicted_classes}{
+  sort=dimensions,
+  name={\ensuremath{K}},
+  description={Number of predicted class}
+}
 
 % Model symbols
 \newglossaryentry{input}{
@@ -58,6 +63,11 @@
   name={\ensuremath{c}},
   description={Class, the text associated to a given image}
 }
+\newglossaryentry{predicted_class}{
+  sort=model,
+  name={\ensuremath{\hat{c}}},
+  description={Class, the text associated to a given image}
+}
 \newglossaryentry{encoding}{
   sort=model,
   name={\ensuremath{y}},
@@ -72,6 +82,11 @@
   sort=model,
   name={\ensuremath{\phi}},
   description={Encoder, function maps class to encoding}
+}
+\newglossaryentry{decoder}{
+  sort=model,
+  name={\ensuremath{\phi^{-1}}},
+  description={Encoder, function maps encoding to class}
 }
 \newglossaryentry{loss}{
   sort=model,
@@ -144,3 +159,4 @@
 \newacronym{pmf}{PMF}{probability mass function}
 \newacronym{gpu}{GPU}{graphics processing unit}
 \newacronym{lca}{LCA}{lowest common ancestor}
+\newacronym{ilsvrc}{ILSVRC}{ImageNet Large Scale Visual Recognition Challenge}
