@@ -1,0 +1,28 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-3.5, -4) {};
+		\node [style=none] (1) at (-3.5, 3.5) {};
+		\node [style=none] (2) at (-4, -3.5) {};
+		\node [style=none] (3) at (3.5, -3.5) {};
+		\node [style=none] (4) at (-3, 0) {};
+		\node [style=none] (5) at (0, -3) {};
+		\node [style=none] (6) at (3, 0) {};
+		\node [style=none] (7) at (0, 3) {};
+		\node [style=align-bottom] (8) at (-1.5, 2) {{\small few}};
+		\node [style=align-bottom] (12) at (-1.5, 1) {{\small severe}};
+		\node [style=align-bottom] (13) at (1.5, 2) {{\small many}};
+		\node [style=align-bottom] (14) at (1.5, 1) {{\small severe}};
+		\node [style=align-bottom] (15) at (-1.5, -1) {{\small few}};
+		\node [style=align-bottom] (16) at (-1.5, -2) {{\small mild}};
+		\node [style=align-bottom] (17) at (1.5, -1) {{\small many}};
+		\node [style=align-bottom] (18) at (1.5, -2) {{\small mild}};
+		\node [style=none] (19) at (0, -4.5) {{\small \textit{Error rate}}};
+		\node [style=rotated-align-bottom] (21) at (-4.5, -3) {{\small \textit{Hier. \ dist.\ mistake}}};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=arrow] (1.center) to (0.center);
+		\draw [style=arrow] (3.center) to (2.center);
+		\draw [style=dotted] (6.center) to (4.center);
+		\draw [style=dotted] (5.center) to (7.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
