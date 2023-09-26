@@ -4,7 +4,7 @@
 In this chapter we will discuss all the parts involved in model's performance
 evaluation, i.e. how to derived the predicted class from the model's
 output~(\Cref{sec:decoding}), various metrics~(\Cref{sec:metrics}),
-output's projections~(\Cref{sec:output-projections}) and adversarial attacks
+projections~(\Cref{sec:projections}) and adversarial attacks
 (\Cref{sec:adversarial-attacks}).
 
 \section{Decoding}
@@ -205,11 +205,36 @@ will be smaller which are the only ones multiply by non-zeros values, hence the
 numerator is smaller. The denominator always stays the same resulting in a lower
 value for hierarchical distance.
 
-\section{Output projections}
-\label{sec:output-projections}
+\section{Projections}
+\label{sec:projections}
+
+\subsection{Encodings projections}
+\label{subsec:encodings-projections}
+\begin{itemize}
+  \item introduce encodings projections
+  \item are important for description encodings
+  \item briefly explain UMAP
+  \item  We use UMAP because it scale better for large number of points so we
+    can reuse it in the next subsection
+\end{itemize}
+
+\subsection{Features projections}
+\label{subsec:features-projections}
+\begin{itemize}
+  \item Visual inspections of model's features vectors (the last layer before
+    output)
+  \item Clustering metrics as measure for internal structured representation
+\end{itemize}
+
+% TODO: first write code to obtain results, then write this section
 
 \section{Adversarial attacks}
 \label{sec:adversarial-attacks}
+\begin{itemize}
+  \item What are adversarial attacks
+  \item Somewhat detailed descriptions of 3 attacks
+\end{itemize}
+
 
 % TODO: How to get predicted class from model's output. Explain the difference
 % between argmax and align+argmax For one-hot encoding the two approaches are
