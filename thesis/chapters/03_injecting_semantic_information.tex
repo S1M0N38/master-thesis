@@ -1,0 +1,695 @@
+\chapter{Injecting semantic information}
+\label{ch:injecting-semantic-information}
+
+Our goal is to inject semantic information into image classification models
+without drastically disrupt a well-run system architecture which has proven
+itself over time. After dissect a model in its components, we identify which
+parts could be enhanced by the addition of extra information. In that way the
+presented technique can be applied to other model architectures in a
+straightforward manner.
+
+\section{Framework}
+\label{sec:framework}
+
+In order to have a common ground for the following sections, we first need to
+introduce a framework for model for image classification and define its building
+blocks. Referring to \Cref{fig:03/framework} here are the components.
+
+\begin{figure}[htbp]
+  \ctikzfig{03/framework}
+  \caption{Image classification framework}
+  \label{fig:03/framework}
+\end{figure}
+
+\paragraph{input} Let \gls{input} be an image represented as a real-valued
+tensor\footnote{The deep learning community use the term ``tensor'' as a
+synonym for ``multidimensional array'', it is not equipped with additional
+structure founded in physics or in mathematics. Throughout this thesis we use
+the deep learning jargon} of shape \gls{channel_size} $\times$ \gls{height_size}
+$\times$ \gls{width_size} where \gls{channel_size} is the number of channels,
+\gls{height_size} is the height and \gls{width_size} is the width. Its entries
+are the intensity value of colors associated to a RGB channels.
+
+\paragraph{output} Let \gls{output} denote the output of the model, that is the
+outcome of the application of \gls{model} on \gls{input}. This is
+\gls{output_size}-dimensional real-valued vector. We use the more specific term
+``model's predictions'' when \gls{output_size} is equal to the number of
+classes and the vector is a \acrlong{pmf} over classes.
+
+\paragraph{model} Let \gls{model} be a function that takes as input an image
+and return a vector, i.e.\
+\begin{equation}
+  \psi_\theta: \mathcal{X} \to \mathcal{Y}
+     : x \mapsto \hat{y} := \psi_\theta \left(x\right)
+  \label{eq:model}
+\end{equation}
+where \gls{input_set} $\subseteq \mathbb{R}^{C \times H \times W}$ is the set of
+images and \gls{output_set} $\subseteq \mathbb{R}^{D}$ is the set of model's
+output. At the higher level of abstraction a deep learning model can be seen as
+a deterministic function of several real variables that output a real-valued
+vector. Internally it is a composition of functions like matrix multiplications,
+convolutions, non-linearities, etc. regulated by parameters $\theta$. Sometimes
+the term ``architecture'' is used as synonym of ``model''.
+
+\paragraph{parameters} Using \gls{parameters} as subscript of \gls{model}
+reminds that the functions that constitute the model are parametrized by a set
+of real number. These parameters are initially randomly initialized and then
+adjusted during the training phase steering the model in such a way to solve
+the given task.
+
+\paragraph{class} We use interchangeably the terms ``class'' and ``label'' to
+referring to the text associated to a given image. In the context of single
+label image classification the class \gls{class} is word which is an element of
+\gls{classes_set}, the set of possible classes.
+
+\paragraph{encodings} Let \gls{encoding} denote a numerical representation of
+the class. It is a \gls{output_size}-dimensional real-valued vector. The term
+encoding must not be confused with the term embedding which can be regarded as
+a specific type of encoding. An example of encoding is the one-hot encoding.
+
+\paragraph{encoder} Let \gls{encoder} be a function that takes as input a class
+\gls{class} and return its encoding \gls{encoding}, i.e.\
+\begin{equation}
+  \phi: \mathcal{C} \to \mathcal{Y} : c \mapsto y := \phi \left(x\right).
+  \label{eq:encoder}
+\end{equation}
+Usually the conversion from class text to numerical representation is not
+explicitly included in the descriptions of deep learning models. However, here
+we devote some attention to this aspect because it will be crucial in the
+following as place to inject semantic information. Moreover, it must not be
+confuse with the ``encoder block'' that can be found in some \acrshort{lm}
+architectures.
+
+\paragraph{loss} The loss or cost function, denote as \gls{loss}, is a function
+that takes as input the output of the model and the encoding of the
+corresponding class and return a scalar,
+\begin{equation}
+  \Loss: \mathcal{Y} \times \mathcal{Y} \to \mathbb{R}
+       : \left(\hat{y}, y\right) \mapsto \Loss \left(\hat{y}, y\right).
+  \label{eq:loss}
+\end{equation}
+It is a measure of how much the models' output and encodings differ, so lower
+is its value better is the model's performance. Depending on the task and the
+encoding different functional from can be used. An example of loss function is
+the cross-entropy loss.
+
+\medskip Assembling these components we obtain an end to end trainable model
+for image classification. At first model's output carry no information about
+classification for the input image. During training many images and their
+corresponding labels are fed into the system so that the parameters
+\gls{parameters} are tuned in such a way that the model's outputs become more
+and more similar to the encodings of the corresponding class, hence the
+emergence of classification capabilities. % TODO: explain a bit better
+optimization Taking advantage of \acrshort{gpu}s, the calculation can be
+parallelize along the batch dimension $B$, i.e.\ multiple images are
+concurrently pass as input to the model so, at the implementation level,
+\gls{input} will be a tensor \gls{batch_size} $\times$ \gls{channel_size}
+$\times$ \gls{height_size} $\times$ \gls{width_size} and consequently the
+output and the encoding will be tensors $B \times D$. \gls{model},
+\gls{encoder} and \gls{loss} must be extended accordingly.
+
+
+\section{Toy Dataset}
+\label{sec:toy-dataset}
+
+It is easier to explain and to understand hierarchical concepts with concrete
+example. So here we introduce a minimalistic example based on toy dataset that
+will come handy in the following. The classes are $\mathcal{C} = [\
+\texttt{lemon},\ \texttt{pear},\ \texttt{apple},\ \texttt{dog},\ \texttt{cat},\
+\texttt{car}\ ]$ and are arranged is a list-like structure so an index can be
+associated to each class, i.e.\ $c_i \to i$. For example, using a zero-based
+indexing, we have $\texttt{lemon} \to 0,\ \texttt{pear} \to 1,\ \ldots$. Theirs
+hierarchical relationships are given by the tree in~\Cref{fig:03/toy-dataset}. At
+the first level of the hierarchy we have the following partition:
+\texttt{Lemon}, \texttt{pear} and \texttt{apple} are fruits, \texttt{dog} and
+\texttt{cat} are animals while \texttt{car} is a vehicle. At the second level we
+have separation between Natural and Artificial objects. The root node include all
+the classes. The number of levels in this hierarchy is
+\gls{hierarchy_levels}$\,=4$. Moreover suppose that this dataset contains 10
+samples per class for a total of $N = 60$ samples.
+\begin{figure}[htbp]
+  \ctikzfig{03/toy-dataset}
+  \caption{Toy dataset hierarchical tree}
+  \label{fig:03/toy-dataset}
+\end{figure}
+
+\section{Encodings}
+\label{sec:encodings}
+
+Encodings are deterministic function that does not change during training, so
+we can compute the encoding for each label of each image in the dataset before
+training. So starting from a dataset $\mathcal{D} = \{ \left(x, c\right)_i
+\}_{i = 1, \ldots, N}$ of \gls{dataset_size} images and their corresponding
+classes, we obtain $\mathcal{D}' = \{ \left(x, y\right)_i \}_{i = 1, \ldots,
+N}$, a set of images and their corresponding encodings. Detaching the encoding
+procedure from training not only reduce the computational cost but also allow to
+inspect the encoding before training.
+%TODO: add reference to future section about encoding projection and evaluation
+
+
+\subsection{One-hot Encoding}
+\label{subsec:one-hot-encoding}
+
+The one-hot encoding is a simple encoding that is usually coupled with the
+cross-entropy loss function (see later~\cref{subsec:cross-entropy-loss}). We
+consider this binomial our baseline and the following encoding-losses pairs are
+develop in order to improve on various aspects while keeping comparable
+performances. The encoder function \gls{encoder} that produce one-hot encoding
+is
+\begin{equation}
+  \phi: \mathcal{C} \to \{0, \,1\}^{D}
+      : c_i \mapsto y_i \equiv \phi \left(c_i\right)
+  \quad \text{where} \quad
+  \phi{\left(c_i\right)}_j = \gls{kronecker_delta}_{ij}.
+  \label{eq:one-hot-encoding}
+\end{equation}
+Referring to the toy dataset we have that one-hot encoding for \texttt{apple} is
+$\left[0, 0, 1, 0, 0, 0\right]$. The resulting encodings will be sparse
+orthogonal binary vectors. Theirs orthogonality translates into a well-separated
+encoding space facilitating model training. Moreover, if it used in conjunction
+with the cross-entropy loss, neat optimization tricks can be employed. Speed,
+simplicity and effectiveness are the ingredients of its success.
+
+The elephant in the room is that one-hot encoding discard all hierarchical
+information accounting only for level zero of the hierarchy tree
+(\Cref{fig:03/toy-dataset}). This means that encoding-wise \texttt{lemon} and
+\texttt{pear} are as similar as \texttt{lemon} and \texttt{car} even though the
+former have the same ancestor in the tree while the latter do not share any node
+beside the root.
+
+\paragraph{cosine similarity} The notion of encoding similarity employed
+throughout this document is the \emph{cosine similarity}. Given two encoding
+$y_1$ and $y_2$, the cosine similarity (or simply their similarity) is defined
+as
+\begin{equation}
+  \gls{cosine_similarity}: \mathcal{Y} \times \mathcal{Y} \to \left[-1, +1\right]
+  : (y_1, y_2) \mapsto \gls{cosine_similarity} \,(y_1, y_2) :=
+  \frac{y_1 \cdot y_2}{\|y_1\| \, \|y_2\|}
+  \label{eq:cosine-simiarity}
+\end{equation}
+where \gls{dot_product} is the dot product and \gls{l2_norm} is the $L^2$ norm.
+If $y_1$ and $y_2$ have already been normalized, i.e.\ $\|y_1\| = \|y_2\| = 1$,
+then the cosine similarity reduce the dot product and it is proportional to
+Euclidean distance. Every one-hot encoding has cosine similarity equal to zero
+with other encodings except for itself (which has it equal to one).
+
+
+\subsection{Hierarchical Encodings}
+\label{subsec:hierarchical-encodings}
+
+We use the term \emph{hierarchical encodings} to designate all the encodings
+that make use of semantic information coming from an hierarchy. As mentioned
+in~\cref{par:hierarchies-tree}, a hierarchy can be represented as a tree data
+structure, an example of which is given by the toy dataset
+in~\Cref{fig:03/toy-dataset}. Tree's leaves are the classes while the ancestors
+at various depth pack broader and broader concepts.
+
+First we need to choose a \emph{metric on the tree} so we can calculate
+pairwise distances between classes and organize results in a $|\mathcal{C}|
+\times |\mathcal{C}|$ matrix. After apply a series of \emph{operations on the
+rows} of this matrix we can directly read out encodings. Different hierarchical
+encodings boils down to different choices of metric and operations.
+
+\paragraph{Lower Common Ancestor}
+The height of \acrfull{lca} can be used as a measure of distance between two
+class on the hierarchy tree. The \acrshort{lca} of $c_i$ and $c_j$ is the node
+that is the closest common ancestor of both $c_i$ and $c_j$, i.e.\
+\begin{equation}
+  \gls{lca_fn} : \mathcal{C} \times \mathcal{C} \to \mathcal{V}:
+  \left(c_i, c_j\right) \mapsto v_{ij} \equiv
+  \gls{lca_fn} \, \left(c_i, c_j\right)
+  \label{eq:lca}
+\end{equation}
+where \gls{vertices_set} is the set of vertices of the tree. The height of a
+node is equal to its hierarchy level. So the height of the \acrshort{lca} is
+\begin{equation}
+  \gls{height_fn} \circ \gls{lca_fn} : \left(c_i, c_j\right) \mapsto h_{ij}
+  \label{eq:lca-height}
+\end{equation}
+From \acrshort{lca} heights it can be derived a similarity measure between
+classes, that is $s_{ij} := 1 - \sfrac{h_{ij}}{L}$. Referring to the toy
+dataset, we have the pairwise lca heights~(\Cref{fig:03/lca-height-matrix}) and
+lca similarities~(\Cref{fig:03/lca-similarity-matrix}).
+\begin{figure}[htbp]
+  \begin{subfigure}{0.45\textwidth}
+    \ctikzfig{03/lca-heights}
+    \caption{LCA height matrix: $h_{ij}$}
+    \label{fig:03/lca-height-matrix}
+  \end{subfigure}
+  \begin{subfigure}{0.45\textwidth}
+    \ctikzfig{03/lca-similarities}
+    \caption{LCA similarity matrix: $s_{ij}$}
+    \label{fig:03/lca-similarity-matrix}
+  \end{subfigure}
+  \caption{Matrix derived from \acrlong{lca}}
+\end{figure}
+
+\paragraph{Bertinetto et al.~\cite{MakingBetterMBertin2019}}\label{par:encoding-mbm}
+To produce the encoding, the authors apply a softmax function row-wise to a
+negative rescaling of the lca heights matrix, that is hi
+\begin{equation}
+  f : h_i \mapsto y_i \equiv f(h_i)
+  \quad \textrm{where} \quad
+  f (h_i)_j := \frac{\exp \left({-\alpha \, h_{ij}}\right)}
+  {\sum_j \exp\left({-\alpha \, h_{ij}}\right)}
+  \label{eq:mbm-hierarchical-encoding}
+\end{equation}
+They used cross-entropy as loss function so the encoding must be a
+\acrshort{pmf} over classes. Moreover they introduce an hyper-parameter $\alpha
+\in [0, +\infty)$ that peaks the distribution around the index corresponding to
+the encoded class. So, for small value of $\alpha$ the resulting encoding will
+be a flat \acrshort{pmf}, while for bigger values it approaches one-hot
+encoding.
+
+\paragraph{Perotti et al.~\cite{BeyondOneHotPerott2023}}\label{par:encoding-b3p}
+It's a similar
+approach to the previous one but it differs in the normalization function and
+in the role played by the hyper-parameter:
+\begin{equation}
+  f :  s_i \mapsto y_i \equiv f(s_i)
+  \quad \textrm{where} \quad
+  f (s_i)_j := \beta \, \delta_{ij} +
+  \left(1 - \beta \right) \, \frac{\max \left(s_{ij},\,0\right)}
+  {\sum_j \max \left(s_{ij},\,0\right)}.
+  \label{eq:b3p-hierarchical-encoding}
+\end{equation}
+They started from \acrshort{lca} similarities matrix, then clip at zeros and
+normalize row-wise. Finally a certain amount of one-hot encoding is added by
+weighting terms with $\beta \in [0, 1]$. For $\beta = 1$ we get back to one-hot
+encoding.
+
+\paragraph{Barz and Denzler~\cite{HierarchyBasedBarz2018}}\label{par:encoding-bd}
+This approach is
+different from the previous two. Instead of operating directly on the lca
+matrix, they propose an algorithm to calculate encodings $\phi(c_i)$ such that
+\begin{equation}
+  \forall \, c_i, c_j \in \mathcal{C} \qquad
+  \phi(c_i) \cdot \phi(c_j) = s_{ij}.
+  \label{eq:bd-hierarchical-encoding}
+\end{equation}
+It starts by choosing a normalized encodings $\phi(c_0)$ and then recursively
+solve systems of linear equations to calculate the other encodings.
+Applied on the toy dataset, Barz and Denzler encodings are calculate in the
+following way:
+\begin{equation*}
+  \phi{\left(c_0\right)} := \left[1, 0, 0, 0, 0, 0\right]
+  \quad \rightarrow \quad
+  \begin{cases}
+    \phi{\left(c_0\right)} \cdot \phi{\left(c_1\right)} = \sfrac{2}{3} \\
+    \phi{\left(c_1\right)} \cdot \phi{\left(c_1\right)} = 1 \\
+    \Rightarrow  \phi{\left(c_1\right)}
+  \end{cases}
+  \quad \rightarrow \quad
+  \begin{cases}
+    \phi{\left(c_0\right)} \cdot \phi{\left(c_2\right)} = \sfrac{2}{3} \\
+    \phi{\left(c_1\right)} \cdot \phi{\left(c_2\right)} = \sfrac{2}{3} \\
+    \phi{\left(c_2\right)} \cdot \phi{\left(c_2\right)} = 1 \\
+    \Rightarrow \phi{\left(c_2\right)}
+  \end{cases}
+  \quad \rightarrow \quad \ldots
+\end{equation*}
+
+\subsection{Word Encodings}
+\label{subsec:word-encoding}
+
+For many datasets don't exist nor can be easily created hierarchies. However it
+is really common that the classes are words or short sentences. That is the
+information that \emph{word encodings} try to exploit. Even without the explicit
+hierarchy provided in the toy dataset, every English speaker intuitively knows
+that \texttt{lemon} and \texttt{pear} are more similar than \texttt{lemon} and
+\texttt{car}. However, it is not clear what similar means in this context: is
+\texttt{lemon} more similar to \texttt{pear} than to \texttt{apple}? To pin
+point such measure we resort to \emph{word embeddings}, i.e.\ latent words
+representations of pre-trained \acrshort{lm}. These are real-valued
+$\gls{output_size}$-dimensional vectors on which we can applied the previously
+defined notion of cosine similarity.
+\begin{equation}
+  g : \gls{classes_set} \to \mathbb{R}^{\gls{output_size}} :
+  c \mapsto y \equiv g(c)
+  \label{eq:word-encoding}
+\end{equation}
+where the $g$ is the embedding function of the pre-trained \acrshort{lm}. In
+this case the output of $g$, i.e.\ the embedding, is what we define as a word
+encoding. However if the following ``embeddings'' and ``encodings'' are not
+synonym but the latter is derived from the former.
+
+Many of the works mentioned in the~\Cref{subsec:embeddings} relate to
+\acrshort{zsl} and train a word embedder alongside the image classifier. Perotti
+et al.~\cite{BeyondOneHotPerott2023} use GloVe~\cite{GloveGlobalVPennin2014} and
+as a pre-trained word embedder looking for model performance improvements
+regarding ``quality and quantity'' of errors. The pre-trained GloVe model can be
+though as a big dense matrix where each row correspond to a word in the training
+dictionary. Then they read out the corresponding rows and finally calculate
+pairwise cosine similarity obtaining $s_{ij}$. From $s_{ij}$, they again
+use~\Cref{eq:b3p-hierarchical-encoding} to get the encoding.
+
+However, upon closer examination, words embeddings approach has two obvious
+flaws. What if the dataset classes' words that are not in the GloVe vocabulary?
+Is \texttt{apple} the fruit or the company? The first problem can sometimes be
+patch by the use of a synonym available in the GloVe dictionary. Other times,
+the words are so specific (e.g. scientific names in iNaturalist) that makes no
+sense substitute with similar words. In the worst case a new embedder $g$ can be
+trained from scratch making sure that the training text corpora contain the
+relevant words. The second problem is far more rooted in the word embeddings
+themselves. Same word can have different meanings (homographs) and the single
+vector return by GloVe-like model does not make any distinction. They only way
+to overcome this issue is to provided more context about the embedded word,
+hence description encodings.
+
+\subsection{Description Encodings}
+\label{subsec:description-encodings}
+
+Description encodings improve over word encodings overcoming out-of-vocabulary
+and homographs problems. While the former could be solved by using a different
+embedder architecture (see later) the latter can only be solve by providing
+additional context instead of a single bare word. The idea is to embed a
+description of the class which contains distinctive characteristics that can be
+use to differentiate it from other classes in the dataset. Still same ideas
+hold: similar classes have similar descriptions which results in similar
+encodings. So a generic pipeline would be:
+\begin{enumerate}
+  \item From the \emph{word} produce the \emph{description}
+  \item From a \emph{description} generate the \emph{embedding}
+  \item From the \emph{embedding} generate the \emph{encodings}
+\end{enumerate}
+
+% From the word produce the description
+If the classes in the dataset are words there are three possible way to produce
+their corresponding description: (1) write it by hand assisted by an human
+expert if needed, (2) scrape it from the Web or (3) generate with a
+\acrshort{lm}. With the first option really high quality individual descriptions
+could be produce but it is not fast and nor scalable. Sometimes humans field
+expert are required making the cost of dataset descriptions enrichment not
+negligible. For example iNaturalist19 have 1010 classes with scientific name as
+words. The second option is faster, scalable but not but it falls short when
+class name are not standard and ambiguous reviving the homographs problem. For
+example this approach could be good for iNaturalist where each classes have a
+lengthy and accurate description on Wikipedia but not for ImageNet and CIFAR100.
+Making use of trendy generative \acrshort{lm} for writing descriptions it's the
+more versatile approach: it is fast, scalable and tunable with prompt
+engineering. Of course different options make sense for different datasets and
+can be applied iteratively and mix (e.g. human expert audit of generated/scraped
+descriptions, handwritten/scraped descriptions used for in-context learning,
+etc.). Description writing can be thought as function from classes' set
+\gls{classes_set} to \gls{descriptions_set} descriptions' set:
+\begin{equation}
+  w : \mathcal{C} \to \mathcal{W}:
+  c \mapsto w_c \equiv w(c)
+  \label{eq:desc-writing}
+\end{equation}
+In~\Cref{fig:descriptions} are shown some example descriptions for the toy
+dataset.
+
+\begin{figure}[htbp]
+  \begin{minipage}{\textwidth}
+    \begin{itemize}
+      \item \texttt{lemon}: \emph{\small``Lemons are \alert{oval-shaped} fruits
+        known for their \alert{bright yellow} color and acidic juice.''}
+      \item \texttt{pear}: \emph{\small``Pears are fruits a with \alert{rounded
+        bottom} and a narrower, \alert{elongated top}.''}
+      \item \texttt{apple}: \emph{\small``Apples are \alert{round} fruits that
+        come in a variety of colors, including \alert{red}, \alert{green}, and
+        \alert{yellow}.''}
+    \end{itemize}
+    \caption{Example of descriptions for the toy dataset}
+    \label{fig:descriptions}
+  \end{minipage}
+\end{figure}
+
+% From a description generate the embedding
+Once we have the descriptions we have to turn into real-valued vectors where the
+notion of similarity is well-defined. To do so we need embedders that are able
+to process sentences as inputs and spit out a vector representations such that
+descriptions that we intuitively assess as similar are mapped in
+mathematically-similar vectors. These embedders are the successors of GloVe-like
+ones and do not rely on a fix English words vocabulary so the out-of-vocabulary
+issue does not arose. The vocabulary of these embedders it made of tokens, i.e.\
+high frequency recurring sequence of characters (a little bit like syllables),
+so that the description can be decomposed in a sequence of tokens (tokenization
+process). Similar to~\Cref{eq:word-encoding}
+\begin{equation}
+  g : \mathcal{W} \to \mathbb{R}^{\tilde{D}} :
+  w_c \mapsto e_c \equiv g(w_c)
+  \label{eq:desc-embedding}
+\end{equation}
+where \gls{embedding_size} is the size the embedding.\\
+
+% From an embedding generate the encodings
+Embedding models employed in \Cref{eq:desc-embedding} are really powerful idea
+that is not limit to \acrshort{nlp} but are used in image and audio as well.
+They can be regarded as machineries capable of lossy compression of information
+into a fix size real valued vector. Due to their versatility their output size
+$\tilde{D}$ can be in the order of thousands but it reasonable to think that
+classes' descriptions coming from a dataset lays on a low dimensional
+manifold.\footnote{The low-dimensional manifold hypothesis was empirically
+  verified in the experiments in~\Cref{ch:experimental-setup} by varying the
+  output dimension $D$: reducing from $D'$ to $D$ does not affect the model
+  performance (on contrary performances improved because of the reduction of the
+number of parameters).} In order to zoom on the ``relevant'' subspace we project
+the embedding into a lower dimensional space using a dimensionality reduction
+algorithm $r$:
+\begin{equation}
+  r : \mathbb{R}^{\tilde{D}} \to \mathbb{R}^{D} :
+  e_c \mapsto y \equiv r(e_c)
+  \label{eq:embedding-projection}
+\end{equation}
+The outcome of this projection is what we call \emph{description
+encodings}.\\
+
+% Using function composition
+Using functions composition description encodings can be written as
+\begin{equation}
+  \phi := r \circ g \circ w : \mathcal{C} \to \mathbb{R}^{D} :
+  c \mapsto y \equiv \phi(c)
+  \label{eq:desc-encoding}
+\end{equation}
+Following this recipe diverse description encodings differ from the choice of
+$w$, $g$, $r$  functions and the hyper-parameter $D$.
+
+\paragraph{PCA Description Encoding}\label{par:encoding-desc} As representative
+of the description encodings family we choose to generate and embed descriptions
+using pretrained \acrshort{lm} and project them with \acrfull{pca} algorithm. A
+really simple prompt was used as input to OpenAI \emph{gpt-3.5-turbo}:
+
+\vspace{10pt}
+
+\begin{minipage}{0.9\linewidth}
+\texttt{\small
+You are an helpful assistant that have to provide the description of a
+'\textcolor{gray}{\texttt{class}}'\\
+- What a '\textcolor{gray}{\texttt{class}}' is.\\
+- What a '\textcolor{gray}{\texttt{class}}' look like (for example color,
+texture, shape, ...).\\
+- In what context '\textcolor{gray}{\texttt{class}}' is used or it can be
+found.\\
+Focus of visual characteristics of a '\textcolor{gray}{\texttt{class}}'.\\
+Write 7 short sentences to describe a '\textcolor{gray}{\texttt{class}}' in
+encyclopedic style.
+}
+\end{minipage}
+
+\vspace{10pt}
+
+Then each description is embedded using OpenAI \emph{text-embedding-ada-002}
+model obtaining a 1536-dimensional embedding for each class. At the end
+embeddings are pass through \acrshort{pca} projecting to a $D$-dimensional
+vectors which are indeed the encoding. Different encoding where produce with
+different value for $D$. Using the previously introduce notation
+\begin{equation}
+  \phi := \textrm{PCA} \circ \textrm{text-embedding-ada-002} \circ
+  \textrm{gpt-3.5-turbo}
+  \label{eq:desc-pca}
+\end{equation}
+
+
+% TODO: Add more on the prompt and what we really try to teach to the model.
+% TODO: Make sure that gls are out side of equations.
+% TODO: Explain the different notation in $c$ and $c_i$.
+% TODO: Change notation for Dataset (\mathcal{D} is used for descriptions' set)
+
+\section{Loss Functions}
+\label{sec:losses}
+
+As mentioned in~\Cref{subsec:hierarchies} using custom loss function is another
+viable path to inject semantic information at training time. However in this
+work we do not explore this avenue, limiting to the use of standard losses due
+to the following compelling reason. In some cases it can be shown that when
+combining standard loss functions with custom encoding is equivalent to use
+custom loss functions applied on one-hot encoding. We think that standard-loss /
+custom-encoding approach, when possible, is preferable because it move some
+computational cost in the pre-training phase (embedding are computed before the
+training)and make it possible to use the well-implemented and highly
+optimization loss functions available in deep learning libraries.
+
+The loss function that use coupled with custom embedding are \emph{cross
+entropy} and \emph{cosine distance}.
+
+\subsection{Cross entropy Loss}
+\label{subsec:cross-entropy-loss}
+
+\acrfull{xe} is widely employed in classification problems. It can be derive
+from the principle of maximum likelihood estimation showing that maximizing the
+likelihood is equivalent to cross-entropy minimization. Its mathematical
+foundation, its simplicity and its effectiveness in the practice make it the de
+facto standard loss function for classification tasks.
+
+Given the two probability vector $p$ and $q$  which components come from
+probability distributions over the same underlying set of events $\mathcal{C}$,
+the cross entropy is defined as:
+\begin{equation}
+  \textrm{XE} \, (p, q) := - q \cdot \log p
+  \label{eq:cross-entropy}
+  \qquad \textrm{where} \qquad
+  \begin{cases}
+    p := \psi_\theta(x) \\
+    q := \phi(c)
+  \end{cases}
+\end{equation}
+
+\paragraph{Cross entropy with one-hot encoding} When computing cross entropy
+between model output and its corresponding one-hot encoded class, the expression
+further simplify into
+\begin{equation*}
+  \textrm{XE} \, (\psi(c_i),\phi_\theta(x))
+  = - \phi(c_i) \cdot \log \psi_\theta(x)
+  = \sum_{j = 1}^D \delta_{ij} \, \log \psi_\theta(x)_j
+  = - \log \psi_\theta(x)_i
+  \label{eq:cross-entropy-one-hot-encoding}
+\end{equation*}
+so only one component from the model output vector is directly involved in the
+model optimization: the one corresponding to the corresponding encoded class is
+maximize.~\footnote{Moreover some optimization tricks can pulled out which avoid
+  overflow and underflow problem when computing the exponential followed by the
+logarithm. Gradient calculation benefit as well.}
+% TODO: further explore this tricks https://www.youtube.com/watch?v=p-6wUOXaVqs
+Starting from an untrained model, we ask it to classify an image containing an
+apple coming from the toy dataset obtaining a probability vector with random
+entries as model's output~(\Cref{fig:03/xe-onehot-before}). Training that make
+use of cross-entropy loss try to modify the model's parameters $\theta$ in such
+a way that the probability distribution of output's entries resemble the
+distribution of the components of the corresponding encoding; a \emph{one} with
+$|\mathcal{C}| - 1$ \emph{zeros} in the case of one-hot
+encoding~(\Cref{fig:03/xe-onehot-after}).
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    % TODO: optimize the plot for thesis
+    \begin{minipage}{\textwidth}
+      \resizebox{\linewidth}{!}{\input{figures/03/xe-onehot-before.pgf}}
+    \end{minipage}
+    \caption{Before training}
+    \label{fig:03/xe-onehot-before}
+  \end{subfigure}
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    % TODO: optimize the plot for thesis
+    \begin{minipage}{\textwidth}
+      \resizebox{\linewidth}{!}{\input{figures/03/xe-onehot-after.pgf}}
+    \end{minipage}
+    \caption{After training}
+    \label{fig:03/xe-onehot-after}
+  \end{subfigure}
+  \caption{What cross entropy with one-hot encoding optimize for}
+\end{figure}
+
+While cross entropy pull up the probability of the correct class, the presence
+of normalization in the softmax function push down the probability related the
+other classes. This all or nothing, black and white, approach is the limit of
+ordinary classification models that do not exploit relationships between
+classes.
+
+In the following this binomial (cross-entropy with one-hot encoding) will be
+consider the \emph{baseline} against which the other encoding-loss pairs will be
+compared.
+
+\paragraph{Cross entropy with hierarchical encoding} Cross entropy and be also
+use as a loss functions in the case of hierarchical. Bertinetto et
+al.~(\ref{par:encoding-mbm}) and Perotti et al.~(\ref{par:encoding-b3p}) indeed
+utilize standard cross entropy loss with their respective hierarchical encoding
+implementation. In this case, the expression for the cross entropy loss cannot
+be simplified as in~\Cref{eq:cross-entropy-one-hot-encoding} and all the
+components of the encoding play a role in the model optimization. Not only
+should a predominant class emerge during training, but the other ones should
+have their corresponding predicted probability not zero. The more a class is
+similar to the ground truth class, the higher its predicted probability should
+be.
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    % TODO: optimize the plot for thesis
+    \begin{minipage}{\textwidth}
+      \resizebox{\linewidth}{!}{\input{figures/03/xe-hier-before.pgf}}
+    \end{minipage}
+    \caption{Before training}
+    \label{fig:03/xe-hier-before}
+  \end{subfigure}
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    % TODO: optimize the plot for thesis
+    \begin{minipage}{\textwidth}
+      \resizebox{\linewidth}{!}{\input{figures/03/xe-hier-after.pgf}}
+    \end{minipage}
+    \caption{After training}
+    \label{fig:03/xe-hier-after}
+  \end{subfigure}
+  \caption{What cross entropy with hierarchical encoding optimize for}
+\end{figure}
+
+\subsection{Cosine distance Loss}
+\label{subsec:cosine-distance-loss}
+
+A different beasts are models that do not produce probability distribution as
+their output and instead return a ``vector representation of their answer''. To
+get the predicted class, the output vector is the compared to the classes'
+encodings and select the one with the highest similarity. The class related to
+the most similar is the predicted class (see later in~\Cref{sec:decoding}).
+
+In this case we try to act on the model's parameters in such a way that the
+output vector of a specific image get closer and closer to the encoding vector
+of the corresponding class. To do so we need a loss function that account for
+such similarity maximization (or dissimilarity minimization). Starting from
+cosine distance~\eqref{eq:cosine-simiarity} we define the \acrfull{cd} as
+\begin{equation}
+  \textrm{CD} \, (p, q) := 1 - \cos (p, q)
+  \label{eq:cosine-distance}
+  \quad \textrm{where} \quad
+  \begin{cases}
+    p := \psi_\theta(x) \\
+    q := \phi(c)
+  \end{cases}
+\end{equation}
+
+\paragraph{Cosine distance with descriptions encoding} Barz and
+Denzler~(\ref{par:encoding-bd}) use cosine distance as loss function
+in~\cite{HierarchyBasedBarz2018} which proved to be particularly effective with
+small datasets~\cite{DeepLearningOBarz2019}. In their work they experiment with
+custom architectures with multiple output heads. One use cosine distance to
+align the head's output to their custom encoding while the latter use standard
+cross entropy loss with one-hot encoding. The total loss function is just the
+sum of the two. We avoid messing up with custom architectures so the
+effectiveness of Barz and Denzler encoding can be directly compare with PCA
+Description Encoding~(\ref{par:encoding-desc}).
+
+\paragraph{Cosine distance with descriptions encoding} Suppose that we have
+generate descriptions of classes alike in~\Cref{fig:descriptions}, then
+following the procedure describe in~\Cref{par:encoding-desc} we get the
+description encodings. To visually understand how cosine distance loss optimize
+model we further project the description encodings and model's output  into a
+2-dimensional vector (see later~\Cref{subsec:encodings-projections}).
+Optimization with cosine distance boils down to minimize the angle between
+output vector and the encoding vector of the corresponding class.
+\begin{figure}[htbp]
+  \begin{subfigure}{0.45\textwidth}
+    \ctikzfig{03/cd-desc-before}
+    \caption{Before training}
+    \label{fig:03/cd-desc-before}
+  \end{subfigure}
+  \begin{subfigure}{0.45\textwidth}
+    \ctikzfig{03/cd-desc-after}
+    \caption{After training}
+    \label{fig:03/cd-desc-after}
+  \end{subfigure}
+  \caption{What cosine distance with description encodings optimize for}
+\end{figure}
