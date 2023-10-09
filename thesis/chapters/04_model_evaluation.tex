@@ -2,7 +2,7 @@
 \label{ch:model-evaluation}
 
 In this chapter we will discuss all the parts involved in model's performance
-evaluation, i.e. how to derived the predicted class from the model's
+evaluation, i.e.\ how to derived the predicted class from the model's
 output~(\Cref{sec:decoding}), various metrics~(\Cref{sec:metrics}),
 projections~(\Cref{sec:projections}) and adversarial attacks
 (\Cref{sec:adversarial-attacks}).
@@ -27,14 +27,14 @@ encoding function $\phi$, that is
   \label{eq:decoding}
 \end{equation}
 hence the name \emph{decoding}. For one-hot encoding $\phi^{-1} := \argmax$,
-i.e. a function that returns the index of the maximum value of the vector given
+i.e.\ a function that returns the index of the maximum value of the vector given
 as input. In contrast others encodings make use of multiple components in
 model's output during training so blindly taking the $\argmax$ throws away
 potentially useful information. Still both loss functions employed try to make
 the model's output similar to the ground truth encoding so it is reasonable to
 consider the predicted class to be the one corresponding to the encoding most
 similar to the model's output. To this end, we choose cosine similarity as
-measure for such quantity, i.e.
+measure for such quantity, i.e.\
 \begin{equation}
   \phi^{-1}(\hat{y}) := \argmax_{c \in \mathcal{C}}
   \left( \gls{cosine_similarity} \left(\hat{y}, \phi(c) \right) \right)
@@ -102,7 +102,7 @@ performance metrics that enable this quantitative/qualitative errors assessment.
 \label{par:metrics-levels}
 Having access to datasets equipped with a hierarchy introduce a new dimension to
 evaluate models across: theirs performance at different levels of the hierarchy.
-With reference to toy dataset in~\Cref{fig:2_toy-dataset}, suppose we are
+With reference to toy dataset in~\Cref{fig:03/toy-dataset}, suppose we are
 interested in a coarser grained classification which distinguish between Fruits,
 Animals and Vehicles (level 1). In this case, after applying the decoding to
 \gls{output} to get \gls{predicted_class}, we need to map the predicted class to
@@ -129,25 +129,25 @@ ground-truth classes \gls{class} and columns predicted classes
 \gls{predicted_class}. It's entries $m_{ij}$ count the number of times a model
 produce the pair $(c_i, \hat{c}_j)$ when evaluated on a dataset. For example a
 model applied on the example dataset can produce the confusion matrices at
-different hierarchical level as in~\Cref{fig:5_confusion-matrices}
+different hierarchical level as in~\Cref{fig:04/confusion-matrices}
 \begin{figure}[htbp]
   \centering
   \begin{subfigure}{0.35\textwidth}
-    \ctikzfig{5_confusion-matrix-level-0}
+    \ctikzfig{04/confusion-matrix-level-0}
   \end{subfigure}
   \begin{subfigure}{0.30\textwidth}
-    \ctikzfig{6_confusion-matrix-level-1}
+    \ctikzfig{04/confusion-matrix-level-1}
   \end{subfigure}
   \begin{subfigure}{0.25\textwidth}
-    \ctikzfig{7_confusion-matrix-level-2}
+    \ctikzfig{04/confusion-matrix-level-2}
   \end{subfigure}
   \caption{Example of confusion matrix: $m_{ij}^l$}
-  \label{fig:5_confusion-matrices}
+  \label{fig:04/confusion-matrices}
 \end{figure}
 \medskip
 
 Using confusion matrix the error rate at l-th level is sum of the elements
-off-diagonal divided by the sum of all elements, i.e.
+off-diagonal divided by the sum of all elements, i.e.\
 \begin{equation}
   \textrm{error rate} :=
   \sum_{i \ne j} m_{ij}^l \bigg/ \sum_{i, \,j} m_{ij}^l.
@@ -158,9 +158,9 @@ off-diagonal divided by the sum of all elements, i.e.
 \subsection{Hierarchical Distance Mistake}
 \label{subsec:hierarchical-distance-mistake}
 \emph{Hierarchical distance mistake} is a metric that take into account the
-hierarchy to quantify the severity of a mistake, i.e. make use of the
+hierarchy to quantify the severity of a mistake, i.e.\ make use of the
 \acrshort{lca} height $h_{ij}$ as weighting factor
-(example~\Cref{fig:lca-height-matrix}). The Hierarchical distance mistake is
+(example~\Cref{fig:03/lca-height-matrix}). The Hierarchical distance mistake is
 define to be
 \begin{equation}
   \textrm{hier.\ dist.\ mistake} :=
@@ -170,7 +170,7 @@ define to be
 So it is the average \acrshort{lca} height between predicted and ground-truth
 classes. Note that $h_{ii}$ are all zeros so we are effectively summing only
 weighted errors in the numerator while the denominator is the total number of
-errors. Due to his definition it's not related to error rate, i.e. it's possible
+errors. Due to his definition it's not related to error rate, i.e.\ it's possible
 to have a low error rate (few errors) but a high hierarchical distance mistake
 (those errors are severe).
 
@@ -184,9 +184,9 @@ one in the bottom left corner. Moreover we can draw this plot for different
 level in the hierarchy highlighting the fact that milder errors in a lower
 levels usually results in less errors in higher ones.
 \begin{figure}[htbp]
-  \ctikzfig{8_error-rate-hier-dist-mistake}
+  \ctikzfig{04/error-rate-hier-dist-mistake}
   \caption{Quadrants in error rate vs hier.\ dist.\ mistake plot}
-  \label{fig:error-rate-hier-dist-mistake}
+  \label{fig:04/error-rate-hier-dist-mistake}
 \end{figure}
 
 \subsection{Hierarchical Distance}
@@ -194,7 +194,7 @@ levels usually results in less errors in higher ones.
 \emph{Hierarchical distance} is somewhat hybrid: it account for both quality and
 quantity of error. It's definition it's almost identical to hierarchical
 distance mistake but instead of divining by the number of errors we divide by
-the total number of sample in the dataset, i.e.
+the total number of sample in the dataset, i.e.\
 \begin{equation}
   \textrm{hier.\ dist.\ } :=
   \sum_{i, \, j} m_{ij}^l \, h_{ij}^l \bigg/ \sum_{i, \, j} m_{ij}^l.
