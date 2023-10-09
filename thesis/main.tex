@@ -1,4 +1,4 @@
-\documentclass[draft,twosides]{report}
+\documentclass[twosides]{report}
 
 % Packages -------------------------------------------------------------------
 
@@ -8,8 +8,19 @@
 % page layout
 \usepackage{geometry}
 
+% tables
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{hhline}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+
+% colors
+\definecolor{orange}{RGB}{235,129,27}
+\newcommand{\alert}[1]{\textcolor{orange}{#1}}
+
 % graphics (images, plots)
-\usepackage{graphicx, subcaption}
+\usepackage{graphicx, subcaption, float}
 \graphicspath{{figures/}}
 
 % diagrams in tikz
@@ -69,19 +80,19 @@
 
 \include{title}
 
-\include{chapters/0_abstract}
+\include{chapters/00_abstract}
 \tableofcontents
 
 \listoffigures
 \listoftables
 
-\include{chapters/1_introduction}
-\include{chapters/2_related_work}
-\include{chapters/3_injecting_semantic_information}
-\include{chapters/4_model_evaluation}
-\include{chapters/5_experiment_setup}
-\include{chapters/6_results_and_discussion}
-\include{chapters/7_conclusion}
+\include{chapters/01_introduction}
+\include{chapters/02_related_work}
+\include{chapters/03_injecting_semantic_information}
+\include{chapters/04_model_evaluation}
+\include{chapters/05_experiment_setup}
+\include{chapters/06_results_and_discussion}
+\include{chapters/07_conclusion}
 
 \printglossary[nonumberlist, title=Notation]
 \printglossary[nonumberlist, type=acronym]
