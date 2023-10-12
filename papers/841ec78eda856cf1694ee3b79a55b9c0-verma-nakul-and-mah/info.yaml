@@ -30,18 +30,18 @@ citations:
 - article-title: Distance metric learning for large margin nearest neighbor classification
   author: weinberger
   journal-title: JMLR
-  year: '2009'
+  year: 2009
 - article-title: Metric learning to rank
   author: mcfee
   journal-title: ICML
-  year: '2010'
+  year: 2010
 - doi: 10.1109/ICCV.2007.4409064
 - doi: 10.1109/ICCV.2009.5459265
 - doi: 10.1109/CVPR.2007.383272
 - article-title: Constructing category hierarchies for visual recognition
   author: marsza?ek
   journal-title: ECCV
-  year: '2008'
+  year: 2008
 - doi: 10.1109/CVPR.2009.5206594
 - doi: 10.1109/CVPR.2010.5540027
 - doi: 10.1109/CVPR.2006.100
@@ -49,31 +49,31 @@ citations:
 - article-title: Large margin taxonomy embedding with an application to document categorization
   author: weinberger
   journal-title: NIPS
-  year: '2009'
+  year: 2009
 - article-title: Cond. prob. tree estimation analysis and algorithms
   author: beygelzimer
   journal-title: UAI
-  year: '2009'
+  year: 2009
 - author: shakhnarovich
   journal-title: Learning Task-Specific Similarity
-  year: '2006'
+  year: 2006
 - article-title: Label embedding trees for large multi-class tasks
   author: bengio
   journal-title: NIPS
-  year: '2010'
+  year: 2010
 - article-title: 'Similarity metrics for categorization: From mono. to category specific'
   author: babenko
   journal-title: ECCV
-  year: '2009'
+  year: 2009
 - doi: 10.1109/CVPR.2008.4587410
 - article-title: Semantic label sharing for learning with many categories
   author: fergus
   journal-title: ECCV
-  year: '2010'
+  year: 2010
 - article-title: 'ImageNet: A large-scale hierarchical image database'
   author: dengw dong
   journal-title: CVPR
-  year: '2009'
+  year: 2009
 - doi: 10.1109/CVPR.2011.5995516
 - doi: 10.1145/1031171.1031186
 - article-title: Neighbourhood components analysis

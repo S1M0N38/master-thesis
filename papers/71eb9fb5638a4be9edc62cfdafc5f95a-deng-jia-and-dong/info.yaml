@@ -27,12 +27,12 @@ citations:
 - article-title: Caltech-256 object category dataset
   author: griffin
   journal-title: Technical Report 7694 Caltech
-  year: '2007'
+  year: 2007
 - article-title: 'Miller. Labeled faces in the wild: A database for studying face
     recognition in unconstrained environments'
   author: huang
   journal-title: Technical Report 07-49 UMass
-  year: '2007'
+  year: 2007
 - doi: 10.1109/CVPR.2007.383048
 - doi: 10.1023/B:VISI.0000029664.99615.94
 - doi: 10.1109/CVPR.2007.383272
@@ -40,7 +40,7 @@ citations:
   author: marszalek
   first-page: 'iv: 479'
   journal-title: ECCV08
-  year: '2008'
+  year: 2008
 - doi: 10.1109/CVPR.2006.264
 - doi: 10.1016/S0262-8856(97)00070-X
 - doi: 10.1109/ICCV.2007.4409064
@@ -50,14 +50,14 @@ citations:
   author: yao
   first-page: '169'
   journal-title: EMMCVPR
-  year: '2007'
+  year: 2007
 - journal-title: The Spanish WordNet
   year: '0'
 - article-title: 'Towards scalable dataset construction: An active learning approach'
   author: collins
   first-page: i:86
   journal-title: ECCV08
-  year: '2008'
+  year: 2008
 - doi: 10.1109/CVPR.2008.4587598
 - doi: 10.1109/TPAMI.2006.79
 - article-title: The PASCAL Visual Object Classes Challenge 2008 (VOC 2008) Results
@@ -80,7 +80,7 @@ citations:
   author: shotton
   first-page: i:1
   journal-title: ECCV06
-  year: '2006'
+  year: 2006
 - doi: 10.1007/s11263-007-0090-8
 - doi: 10.1109/TPAMI.2008.128
 - doi: 10.1109/CVPRW.2008.4562953
@@ -88,7 +88,7 @@ citations:
   author: vossen
   first-page: '89'
   journal-title: Proceedings DIR 2007
-  year: '2007'
+  year: 2007
 - doi: 10.1145/985692.985733
 doc_url: http://xplorestaging.ieee.org/ielx5/5191365/5206488/05206848.pdf?arnumber=5206848
 doi: 10.1109/cvpr.2009.5206848

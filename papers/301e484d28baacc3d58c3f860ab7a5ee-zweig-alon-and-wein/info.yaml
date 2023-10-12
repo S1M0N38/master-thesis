@@ -15,14 +15,14 @@ citations:
   first-page: '594'
   journal-title: IEEE PAMI
   volume: '28'
-  year: '2006'
+  year: 2006
 - doi: 10.1109/AFGR.1998.670949
 - doi: 10.1109/ICCV.2005.137
 - doi: 10.1109/CVPR.2005.117
 - article-title: Subordinate class recognition using relational object models
   author: bar-hillel
   journal-title: Proc NIPS
-  year: '2006'
+  year: 2006
 - article-title: Object classification from a single example utilizing class relevance
     metrics
   author: fink
@@ -33,7 +33,7 @@ citations:
 - article-title: Caltech-256 object category dataset
   author: griffin
   journal-title: Technical Report UCB/CSD-04-1366
-  year: '2007'
+  year: 2007
 - doi: 10.1162/neco.1992.4.1.1
 - article-title: Efficient learning of relational object class models
   author: bar-hillel
