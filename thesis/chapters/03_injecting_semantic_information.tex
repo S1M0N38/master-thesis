@@ -694,3 +694,40 @@ output vector and the encoding vector of the corresponding class.
   \caption{What cosine distance with description encodings optimize for}
 \end{figure}
 % TODO:make these figures smaller
+
+\section{Encodings - Losses pairs}
+\label{sec:encodings-losses-pairs}
+
+In the previous sections, we presented some encodings and loss functions.
+The~\Cref{tab:encodings-losses} collects all encoding-loss combinations that we
+focused on and whose results will be analyzed in the following chapters.
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{lllcc}
+    \toprule
+    Name       & Encoding       & Loss & Parameter & Need hierarchy? \\
+    \midrule
+    XE One-hot & One-hot~(\ref{subsec:one-hot-encoding})
+               & XE & None    & No   \\
+    XE MBM     & Bertinetto et al.~(\ref{par:encoding-mbm})
+               & XE & $\beta$ & Yes  \\
+    XE B3P     & Perotti et al.~(\ref{par:encoding-b3p})
+               & XE & $\beta$ & Yes  \\
+    CD BD      & Barz \& Denzler~(\ref{par:encoding-bd})
+               & CD & None    & Yes  \\
+    CD Desc.   & Description~(\ref{par:encoding-desc})
+               & CD & $d$     & No   \\
+    \bottomrule
+  \end{tabular}
+  \caption{Encodings--losses pairs}
+  \label{tab:encodings-losses}
+\end{table}
+The first naming scheme uses the first two letters to indicate the loss
+(\texttt{XE} for cross entropy and \texttt{CD} for cosine distance) and the
+second word to indicate the encoding. The acronym \texttt{MBM} refers to the
+paper by Bertinetto et al.~\cite{MakingBetterMBertin2019}: ``Making Better
+Mistakes''. \texttt{B3P} and \texttt{DB} refer to the authors of the papers:
+Perotti, Bertolotto, Pastor, Panisson, and Barz, Denzler respectively. Some
+encodings require a hyper-parameter to be tuned while others do not. Lastly, the
+only encodings that do not require a hierarchy are one-hot and description
+encodings, so theoretically they can be applied to any dataset.
