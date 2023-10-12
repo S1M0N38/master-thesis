@@ -74,7 +74,7 @@ citations:
 - author: carreira
   first-page: '6299'
   journal-title: Proc Conf Comput Vis Pattern Recognit
-  year: 2017
+  year: '2017'
 - doi: 10.1109/CVPR42600.2020.00583
 - article-title: 'TransGAN: Two transformers can make one strong GAN'
   author: jiang
@@ -85,14 +85,14 @@ citations:
 - doi: 10.1109/ICCV48922.2021.00950
 - article-title: 'Swin-Unet: Unet-like pure transformer for medical image segmentation'
   author: cao
-  year: 2021
+  year: '2021'
 - doi: 10.1109/CVPR46437.2021.01268
 - doi: 10.1109/CVPR46437.2021.00199
 - doi: 10.1145/3394171.3413775
 - doi: 10.1007/978-3-030-58595-2_2
 - article-title: 'Visualbert: A simple and performant baseline for vision and language'
   author: li
-  year: 2019
+  year: '2019'
 - doi: 10.1109/ICCV.2019.00756
 - article-title: 'The lottery ticket hypothesis: Finding sparse, trainable neural
     networks'
@@ -105,7 +105,7 @@ citations:
   author: chuang
   first-page: '4168'
   journal-title: Proc Conf Interspeech
-  year: 2020
+  year: '2020'
 - article-title: 'VL-BERT: Pre-training of generic visual-linguistic representations'
   author: su
   journal-title: Proc Int Conf Learn Representations
@@ -117,7 +117,7 @@ citations:
 - doi: 10.1109/ICCV.2017.298
 - article-title: Vision transformer pruning
   author: zhu
-  year: 2021
+  year: '2021'
 - doi: 10.1109/CVPR52688.2022.01185
 - doi: 10.1007/978-3-030-58517-4_31
 - article-title: Image transformer
@@ -138,21 +138,21 @@ citations:
 - article-title: 'CVonline: The evolving, distributed, non-proprietary, on-line compendium
     of computer vision'
   author: fisher
-  year: 2008
+  year: '2008'
 - doi: 10.1109/CVPR46437.2021.00542
 - article-title: Gaussian error linear units (GELUS)
   author: hendrycks
-  year: 2016
+  year: '2016'
 - article-title: Layer Normalization
   author: ba
-  year: 2016
+  year: '2016'
 - article-title: 'TRTR: Visual tracking with transformer'
   author: zhao
-  year: 2021
+  year: '2021'
 - doi: 10.1109/CVPR46437.2021.00162
 - article-title: 'TransTrack: Multiple object tracking with transformer'
   author: sun
-  year: 2021
+  year: '2021'
 - doi: 10.1109/CVPR46437.2021.00803
 - doi: 10.1609/aaai.v35i6.16636
 - article-title: Exploring the limits of transfer learning with a unified text-to-text
@@ -161,10 +161,10 @@ citations:
   first-page: '1'
   journal-title: J Mach Learn Res
   volume: '21'
-  year: 2020
+  year: '2020'
 - article-title: Improving visual reasoning by exploiting the knowledge in texts
   author: sharifzadeh
-  year: 2021
+  year: '2021'
 - doi: 10.1109/ICPR48806.2021.9412265
 - doi: 10.1109/ICCV48922.2021.00375
 - doi: 10.1109/TPAMI.2021.3137605
@@ -182,7 +182,7 @@ citations:
 - article-title: 'Visual transformers: Token-based image representation and processing
     for computer vision'
   author: wu
-  year: 2020
+  year: '2020'
 - article-title: 'Rezero is all you need: Fast convergence at large depth'
   author: bachlechner
   first-page: '1352'
@@ -211,20 +211,20 @@ citations:
   year: '0'
 - article-title: Learning transferable visual models from natural language supervision
   author: radford
-  year: 2021
+  year: '2021'
 - doi: 10.1109/CVPR.2019.00033
 - article-title: 'ConvTransformer: A convolutional transformer network for video frame
     synthesis'
   author: liu
-  year: 2020
+  year: '2020'
 - doi: 10.1109/3DV53792.2021.00021
 - article-title: Neural discrete representation learning
   author: oord
   first-page: '6309'
-  year: 2017
+  year: '2017'
 - article-title: 'VitGAN: Training GANs with vision transformers'
   author: lee
-  year: 2021
+  year: '2021'
 - doi: 10.1109/ICCV48922.2021.01595
 - article-title: Point cloud transformer
   author: guo
@@ -232,20 +232,20 @@ citations:
   first-page: '187'
   journal-title: Computational Visual Media
   volume: '7'
-  year: 2021
+  year: '2021'
 - doi: 10.1109/ACCESS.2021.3116304
 - article-title: ImageNet classification with deep convolutional neural networks
   author: krizhevsky
   first-page: '1097'
   journal-title: Proc Int Conf Neural Inf Process
-  year: 2012
+  year: '2012'
 - doi: 10.1109/5.726791
 - doi: 10.1162/neco.1997.9.8.1735
 - doi: 10.7551/mitpress/5236.001.0001
 - doi: 10.18653/v1/D16-1244
 - article-title: Spatiotemporal transformer for video-based person re-identification
   author: zhang
-  year: 2021
+  year: '2021'
 - article-title: Neural machine translation by jointly learning to align and translate
   author: bahdanau
   journal-title: Proc Int Conf Learn Representations
@@ -260,19 +260,19 @@ citations:
 - article-title: 'A video is worth three views: Trigeminal transformers for video-based
     person re-identification'
   author: liu
-  year: 2021
+  year: '2021'
 - doi: 10.18653/v1/2020.findings-emnlp.1
 - doi: 10.18653/v1/2020.findings-emnlp.372
 - article-title: Convolutional sequence to sequence learning
   author: gehring
   first-page: '1243'
   journal-title: Proc Int Conf Mach Learn
-  year: 2017
+  year: '2017'
 - article-title: Improving BERT with span-based dynamic convolution
   author: jiang
   first-page: '12837'
   journal-title: Proc Conf Neural Informat Process Syst
-  year: 2020
+  year: '2020'
 - article-title: Mastering text-to-image generation via transformers
   author: ding
   journal-title: Proc Conf Neural Informat Process Syst
@@ -289,14 +289,14 @@ citations:
 - doi: 10.1109/ICCV48922.2021.00147
 - article-title: 'Visual Parser: Representing part-whole hierarchies with transformers'
   author: sun
-  year: 2021
+  year: '2021'
 - doi: 10.1109/ICCV48922.2021.00061
 - article-title: Cross-covariance image transformers
   author: el-nouby
-  year: 2021
+  year: '2021'
 - article-title: 'Refiner: Refining self-attention for vision transformers'
   author: zhou
-  year: 2021
+  year: '2021'
 - doi: 10.1609/aaai.v36i2.20099
 - article-title: Scalable visual transformers with hierarchical pooling
   author: pan
@@ -310,31 +310,31 @@ citations:
 - doi: 10.1109/ICCV48922.2021.00986
 - article-title: 'Twins: Revisiting the design of spatial attention in vision transformers'
   author: chu
-  year: 2021
+  year: '2021'
 - article-title: Regional-to-local attention for vision transformers
   author: chen
-  year: 2021
+  year: '2021'
 - article-title: 'CAT: Cross attention in vision transformer'
   author: lin
-  year: 2021
+  year: '2021'
 - article-title: 'CSWin transformer: A general vision transformer backbone with cross-shaped
     windows'
   author: dong
-  year: 2021
+  year: '2021'
 - article-title: 'Shuffle transformer: Rethinking spatial shuffle for vision transformer'
   author: huang
-  year: 2021
+  year: '2021'
 - article-title: 'MSG-transformer: Exchanging local spatial information by manipulating
     messenger tokens'
   author: fang
-  year: 2021
+  year: '2021'
 - doi: 10.1109/ICCV48922.2021.00060
 - article-title: 'DeepViT: Towards deeper vision transformer'
   author: zhou
-  year: 2021
+  year: '2021'
 - article-title: 'KVT: K-NN attention for boosting vision transformers'
   author: wang
-  year: 2021
+  year: '2021'
 - doi: 10.1007/s11431-020-1647-3
 - article-title: Reducing transformer depth on demand with structured dropout
   author: fan
@@ -344,22 +344,22 @@ citations:
   author: hou
   first-page: '9782'
   journal-title: Proc Int Conf Neural Inf Process
-  year: 2020
+  year: '2020'
 - article-title: 'A distilled version of BERT: Smaller, faster, cheaper and lighter'
   author: sanh
-  year: 2019
+  year: '2019'
 - doi: 10.18653/v1/D19-1441
 - doi: 10.18653/v1/2020.acl-main.195
 - article-title: 'Well-read students learn better: The impact of student initialization
     on knowledge distillation'
   author: turc
-  year: 2019
+  year: '2019'
 - article-title: 'VOLO: Vision outlooker for visual recognition'
   author: yuan
-  year: 2021
+  year: '2021'
 - article-title: bibinfotitleConvolutional neural networks meet vision transformers
   author: guo
-  year: 2021
+  year: '2021'
 - doi: 10.18653/v1/2020.emnlp-main.633
 - article-title: 'EfficientNet: Rethinking model scaling for convolutional neural
     networks'
@@ -371,43 +371,43 @@ citations:
 - article-title: Feedforward networks for image classification with data-efficient
     training
   author: touvron
-  year: 2021
+  year: '2021'
 - article-title: Quantized 8 bit BERT
   author: zafrir
-  year: 2019
+  year: '2019'
 - article-title: 'Beyond self-attention: External attention using two linear layers
     for visual tasks'
   author: guo
-  year: 2021
+  year: '2021'
 - article-title: Do you even need attention? A stack of feed-forward layers does surprisingly
     well on imagenet
   author: melas-kyriazi
-  year: 2021
+  year: '2021'
 - article-title: 'LocalViT: Bringing locality to vision transformers'
   author: li
-  year: 2021
+  year: '2021'
 - doi: 10.1109/ICCV48922.2021.01204
 - article-title: CVT:Introducing convolutions to vision transformers
   author: wu
-  year: 2021
+  year: '2021'
 - doi: 10.1109/ICCV48922.2021.00062
 - article-title: Vision transformer architecture search
   author: su
-  year: 2021
+  year: '2021'
 - article-title: Scaling vision transformers
   author: zhai
-  year: 2021
+  year: '2021'
 - doi: 10.1109/ICCV48922.2021.00008
 - doi: 10.1109/ICCV48922.2021.01205
 - article-title: 'Uformer: A general U-shaped transformer for image restoration'
   author: wang
-  year: 2021
+  year: '2021'
 - article-title: 'MLP-mixer: An all-MLP architecture for vision'
   author: tolstikhin
-  year: 2021
+  year: '2021'
 - article-title: Conditional positional encodings for vision transformers
   author: chu
-  year: 2021
+  year: '2021'
 - doi: 10.1109/ICCV48922.2021.00988
 - doi: 10.1109/ICCV48922.2021.00010
 - article-title: Augmented shortcuts for vision transformers
@@ -426,11 +426,11 @@ citations:
   author: ba
   first-page: '2654'
   journal-title: Proc Int Conf Neural Inf Process
-  year: 2014
+  year: '2014'
 - doi: 10.18653/v1/2020.acl-main.202
 - article-title: Distilling the knowledge in a neural network
   author: hinton
-  year: 2015
+  year: '2015'
 - article-title: Model compression
   author: bucilu?
   first-page: '535'
@@ -438,7 +438,7 @@ citations:
   year: '0'
 - article-title: Efficient vision transformers via fine-grained manifold distillation
   author: jia
-  year: 2021
+  year: '2021'
 - article-title: Improving the speed of neural networks on CPUs
   author: vanhoucke
   journal-title: Proc Int Conf Neural Inf Process Syst Workshop
@@ -446,14 +446,14 @@ citations:
 - article-title: Deep self-attention distillation for task-agnostic compression of
     pre-trained transformers
   author: wang
-  year: 2020
+  year: '2020'
 - doi: 10.1609/aaai.v34i04.5963
 - article-title: 'Riptide: Fast end-to-end binarized neural networks'
   author: fromm
   first-page: '379'
   journal-title: Proc Mach Learn Syst
   volume: '2'
-  year: 2020
+  year: '2020'
 - doi: 10.1007/978-3-030-58539-6_26
 - article-title: 'ProxQuant: Quantized neural networks via proximal operators'
   author: bai
@@ -462,14 +462,14 @@ citations:
 - article-title: Efficient 8-bit quantization of transformer neural machine language
     translation model
   author: bhandare
-  year: 2019
+  year: '2019'
 - article-title: Quantized transformer
   author: fan
-  year: 2019
+  year: '2019'
 - doi: 10.18653/v1/2020.sustainlp-1.4
 - article-title: 'Transformers. zip: Compressing transformers with pruning and quantization'
   author: cheong
-  year: 2019
+  year: '2019'
 - doi: 10.1007/978-3-030-60450-9_29
 - article-title: Post-training quantization for vision transformer
   author: liu
@@ -495,7 +495,7 @@ citations:
   year: '0'
 - article-title: Learning multiple layers of features from tiny images
   author: krizhevsky
-  year: 2009
+  year: '2009'
 - doi: 10.1073/pnas.252631999
 - doi: 10.1137/08074489X
 - article-title: 'Big bird: Transformers for longer sequences'
@@ -526,14 +526,14 @@ citations:
 - article-title: 'Efficient DETR: Improving end-to-end object detector with dense
     prior'
   author: yao
-  year: 2021
+  year: '2021'
 - article-title: 'DETReg: Unsupervised pretraining with region priors for object detection'
   author: bar
-  year: 2021
+  year: '2021'
 - doi: 10.1109/CVPR.2018.00644
 - article-title: 'ISTR: End-to-end instance segmentation with transformers'
   author: hu
-  year: 2021
+  year: '2021'
 - article-title: Segmenting objects by learning queries
   author: dong
   journal-title: Proc Conf Neural Informat Process Syst
@@ -549,13 +549,13 @@ citations:
   year: '0'
 - article-title: Fully transformer networks for semantic image segmentation
   author: wu
-  year: 2021
+  year: '2021'
 - doi: 10.1145/3374217
 - doi: 10.1109/ICCV48922.2021.00774
 - article-title: A large-scale study of representation learning with the visual task
     adaptation benchmark
   author: zhai
-  year: 2019
+  year: '2019'
 - doi: 10.18653/v1/P19-1425
 - article-title: Towards understanding the role of over-parametrization in generalization
     of neural networks
@@ -570,7 +570,7 @@ citations:
 - doi: 10.18653/v1/P19-1282
 - article-title: Towards robust vision transformer
   author: mao
-  year: 2021
+  year: '2021'
 - doi: 10.1109/CVPR46437.2021.00084
 - doi: 10.18653/v1/D19-1002
 - doi: 10.1007/978-3-030-87193-2_4
@@ -591,39 +591,39 @@ citations:
   author: qi
   first-page: '5099'
   journal-title: Proc Conf Neural Informat Process Syst
-  year: 2017
+  year: '2017'
 - article-title: 'HandsFormer: Keypoint transformer for monocular 3D pose estimation
     ofhands and object in interaction'
   author: hampali
-  year: 2021
+  year: '2021'
 - doi: 10.1109/ICCV48922.2021.01112
 - article-title: Direct human pose estimation with transformers
   author: mao
-  year: 2021
+  year: '2021'
 - doi: 10.1109/CVPRW53098.2021.00378
 - doi: 10.1001/archpsyc.1962.01720030064010
 - article-title: Test-time personalization with a transformer for human pose estimation
   author: li
   journal-title: Proc Adv Neural Informat Process Syst
-  year: 2021
+  year: '2021'
 - author: rosenblatt
   journal-title: The Perceptron A perceiving and recognizing automaton Project PARA
   year: '1957'
 - article-title: DETR for pedestrian detection
   author: lin
-  year: 2020
+  year: '2020'
 - article-title: 'Model rubik''s cube: Twisting resolution, depth and width for tinynets'
   author: han
   first-page: '19353'
   journal-title: Proc Conf Neural Informat Process Syst
-  year: 2020
+  year: '2020'
 - doi: 10.1145/2541940.2541967
 - doi: 10.1109/HOTCHIPS.2019.8875654
 - article-title: 'Perceiver: General perception with iterative attention'
   author: jaegle
   first-page: '4651'
   journal-title: Proc Int Conf Mach Learn
-  year: 2021
+  year: '2021'
 - article-title: More features from cheap operations
   author: han
   first-page: '1580'
@@ -631,15 +631,15 @@ citations:
   year: '0'
 - article-title: 'Perceiver IO: A general architecture for structured inputs & outputs'
   author: jaegle
-  year: 2021
+  year: '2021'
 - article-title: Language models are unsupervised multitask learners
   author: radford
   journal-title: OpenAIRE blog
   volume: '1'
-  year: 2019
+  year: '2019'
 - article-title: BEiT:BERT pre-training of image transformers
   author: bao
-  year: 2021
+  year: '2021'
 - article-title: Masked self-supervised transformer for visual representation
   author: li
   journal-title: Proc Conf Neural Informat Process Syst
@@ -647,7 +647,7 @@ citations:
 - doi: 10.1109/CVPR.2016.278
 - article-title: Conditional image generation with pixelCNN decoders
   author: oord
-  year: 2016
+  year: '2016'
 - doi: 10.1145/1390156.1390294
 - article-title: Autoencoders, minimum description length, and helmholtz free energy
   author: hinton
@@ -657,15 +657,15 @@ citations:
 - article-title: Early convolutions help transformers see better
   author: xiao
   journal-title: Proc Conf Neural Informat Process Syst
-  year: 2021
+  year: '2021'
 - article-title: Efficient self-supervised vision transformers for representation
     learning
   author: li
-  year: 2021
+  year: '2021'
 - doi: 10.1109/CVPR42600.2020.00975
 - article-title: Self-supervised learning with swin transformers
   author: xie
-  year: 2021
+  year: '2021'
 - article-title: 'BERT: Pre-training of deep bidirectional transformers for language
     understanding'
   author: devlin
@@ -707,11 +707,11 @@ citations:
   author: chi
   first-page: '13564'
   journal-title: Proc Conf Neural Informat Process Syst
-  year: 2020
+  year: '2020'
 - doi: 10.1109/TCSVT.2021.3082763
 - article-title: Toward transformer-based object detection
   author: beal
-  year: 2020
+  year: '2020'
 - doi: 10.1109/WACV48630.2021.00374
 - doi: 10.1109/CVPR46437.2021.00738
 - doi: 10.1109/ICCV48922.2021.00359
@@ -721,7 +721,7 @@ citations:
   year: '0'
 - article-title: Oriented object detection with transformer
   author: ma
-  year: 2021
+  year: '2021'
 - doi: 10.1109/ICCV48922.2021.00360
 doc_url: http://xplorestaging.ieee.org/ielx7/34/9970415/09716741.pdf?arnumber=9716741
 doi: 10.1109/tpami.2022.3152247

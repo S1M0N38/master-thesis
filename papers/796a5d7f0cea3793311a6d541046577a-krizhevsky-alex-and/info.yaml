@@ -29,41 +29,41 @@ citations:
 - doi: 10.1145/1345448.1345465
 - author: Berg A.
   volume-title: Large scale visual recognition challenge
-  year: 2010
+  year: '2010'
 - doi: 10.1023/A:1010933404324
 - author: Cireşan D.
   volume-title: High-performance neural networks for visual object classification.
     Arxiv preprint arXiv:1102.0183
-  year: 2011
+  year: '2011'
 - author: Cireşan D.
   volume-title: Multi-column deep neural networks for image classification. Arxiv
     preprint arXiv:1202.2745
-  year: 2012
+  year: '2012'
 - unstructured: Deng J. Berg A. Satheesh S. Su H. Khosla A. Fei-Fei L. In ILSVRC-2012
     (2012).  Deng J. Berg A. Satheesh S. Su H. Khosla A. Fei-Fei L. In ILSVRC-2012
     (2012).
 - author: Deng J.
   volume-title: CVPR09
-  year: 2009
+  year: '2009'
 - doi: 10.1016/j.cviu.2005.09.012
 - doi: 10.1007/BF00344251
 - author: He K.
   volume-title: Deep residual learning for image recognition. arXiv preprint arXiv:1512.03385
-  year: 2015
+  year: '2015'
 - author: Hinton G.
   volume-title: Improving neural networks by preventing co-adaptation of feature detectors.
     arXiv preprint arXiv:1207.0580
-  year: 2012
+  year: '2012'
 - doi: 10.1109/ICCV.2009.5459469
 - author: Krizhevsky A.
   volume-title: Department of Computer Science
-  year: 2009
+  year: '2009'
 - author: Krizhevsky A.
   volume-title: Convolutional deep belief networks on cifar-10. Unpublished manuscript
-  year: 2010
+  year: '2010'
 - author: Krizhevsky A.
   volume-title: ESANN
-  year: 2011
+  year: '2011'
 - author: LeCun Y.
   volume-title: Advances in Neural Information Processing Systems
   year: '1990'
@@ -77,7 +77,7 @@ citations:
 - doi: 10.1007/BF01931367
 - author: Mensink T.
   volume-title: Italy
-  year: 2012
+  year: '2012'
 - doi: 10.5555/3104322.3104425
 - doi: 10.1371/journal.pcbi.0040027
 - doi: 10.1371/journal.pcbi.1000579

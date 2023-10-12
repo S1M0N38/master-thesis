@@ -33,7 +33,7 @@ citations:
 - article-title: Zero-data learning of new tasks
   author: larochelle
   journal-title: AAAI
-  year: 2008
+  year: '2008'
 - doi: 10.1109/CVPR.2012.6247943
 - doi: 10.1023/B:VISI.0000029664.99615.94
 - doi: 10.1109/CVPR.2011.5995329
@@ -41,7 +41,7 @@ citations:
     faces'
   author: kumar
   journal-title: ECCV
-  year: 2008
+  year: '2008'
 - article-title: Large margin methods for structured and interdependent output variables
   author: tsochantaridis
   journal-title: JMLR
@@ -50,31 +50,31 @@ citations:
 - article-title: A discriminative latent model of object classes and attributes
   author: wang
   journal-title: ECCV
-  year: 2010
+  year: '2010'
 - doi: 10.1109/TPAMI.2010.57
 - doi: 10.1109/CVPR.2011.5995466
 - doi: 10.1109/ICCV.2011.6126539
 - author: hastie
   journal-title: The Elements of Statistical Learning
-  year: 2008
+  year: '2008'
 - article-title: Joint learning of visual attributes, object classes and visual saliency
   author: wang
   journal-title: ICCV
-  year: 2009
+  year: '2009'
 - article-title: Multi-label prediction via compressed sensing
   author: hsu
   journal-title: NIPS
-  year: 2009
+  year: '2009'
 - article-title: Tree-structured CRF models for interactive image labeling
   author: mensink
   journal-title: IEEE TPAMI
-  year: 2012
+  year: '2012'
 - doi: 10.1109/ICCV.2009.5459203
 - article-title: Attribute-based transfer learning for object categorization with
     zero or one training example
   author: yu
   journal-title: ECCV
-  year: 2010
+  year: '2010'
 - article-title: Kernel dependency estimation
   author: weston
   journal-title: NIPS
@@ -83,25 +83,25 @@ citations:
 - article-title: Large margin taxonomy embedding for document categorization
   author: weinberger
   journal-title: NIPS
-  year: 2008
+  year: '2008'
 - article-title: 'Metric learning for large scale image classification: Generalizing
     to new classes at near-zero cost'
   author: mensink
   journal-title: ECCV
-  year: 2012
+  year: '2012'
 - article-title: 'Im2Text: Describing images using 1 million captioned photographs'
   author: ordonez
   journal-title: NIPS
-  year: 2011
+  year: '2011'
 - doi: 10.1207/s15516709cog1502_3
 - article-title: Zero-shot learning with semantic output codes
   author: palatucci
   journal-title: NIPS
-  year: 2009
+  year: '2009'
 - article-title: Improving the Fisher kernel for large-scale image classification
   author: perronnin
   journal-title: ECCV
-  year: 2010
+  year: '2010'
 - doi: 10.1109/CVPR.2011.5995627
 - doi: 10.1109/CVPR.2010.5540121
 - article-title: The principal components analysis of a graph, and its relationships
@@ -112,11 +112,11 @@ citations:
 - article-title: Visual recognition with humans in the loop
   author: branson
   journal-title: ECCV
-  year: 2010
+  year: '2010'
 - article-title: Label embedding trees for large multi-class tasks
   author: bengio
   journal-title: NIPS
-  year: 2010
+  year: '2010'
 - doi: 10.1109/TKDE.2010.252
 - doi: 10.1145/1273496.1273499
 - doi: 10.1109/CVPR.2011.5995504
@@ -126,13 +126,13 @@ citations:
 - article-title: XRCEs participation to ImageEval
   author: clinchant
   journal-title: ImageEval Workshop at CVIR
-  year: 2007
+  year: '2007'
 - doi: 10.1007/978-3-642-33715-4_18
 - doi: 10.5244/C.25.76
 - article-title: Learning visual attributes
   author: ferrari
   journal-title: NIPS
-  year: 2007
+  year: '2007'
 - doi: 10.1109/CVPR.2009.5206772
 doc_url: http://xplorestaging.ieee.org/ielx7/6596161/6618844/06618955.pdf?arnumber=6618955
 doi: 10.1109/cvpr.2013.111

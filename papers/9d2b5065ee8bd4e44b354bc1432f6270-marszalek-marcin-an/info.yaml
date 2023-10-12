@@ -17,7 +17,7 @@ citations:
 - article-title: Coloring local feature extraction
   author: van de weijer
   journal-title: ECCV
-  year: 2006
+  year: '2006'
 - article-title: Categorizing nine visual classes using local appearance descriptors
   author: willamowski
   journal-title: IWLAVS
@@ -52,7 +52,7 @@ citations:
 - article-title: The 2006 PASCAL visual object classes challenge
   author: everingham
   journal-title: The PASCAL Visual Object Classes challenge
-  year: 2006
+  year: '2006'
 - doi: 10.1016/0010-0285(84)90009-4
 - author: hopcroft
   journal-title: Introduction to Automata Theory Languages and Computation

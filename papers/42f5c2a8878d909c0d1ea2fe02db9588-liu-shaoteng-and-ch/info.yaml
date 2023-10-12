@@ -25,40 +25,40 @@ citations:
 - article-title: 'Poincare glove: Hyperbolic word embeddings'
   author: tifrea
   journal-title: ICLRE
-  year: 2019
+  year: '2019'
 - article-title: Zero-shot learning through cross-modal transfer
   author: richard
   journal-title: NIPS
-  year: 2013
+  year: '2013'
 - article-title: Zero-shot learning through cross-modal transfer
   author: richard
   journal-title: NIPS
-  year: 2013
+  year: '2013'
 - doi: 10.1109/CVPR.2011.5995720
 - article-title: 'Msplit lbi: Realizing feature selection and dense estimation simultaneously
     in few-shot and zero-shot learning'
   author: zhao
   journal-title: ArXiv Preprint
-  year: 2018
+  year: '2018'
 - doi: 10.1109/ICCV.2015.474
 - doi: 10.1109/CVPR.2017.328
 - doi: 10.1109/CVPR.2018.00717
 - article-title: Attribute learning for understanding unstructured social activity
   author: yanwei
   journal-title: ECCV
-  year: 2012
+  year: '2012'
 - doi: 10.1109/CVPR.2016.576
 - doi: 10.1109/TPAMI.2019.2922175
 - article-title: Hyperbolic entailment cones for learning hierarchical embeddings
   author: ganea
   journal-title: ICML
-  year: 2018
+  year: '2018'
 - doi: 10.1109/CVPR.2019.00978
 - doi: 10.1109/CVPR.2016.90
 - article-title: Generative dual adversarial network for generalized zero-shot learning
   author: he
   journal-title: CVPR
-  year: 2019
+  year: '2019'
 - doi: 10.1109/CVPR.2019.01175
 - doi: 10.1109/CVPR.2009.5206594
 - doi: 10.1109/TPAMI.2013.140
@@ -67,16 +67,16 @@ citations:
 - article-title: Zero-shot learning by convex combination of semantic embeddings
   author: norouzi
   journal-title: ICLRE
-  year: 2014
+  year: '2014'
 - doi: 10.1109/CVPR.2016.575
 - article-title: Large-scale object classification using label relation graphs
   author: deng
   journal-title: ECCV
-  year: 2014
+  year: '2014'
 - article-title: An embarrassingly simple approach to zero-shot learning
   author: romera-paredes
   journal-title: ICML
-  year: 2015
+  year: '2015'
 - doi: 10.1109/CVPR.2018.00115
 - doi: 10.1109/CVPR.2019.00635
 - doi: 10.1109/CVPR.2009.5206848
@@ -84,23 +84,23 @@ citations:
 - article-title: 'Devise: A deep visual-semantic embedding model'
   author: andrea
   journal-title: NIPS
-  year: 2013
+  year: '2013'
 - article-title: Riemannian adaptive optimization methods
   author: bécigneul
   journal-title: ICLRE
-  year: 2019
+  year: '2019'
 - doi: 10.3115/v1/W14-1618
 - doi: 10.1109/CVPR.2019.00561
 - doi: 10.1162/tacl_a_00134
 - article-title: Distributed representations of words and phrases and their compositionality
   author: tomas
   journal-title: NIPS
-  year: 2013
+  year: '2013'
 - doi: 10.1109/CVPR.2011.5995353
 - article-title: Poincare embeddings for learning hierarchical representations
   author: nickel
   journal-title: NIPS
-  year: 2017
+  year: '2017'
 - doi: 10.1145/219717.219748
 doc_url: http://xplorestaging.ieee.org/ielx7/9142308/9156271/09157359.pdf?arnumber=9157359
 doi: 10.1109/cvpr42600.2020.00929

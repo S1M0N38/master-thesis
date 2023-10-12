@@ -28,13 +28,13 @@ citations:
   author: buitinck
   first-page: '108'
   journal-title: Proc ECML PKDD Workshop Lang Data Mining Mach Learn
-  year: 2013
+  year: '2013'
 - doi: 10.1007/978-3-030-25797-2_3
 - article-title: 'Visualization, summarization and exploration of large collections
     of images: State of the art'
   author: camargo
   journal-title: Proc Latin-Amer Conf Netw Electron Media (LACNEM)
-  year: 2009
+  year: '2009'
 - article-title: 'ROUGE: A package for automatic evaluation of summaries'
   author: lin
   first-page: '74'
@@ -45,7 +45,7 @@ citations:
 - article-title: The cityscapes dataset
   author: cordts
   journal-title: Proc CVPR Workshop Future Datasets Vis
-  year: 2015
+  year: '2015'
 - doi: 10.1109/CVPR.2019.00656
 - doi: 10.1145/1873951.1874095
 - doi: 10.1016/j.patcog.2006.05.022
@@ -53,7 +53,7 @@ citations:
   author: tschiatschek
   first-page: '1413'
   journal-title: Proc Adv Neural Inf Process Syst
-  year: 2014
+  year: '2014'
 - doi: 10.1016/j.patcog.2012.07.011
 - doi: 10.1145/1141277.1141601
 - doi: 10.1109/IVL.1998.694467
@@ -65,7 +65,7 @@ citations:
   first-page: '169'
   journal-title: Int J Adv Res Innov Ideas Educ
   volume: '2'
-  year: 2016
+  year: '2016'
 - doi: 10.1109/ICDMW.2018.00143
 - doi: 10.1515/comp-2018-0018
 - doi: 10.1186/s13040-018-0181-9
@@ -82,7 +82,7 @@ citations:
 - article-title: Cross-modal learning for multi-modal video categorization
   author: goyal
   journal-title: arXiv 2003 03501
-  year: 2020
+  year: '2020'
 - doi: 10.1109/BigData.2015.7363803
 - doi: 10.1109/CVPR.2017.544
 - doi: 10.1109/CVPR.2018.00132
@@ -103,7 +103,7 @@ citations:
   author: de boer
   first-page: '69'
   journal-title: Proc 1st Int Conf Big Data Small Data Linked Data Open Data (ALLDATA)
-  year: 2015
+  year: '2015'
 - doi: 10.1145/1964921.1964929
 - doi: 10.1109/ICCV.2019.01042
 - doi: 10.18653/v1/W15-2812

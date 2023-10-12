@@ -21,31 +21,31 @@ citations:
   author: Snidaro
   first-page: '1'
   series-title: 2019 22th International Conference on Information Fusion
-  year: 2019
+  year: '2019'
 - article-title: Efficient estimation of word representations in vector space
   author: Mikolov
   series-title: International Conference on Learning Representations - ICLR Workshop
-  year: 2013
+  year: '2013'
 - article-title: 'GloVe: Global vectors for word representation'
   author: Pennington
   first-page: '1532'
   series-title: Proceedings of the 2014 Conference on Empirical Methods in Natural
     Language Processing (EMNLP)
-  year: 2014
+  year: '2014'
 - article-title: Enriching word vectors with subword information
   author: Bojanowski
   doi: 10.1162/tacl_a_00051
   first-page: '135'
   journal-title: Trans. Assoc. Comput. Linguist. (TACL)
   volume: '5'
-  year: 2017
+  year: '2017'
 - article-title: Deep contextualized word representations
   author: Peters
   first-page: '2227'
   series-title: 'Proceedings of the 2018 Conference of the North American Chapter
     of the Association for Computational Linguistics: Human Language Technologies,
     Volume 1 (Long Papers)'
-  year: 2018
+  year: '2018'
 - article-title: 'BERT: Pre-training of deep bidirectional transformers for language
     understanding'
   author: Devlin
@@ -53,16 +53,16 @@ citations:
   series-title: 'Proceedings of the 2019 Conference of the North American Chapter
     of the Association for Computational Linguistics: Human Language Technologies,
     Volume 1 (Long and Short Papers)'
-  year: 2019
+  year: '2019'
 - author: Liu
   series-title: Representation Learning for Natural Language Processing
-  year: 2020
+  year: '2020'
 - article-title: A survey of word embeddings for clinical text
   author: Khattak
   first-page: '0'
   journal-title: J. Biomed. Inform. (JBI)
   volume: '100'
-  year: 2019
+  year: '2019'
 - article-title: 'Short text topic modeling techniques, applications, and performance:
     a survey'
   author: Qiang
@@ -71,7 +71,7 @@ citations:
   issue: '3'
   journal-title: IEEE Trans. Knowl. Data Eng.
   volume: '34'
-  year: 2020
+  year: '2020'
 - article-title: Distributional structure
   author: Harris
   first-page: '3'
@@ -83,7 +83,7 @@ citations:
   doi: 10.1007/s10515-021-00301-1
   journal-title: Autom. Softw. Eng.
   volume: '29'
-  year: 2022
+  year: '2022'
 - unstructured: 'W. Cavnar, W.B. Cavnar, J.M. Trenkle, N-gram-based text categorization,
     in: Proceedings of 3rd Annual Symposium on Document Analysis and Information Retrieval
     (SDAIR-94), 1994, pp. 161–175.'
@@ -123,18 +123,18 @@ citations:
   first-page: '1393'
   series-title: Proceedings of the 2013 Conference on Empirical Methods in Natural
     Language Processing
-  year: 2013
+  year: '2013'
 - article-title: 'Words are not equal: Graded weighting model for building composite
     document vectors'
   author: Singh
   first-page: '11'
   series-title: Proceedings of the 12th International Conference on Natural Language
     Processing
-  year: 2015
+  year: '2015'
 - article-title: A simple but tough-to-beat baseline for sentence embeddings
   author: Arora
   series-title: International Conference on Learning Representations
-  year: 2017
+  year: '2017'
 - article-title: Principal component analysis
   author: Abdi
   doi: 10.1002/wics.101
@@ -142,27 +142,27 @@ citations:
   issue: '4'
   journal-title: Wiley Interdiscip. Rev. Comput. Stat.
   volume: '2'
-  year: 2010
+  year: '2010'
 - article-title: 'Frege in space: A program for composition distributional semantics'
   author: Baroni
   first-page: '5'
   series-title: Linguistic Issues in Language Technology (LiLT), Volume 9, 2014 -
     Perspectives on Semantic Representations for Textual Inference
-  year: 2014
+  year: '2014'
 - article-title: A practical and linguistically-motivated approach to compositional
     distributional semantics
   author: Paperno
   first-page: '90'
   series-title: 'Proceedings of the 52nd Annual Meeting of the Association for Computational
     Linguistics (Volume 1: Long Papers)'
-  year: 2014
+  year: '2014'
 - article-title: An exploration of discourse-based sentence spaces for compositional
     distributional semantics
   author: Polajnar
   first-page: '1'
   series-title: Proceedings of the First Workshop on Linking Computational Models
     of Lexical, Sentential and Discourse-Level Semantics
-  year: 2015
+  year: '2015'
 - article-title: 'Vector of locally-aggregated word embeddings (VLAWE): A novel document-level
     representation'
   author: Ionescu
@@ -170,7 +170,7 @@ citations:
   series-title: 'Proceedings of the 2019 Conference of the North American Chapter
     of the Association for Computational Linguistics: Human Language Technologies,
     Volume 1 (Long and Short Papers)'
-  year: 2019
+  year: '2019'
 - doi: 10.1609/aaai.v34i05.6292
   unstructured: 'V. Gupta, A. Saw, P. Nokhiz, P. Netrapalli, P. Rai, P. Talukdar,
     P-SIF: Document embeddings using partition averaging, in: Proceedings of the AAAI
@@ -180,50 +180,50 @@ citations:
   author: Mekala
   first-page: '659'
   series-title: Conference on Empirical Methods in Natural Language Processing
-  year: 2017
+  year: '2017'
 - article-title: Improving document classification with multi-sense embeddings
   author: Gupta
   first-page: '2030'
   series-title: European Conference on Artificial Intelligence (ECAI) 2020
-  year: 2020
+  year: '2020'
 - article-title: Breaking sticks and ambiguities with adaptive skip-gram
   author: Bartunov
   first-page: '130'
   series-title: Proceedings of the 19th International Conference on Artificial Intelligence
     and Statistics
   volume: vol. 51
-  year: 2016
+  year: '2016'
 - article-title: 'Stacked denoising autoencoders: Learning useful representations
     in a deep network with a local denoising criterion'
   author: Vincent
   issue: '12'
   journal-title: J. Mach. Learn. Res. (JMLR)
   volume: '11'
-  year: 2010
+  year: '2010'
 - article-title: Distributed representations of sentences and documents
   author: Le
   first-page: II
   series-title: Proceedings of the 31st International Conference on International
     Conference on Machine Learning (ICML) - Volume 32
-  year: 2014
+  year: '2014'
 - article-title: Distributed representations of words and phrases and their compositionality
   author: Mikolov
   first-page: '3111'
   series-title: Advances in Neural Information Processing Systems
-  year: 2013
+  year: '2013'
 - article-title: Learning document embeddings by predicting n-grams for sentiment
     classification of long movie reviews
   author: Li
   series-title: Workshop Contribution at International Conference on Learning Representations
     (ICLR) 2016
-  year: 2016
+  year: '2016'
 - article-title: Sentiment classification using document embeddings trained with cosine
     similarity
   author: Thongtan
   first-page: '407'
   series-title: 'Proceedings of the 57th Annual Meeting of the Association for Computational
     Linguistics: Student Research Workshop'
-  year: 2019
+  year: '2019'
 - article-title: Document embeddings learned on various types of n-grams for cross-topic
     authorship attribution
   author: Gómez-Adorno
@@ -231,14 +231,14 @@ citations:
   first-page: '741'
   journal-title: Computing
   volume: '100'
-  year: 2018
+  year: '2018'
 - article-title: Robust text classification for sparsely labelled data using multi-level
     embeddings
   author: Baker
   first-page: '2333'
   series-title: 'Proceedings of COLING 2016, the 26th International Conference on
     Computational Linguistics: Technical Papers'
-  year: 2016
+  year: '2016'
 - unstructured: 'G. Jawahar, M. Gupta, V. Varma, Doc2Sent2Vec: A Novel Two-Phase Approach
     for Learning Document Representation, in: Special Interest Group in Information
     Retrieval, SIGIR, Pisa, Italy, 2016, pp. 809–812.'
@@ -248,13 +248,13 @@ citations:
   first-page: '1367'
   series-title: 'Proceedings of the 2016 Conference of the North American Chapter
     of the Association for Computational Linguistics: Human Language Technologies'
-  year: 2016
+  year: '2016'
 - article-title: 'Siamese CBOW: Optimizing word embeddings for sentence representations'
   author: Kenter
   first-page: '941'
   series-title: 'Proceedings of the 54th Annual Meeting of the Association for Computational
     Linguistics (Volume 1: Long Papers)'
-  year: 2016
+  year: '2016'
 - doi: 10.18653/v1/N18-1049
   unstructured: 'M. Pagliardini, P. Gupta, M. Jaggi, Unsupervised learning of sentence
     embeddings using compositional n-gram features, in: Proceedings of North American
@@ -266,42 +266,42 @@ citations:
   first-page: '43100'
   journal-title: IEEE Access
   volume: '7'
-  year: 2019
+  year: '2019'
 - article-title: Efficient vector representation for documents through corruption
   author: Chen
   series-title: International Conference on Learning Representations
-  year: 2017
+  year: '2017'
 - article-title: 'Word mover’s embedding: From Word2Vec to document embedding'
   author: Wu
   first-page: '4524'
   series-title: Proceedings of the 2018 Conference on Empirical Methods in Natural
     Language Processing
-  year: 2018
+  year: '2018'
 - article-title: From word embeddings to document distances
   author: Kusner
   first-page: '957'
   series-title: Proceedings of the 32nd International Conference on Machine Learning
   volume: vol. 37
-  year: 2015
+  year: '2015'
 - article-title: Skip-thought vectors
   author: Kiros
   first-page: '3294'
   series-title: Advances in Neural Information Processing Systems, Vol. 28
-  year: 2015
+  year: '2015'
 - article-title: 'Rethinking skip-thought: A neighborhood based approach'
   author: Tang
   first-page: '211'
   series-title: Proceedings of the 2nd Workshop on Representation Learning for NLP
-  year: 2017
+  year: '2017'
 - author: Tang
   series-title: Trimming and improving skip-thought vectors
-  year: 2017
+  year: '2017'
 - article-title: Unsupervised sentence embedding using document structure-based context
   author: Lee
   first-page: '633'
   series-title: Joint European Conference on Machine Learning and Knowledge Discovery
     in Databases
-  year: 2019
+  year: '2019'
 - unstructured: 'M.-T. Luong, Q. Le, I. Sutskever, O. Vinyals, L. Kaiser, Multi-task
     sequence to sequence learning, in: Proceedings of International Conference on
     Learning Representations (ICLR), San Juan, Puerto Rico, 2015.'
@@ -309,29 +309,29 @@ citations:
     large scale multi-task learning
   author: Subramanian
   series-title: International Conference on Learning Representations
-  year: 2018
+  year: '2018'
 - article-title: Neural variational inference for text processing
   author: Miao
   first-page: '1727'
   series-title: Proceedings of the 33rd International Conference on International
     Conference on Machine Learning (ICML) - Volume 48
-  year: 2016
+  year: '2016'
 - article-title: Neural machine translation by jointly learning to align and translate
   author: Bahdanau
   series-title: International Conference on Learning Representations (ICLR) 2015
-  year: 2014
+  year: '2014'
 - article-title: A hierarchical neural autoencoder for paragraphs and documents
   author: Li
   first-page: '1106'
   series-title: 'Proceedings of the 53rd Annual Meeting of the Association for Computational
     Linguistics and the 7th International Joint Conference on Natural Language Processing
     (Volume 1: Long Papers)'
-  year: 2015
+  year: '2015'
 - article-title: Semantic sentence embeddings for paraphrasing and text summarization
   author: Zhang
   first-page: '705'
   series-title: 2017 IEEE Global Conference on Signal and Information Processing (GlobalSIP)
-  year: 2017
+  year: '2017'
 - doi: 10.1609/aaai.v33i01.33019993
   unstructured: 'J. Luo, M. Yang, Y. Shen, Q. Qu, Learning document embeddings with
     crossword prediction, in: Proceedings of the AAAI Conference on Artificial Intelligence,
@@ -341,48 +341,48 @@ citations:
   author: Gan
   first-page: '2390'
   series-title: Empirical Methods in Natural Language Processing
-  year: 2017
+  year: '2017'
 - article-title: A CNN-LSTM network with attention approach for learning universal
     sentence representation in embedded system
   author: Fu
   doi: 10.1016/j.micpro.2020.103051
   journal-title: Microprocess. Microsyst.
   volume: '74'
-  year: 2020
+  year: '2020'
 - article-title: Deconvolutional paragraph representation learning
   author: Zhang
   first-page: '5438'
   series-title: Advances in Neural Information Processing Systems, Vol. 30
-  year: 2017
+  year: '2017'
 - author: Zhu
   series-title: Context aware document embedding
-  year: 2017
+  year: '2017'
 - article-title: Self-discriminative learning for unsupervised document embedding
   author: Chen
   first-page: '2465'
   series-title: 'Proceedings of the 2019 Conference of the North American Chapter
     of the Association for Computational Linguistics: Human Language Technologies,
     Volume 1 (Long and Short Papers)'
-  year: 2019
+  year: '2019'
 - article-title: Linked document embedding for classification
   author: Wang
   first-page: '115'
   series-title: Proceedings of the 25th ACM International on Conference on Information
     and Knowledge Management
-  year: 2016
+  year: '2016'
 - article-title: Parsing natural scenes and natural language with recursive neural
     networks
   author: Socher
   first-page: '129'
   series-title: Proceedings of the 28th International Conference on International
     Conference on Machine Learning
-  year: 2011
+  year: '2011'
 - article-title: Semi-supervised recursive autoencoders for predicting sentiment distributions
   author: Socher
   first-page: '151'
   series-title: Proceedings of the 2011 Conference on Empirical Methods in Natural
     Language Processing
-  year: 2011
+  year: '2011'
 - article-title: 'Deep sentence embedding using long short-term memory networks: Analysis
     and application to information retrieval'
   author: Palangi
@@ -391,76 +391,76 @@ citations:
   issue: '4'
   journal-title: IEEE/ACM Trans. Audio Speech Lang. Process.
   volume: '24'
-  year: 2016
+  year: '2016'
 - article-title: Learning to understand phrases by embedding the dictionary
   author: Hill
   doi: 10.1162/tacl_a_00080
   first-page: '17'
   journal-title: Trans. Assoc. Comput. Linguist.
   volume: '4'
-  year: 2016
+  year: '2016'
 - article-title: Recurrent convolutional neural networks for text classification
   author: Lai
   first-page: '2267'
   series-title: Proceedings of the Twenty-Ninth AAAI Conference on Artificial Intelligence
-  year: 2015
+  year: '2015'
 - article-title: Hierarchical attention networks for document classification
   author: Yang
   first-page: '1480'
   series-title: 'Proceedings of the 2016 Conference of the North American Chapter
     of the Association for Computational Linguistics: Human Language Technologies'
-  year: 2016
+  year: '2016'
 - article-title: Document embedding enhanced event detection with hierarchical and
     supervised attention
   author: Zhao
   first-page: '414'
   series-title: 'Proceedings of the 56th Annual Meeting of the Association for Computational
     Linguistics (Volume 2: Short Papers)'
-  year: 2018
+  year: '2018'
 - article-title: A structured self-attentive sentence embedding
   author: Lin
   series-title: International Conference on Learning Representations (ICLR)
-  year: 2017
+  year: '2017'
 - author: Wieting
   series-title: Towards universal paraphrastic sentence embeddings
-  year: 2016
+  year: '2016'
 - article-title: Universal sentence encoder for english
   author: Cer
   first-page: '169'
   series-title: 'Proceedings of the 2018 Conference on Empirical Methods in Natural
     Language Processing: System Demonstrations'
-  year: 2018
+  year: '2018'
 - article-title: A convolutional neural network for modelling sentences
   author: Kalchbrenner
   first-page: '655'
   series-title: 'Proceedings of the 52nd Annual Meeting of the Association for Computational
     Linguistics (Volume 1: Long Papers)'
-  year: 2014
+  year: '2014'
 - article-title: Deep unordered composition rivals syntactic methods for text classification
   author: Iyyer
   first-page: '1681'
   series-title: 'Proceedings of the 53rd Annual Meeting of the Association for Computational
     Linguistics and the 7th International Joint Conference on Natural Language Processing
     (Volume 1: Long Papers)'
-  year: 2015
+  year: '2015'
 - article-title: 'XLNet: Generalized autoregressive pretraining for language understanding'
   author: Yang
   first-page: '5753'
   series-title: Advances in Neural Information Processing Systems, Vol. 32
-  year: 2019
+  year: '2019'
 - article-title: Supervised learning of universal sentence representations from natural
     language inference data
   author: Conneau
   first-page: '670'
   series-title: Proceedings of the 2017 Conference on Empirical Methods in Natural
     Language Processing
-  year: 2017
+  year: '2017'
 - article-title: 'Multi-co-training for document classification using various document
     representations: TF–IDF, LDA, and Doc2Vec'
   author: Donghwa
   journal-title: Inform. Sci.
   volume: '477'
-  year: 2018
+  year: '2018'
 - article-title: Text classification based on paragraph distributed representation
     and extreme learning machine
   author: Zeng
@@ -469,20 +469,20 @@ citations:
     Conference, ICSI 2015, Held in Conjunction with the Second BRICS Congress, CCI
     2015, Beijing, China, June 25-28, 2015, Proceedings, Part II
   volume: vol. 9141
-  year: 2015
+  year: '2015'
 - article-title: Knowledge-enhanced document embeddings for text classification
   author: Sinoara
   doi: 10.1016/j.knosys.2018.10.026
   first-page: '955'
   journal-title: Knowl.-Based Syst.
   volume: '163'
-  year: 2019
+  year: '2019'
 - article-title: Text classification with document embeddings
   author: Huang
   first-page: '131'
   series-title: Chinese Computational Linguistics and Natural Language Processing
     Based on Naturally Annotated Big Data
-  year: 2014
+  year: '2014'
 - article-title: Discriminant document embeddings with an extreme learning machine
     for classifying clinical narratives
   author: Lauren
@@ -490,22 +490,22 @@ citations:
   first-page: '129'
   journal-title: Neurocomputing
   volume: '277'
-  year: 2018
+  year: '2018'
 - author: Grnarova
   series-title: Neural document embeddings for intensive care patient mortality prediction
-  year: 2016
+  year: '2016'
 - article-title: 'Sentence-BERT: Sentence embeddings using siamese BERT-networks'
   author: Reimers
   first-page: '3982'
   series-title: Proceedings of the 2019 Conference on Empirical Methods in Natural
     Language Processing and the 9th International Joint Conference on Natural Language
     Processing (EMNLP-IJCNLP)
-  year: 2019
+  year: '2019'
 - article-title: Language models are few-shot learners
   author: Brown
   first-page: '1877'
   series-title: Advances in Neural Information Processing Systems, Vol. 33
-  year: 2020
+  year: '2020'
 - doi: 10.1145/3289600.3291023
   unstructured: 'M. Josifoski, I. Paskov, H. Paskov, M. Jaggi, R. West, Crosslingual
     document embedding as reduced-rank ridge regression, in: Proceedings of the Twelfth
@@ -515,21 +515,21 @@ citations:
   author: Cho
   first-page: '1724'
   series-title: 'EMNLP 2014: Conference on Empirical Methods in Natural Language Processing'
-  year: 2014
+  year: '2014'
 - author: Kalchbrenner
   series-title: Neural machine translation in linear time
-  year: 2016
+  year: '2016'
 - article-title: Sequence to sequence learning with neural networks
   author: Sutskever
   first-page: '3104'
   series-title: Proceedings of the 27th International Conference on Neural Information
     Processing Systems - Volume 2
-  year: 2014
+  year: '2014'
 - article-title: Cross-lingual language model pretraining
   author: Conneau
   first-page: '7059'
   series-title: Advances in Neural Information Processing Systems, Vol. 32
-  year: 2019
+  year: '2019'
 - article-title: Massively multilingual sentence embeddings for zero-shot cross-lingual
     transfer and beyond
   author: Artetxe
@@ -537,73 +537,73 @@ citations:
   first-page: '597'
   journal-title: Trans. Assoc. Comput. Linguist.
   volume: '7'
-  year: 2019
+  year: '2019'
 - article-title: Attention is all you need
   author: Vaswani
   first-page: '6000'
   series-title: Advances in Neural Information Processing Systems, Vol. 30
-  year: 2017
+  year: '2017'
 - article-title: 'Show, attend and tell: Neural image caption generation with visual
     attention'
   author: Xu
   first-page: '2048'
   series-title: International Conference on Machine Learning
-  year: 2015
+  year: '2015'
 - article-title: 'DiSAN: Directional self-attention network for RNN/CNN-free language
     understanding'
   author: Shen
   first-page: '5446'
   series-title: AAAI
-  year: 2018
+  year: '2018'
 - article-title: 'Reinforced self-attention network: A hybrid of hard and soft attention
     for sequence modeling'
   author: Shen
   first-page: '4345'
   series-title: Proceedings of the 27th International Joint Conference on Artificial
     Intelligence
-  year: 2018
+  year: '2018'
 - article-title: 'Transformer-XL: Attentive language models beyond a fixed-length
     context'
   author: Dai
   first-page: '2978'
   series-title: Proceedings of the 57th Annual Meeting of the Association for Computational
     Linguistics
-  year: 2019
+  year: '2019'
 - article-title: Bi-directional block self-attention for fast and memory-efficient
     sequence modeling
   author: Shen
   series-title: International Conference on Learning Representations
-  year: 2018
+  year: '2018'
 - author: Radford
   series-title: Improving Language Understanding by Generative Pre-Training
-  year: 2018
+  year: '2018'
 - article-title: Language models are unsupervised multitask learners
   author: Radford
   journal-title: OpenAI Blog
-  year: 2018
+  year: '2018'
 - article-title: 'ALBERT: A lite BERT for self-supervised learning of language representations'
   author: Lan
   series-title: International Conference on Learning Representations
-  year: 2020
+  year: '2020'
 - article-title: 'DistilBERT, a distilled version of BERT: smaller, faster, cheaper
     and lighter'
   author: Sanh
   series-title: 5th Workshop on Energy Efficient Machine Learning and Cognitive Computing
     at NeurIPS 2019
-  year: 2019
+  year: '2019'
 - article-title: 'SpanBERT: Improving pre-training by representing and predicting
     spans'
   author: Joshi
   journal-title: Trans. Assoc. Comput. Linguist.
   volume: '8'
-  year: 2020
+  year: '2020'
 - article-title: 'MASS: Masked sequence to sequence pre-training for language generation'
   author: Song
   first-page: '5926'
   series-title: Proceedings of the 36th International Conference on Machine Learning,
     ICML 2019, 9-15 June 2019, Long Beach, California, USA
   volume: vol. 97
-  year: 2019
+  year: '2019'
 - article-title: 'BioBERT: a pre-trained biomedical language representation model
     for biomedical text mining'
   author: Lee
@@ -612,90 +612,90 @@ citations:
   issue: '4'
   journal-title: Bioinformatics
   volume: '36'
-  year: 2019
+  year: '2019'
 - article-title: 'SciBERT: A pretrained language model for scientific text'
   author: Beltagy
   first-page: '3615'
   series-title: Proceedings of the 2019 Conference on Empirical Methods in Natural
     Language Processing and the 9th International Joint Conference on Natural Language
     Processing (EMNLP-IJCNLP)
-  year: 2019
+  year: '2019'
 - article-title: Publicly available clinical BERT embeddings
   author: Alsentzer
   first-page: '72'
   series-title: Proceedings of the 2nd Clinical Natural Language Processing Workshop
-  year: 2019
+  year: '2019'
 - article-title: 'SBERT-WK: A sentence embedding method by dissecting BERT-based word
     models'
   author: Wang
   journal-title: IEEE/ACM Trans. Audio Speech Lang. Process.
   volume: PP
-  year: 2020
+  year: '2020'
 - article-title: 'RoBERTa: A robustly optimized BERT pretraining approach'
   author: Liu
   series-title: Under Review as a Conference Paper at International Conference on
     Learning Representations (ICLR) 2020
-  year: 2020
+  year: '2020'
 - article-title: Story ending prediction by transferable bert
   author: Li
   first-page: '1800'
   series-title: Proceedings of the 28th International Joint Conference on Artificial
     Intelligence
-  year: 2019
+  year: '2019'
 - author: Adhikari
   series-title: 'DocBERT: BERT for document classification'
-  year: 2019
+  year: '2019'
 - article-title: Hierarchical transformers for long document classification
   author: Pappagari
   first-page: '838'
   series-title: 2019 IEEE Automatic Speech Recognition and Understanding Workshop
-  year: 2019
+  year: '2019'
 - article-title: 'BERTgrid: Contextualized embedding for 2D document representation
     and understanding'
   author: Denk
   series-title: NeurIPS 2019
-  year: 2019
+  year: '2019'
 - article-title: Language-agnostic BERT sentence embedding
   author: Feng
   first-page: '878'
   series-title: 'Proceedings of the 60th Annual Meeting of the Association for Computational
     Linguistics (Volume 1: Long Papers)'
-  year: 2022
+  year: '2022'
 - article-title: 'ELECTRA: Pre-training text encoders as discriminators rather than
     generators'
   author: Clark
   series-title: 'ICLR 2020 : Eighth International Conference on Learning Representations'
-  year: 2020
+  year: '2020'
 - author: Wu
   series-title: 'CLEAR: Contrastive learning for sentence representation'
-  year: 2020
+  year: '2020'
 - author: Ma
   series-title: 'Universal text representation from BERT: An empirical study'
-  year: 2019
+  year: '2019'
 - article-title: Towards debiasing sentence representations
   author: Liang
   first-page: '5502'
   series-title: Proceedings of the 58th Annual Meeting of the Association for Computational
     Linguistics
-  year: 2020
+  year: '2020'
 - article-title: 'SPECTER: Document-level representation learning using citation-informed
     transformers'
   author: Cohan
   first-page: '2270'
   series-title: Association for Computational Linguistics ACL
-  year: 2020
+  year: '2020'
 - article-title: 'Distributional semantics with eyes: Using image analysis to improve
     computational representations of word meaning'
   author: Bruni
   first-page: '1219'
   series-title: Proceedings of the 20th ACM International Conference on Multimedia
-  year: 2012
+  year: '2012'
 - article-title: Visual information in semantic representation
   author: Feng
   first-page: '91'
   series-title: 'Human Language Technologies: The 2010 Annual Conference of the North
     American Chapter of the Association for Computational Linguistics'
-  year: 2010
+  year: '2010'
 - unstructured: 'S. Bergsma, R. Goebel, Using visual information to predict lexical
     preference, in: Proceedings of the International Conference Recent Advances in
     Natural Language Processing 2011, Hissar, Bulgaria, 2011, pp. 399–405.'
@@ -704,13 +704,13 @@ citations:
   first-page: '22'
   series-title: Proceedings of the GEMS 2011 Workshop on Geometrical Models of Natural
     Language Semantics
-  year: 2011
+  year: '2011'
 - article-title: Models of semantic representation with visual attributes
   author: Silberer
   first-page: '572'
   series-title: 'Proceedings of the 51st Annual Meeting of the ACL (Volume 1: Long
     Papers)'
-  year: 2013
+  year: '2013'
 - article-title: Relations between two sets of variates
   author: Hotelling
   first-page: '162'
@@ -724,7 +724,7 @@ citations:
   issue: '3'
   journal-title: Psychol. Rev.
   volume: '116'
-  year: 2009
+  year: '2009'
 - doi: 10.3115/v1/P14-1068
   unstructured: 'C. Silberer, M. Lapata, Learning grounded meaning representations
     with autoencoders, in: Proceedings of the 52nd Annual Meeting of the Association
@@ -746,7 +746,7 @@ citations:
   first-page: '255'
   series-title: Proceedings of the 2014 Conference on Empirical Methods in Natural
     Language Processing
-  year: 2014
+  year: '2014'
 - article-title: 'Nasari: Integrating explicit knowledge and corpus statistics for
     a multilingual representation of concepts and entities'
   author: Camacho-Collados
@@ -754,7 +754,7 @@ citations:
   first-page: '36'
   journal-title: Artificial Intelligence
   volume: '240'
-  year: 2016
+  year: '2016'
 - article-title: 'WordNet: A lexical database for english'
   author: Miller
   doi: 10.1145/219717.219748
@@ -770,19 +770,19 @@ citations:
   first-page: '217'
   journal-title: Artificial Intelligence
   volume: '193'
-  year: 2012
+  year: '2012'
 - article-title: Single or multiple? Combining word representations independently
     learned from text and wordnet
   author: Goikoetxea
   first-page: '2608'
   series-title: Thirtieth AAAI Conference on Artificial Intelligence
-  year: 2016
+  year: '2016'
 - article-title: Combining word semantics within complex Hilbert space for information
     retrieval
   author: Wittek
   first-page: '160'
   series-title: International Symposium on Quantum Interaction
-  year: 2013
+  year: '2013'
 - doi: 10.3115/v1/N15-1184
   unstructured: 'M. Faruqui, J. Dodge, S.K. Jauhar, C. Dyer, E. Hovy, N.A. Smith,
     Retrofitting word vectors to semantic lexicons, in: Proceedings of the 2015 Conference
@@ -793,7 +793,7 @@ citations:
   author: Thoma
   first-page: '694'
   series-title: International Semantic Web Conference
-  year: 2017
+  year: '2017'
 - article-title: Sentiment-aware word embedding for emotion classification
   author: Mao
   doi: 10.3390/app9071334
@@ -801,7 +801,7 @@ citations:
   issue: '7'
   journal-title: Appl. Sci.
   volume: '9'
-  year: 2019
+  year: '2019'
 - doi: 10.18653/v1/D18-1011
   unstructured: 'S. Wang, J. Zhang, C. Zong, Associative multichannel autoencoder
     for multimodal word representation, in: Proceedings of the 2018 Conference on
@@ -811,7 +811,7 @@ citations:
   first-page: '153'
   series-title: 'Proceedings of the 2015 Conference of the North American Chapter
     of the Association for Computational Linguistics: Human Language Technologies'
-  year: 2015
+  year: '2015'
 - doi: 10.1109/CVPR.2016.539
   unstructured: 'S. Kottur, R. Vedantam, J.M. Moura, D. Parikh, Visual word2vec (vis-w2v):
     Learning visually grounded word embeddings using abstract scenes, in: Proceedings
@@ -830,7 +830,7 @@ citations:
   author: Hasegawa
   series-title: IWCS 2017—12th International Conference on Computational Semantics—Short
     Papers
-  year: 2017
+  year: '2017'
 - doi: 10.1609/aaai.v32i1.11939
   unstructured: 'E. Zablocki, B. Piwowarski, L. Soulier, P. Gallinari, Learning multi-modal
     word representation grounded in visual context, in: Proceedings of the AAAI Conference
@@ -840,13 +840,13 @@ citations:
   first-page: '132'
   series-title: Joint European Conference on Machine Learning and Knowledge Discovery
     in Databases
-  year: 2014
+  year: '2014'
 - article-title: A unified model for word sense representation and disambiguation
   author: Chen
   first-page: '1025'
   series-title: Proceedings of the 2014 Conference on Empirical Methods in Natural
     Language Processing
-  year: 2014
+  year: '2014'
 - doi: 10.3115/v1/P14-2089
   unstructured: 'M. Yu, M. Dredze, Improving lexical embeddings with semantic knowledge,
     in: Proceedings of the 52nd Annual Meeting of the Association for Computational
@@ -856,14 +856,14 @@ citations:
   author: Celikyilmaz
   first-page: '39'
   series-title: 2015 AAAI Spring Symposium Series
-  year: 2015
+  year: '2015'
 - article-title: 'Freebase: A collaboratively created graph database for structuring
     human knowledge'
   author: Bollacker
   first-page: '1247'
   series-title: Proceedings of the 2008 ACM SIGMOD International Conference on Management
     of Data
-  year: 2008
+  year: '2008'
 - doi: 10.3115/v1/P15-1173
   unstructured: 'S. Rothe, H. Schütze, AutoExtend: Extending word embeddings to embeddings
     for synsets and lexemes, in: Proceedings of the 53rd Annual Meeting of the Association
@@ -875,23 +875,23 @@ citations:
   series-title: 'Proceedings of the 53rd Annual Meeting of the Association for Computational
     Linguistics and the 7th International Joint Conference on Natural Language Processing
     (Volume 1: Long Papers)'
-  year: 2015
+  year: '2015'
 - article-title: Integrating extra knowledge into word embedding models for biomedical
     NLP tasks
   author: Ling
   first-page: '968'
   series-title: 2017 International Joint Conference on Neural Networks
-  year: 2017
+  year: '2017'
 - article-title: Multi-view recurrent neural acoustic word embeddings
   author: He
   series-title: International Conference on Learning Representations
-  year: 2017
+  year: '2017'
 - article-title: 'Sound-Word2Vec: Learning word representations grounded in sounds'
   author: Vijayakumar
   first-page: '920'
   series-title: Proceedings of the 2017 Conference on Empirical Methods in Natural
     Language Processing
-  year: 2017
+  year: '2017'
 - doi: 10.1145/2502081.2502245
   unstructured: 'F. Font, G. Roma, X. Serra, Freesound technical demo, in: Proceedings
     of the 21st ACM International Conference on Multimedia, 2013, pp. 411–412.'
@@ -904,23 +904,23 @@ citations:
   author: Lu
   first-page: '1'
   series-title: Advances in Neural Information Processing Systems, Vol. 32
-  year: 2019
+  year: '2019'
 - author: Li
   series-title: 'Visualbert: A simple and performant baseline for vision and language'
-  year: 2019
+  year: '2019'
 - article-title: Knowledge enhanced contextual word representations
   author: Peters
   first-page: '43'
   series-title: Proceedings of the 2019 Conference on Empirical Methods in Natural
     Language Processing and the 9th International Joint Conference on Natural Language
     Processing (EMNLP-IJCNLP)
-  year: 2019
+  year: '2019'
 - article-title: Enriching BERT with knowledge graph embeddings for document classification
   author: Ostendorff
   first-page: '307'
   series-title: Proceedings of the 15th Conference on Natural Language Processing
     (KONVENS 2019)
-  year: 2019
+  year: '2019'
 - article-title: 'Multimodal machine learning: A survey and taxonomy'
   author: Baltrušaitis
   doi: 10.1109/TPAMI.2018.2798607
@@ -928,21 +928,21 @@ citations:
   issue: '2'
   journal-title: IEEE Trans. Pattern Anal. Mach. Intell.
   volume: '41'
-  year: 2018
+  year: '2018'
 - article-title: 'Deep multimodal representation learning: A survey'
   author: Guo
   doi: 10.1109/ACCESS.2019.2916887
   first-page: '63373'
   journal-title: IEEE Access
   volume: '7'
-  year: 2019
+  year: '2019'
 - article-title: Learning language through pictures
   author: Chrupała
   first-page: '112'
   series-title: 'Proceedings of the 53rd Annual Meeting of the Association for Computational
     Linguistics and the 7th International Joint Conference on Natural Language Processing
     (Volume 2: Short Papers)'
-  year: 2015
+  year: '2015'
 - doi: 10.1109/CVPR.2016.13
   unstructured: 'S. Reed, Z. Akata, H. Lee, B. Schiele, Learning deep representations
     of fine-grained visual descriptions, in: Proceedings of the IEEE Conference on
@@ -954,32 +954,32 @@ citations:
   issue: '4'
   journal-title: IEEE Trans. Pattern Anal. Mach. Intell.
   volume: '39'
-  year: 2017
+  year: '2017'
 - article-title: Audio-linguistic embeddings for spoken sentences
   author: Haque
   first-page: '7355'
   series-title: ICASSP 2019-2019 IEEE International Conference on Acoustics, Speech
     and Signal Processing
-  year: 2019
+  year: '2019'
 - article-title: 'Entity linking meets word sense disambiguation: a unified approach'
   author: Moro
   doi: 10.1162/tacl_a_00179
   first-page: '231'
   journal-title: Trans. Assoc. Comput. Linguist.
   volume: '2'
-  year: 2014
+  year: '2014'
 - article-title: Automatic document screening of medical literature using word and
     text embeddings in an active learning setting
   author: Carvallo
   doi: 10.1007/s11192-020-03648-6
   journal-title: Scientometrics
   volume: '125'
-  year: 2020
+  year: '2020'
 - article-title: Fusing contextual word embeddings for concreteness estimation
   author: Incitti
   first-page: '508'
   series-title: 2021 IEEE 24th International Conference on Information Fusion
-  year: 2021
+  year: '2021'
 doi: 10.1016/j.inffus.2022.08.024
 files:
 - 1-s2.0-s1566253522001233-main-a.pdf
