@@ -509,30 +509,31 @@ the previously introduced notation
 \section{Loss Functions}
 \label{sec:losses}
 
-As mentioned in~\Cref{subsec:hierarchies} using custom loss function is another
-viable path to inject semantic information at training time. However in this
-work we do not explore this avenue, limiting to the use of standard losses due
-to the following compelling reason. In some cases it can be shown that when
-combining standard loss functions with custom encoding is equivalent to use
-custom loss functions applied on one-hot encoding. We think that standard-loss /
-custom-encoding approach, when possible, is preferable because it move some
-computational cost in the pre-training phase (embedding are computed before the
-training)and make it possible to use the well-implemented and highly
-optimization loss functions available in deep learning libraries.
+As mentioned in~\Cref{subsec:hierarchies}, using custom loss functions is
+another viable path to inject semantic information at training time. However, in
+this work, we do not explore this avenue, limiting ourselves to the use of
+standard losses due to the following compelling reason. In some cases, it can be
+shown that combining standard loss functions with custom encoding is equivalent
+to using custom loss functions applied on one-hot encoding. We think that the
+standard-loss / custom-encoding approach, when possible, is preferable because
+it moves some computational cost to the pre-training phase (embeddings are
+computed before the training) and makes it possible to use the well-implemented
+and highly optimized loss functions available in deep learning libraries.
 
-The loss function that use coupled with custom embedding are \emph{cross
-entropy} and \emph{cosine distance}.
+The loss functions that we use in conjunction with custom embeddings are
+\emph{cross entropy} and \emph{cosine distance}.
+
 
 \subsection{Cross entropy Loss}
 \label{subsec:cross-entropy-loss}
 
-\acrfull{xe} is widely employed in classification problems. It can be derive
-from the principle of maximum likelihood estimation showing that maximizing the
-likelihood is equivalent to cross-entropy minimization. Its mathematical
-foundation, its simplicity and its effectiveness in the practice make it the de
-facto standard loss function for classification tasks.
+\acrfull{xe} is widely employed in classification problems. It can be derived
+from the principle of maximum likelihood estimation, showing that maximizing the
+likelihood is equivalent to minimizing cross entropy. Its mathematical
+foundation, simplicity, and effectiveness in practice make it the de facto
+standard loss function for classification tasks.
 
-Given the two probability vector $p$ and $q$  which components come from
+Given two probability vectors $p$ and $q$, whose components come from
 probability distributions over the same underlying set of events $\mathcal{C}$,
 the cross entropy is defined as:
 \begin{equation}
@@ -546,8 +547,8 @@ the cross entropy is defined as:
 \end{equation}
 
 \paragraph{Cross entropy with one-hot encoding} When computing cross entropy
-between model output and its corresponding one-hot encoded class, the expression
-further simplify into
+between the model output and its corresponding one-hot encoded class, the
+expression further simplifies into
 \begin{equation*}
   \textrm{XE} \, (\psi(c_i),\phi_\theta(x))
   = - \phi(c_i) \cdot \log \psi_\theta(x)
@@ -556,16 +557,16 @@ further simplify into
   \label{eq:cross-entropy-one-hot-encoding}
 \end{equation*}
 so only one component from the model output vector is directly involved in the
-model optimization: the one corresponding to the corresponding encoded class is
-maximize.~\footnote{Moreover some optimization tricks can pulled out which avoid
-  overflow and underflow problem when computing the exponential followed by the
-logarithm. Gradient calculation benefit as well.}
+model optimization: the one corresponding to the encoded class is
+maximized.~\footnote{Moreover, some optimization tricks can be used to avoid
+  overflow and underflow problems when computing the exponential followed by the
+logarithm. Gradient calculation also benefits from these tricks.}
 % TODO: further explore this tricks https://www.youtube.com/watch?v=p-6wUOXaVqs
 Starting from an untrained model, we ask it to classify an image containing an
-apple coming from the toy dataset obtaining a probability vector with random
-entries as model's output~(\Cref{fig:03/xe-onehot-before}). Training that make
-use of cross-entropy loss try to modify the model's parameters $\theta$ in such
-a way that the probability distribution of output's entries resemble the
+apple from the toy dataset, obtaining a probability vector with random entries
+as the model's output~(\Cref{fig:03/xe-onehot-before}). Training that makes use
+of cross-entropy loss tries to modify the model's parameters $\theta$ in such a
+way that the probability distribution of the output's entries resembles the
 distribution of the components of the corresponding encoding; a \emph{one} with
 $|\mathcal{C}| - 1$ \emph{zeros} in the case of one-hot
 encoding~(\Cref{fig:03/xe-onehot-after}).
@@ -592,9 +593,9 @@ encoding~(\Cref{fig:03/xe-onehot-after}).
   \caption{What cross entropy with one-hot encoding optimize for}
 \end{figure}
 
-While cross entropy pull up the probability of the correct class, the presence
-of normalization in the softmax function push down the probability related the
-other classes. This all or nothing, black and white, approach is the limit of
+While cross entropy pulls up the probability of the correct class, the presence
+of normalization in the softmax function pushes down the probability related to
+the other classes. This all-or-nothing, black-and-white approach is the limit of
 ordinary classification models that do not exploit relationships between
 classes.
 
@@ -602,12 +603,12 @@ In the following this binomial (cross-entropy with one-hot encoding) will be
 consider the \emph{baseline} against which the other encoding-loss pairs will be
 compared.
 
-\paragraph{Cross entropy with hierarchical encoding} Cross entropy and be also
-use as a loss functions in the case of hierarchical. Bertinetto et
+\paragraph{Cross entropy with hierarchical encoding} Cross entropy can be also
+used as a loss function in the case of hierarchical. Bertinetto et
 al.~(\ref{par:encoding-mbm}) and Perotti et al.~(\ref{par:encoding-b3p}) indeed
 utilize standard cross entropy loss with their respective hierarchical encoding
 implementation. In this case, the expression for the cross entropy loss cannot
-be simplified as in~\Cref{eq:cross-entropy-one-hot-encoding} and all the
+be simplified as in~\Cref{eq:cross-entropy-one-hot-encoding} and all
 components of the encoding play a role in the model optimization. Not only
 should a predominant class emerge during training, but the other ones should
 have their corresponding predicted probability not zero. The more a class is
@@ -639,17 +640,17 @@ be.
 \subsection{Cosine distance Loss}
 \label{subsec:cosine-distance-loss}
 
-A different beasts are models that do not produce probability distribution as
+A different beast are models that do not produce probability distribution as
 their output and instead return a ``vector representation of their answer''. To
 get the predicted class, the output vector is the compared to the classes'
 encodings and select the one with the highest similarity. The class related to
-the most similar is the predicted class (see later in~\Cref{sec:decoding}).
+the most similar one is the predicted class (see later in~\Cref{sec:decoding}).
 
 In this case we try to act on the model's parameters in such a way that the
 output vector of a specific image get closer and closer to the encoding vector
 of the corresponding class. To do so we need a loss function that account for
-such similarity maximization (or dissimilarity minimization). Starting from
-cosine distance~\eqref{eq:cosine-simiarity} we define the \acrfull{cd} as
+such maximization of similarity (or minimization of dissimilarity). Starting
+from cosine distance~\eqref{eq:cosine-simiarity} we define the \acrfull{cd} as
 \begin{equation}
   \textrm{CD} \, (p, q) := 1 - \cos (p, q)
   \label{eq:cosine-distance}
@@ -660,24 +661,24 @@ cosine distance~\eqref{eq:cosine-simiarity} we define the \acrfull{cd} as
   \end{cases}
 \end{equation}
 
-\paragraph{Cosine distance with descriptions encoding} Barz and
+\paragraph{Cosine distance with Barz \& Denzler's encodings} Barz and
 Denzler~(\ref{par:encoding-bd}) use cosine distance as loss function
 in~\cite{HierarchyBasedBarz2018} which proved to be particularly effective with
 small datasets~\cite{DeepLearningOBarz2019}. In their work they experiment with
-custom architectures with multiple output heads. One use cosine distance to
-align the head's output to their custom encoding while the latter use standard
+custom architectures with multiple output heads. One uses cosine distance to
+align the head's output to their custom encoding while the latter uses standard
 cross entropy loss with one-hot encoding. The total loss function is just the
 sum of the two. We avoid messing up with custom architectures so the
-effectiveness of Barz and Denzler encoding can be directly compare with PCA
+effectiveness of Barz and Denzler encoding can be directly compared with PCA
 Description Encoding~(\ref{par:encoding-desc}).
 
 \paragraph{Cosine distance with descriptions encoding} Suppose that we have
-generate descriptions of classes alike in~\Cref{fig:descriptions}, then
-following the procedure describe in~\Cref{par:encoding-desc} we get the
-description encodings. To visually understand how cosine distance loss optimize
+generated descriptions of classes alike in~\Cref{fig:descriptions}, then
+following the procedure described in~\Cref{par:encoding-desc} we get the
+description encodings. To visually understand how cosine distance loss optimizes
 model we further project the description encodings and model's output  into a
 2-dimensional vector (see later~\Cref{subsec:encodings-projections}).
-Optimization with cosine distance boils down to minimize the angle between
+Optimization with cosine distance boils down to minimize the angle between the
 output vector and the encoding vector of the corresponding class.
 \begin{figure}[htbp]
   \begin{subfigure}{0.45\textwidth}
