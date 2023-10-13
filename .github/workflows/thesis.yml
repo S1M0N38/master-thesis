@@ -33,8 +33,10 @@ jobs:
         run: |
           cd thesis
           tectonic main.tex
+          makeglossaries main
+          tectonic main.tex
           cd ..
-
+      
       - name: Publish
         uses: actions/upload-artifact@v3
         with:
