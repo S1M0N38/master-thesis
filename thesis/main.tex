@@ -31,9 +31,9 @@
 
 % bibliography
 \usepackage[
-  backend=biber,
-  style=numeric,
-  sorting=none,
+	backend=biber,
+	style=numeric,
+	sorting=none,
 ]{biblatex}
 \addbibresource{bibliography.bib}
 
@@ -41,10 +41,10 @@
 \usepackage{hyperref}
 \usepackage{cleveref}
 \hypersetup{
-    colorlinks=true,
-    linkcolor=black,      % Color of internal links (e.g., table of contents)
-    citecolor=gray,       % Color of citation links (e.g., in-text references)
-    urlcolor=black,       % Color of URLs and external links
+	colorlinks=true,
+	linkcolor=black,      % Color of internal links (e.g., table of contents)
+	citecolor=gray,       % Color of citation links (e.g., in-text references)
+	urlcolor=black,       % Color of URLs and external links
 }
 
 % glossary
@@ -60,7 +60,7 @@
 \mathchardef\ordinarycolon\mathcode`\:
 \mathcode`\:=\string"8000
 \begingroup \catcode`\:=\active
-  \gdef:{\mathrel{\mathop\ordinarycolon}}
+\gdef:{\mathrel{\mathop\ordinarycolon}}
 \endgroup
 
 % math operators
