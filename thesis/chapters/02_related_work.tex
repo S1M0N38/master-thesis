@@ -4,246 +4,90 @@
 \section{Image Classification with Neural Networks}
 \label{sec:image-classification-with-neural-networks}
 
-One of the first instances where Neural Networks were employed for image
-classification was in 1998 by LeCun et al.~\cite{GradientBasedLecun1998}. Their
-model, LeNet-5, was able to identify handwritten digits with higher accuracy
-than previous methods that relied on manual feature extraction such as edge
-detection and hardcoded pattern recognition. The raw image of the digit is % FIX: is?
-passed as input to LeNet, and the model outputs a number from 0 to 9. Some
-foundational ideas that were at the core of the architecture (convolutional
-operations, gradient-based optimization, pooling layers) stood the test of time
-and proved to be highly successful.
+% FIX: ... digit is passed ...?
+One of the first instances where Neural Networks were employed for image classification was in 1998 by LeCun et al.~\cite{GradientBasedLecun1998}. Their model, LeNet-5, was able to identify handwritten digits with higher accuracy than previous methods that relied on manual feature extraction such as edge detection and hardcoded pattern recognition. The raw image of the digit is passed as input to LeNet, and the model outputs a number from 0 to 9.
+Some foundational ideas that were at the core of the architecture (convolutional operations, gradient-based optimization, pooling layers) stood the test of time and proved to be highly successful.
 
-Fast forwarding to 2012. AlexNet~\cite{ImagenetClassiKrizhe2017}, a
-\acrfull{cnn} similar in spirit to LeNet-5, won the
-\acrfull{ilsvrc}~\cite{ImagenetLargeRussak2014} with a significant 10.8\% gap
-over the runner-up in the top-5 error metric. This result demonstrated the
-potential of \acrshort{cnn}s to process larger color images (224 × 224 × 3) and
-sparked renewed interest in the field, which shifted from the idea of manual
-feature extraction to the end-to-end approach.
+Fast forwarding to 2012. AlexNet~\cite{ImagenetClassiKrizhe2017}, a \acrfull{cnn} similar in spirit to LeNet-5, won the \acrfull{ilsvrc}~\cite{ImagenetLargeRussak2014} with a significant 10.8\% gap over the runner-up in the top-5 error metric. This result demonstrated the potential of \acrshort{cnn}s to process larger color images (224 × 224 × 3) and sparked renewed interest in the field, which shifted from the idea of manual feature extraction to the end-to-end approach.
 
-Researchers investigated various components of the \acrshort{cnn} architecture:
-model depth, the optimal kernel size, the number of filters, and pooling
-operations. Some works \cite{VeryDeepConvoSimony2014, GoingDeeperWiSzeged2014}
-focus on increasing the depth of the models, and Szegedy et
-al.~\cite{GoingDeeperWiSzeged2014} were able to do so through the introduction
-of a highly efficient ``Inception module'', which increased depth while
-maintaining \acrfull{flops} under control. Keeping \acrshort{flops} low at
-inference time is crucial for embedding models into resource-constrained
-devices such as smartphones or \acrfull{itos}~\cite{SqueezenetAleIandol2016,
-MnasnetPlatfoTanM2018, MobilenetsEffHoward2017}.
+Researchers investigated various components of the \acrshort{cnn} architecture: model depth, the optimal kernel size, the number of filters, and pooling operations. Some works \cite{VeryDeepConvoSimony2014, GoingDeeperWiSzeged2014} focus on increasing the depth of the models, and Szegedy et al.~\cite{GoingDeeperWiSzeged2014} were able to do so through the introduction of a highly efficient ``Inception module'', which increased depth while maintaining \acrfull{flops} under control. Keeping \acrshort{flops} low at inference time is crucial for embedding models into resource-constrained devices such as smartphones or \acrfull{itos}~\cite{SqueezenetAleIandol2016, MnasnetPlatfoTanM2018, MobilenetsEffHoward2017}.
 
-A problem that arose with the increase in depth was the so-called ``vanishing
-gradient''. The gradient of the loss function with respect to the model's
-parameters in the early layers tends to zero, and this affects the ability of
-the optimizer to properly update those weights. Residual connections,
-introduced in ResNet~\cite{DeepResidualLHeKa2015, IdentityMappinHeKa2016}, are
-shortcuts in the network architecture that effectively circumvent the problem,
-allowing the gradient to flow backwards effectively so that deeper models can
-be trained. Connections between layers, i.e.\ the topology of the network, were % FIX: curly line
-further explored by~\cite{DualPathNetwoChen2017, DenselyConnectHuang2016} and
-previously using evolutionary methods by~\cite{DesigningNeuraMiller1989,
-EvolvingNeuralStanle2002}.
+% FIX: undercurl | ... the topology of the network, were ...
+A problem that arose with the increase in depth was the so-called ``vanishing gradient''. The gradient of the loss function with respect to the model's parameters in the early layers tends to zero, and this affects the ability of the optimizer to properly update those weights.
+Residual connections, introduced in ResNet~\cite{DeepResidualLHeKa2015, IdentityMappinHeKa2016}, are shortcuts in the network architecture that effectively circumvent the problem, allowing the gradient to flow backwards effectively so that deeper models can be trained.
+Connections between layers, i.e.\ the topology of the network, were further explored by~\cite{DualPathNetwoChen2017, DenselyConnectHuang2016} and previously using evolutionary methods by~\cite{DesigningNeuraMiller1989, EvolvingNeuralStanle2002}.
 
-Neural Architecture Search was employed to search for the optimal width and the
-depth of a model given a basic building block~\cite{ProgressiveNeuLiuC2017,
-GeneticCnnXieL2017, LargeScaleEvoReal2017, RegularizedEvoReal2018}. Utilizing
-different building blocks and optimizing for various budget types
-(e.g.~\acrshort{flops}, number of parameters, inference time), numerous
-architectures were produced. EfficientNets~\cite{EfficientnetRTanM2019,
-Efficientnetv2TanM2021} represent a well-known example of such approaches,
-employing the Squeeze-and-Excitation module~\cite{SqueezeAndExcHuJi2017} as a
-fundamental component.
+Neural Architecture Search was employed to search for the optimal width and the depth of a model given a basic building block~\cite{ProgressiveNeuLiuC2017, GeneticCnnXieL2017, LargeScaleEvoReal2017, RegularizedEvoReal2018}. Utilizing different building blocks and optimizing for various budget types (e.g.~\acrshort{flops}, number of parameters, inference time), numerous architectures were produced.
+EfficientNets~\cite{EfficientnetRTanM2019, Efficientnetv2TanM2021} represent a well-known example of such approaches, employing the Squeeze-and-Excitation module~\cite{SqueezeAndExcHuJi2017} as a fundamental component.
 
-Stacks of convolutional blocks followed by \acrfull{fc} layers have begun to
-reach their limit with regard to classification accuracy. \acrshort{cnn}s were
-augmented with an attention mechanism to more effectively process global
-features in an image, thereby defining hybrid
-architectures~\cite{SpatialTransfoJaderb2015, LookAndThinkCaoC2015,
-ShowAttendAnXuKe2015, ScaCnnSpatiaChen2016}. Recently, interest has shifted
-toward \acrfull{vit}~\cite{AnImageIsWorDosovi2020}, architectures that solely
-use an attention mechanism for feature extraction, which are capable of
-achieving state-of-the-art results in some well-established image
-classification problems~\cite{TransformersInKhan2021, ASurveyOnVisHanK2023}.
-\acrshort{vit} requires training on huge datasets to attain competitive
-performance and, as of the time of writing, cannot run on consumer or low-power % FIX: run -> train
-devices due to high computational costs.
+% FIX: run -> train | ... cannot run on consumer or low-power ...
+Stacks of convolutional blocks followed by \acrfull{fc} layers have begun to reach their limit with regard to classification accuracy. \acrshort{cnn}s were augmented with an attention mechanism to more effectively process global features in an image, thereby defining hybrid architectures~\cite{SpatialTransfoJaderb2015, LookAndThinkCaoC2015, ShowAttendAnXuKe2015, ScaCnnSpatiaChen2016}.
+Recently, interest has shifted toward \acrfull{vit}~\cite{AnImageIsWorDosovi2020}, architectures that solely use an attention mechanism for feature extraction, which are capable of achieving state-of-the-art results in some well-established image classification problems~\cite{TransformersInKhan2021, ASurveyOnVisHanK2023}. \acrshort{vit} requires training on huge datasets to attain competitive performance and, as of the time of writing, cannot run on consumer or low-power devices due to high computational costs.
 
 \section{Semantic Information Representations}
 \label{sec:semantic-information-sources}
 
-In supervised learning, image classification is a task that consists of
-assigning a label to an image from a fixed set of labels. Without any
-additional information about the labels, they are merely a set of symbols with
-no inherent structure or relationship between them. Conversely, having richer % FIX: more
-information on labels turns out to be beneficial for model
-interpretability~\cite{ImprovingInterDong2017}, image
-summarization~\cite{SemanticImagePasini2022}, and image classification
-itself~\cite{MakingBetterMBertin2019}. Assuming that the label of an image is
-an English word indicating what is depicted in the image, we can obtain
-supplementary information about a label from various sources, which produce
-different representations.
+% FIX: more | ... between them. Conversely, having richer
+In supervised learning, image classification is a task that consists of assigning a label to an image from a fixed set of labels.
+Without any additional information about the labels, they are merely a set of symbols with no inherent structure or relationship between them.
+Conversely, having richer information on labels turns out to be beneficial for model interpretability~\cite{ImprovingInterDong2017}, image summarization~\cite{SemanticImagePasini2022}, and image classification itself~\cite{MakingBetterMBertin2019}. Assuming that the label of an image is an English word indicating what is depicted in the image, we can obtain supplementary information about a label from various sources, which produce different representations.
 
-\paragraph{Hierarchies (trees)} % FIX: ?
+% FIX: ?
+\paragraph{Hierarchies (trees)}
 \label{par:hierarchies-tree}
-WordNet~\cite{WordnetMi1995} is a lexical database for the English language in
-which words are connected through semantic relations such as synonyms,
-hyponyms, and meronyms, resulting in a graph structure. The ImageNet database
-was constructed using WordNet as a source of labels, thus information from
-WordNet could be leveraged when training a model on ImageNet. Additional
-examples of semantically enriched datasets include
-iNaturalist~\cite{TheInaturalistHorn2017} (taxonomy) and
-CIFAR-100~\cite{LearningMultipKrizhe2009} (handcrafted). Given a graph
-structure, it can be pruned to obtain a \emph{rooted tree}, which is a
-connected acyclic undirected graph with one vertex designated as the root.
-Furthermore, a natural orientation of edges towards (or away from) the root can
-be assigned. The resulting data structure can be used to represent
-hierarchically organized knowledge such as ontologies and taxonomies.
+WordNet~\cite{WordnetMi1995} is a lexical database for the English language in which words are connected through semantic relations such as synonyms, hyponyms, and meronyms, resulting in a graph structure. The ImageNet database was constructed using WordNet as a source of labels, thus information from WordNet could be leveraged when training a model on ImageNet. Additional examples of semantically enriched datasets include iNaturalist~\cite{TheInaturalistHorn2017} (taxonomy) and CIFAR-100~\cite{LearningMultipKrizhe2009} (handcrafted). Given a graph structure, it can be pruned to obtain a \emph{rooted tree}, which is a connected acyclic undirected graph with one vertex designated as the root. Furthermore, a natural orientation of edges towards (or away from) the root can be assigned. The resulting data structure can be used to represent hierarchically organized knowledge such as ontologies and taxonomies.
 
 \paragraph{Embeddings (vectors)}
 \label{par:embeddings-vectors}
-Most of the time, labels are simply a set of words with no inherent structure,
-hence the semantic structure must be inferred from the isolated words. A
-flexible approach is to resort to the internal representation of a pre-trained
-\acrfull{lm}, commonly known as word embeddings~\cite{BeyondWordEmbIncitt2023}.
-The extracted semantic structure is organized in a vector space where words are
-represented as real-valued vectors. The input to a \acrshort{lm} can be either
-the raw label or a detailed description of the label. Moreover, such a
-description can be written by human experts, scraped from the web, or generated
-by the \acrshort{lm} itself.\medskip
+Most of the time, labels are simply a set of words with no inherent structure, hence the semantic structure must be inferred from the isolated words. A flexible approach is to resort to the internal representation of a pre-trained \acrfull{lm}, commonly known as word embeddings~\cite{BeyondWordEmbIncitt2023}. The extracted semantic structure is organized in a vector space where words are represented as real-valued vectors. The input to a \acrshort{lm} can be either the raw label or a detailed description of the label. Moreover, such a description can be written by human experts, scraped from the web, or generated by the \acrshort{lm} itself.\medskip
 
-These two approaches produce different representations of semantic information
-(trees vs. vectors), and thus there exist various ways to inject them into a
-model. It is worth mentioning that these are not the only sources of external
-information useful for vision models (e.g. human-annotated attributes were left
-out). However, these are the sources that require the least human effort to
-exploit, a crucial aspect in training large models which require extensive
-datasets.
+These two approaches produce different representations of semantic information (trees vs.\ vectors), and thus there exist various ways to inject them into a model.
+It is worth mentioning that these are not the only sources of external information useful for vision models (e.g. human-annotated attributes were left out). However, these are the sources that require the least human effort to exploit, a crucial aspect in training large models which require extensive datasets.
 
 \section{Semantic Information Injection}
 \label{sec:semantic-information-injection}
 
-Semantic information can be injected into different parts of a model: directly
-into labels, into the loss function, or by designing a custom architecture. Of % FIX: Citation needed. See later.
-course, the line between custom loss functions and custom architectures is % FIX: Of course = condescending tone?
-somewhat blurred because developing a custom architecture usually requires a
-non-standard approaches to its optimization.
+% FIX: Citation needed. | ... or by designing a custom architecture. | See later.
+% FIX: condescending tone? | Of course , the line between ...
+Semantic information can be injected into different parts of a model: directly into labels, into the loss function, or by designing a custom architecture. Of course, the line between custom loss functions and custom architectures is somewhat blurred because developing a custom architecture usually requires a non-standard approaches to its optimization.
 
 \subsection{Hierarchies}
 \label{subsec:hierarchies}
 
 % Custom Labels Encoding
-Adding semantic information directly at the label level requires finding an
-encoding capable of representing the meaningful relationships described by a
-hierarchical tree. We use the term \emph{hierarchical encoding} to refer to an
-encoding of labels that is able to represent the hierarchical relationships.
-The most straightforward way to produce a hierarchical encoding is to define a
-notion of similarity in the tree structure and transfer it to the encoding.
-That is, two labels similar in the hierarchical tree should have similar
-encodings. The various proposed approaches differ in the definition of
-similarity and the derivation of the encoding. Barz and
-Denzler~\cite{HierarchyBasedBarz2018} solved systems of equations requiring
-that the dot product of two encodings is proportional to their similarity in
-the hierarchical tree. Bertinetto et al.~\cite{MakingBetterMBertin2019} applied
-the softmax function to the rows of a pairwise similarity matrix derived from
-the hierarchy. Perotti et al.~\cite{BeyondOneHotPerott2023} followed a similar
-strategy but rescaled intervals instead of using softmax and combined the
-results with the standard one-hot encoding. Redmon et
-al.~\cite{Yolo9000BetteRedmon2016} improved the YOLO
-model~\cite{YouOnlyLookORedmon2015} by exploiting WordTree, a tree-like
-structure derived from WordNet where labels come from different datasets. They
-do not apply softmax over fine-grained classes but concatenate label encodings
-from different levels of the hierarchy and compute the softmax over all synsets
-that are hyponyms of the same concept.
+Adding semantic information directly at the label level requires finding an encoding capable of representing the meaningful relationships described by a hierarchical tree. We use the term \emph{hierarchical encoding} to refer to an encoding of labels that is able to represent the hierarchical relationships. The most straightforward way to produce a hierarchical encoding is to define a notion of similarity in the tree structure and transfer it to the encoding. That is, two labels similar in the hierarchical tree should have similar encodings. The various proposed approaches differ in the definition of similarity and the derivation of the encoding. 
+Barz and Denzler~\cite{HierarchyBasedBarz2018} solved systems of equations requiring that the dot product of two encodings is proportional to their similarity in the hierarchical tree.
+Bertinetto et al.~\cite{MakingBetterMBertin2019} applied the softmax function to the rows of a pairwise similarity matrix derived from the hierarchy.
+Perotti et al.~\cite{BeyondOneHotPerott2023} followed a similar strategy but rescaled intervals instead of using softmax and combined the results with the standard one-hot encoding. 
+Redmon et al.~\cite{Yolo9000BetteRedmon2016} improved the YOLO model~\cite{YouOnlyLookORedmon2015} by exploiting WordTree, a tree-like structure derived from WordNet where labels come from different datasets. They do not apply softmax over fine-grained classes but concatenate label encodings from different levels of the hierarchy and compute the softmax over all synsets that are hyponyms of the same concept.
 
 % Custom Loss
-Another approach consists of defining a custom loss function that takes into
-account the relationship between labels. The idea is that a properly
-constructed function can steer the model towards a more hierarchically
-structured internal representation. For nearest-neighbor classifiers, Verma et
-al.~\cite{LearningHierarVerma2012} learn distance metrics for each node of the
-hierarchy tree by using a ``context sensitive loss'' that accounts for
-distances between nodes. Wu et al.~\cite{LearningToMakWuHu2016} add on top of a
-\acrshort{cnn} parallel linked \acrshort{fc} layers corresponding to hierarchy
-levels and use their outputs as regularization for the standard cross-entropy
-loss. Conversely, Alsallah et al.~\cite{DoConvolutionaAlsall2017} add
-\acrshort{fc} heads at different depths of an AlexNet model, each of which
-contributes to the total loss. Bertinetto et al.~\cite{MakingBetterMBertin2019}
-introduce ``hierarchical cross-entropy'', a loss function that incorporates
-class hierarchical information by factorizing the predicted class probabilities
-into conditional probabilities along the paths of the hierarchy tree, and
-weighting the cross-entropy of each conditional probability based on the depth
-in the hierarchy. In a series of works~\cite{ComplementObjeChen2019,
-ImprovingAdverChen2019, LearningWithHChen2019}, Chen et al. introduce
-``complement entropy loss function'' and its hierarchical version. This loss
-revolves around lowering the model probabilities of the incorrect classes
-instead of increasing the one associated with the correct class.
+Another approach consists of defining a custom loss function that takes into account the relationship between labels. The idea is that a properly constructed function can steer the model towards a more hierarchically structured internal representation.
+For nearest-neighbor classifiers, Verma et al.~\cite{LearningHierarVerma2012} learn distance metrics for each node of the hierarchy tree by using a ``context sensitive loss'' that accounts for distances between nodes.
+Wu et al.~\cite{LearningToMakWuHu2016} add on top of a \acrshort{cnn} parallel linked \acrshort{fc} layers corresponding to hierarchy levels and use their outputs as regularization for the standard cross-entropy loss.
+Conversely, Alsallah et al.~\cite{DoConvolutionaAlsall2017} add \acrshort{fc} heads at different depths of an AlexNet model, each of which
+contributes to the total loss.
+Bertinetto et al.~\cite{MakingBetterMBertin2019} introduce ``hierarchical cross-entropy'', a loss function that incorporates class hierarchical information by factorizing the predicted class probabilities into conditional probabilities along the paths of the hierarchy tree, and weighting the cross-entropy of each conditional probability based on the depth in the hierarchy.
+In a series of works~\cite{ComplementObjeChen2019, ImprovingAdverChen2019, LearningWithHChen2019}, Chen et al. introduce ``complement entropy loss function'' and its hierarchical version. This loss revolves around lowering the model probabilities of the incorrect classes instead of increasing the one associated with the correct class.
 
 % Custom Architecture
-Some of the aforementioned works~\cite{LearningToMakWuHu2016,
-DoConvolutionaAlsall2017} implemented a custom architecture alongside a custom
-loss function as well. Garg et al.~\cite{LearningHierarGarg2022} propose an
-architecture similar to~\cite{LearningToMakWuHu2016} (parallel \acrshort{fc}
-layers per hierarchical level as classifiers) but put more emphasis on
-enforcing structure in the feature space by using a four-term loss function.
-The first term is the standard cross-entropy on fine-grained labels, while the
-second is the Jensen-Shannon divergence between the predictions of a coarse
-classifier and soft label distributions derived from the finer-grained
-classifier predictions. The other two terms promote a more discriminative
-(marginal loss) and better oriented (geometric consistency loss) feature space.
-In the context of fine-grained visual classification, Chang et
-al.~\cite{YourFlamingoChang2020} split the feature vector into $K$-fold and use
-them to feed $K$ classifiers, where $K$ is the number of levels in the
-hierarchy. During the forward pass, the features used in finer classifiers are
-also used in the coarser ones, but a gradient controller blocks the gradient
-propagation, preventing fine-grained features from being biased towards
-coarse-grained recognition. This way, there is a disentanglement of the feature
-space, but still, fine-level features aid coarse-level classifiers.
-% FIX: undercurl, fine help coarse cls was a main result
+% FIX: undercurl | ... but still, fine-level features aid coarse-level classifiers.
+Some of the aforementioned works~\cite{LearningToMakWuHu2016, DoConvolutionaAlsall2017} implemented a custom architecture alongside a custom loss function as well. 
+Garg et al.~\cite{LearningHierarGarg2022} propose an architecture similar to~\cite{LearningToMakWuHu2016} (parallel \acrshort{fc} layers per hierarchical level as classifiers) but put more emphasis on enforcing structure in the feature space by using a four-term loss function. The first term is the standard cross-entropy on fine-grained labels, while the second is the Jensen-Shannon divergence between the predictions of a coarse classifier and soft label distributions derived from the finer-grained classifier predictions. The other two terms promote a more discriminative (marginal loss) and better oriented (geometric consistency loss) feature space.
+In the context of fine-grained visual classification, Chang et al.~\cite{YourFlamingoChang2020} split the feature vector into $K$-fold and use them to feed $K$ classifiers, where $K$ is the number of levels in the hierarchy. During the forward pass, the features used in finer classifiers are also used in the coarser ones, but a gradient controller blocks the gradient propagation, preventing fine-grained features from being biased towards coarse-grained recognition. This way, there is a disentanglement of the feature space, but still, fine-level features aid coarse-level classifiers.
 
 \subsection{Embeddings}
 \label{subsec:embeddings}
 
-Extracting semantic information from plain text labels using \acrshort{lm} is a
-highly flexible approach that does not require additional information about the
-labels and, sometimes, not even the labels themselves. In image classification,
-\acrfull{zsl} is a collection of techniques where a model is trained to
-recognize classes that were not present during
-training~\cite{AnIntroductionSoysal2020}. This can be achieved by leveraging
-the capabilities of other pre-trained models and instilling such knowledge into
-the image classification model. DeViSE~\cite{DeviseADeepFrome2013} uses latent
-information extracted from large text corpora, such as Wikipedia, to build a
-capable \acrshort{zsl} model. The key idea was the use of recently introduced
-learnable word embeddings~\cite{EfficientEstimMikolo2013,
-DistributedRepMikolo2013}, later patented by Google as
-Word2Vec~\cite{ComputingNumerMikolo2013}. It has been shown
-in~\cite{EvaluationOfOAkata2014, LabelEmbeddingAkata2015} that embeddings from
-different sources (e.g.\ hierarchies and text corpora) can carry non-redundant
-information and can be combined to learn a better encoding. For this reason,
-various hybrid approaches, in the spirit of DeViSE, have been proposed. Akata
-et al.~\cite{EvaluationOfOAkata2014} propose a \acrshort{zsl} model
-specifically geared towards fine-grained classification. Liu et
-al.~\cite{HyperbolicVisuLiuS2020} move some parts of the model pipeline into
-hyperbolic space, arguing for its suitability regarding hierarchical
-representation, evidence supported by~\cite{PoincareEmbeddNickel2017,
-HyperbolicEntaGanea2018}.
+Extracting semantic information from plain text labels using \acrshort{lm} is a highly flexible approach that does not require additional information about the labels and, sometimes, not even the labels themselves. In image classification, \acrfull{zsl} is a collection of techniques where a model is trained to recognize classes that were not present during training~\cite{AnIntroductionSoysal2020}. This can be achieved by leveraging the capabilities of other pre-trained models and instilling such knowledge into the image classification model.
+DeViSE~\cite{DeviseADeepFrome2013} uses latent information extracted from large text corpora, such as Wikipedia, to build a capable \acrshort{zsl} model. The key idea was the use of recently introduced learnable word embeddings~\cite{EfficientEstimMikolo2013, DistributedRepMikolo2013}, later patented by Google as
+Word2Vec~\cite{ComputingNumerMikolo2013}. 
+It has been shown in~\cite{EvaluationOfOAkata2014, LabelEmbeddingAkata2015} that embeddings from different sources (e.g.\ hierarchies and text corpora) can carry non-redundant information and can be combined to learn a better encoding. For this reason, various hybrid approaches, in the spirit of DeViSE, have been proposed. 
+Akata et al.~\cite{EvaluationOfOAkata2014} propose a \acrshort{zsl} model specifically geared towards fine-grained classification.
+Liu et al.~\cite{HyperbolicVisuLiuS2020} move some parts of the model pipeline into hyperbolic space, arguing for its suitability regarding hierarchical representation, evidence supported by~\cite{PoincareEmbeddNickel2017, HyperbolicEntaGanea2018}.
 
-Currently, embeddings, i.e.\ latent representations of information as
-real-valued vectors, appear to be a powerful way to enable different models to
-communicate and represent concepts in a somewhat similar fashion. The
-transformer architecture~\cite{AttentionIsAlVaswan2017} was introduced in the
-context of \acrfull{nlp}. They proved to be general-purpose differentiable
-computers: expressive (in the forward pass), optimizable (via backpropagation
-and gradient descent), and efficient (highly
-parallelizable).\footnote{Paraphrasing a post on $\mathbb{X}$ by Andrej
-Karpathy, a prominent figure in the field.} Subsequently, they were adapted for
-processing images~\cite{ImageTransformParmar2018, EndToEndObjeCarion2020,
-AnImageIsWorDosovi2020}, videos~\cite{VivitAVideoArnab2021,
-TemporalContexShao2020}, and audio~\cite{NeuralSpeechSLiNa2018,
-SpeechTransforDong2018, ConformerConvGulati2020}. Presently, cutting-edge
-research focuses on processing different types of inputs from various sources,
-trying to exploit the correlations between them. These models are called
-multimodal models~\cite{ASurveyOnMulYinS2023}.
+Currently, embeddings, i.e.\ latent representations of information as real-valued vectors, appear to be a powerful way to enable different models to communicate and represent concepts in a somewhat similar fashion. The transformer architecture~\cite{AttentionIsAlVaswan2017} was introduced in the context of \acrfull{nlp}. They proved to be general-purpose differentiable computers: expressive (in the forward pass), optimizable (via backpropagation and gradient descent), and efficient (highly parallelizable).\footnote{Paraphrasing a post on $\mathbb{X}$ by Andrej Karpathy, a prominent figure in the field.} Subsequently, they were adapted for processing images~\cite{ImageTransformParmar2018, EndToEndObjeCarion2020, AnImageIsWorDosovi2020}, videos~\cite{VivitAVideoArnab2021, TemporalContexShao2020}, and audio~\cite{NeuralSpeechSLiNa2018, SpeechTransforDong2018, ConformerConvGulati2020}. 
+Presently, cutting-edge research focuses on processing different types of inputs from various sources, trying to exploit the correlations between them. These models are called multimodal models~\cite{ASurveyOnMulYinS2023}.
 
 \section{Adversarial Attacks}
 \label{sec:adversarial-attacks-related-work}
