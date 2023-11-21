@@ -1,0 +1,45 @@
+abstract: Neural networks are vulnerable to adversarial examples, which poses a threat
+  to their application in security sensitive systems. We propose high-level representation
+  guided denoiser (HGD) as a defense for image classification. Standard denoiser suffers
+  from the error amplification effect, in which small residual adversarial noise is
+  progressively amplified and leads to wrong classifications. HGD overcomes this problem
+  by using a loss function defined as the difference between the target model's outputs
+  activated by the clean image and denoised image. Compared with ensemble adversarial
+  training which is the state-of-the-art defending method on large images, HGD has
+  three advantages. First, with HGD as a defense, the target model is more robust
+  to either white-box or black-box adversarial attacks. Second, HGD can be trained
+  on a small subset of the images and generalizes well to other images and unseen
+  classes. Third, HGD can be transferred to defend models other than the one guiding
+  it. In NIPS competition on defense against adversarial attacks, our HGD solution
+  won the first place and outperformed other models by a large margin.
+archiveprefix: arXiv
+author: Liao, Fangzhou and Liang, Ming and Dong, Yinpeng and Pang, Tianyu and Hu,
+  Xiaolin and Zhu, Jun
+author_list:
+- family: Liao
+  given: Fangzhou
+- family: Liang
+  given: Ming
+- family: Dong
+  given: Yinpeng
+- family: Pang
+  given: Tianyu
+- family: Hu
+  given: Xiaolin
+- family: Zhu
+  given: Jun
+eprint: 1712.02976v2
+file: 1712.02976v2.pdf
+files:
+- tmpdyj467un.pdf
+month: Dec
+note: CVPR 2018
+papis_id: 8b429d17183e1e8a2a135970f0143acb
+primaryclass: cs.CV
+ref: DefenseAgainstLiao2017
+time-added: 2023-11-21-17:01:55
+title: Defense against Adversarial Attacks Using High-Level Representation   Guided
+  Denoiser
+type: article
+url: http://arxiv.org/abs/1712.02976v2
+year: '2017'

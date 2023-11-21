@@ -1,0 +1,29 @@
+abstract: The Jacobian-based Saliency Map Attack is a family of adversarial attack
+  methods for fooling classification models, such as deep neural networks for image
+  classification tasks. By saturating a few pixels in a given image to their maximum
+  or minimum values, JSMA can cause the model to misclassify the resulting adversarial
+  image as a specified erroneous target class. We propose two variants of JSMA, one
+  which removes the requirement to specify a target class, and another that additionally
+  does not need to specify whether to only increase or decrease pixel intensities.
+  Our experiments highlight the competitive speeds and qualities of these variants
+  when applied to datasets of hand-written digits and natural scenes.
+archiveprefix: arXiv
+author: Wiyatno, Rey and Xu, Anqi
+author_list:
+- family: Wiyatno
+  given: Rey
+- family: Xu
+  given: Anqi
+eprint: 1808.07945v1
+file: 1808.07945v1.pdf
+files:
+- tmp8jqbmbfn.pdf
+month: Aug
+papis_id: 287794a6b76b85d52237da5e8c2f7c84
+primaryclass: cs.LG
+ref: MaximalJacobiaWiyatn2018
+time-added: 2023-11-21-16:40:16
+title: Maximal Jacobian-based Saliency Map Attack
+type: article
+url: http://arxiv.org/abs/1808.07945v1
+year: '2018'

@@ -1,0 +1,44 @@
+abstract: 'Deep learning takes advantage of large datasets and computationally efficient
+  training algorithms to outperform other approaches at various machine learning tasks.
+  However, imperfections in the training phase of deep neural networks make them vulnerable
+  to adversarial samples: inputs crafted by adversaries with the intent of causing
+  deep neural networks to misclassify. In this work, we formalize the space of adversaries
+  against deep neural networks (DNNs) and introduce a novel class of algorithms to
+  craft adversarial samples based on a precise understanding of the mapping between
+  inputs and outputs of DNNs. In an application to computer vision, we show that our
+  algorithms can reliably produce samples correctly classified by human subjects but
+  misclassified in specific targets by a DNN with a 97% adversarial success rate while
+  only modifying on average 4.02% of the input features per sample. We then evaluate
+  the vulnerability of different sample classes to adversarial perturbations by defining
+  a hardness measure. Finally, we describe preliminary work outlining defenses against
+  adversarial samples by defining a predictive measure of distance between a benign
+  input and a target classification.'
+archiveprefix: arXiv
+author: Papernot, Nicolas and McDaniel, Patrick and Jha, Somesh and Fredrikson, Matt
+  and Celik, Z. Berkay and Swami, Ananthram
+author_list:
+- family: Papernot
+  given: Nicolas
+- family: McDaniel
+  given: Patrick
+- family: Jha
+  given: Somesh
+- family: Fredrikson
+  given: Matt
+- family: Celik
+  given: Z. Berkay
+- family: Swami
+  given: Ananthram
+eprint: 1511.07528v1
+file: 1511.07528v1.pdf
+files:
+- tmp0jtbezg5.pdf
+month: Nov
+papis_id: 0ea46f41270ee754fd8a1aabec54fe10
+primaryclass: cs.CR
+ref: TheLimitationsPapern2015
+time-added: 2023-11-21-17:15:19
+title: The Limitations of Deep Learning in Adversarial Settings
+type: article
+url: http://arxiv.org/abs/1511.07528v1
+year: '2015'

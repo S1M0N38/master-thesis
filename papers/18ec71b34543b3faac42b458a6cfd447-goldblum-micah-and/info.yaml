@@ -1,0 +1,38 @@
+abstract: Knowledge distillation is effective for producing small, high-performance
+  neural networks for classification, but these small networks are vulnerable to adversarial
+  attacks. This paper studies how adversarial robustness transfers from teacher to
+  student during knowledge distillation. We find that a large amount of robustness
+  may be inherited by the student even when distilled on only clean images. Second,
+  we introduce Adversarially Robust Distillation (ARD) for distilling robustness onto
+  student networks. In addition to producing small models with high test accuracy
+  like conventional distillation, ARD also passes the superior robustness of large
+  networks onto the student. In our experiments, we find that ARD student models decisively
+  outperform adversarially trained networks of identical architecture in terms of
+  robust accuracy, surpassing state-of-the-art methods on standard robustness benchmarks.
+  Finally, we adapt recent fast adversarial training methods to ARD for accelerated
+  robust distillation.
+archiveprefix: arXiv
+author: Goldblum, Micah and Fowl, Liam and Feizi, Soheil and Goldstein, Tom
+author_list:
+- family: Goldblum
+  given: Micah
+- family: Fowl
+  given: Liam
+- family: Feizi
+  given: Soheil
+- family: Goldstein
+  given: Tom
+doi: 10.1609/aaai.v34i04.5816
+eprint: 1905.09747v2
+file: 1905.09747v2.pdf
+files:
+- tmpb0x5knk2.pdf
+month: May
+papis_id: 433c31519ba95fae4d7ae8f240b08c82
+primaryclass: cs.LG
+ref: AdversariallyRGoldbl2019
+time-added: 2023-11-21-17:16:25
+title: Adversarially Robust Distillation
+type: article
+url: http://arxiv.org/abs/1905.09747v2
+year: '2019'

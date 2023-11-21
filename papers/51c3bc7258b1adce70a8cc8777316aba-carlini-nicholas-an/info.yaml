@@ -1,0 +1,22 @@
+abstract: 'We show that defensive distillation is not secure: it is no more resistant
+  to targeted misclassification attacks than unprotected neural networks.'
+archiveprefix: arXiv
+author: Carlini, Nicholas and Wagner, David
+author_list:
+- family: Carlini
+  given: Nicholas
+- family: Wagner
+  given: David
+eprint: 1607.04311v1
+file: 1607.04311v1.pdf
+files:
+- tmpsrbkt1x9.pdf
+month: Jul
+papis_id: f9eae9adc68754c86eb267e59489f012
+primaryclass: cs.CR
+ref: DefensiveDistiCarlin2016
+time-added: 2023-11-21-17:16:01
+title: Defensive Distillation is Not Robust to Adversarial Examples
+type: article
+url: http://arxiv.org/abs/1607.04311v1
+year: '2016'
