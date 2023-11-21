@@ -245,9 +245,16 @@ research focuses on processing different types of inputs from various sources,
 trying to exploit the correlations between them. These models are called
 multimodal models~\cite{ASurveyOnMulYinS2023}.
 
-\section{[TODO] Adversarial Attacks}
+\section{Adversarial Attacks}
 \label{sec:adversarial-attacks-related-work}
-% TODO:
-% - read about various adversarial attacks
-% - Explain them briefly
-% - Search for evidences that robustness can be improved with semantic injection
+
+In machine learning, \emph{adversarial attacks} consist of input manipulation with the purpose of influencing the output of a model in an adversarial manner.
+In the case of image classification, these manipulations are small, often imperceptible, perturbations in the pixel values of the image such that they lead to misclassification by the model.
+
+Szegedy et al.~\cite{IntriguingPropSzeged2013} were among the first to report the susceptibility of \acrshort{cnn}s to adversarial perturbations of the input images. In general, tiny random perturbations of an image do not trick the model into misclassification; however, carefully crafted ones can. The search for such peculiar perturbations can be formulated as an optimization problem of the model's loss function.
+Goodfellow et al.~\cite{ExplainingAndGoodfe2014} introduced \acrfull{fgsm}, a method for generating adversarial examples in a faster ways by approximating the adversarial perturbation.
+Subsequently, various adversarial attacks have been proposed by imposing different constraints in the optimization problem or by iteratively refining the perturbation. The most notable are: \acrfull{bim}~\cite{AdversarialExaKuraki2016}, \acrfull{pgd}~\cite{TowardsDeepLeMadry2017}, \acrfull{jsma}~\cite{MaximalJacobiaWiyatn2018}, and \acrfull{cw}~\cite{TowardsEvaluatCarlin2016}.
+
+Parallel to attack methods, a plethora of defense techniques has been proposed to mitigate adversarial attacks, aiming to achieved what is known as \emph{model robustness}. They range from \emph{input preprocessing}~\cite{FeatureSqueeziXuWe2017, CounteringAdveGuoC2017, AStudyOfTheDziuga2016, DefenseAgainstLiao2017}, to \emph{adversarial training}~\cite{ExplainingAndGoodfe2014, TowardsDeepLeMadry2017, EnsembleAdversTramer2017, AdversarialMacKuraki2016}, and \emph{model distillation}~\cite{DistillationAsPapern2015, TheLimitationsPapern2015, DefensiveDistiCarlin2016, AdversariallyRGoldbl2019}.
+
+Other defense approaches focus on directly building models with internal representations that are difficult to exploit by adversarial attacks. As discussed in \Cref{sec:semantic-information-injection}, there are many ways to steer the model's internal representation towards a desired one by operating on the model's components. The injection of semantic information can achieve such a goal, so it is reasonable to speculate that such a tweak can have some influence on model robustness. Mustafa et al.~\cite{AdversarialDefMustaf2019} forced features for each class to lie inside a region that is maximally separated from the regions of other classes thanks to a custom loss function. Chan et al.~\cite{ImprovingAdverChen2019} used a custom objective as well to encourage the model to learn features that are more discriminative and less sensitive to adversarial perturbations.
