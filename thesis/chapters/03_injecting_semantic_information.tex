@@ -7,51 +7,53 @@ After dissecting a model in its components, we identify which parts could be enh
 \section{Framework}
 \label{sec:framework}
 
-In order to have a common ground for the following sections, we first need to introduce a framework for model for image classification and define its building blocks. Referring to \Cref{fig:03/framework} here are the components.
-
+In order to have a common ground for the following sections, in \Cref{fig:03/framework} we introduce a framework for model for image classification and define its building blocks.
 \begin{figure}[htbp]
   \ctikzfig{03/framework}
   \caption{Image classification framework}
   \label{fig:03/framework}
 \end{figure}
 
-\paragraph{input} Let \gls{input} be an image represented as a real-valued tensor\footnote{The deep learning community uses the term ``tensor'' as a synonym for ``multidimensional array'', it is not equipped with additional structure found in physics or in mathematics. Throughout this thesis we use the deep learning jargon} of shape \gls{channel_size} $\times$ \gls{height_size} $\times$ \gls{width_size} where \gls{channel_size} is the number of channels, \gls{height_size} is the height and \gls{width_size} is the width. Its entries are the intensity values of colors associated with RGB channels.
+\begin{itemize}
+\item \textbf{Input} (\gls{input}). Let \gls{input} be an image represented as a real-valued tensor\footnote{The deep learning community uses the term ``tensor'' as a synonym for ``multidimensional array'', it is not equipped with additional structure found in physics or in mathematics. Throughout this thesis we use the deep learning jargon} of shape \gls{channel_size} $\times$ \gls{height_size} $\times$ \gls{width_size} where \gls{channel_size} is the number of channels, \gls{height_size} is the height and \gls{width_size} is the width. Its entries are the intensity values of colors associated with RGB channels.
 
-\paragraph{output} Let \gls{output} denote the output of the model, that is the outcome of the application of \gls{model} on \gls{input}. This is \gls{output_size}-dimensional real-valued vector. We use the more specific term ``model's predictions'' when \gls{output_size} is equal to the number of classes and the vector is a \acrfull{pmf} over classes.
-
-\paragraph{model} Let \gls{model} be a function that takes as input an image and return a vector, i.e.\
+\item \textbf{Model} (\gls{model}). Let \gls{model} be a function that takes as input an image and return a vector, i.e.\
 \begin{equation}
   \psi_\theta: \mathcal{X} \to \mathcal{Y}
      : x \mapsto \hat{y} := \psi_\theta \left(x\right)
   \label{eq:model}
 \end{equation}
-where \gls{input_set} $\subseteq \mathbb{R}^{C \times H \times W}$ is the set of images and \gls{output_set} $\subseteq \mathbb{R}^{D}$ is the set of model's output. At the highest level of abstraction, a deep learning model can be seen as a deterministic function of several real variables that output a real-valued vector. Internally it is a composition of functions like matrix multiplications, convolutions, non-linearities, etc. weighted by parameters $\theta$. Sometimes the term ``architecture'' is used as synonym of ``model''.
+where \gls{input_set} $\subseteq \mathbb{R}^{C \times H \times W}$ is the set of images and \gls{output_set} $\subseteq \mathbb{R}^{D}$ is the set of model's output. At the highest level of abstraction, a deep learning model can be seen as a deterministic function of several real variables that output a real-valued vector. Internally it is a composition of functions like matrix multiplications, convolutions, non-linearities, etc. Sometimes the term ``architecture'' is used as synonym of ``model''.
 
-\paragraph{parameters} Using \gls{parameters} as subscript of \gls{model}
-reminds that the functions that constitute the model are parametrized by a set of real number. These parameters are initially randomly initialized and then adjusted during the training phase steering the model in such a way to solve the given task.
+\item \textbf{Output} (\gls{output}). Let \gls{output} denote the output of the model, that is the outcome of the application of \gls{model} on \gls{input}. This is \gls{output_size}-dimensional real-valued vector. We use the more specific term ``model's predictions'' when \gls{output_size} is equal to the number of classes and the vector is a \acrfull{pmf} over classes.
 
-\paragraph{class} We use interchangeably the terms ``class'' and ``label'' to referring to the text associated with a given image. In the context of single label image classification the class \gls{class} is word which is an element of \gls{classes_set}, the set of possible classes. Sometimes it's handy to promote the set of classes to a list like structure so to every class $c$ is associated an numeric index $i$ such that $c_i \to i$.
+\item \textbf{Parameters} (\gls{parameters}). Using \gls{parameters} as subscript of \gls{model}
+reminds that the functions that constitute the model are parametrized by a set of real number. These parameters are initially randomly initialized and then adjusted during the training phase steering the model in such a way to solve the given task. Sometimes the term ``weights'' is used as synonym of ``parameters''.
 
-\paragraph{encodings} Let \gls{encoding} denote a numerical representation of the class. It is a \gls{output_size}-dimensional real-valued vector. The notation $y_i$ is used to denote the encoding of class $c_i$. The term encoding should not be confused with the term embedding which can be regarded as a specific type of encoding. An example of encoding is the one-hot encoding.
+\item \textbf{Class} (\gls{class}, \gls{class_i}). We use interchangeably the terms ``class'' and ``label'' to referring to the text associated with a given image. In the context of single label image classification the class \gls{class} is word which is an element of \gls{classes_set}, the set of possible classes. Sometimes it's handy to promote the set of classes to a list like structure so to every class \gls{class} is associated an numeric index $i$ such that $\gls{class_i} \to i$.
 
-\paragraph{encoder} Let \gls{encoder} be a function that takes as input a class \gls{class} and return its encoding \gls{encoding}, i.e.\
+\item \textbf{Encodings} (\gls{encoding}, \gls{encoding_i}). An encoding of a class \gls{class} is a \gls{output_size}-dimensional real-valued vector and is denoted by \gls{encoding}. The notation \gls{encoding_i} is used to indicate the encoding of class \gls{class_i}. The term encoding should not be confused with the term embedding which can be regarded as a specific type of encoding. An example of encoding is the one-hot encoding.
+
+\item \textbf{Encoder} (\gls{encoder}). Let \gls{encoder} be a function that takes as input a class \gls{class} and return its encoding \gls{encoding}, i.e.\
 \begin{equation}
   \phi: \mathcal{C} \to \mathcal{Y} : c \mapsto y := \phi \left(x\right).
   \label{eq:encoder}
 \end{equation}
 Usually the conversion from class text to numerical representation is not explicitly included in the descriptions of deep learning models. However, here we devote some attention to this aspect because it will be crucial in the following as a place to inject semantic information. Moreover, it must not be confuse with the ``encoder block'' that can be found in some \acrshort{lm} architectures.
 
-\paragraph{loss} The loss or cost function, denote as \gls{loss}, is a function that takes as input the output of the model and the encoding of the corresponding class and return a scalar,
+\item \textbf{Loss} (\gls{loss}). The loss or cost function, denote as \gls{loss}, is a function that takes as input the output of the model \gls{output} and the encoding of the corresponding class \gls{encoding} and return a scalar,
 \begin{equation}
   \Loss: \mathcal{Y} \times \mathcal{Y} \to \mathbb{R}
        : \left(\hat{y}, y\right) \mapsto \Loss \left(\hat{y}, y\right).
   \label{eq:loss}
 \end{equation}
-It is a measure of how much the models' output and encodings differ, so lower is its value better is the model's performance. Depending on the task and the encoding different functional from can be used. An example of a loss function is the cross-entropy loss.
+It is a measure of how much the models' output and encodings differ, so the lower is its value the better is the model's performance. Depending on the task and the encoding different functional form can be used. An example of a loss function is the cross-entropy loss.
 
-\medskip Assembling these components we obtain an end to end trainable model for image classification. At beginning the model's output carries no information about classification for the input image. During training many images and their corresponding labels are fed into the system so that the parameters \gls{parameters} are tuned in such a way that the model's outputs become more and more similar to the encodings of the corresponding class, hence the emergence of classification capabilities.
+\end{itemize}
 
-Taking advantage of \acrshort{gpu}s, the calculation can be parallelize along the batch dimension $B$, i.e.\ multiple images are concurrently passed as input to the model so, at the implementation level, \gls{input} will be a tensor \gls{batch_size} $\times$ \gls{channel_size} $\times$ \gls{height_size} $\times$ \gls{width_size} and consequently the output and the encoding will be tensors $B \times D$. \gls{model}, \gls{encoder} and \gls{loss} must be extended accordingly.
+Assembling these components we obtain an end to end trainable model for image classification. At beginning the model's output carries no information about classification for the input image. During training many images and their corresponding labels are fed into the system so that the parameters \gls{parameters} are tuned in such a way that the model's outputs become more and more similar to the encodings of the corresponding class, hence the emergence of classification capabilities.
+
+Taking advantage of \acrshort{gpu}s, the calculation can be parallelize along the batch dimension \gls{batch_size}, i.e.\ multiple images are concurrently passed as input to the model so, at the implementation level, \gls{input} will be a tensor \gls{batch_size} $\times$ \gls{channel_size} $\times$ \gls{height_size} $\times$ \gls{width_size} and consequently the output and the encoding will be tensors \gls{batch_size}$\times$\gls{output_size}. \gls{model}, \gls{encoder} and \gls{loss} must be extended accordingly.
 
 
 \section{Toy Dataset}
