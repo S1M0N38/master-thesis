@@ -92,7 +92,7 @@ Presently, cutting-edge research is focused on processing various types of input
 \label{sec:adversarial-attacks-related-work}
 
 In machine learning, \emph{adversarial attacks} consist of input manipulation with the purpose of influencing the output of a model in an adversarial manner.
-In the context of image classification, these manipulations are small, often imperceptible, perturbations in the pixel values of the image that lead to misclassification by the model.
+In the context of image classification, these manipulations are small, often imperceptible, perturbations in the pixel values of an image that lead to its misclassification by the model.
 
 Szegedy et al.~\cite{IntriguingPropSzeged2013} were among the first to report the susceptibility of \acrshort{cnn}s to adversarial perturbations of input images. Generally, random perturbations of an image do not deceive the model into misclassification; however, carefully crafted ones can. The search for such peculiar perturbations can be formulated as an optimization problem of the model's loss function.
 Goodfellow et al.~\cite{ExplainingAndGoodfe2014} introduced \acrfull{fgsm}, a method for generating adversarial examples more rapidly by approximating the adversarial perturbation.
