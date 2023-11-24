@@ -127,6 +127,26 @@
 }
 
 % Symbols
+\newglossaryentry{compose}{
+  sort=symbols,
+  name={\ensuremath{\circ}},
+  description={$f \circ g \, (x)$ is an alternative notation for $f(g(x))$}
+}
+\newglossaryentry{equiv}{
+  sort=symbols,
+  name={\ensuremath{\equiv}},
+  description={\acrshort{lhs} is an alternative notation for \acrshort{rhs} and vice versa}
+}
+\newglossaryentry{define_lhs_from_rhs}{
+  sort=symbols,
+  name={\ensuremath{:=}},
+  description={\acrshort{lhs} is defined to be equal to \acrshort{rhs}}
+}
+\newglossaryentry{define_rhs_from_lhs}{
+  sort=symbols,
+  name={\ensuremath{=:}},
+  description={\acrshort{rhs} is defined to be equal to \acrshort{lhs}}
+}
 \newglossaryentry{kronecker_delta}{
   sort=symbols,
   name={\ensuremath{\delta}},
@@ -172,13 +192,15 @@
 
 
 % Acronyms
+\newacronym{rhs}{RHS}{Right Hand Side}
+\newacronym{lhs}{LHS}{Left Hand Side}
 \newacronym{cnn}{CNN}{Convolutional Neural Network}
 \newacronym{zsl}{ZSL}{Zero-Shot-Learning}
 \newacronym{lm}{LM}{Language Model}
 \newacronym{pdf}{PDF}{Probability Density Function}
 \newacronym{pmf}{PMF}{Probability Mass Function}
 \newacronym{gpu}{GPU}{Graphics Processing Unit}
-\newacronym{lca}{LCA}{Lowest Common Ancestor}
+\newacronym{lca}{LCA}{lowest common ancestor}
 \newacronym{ilsvrc}{ILSVRC}{ImageNet Large Scale Visual Recognition Challenge}
 \newacronym{nlp}{NLP}{Natural Language Processing}
 \newacronym{pca}{PCA}{Principal Component Analysis}
