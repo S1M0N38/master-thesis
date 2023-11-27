@@ -9,7 +9,7 @@ author_list:
 booktitle: Deep Learning
 chapter: '6'
 files: []
-note: \url{http://www.deeplearningbook.org}
+url: 'http://www.deeplearningbook.org'
 pages: 180--184
 papis_id: 18d9a6abb434bea35099b23e451f9a2e
 publisher: MIT Press
