@@ -1,0 +1,20 @@
+author: Goodfellow, Ian and Bengio, Yoshua and Courville, Aaron
+author_list:
+- family: Goodfellow
+  given: Ian
+- family: Bengio
+  given: Yoshua
+- family: Courville
+  given: Aaron
+booktitle: Deep Learning
+chapter: '6'
+files: []
+note: \url{http://www.deeplearningbook.org}
+pages: 180--184
+papis_id: 18d9a6abb434bea35099b23e451f9a2e
+publisher: MIT Press
+ref: DeepLearningGoodfe2016
+time-added: 2023-11-27-11:02:26
+title: Deep Learning
+type: inbook
+year: '2016'
