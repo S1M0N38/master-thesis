@@ -140,24 +140,61 @@ If the model produces few errors, the off-diagonal values in the confusion matri
 \end{itemize}
 
 
-\section{Adversarial attacks}
-\label{sec:adversarial-attacks}
-\begin{itemize}
-  \item What are adversarial attacks
-  \item Somewhat detailed descriptions of 3 attacks
-\end{itemize}
+\section{Adversarial Attacks}
+\label{sec:adversarial-attacks-model-evaluation}
 
+As briefly mentioned in~\Cref{sec:adversarial-attacks-related-work}, the term \emph{adversarial attack} refers to a manipulation by an adversary party of inputs to a machine learning model with the purpose of control its outputs.
 
-% TODO: How to get predicted class from model's output. Explain the difference
-% between argmax and align+argmax For one-hot encoding the two approaches are
-% equivalent. For others encodings there is some difference. Explore and Explain
-% it This is a clever way to fully use information about what models predict,
-% not only this take into account the fact that the highest probability is the
-% correct class, but also what the model thinks the image is not. Effectively
-% denoising the prediction, a sort of top-\gls{number_predicted_classes}
-% approach with a single class as output.
-%
-% TODO: Motivate why we are evaluating all these different aspect
-% TODO: Metric definitions.
-% TODO: Features vector, clustering, plots ...
-% TODO: Adversarial attack: def, how they works, strength weakness
+It is outside the scope of this work to develop models that can withstand to sophisticate adversarial attack a defense mechanism. Instead we merely focus on how models trained with different encodings and loss functions behave against the well-know adversarial attack: \acrfull{fgsm}. The key idea is to exploit this adversarial attack searching capabilities in the images space to look for challenging examples and reevaluate the models on the modify inputs. In this view the ability to resist to an adversarial attack can be seen as a proxy for ``good'' and structured internal representation of the model. In this regard is similar to the clustering metrics on features projections in \Cref{subsec:features-projections}
+
+After a short digression on the types of adversarial attack in \Cref{subsec:types-adversarial-attacks}, we will describe the \acrshort{fgsm} attack in \Cref{subsec:fgsm-attack}.
+
+\subsection{Types of adversarial attacks}
+\label{subsec:types-adversarial-attacks}
+Regarding image classification the are various non-mutual exclusive way to classify various type of adversarial attacks based on the context, technique and goal of the attack.
+
+Based on the adversary's knowledge we can distinguish between \emph{white-box}, \emph{black-box}, and \emph{gray-box} attacks.
+A \emph{white-box} attack is one in which the adversary has ``read permission'' to all components of the framework~(\Cref{fig:03/framework}) and ``write permission'' of the inputs of a model. So the adversary party can make use of the model's parameters, architecture, training data, etc. to craft the adversarial examples.
+On the opposite end of the spectrum, a \emph{black-box} attack is one in which the adversary can only modify the inputs of the model and can read out the corresponding outputs; all the other components of the framework are hidden.
+Between these two extremes, there are various ``shades of gray'' in which the adversary team has access to a proper subset of the components of the machine learning pipeline -- e.g. test and training datasets, model's architecture, loss function, etc. -- excluding model's parameters.
+
+Other important classifications of adversarial attacks is based on the goal of the attack one of which is the distinction between \emph{targeted} and \emph{untargeted} attacks.
+A \emph{targeted} attack is said to be successful if the model misclassifies the adversarial example as a specific class chosen by the adversary. There is also the possibility that the model wrongly predicts the class of the adversarial example but not the one chosen by the adversary; we refers to this a \emph{misclassfication}.
+An \emph{untargeted attack} is said to be successful if the model missclassifies the adversarial example independently of the predicted class.
+
+Adversarial attacks can be \emph{poisoning attack} or \emph{evasion attack}.
+The former is a type of attack performed during training in which the training dataset is manipulated to make the model learn a wrong mapping between inputs and outputs. This imply that the adversary party has access or can redirect the training pipeline to a malicious dataset. These techniques are generally know as \emph{data poisoning} and are outside the scope of this work.
+\emph{Evasion attack} refers to adversarial attack performed at inference time in which the manipulated input is fed to the model and the corresponding output is observed.
+
+\subsection{FGSM attack}
+\label{subsec:fgsm-attack}
+
+\acrfull{fgsm} is an \emph{white-box evasion} adversarial attack introduced by Goodfellow et al.~\cite{ExplainingAndGoodfe2014}. As the previous white-box adversarial attacks, at its core is an optimization problem; that is, find the stationary point of give objective with a constrain on the magnitude of the perturbation.
+
+Let \gls{input} be the original image represented by a tensor of \gls{channel_size} $\times$ \gls{height_size} $\times$ \gls{width_size}.
+The perturbation \gls{perturbation} is a tensor with the same dimensions of \gls{input}. The adversarial example \gls{perturbed-input} is the sum of the original image and the perturbation, i.e.
+\begin{equation}
+  \gls{perturbed-input} := \gls{input} + \gls{perturbation}
+  \label{eq:perturbed-input}
+\end{equation}
+Different adversarial attacks has different way to produce \gls{perturbation}.
+
+\paragraph{Untargeted \acrshort{fgsm}} In the case of untargeted \acrshort{fgsm} the perturbation \gls{perturbation} is defined as
+\begin{equation}
+  \gls{perturbation} :=
+  \gls{signum} \, \left[\gls{grad} \Loss\left(\hat{y}, y\right)\right] \, \epsilon
+  \label{eq:untargeted-perturbation}
+\end{equation}
+that is the sign of gradient of the loss between the model's output \gls{output} and the encoding of the corresponding ground truth \gls{encoding} with respect to input \gls{input} rescaled by $\epsilon$. In other words we are looking for a perturbation which increase/decrease each pixel value in the original image by a quantity $\epsilon$ such that the $\Loss\left(\hat{y}, y\right)$ is maximize. This effectively steer the model away from the correct classification.
+
+\paragraph{Targeted \acrshort{fgsm}} A targeted attack aim to steer all model prediction towards a given class called the \emph{target class}. Let \gls{class_i} be the target class and \gls{encoding_i} its corresponding encoding. The \gls{perturbation_i} is given by
+\begin{equation}
+  \gls{perturbation_i} :=
+  - \gls{signum} \, \left[\gls{grad} \Loss\left(\hat{y}, y_i\right)\right] \, \epsilon.
+  \label{eq:targeted-perturbation}
+\end{equation}
+The difference between \Cref{eq:targeted-perturbation} and \Cref{eq:untargeted-perturbation} is two fold. The minus sign turn the maximization problem into a minimization one. The quantity we try to minimize is the loss between model's output \gls{output} and the encoding of the target class \gls{encoding_i}. This procedure effectively steer the model towards the target class making more probable that all inputs are classify as the chosen target class.\medskip
+
+The parameter $\epsilon$ is fix and control the magnitude of the perturbation. Smaller values of $\epsilon$ produce a smaller perturbation hence \gls{perturbed-input} will closely resemble the original \gls{input} but the attack will be less effective. If a perturbation is sufficiently small, a \gls{perturbed-input} cannot be distinguished from \gls{input} by a naked eye but can still trick the classifier. Conversely, if $\epsilon$ is too large, the corrupted input could be easily spotted by a human observer and in the extreme case make the content of \gls{input} barely recognizable. Various experiment for targeted and untargeted attack with different value for $\epsilon$ are presented in \Cref{ch:results-and-discussion}.\medskip
+
+Despite its simplicity, the \gls{fgsm} attack is quite effective especially against models that do not implement a defence mechanism (see \Cref{sec:adversarial-attacks-results-and-discussion}) even for ``undetectable value'' for $\epsilon$. We restate that \gls{fgsm} attack is use merely as evaluation tool for probing at the model's internal representation.
