@@ -84,7 +84,7 @@ The encoder function \gls{encoder} that produces one-hot encoding is
   \phi: \mathcal{C} \to \{0, \,1\}^{D}
       : c_i \mapsto y_i \equiv \phi \left(c_i\right)
   \quad \text{where} \quad
-  \phi{\left(c_i\right)}_j = \gls{kronecker_delta}_{ij}.
+  \phi{\left(c_i\right)}_j = \gls{kronecker_delta}.
   \label{eq:one-hot-encoding}
 \end{equation}
 Referring to the toy dataset, we have that the one-hot encoding for \texttt{apple} is $\left[0, 0, 1, 0, 0, 0\right]$. The resulting encodings are sparse orthogonal binary vectors. Their orthogonality translates into a well-separated encoding space, facilitating model training. Speed and simplicity are the key factors for its widespread use.
