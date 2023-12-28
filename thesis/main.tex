@@ -7,6 +7,7 @@
 
 % page layout
 \usepackage{geometry}
+\usepackage{layouts}
 
 % tables
 \usepackage{multirow}
@@ -20,7 +21,7 @@
 \newcommand{\alert}[1]{\textcolor{orange}{#1}}
 
 % graphics (images, plots)
-\usepackage{graphicx, subcaption, float}
+\usepackage{graphicx, subcaption, float, pgfplots}
 \graphicspath{{figures/}}
 
 % diagrams in tikz
@@ -31,9 +32,9 @@
 
 % bibliography
 \usepackage[
-	backend=biber,
-	style=numeric,
-	sorting=none,
+  backend=biber,
+  style=numeric,
+  sorting=none,
 ]{biblatex}
 \addbibresource{bibliography.bib}
 
@@ -41,10 +42,10 @@
 \usepackage{hyperref}
 \usepackage{cleveref}
 \hypersetup{
-	colorlinks=true,
-	linkcolor=black,      % Color of internal links (e.g., table of contents)
-	citecolor=gray,       % Color of citation links (e.g., in-text references)
-	urlcolor=black,       % Color of URLs and external links
+  colorlinks=true,
+  linkcolor=black,      % Color of internal links (e.g., table of contents)
+  citecolor=gray,       % Color of citation links (e.g., in-text references)
+  urlcolor=black,       % Color of URLs and external links
 }
 
 % glossary
