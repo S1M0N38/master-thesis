@@ -195,7 +195,6 @@ Applied to the toy dataset, Barz and Denzler encodings are calculated as follows
 \subsection{Word Encodings}
 \label{subsec:word-encoding}
 
-% FIX: For many datsests ...| how can I provide a reference?
 For many datasets, hierarchies do not exist or cannot be easily created. However, it is quite common for the classes to be words or short phrases. This is the information that \emph{word encodings} attempt to exploit. Even without an explicit hierarchy, as provided in the toy dataset, every English speaker intuitively knows that \texttt{lemon} and \texttt{pear} are more similar than \texttt{lemon} and \texttt{car}.
 However, it is not clear what ``similar'' means in this context: Is \texttt{lemon} more similar to \texttt{pear} than to \texttt{apple}? To pinpoint such a measure, we resort to \emph{word embeddings}, i.e.\ latent word representations from pre-trained \acrshort{lm}s. These are real-valued vectors of dimension $\gls{output_size}$, on which we can apply the previously defined notion of cosine similarity.
 \begin{equation}
