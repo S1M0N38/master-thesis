@@ -1,14 +1,9 @@
 # papers, thesis and slides
 *.pdf
 
-# Latex intermediate files
-main.ddn
-main.dld
-main.sdn
-main.sld
-main.tdn
-main.tld
-main.tlg
-main.ist
-main.dlg
-main.slg
+# LaTex
+aux
+*.synctex.gz
+
+# MacOs
+.DS_Store
