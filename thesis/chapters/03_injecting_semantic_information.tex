@@ -374,10 +374,8 @@ Starting with an untrained model, we ask it to classify an image containing an a
 
 While cross entropy pulls up the probability of the correct class, the presence of normalization in the softmax function pushes down the probability related to the other classes. This all-or-nothing, black-and-white approach is the limit of ordinary classification models that do not exploit relationships between classes.
 
-% FIX: change a 'binomial' to a similar term | In the following this binomial ...
 In the following, this combination (cross-entropy with one-hot encoding) will be considered the \emph{baseline} against which the other encoding-loss pairs will be compared.
 
-% FIX: change the expression 'not only' | Not only should a predominant ...
 \paragraph{Cross entropy with hierarchical encoding} Cross entropy can also be used as a loss function in the case of hierarchical encoding. Bertinetto et al.~(\ref{par:encoding-mbm}) and Perotti et al.~(\ref{par:encoding-b3p}) indeed utilize standard cross entropy loss with their respective hierarchical encoding implementations. In this case, the expression for the cross entropy loss cannot be simplified as in~\Cref{eq:cross-entropy-one-hot-encoding} and all components of the encoding play a role in the model optimization.
 A predominant class should emerge during training, but the predicted probabilities for the other classes should not be zero. The more a class is similar to the ground truth class, the higher its predicted probability should be.
 \begin{figure}[htbp]
@@ -406,7 +404,6 @@ A predominant class should emerge during training, but the predicted probabiliti
 \subsection{Cosine Distance Loss}
 \label{subsec:cosine-distance-loss}
 
-% FIX: formal voc | A different beast are ...
 A different type of models are the ones that do not produce a probability distribution as their output, but instead return a ``vector representation of their answer''. To determine the predicted class, the output vector is compared to the encodings of the classes, and the class with the highest similarity is selected as the predicted class (\Cref{sec:decoding}).
 
 In such cases, we aim to adjust the model's parameters so that the output vector of a specific image becomes increasingly similar to the encoding vector of the corresponding class. To achieve this, we require a loss function that accounts for the maximization of similarity (or minimization of dissimilarity).
@@ -455,7 +452,7 @@ In the preceding sections, we introduced various encodings and loss functions.
     XE One-hot & One-hot~(\ref{subsec:one-hot-encoding})
                & XE & None    & No   \\
     XE MBM     & Bertinetto et al.~(\ref{par:encoding-mbm})
-               & XE & $\beta$ & Yes  \\
+               & XE & $\alpha$ & Yes  \\
     XE B3P     & Perotti et al.~(\ref{par:encoding-b3p})
                & XE & $\beta$ & Yes  \\
     CD BD      & Barz \& Denzler~(\ref{par:encoding-bd})
