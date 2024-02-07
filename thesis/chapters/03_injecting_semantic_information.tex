@@ -422,7 +422,7 @@ We refrain from using custom architectures so that the effectiveness of Barz and
 
 \paragraph{Cosine Distance with Descriptions Encoding} Assuming that we have generated class descriptions as shown in~\Cref{fig:descriptions}, and following the procedure described in~\Cref{par:encoding-desc}, we obtain the description encodings.
 To visually comprehend how the cosine distance loss optimizes the model, we further project the description encodings and the model's output into a two-dimensional space (see~\Cref{subsec:encodings-projections} for details). Optimization with cosine distance essentially involves minimizing the angle between the output vector and the encoding vector of the corresponding class.
-\begin{figure}[htbp]
+\begin{figure}[htbp] % TODO:make these figures smaller
   \begin{subfigure}{0.45\textwidth}
     \ctikzfig{03/cd-desc-before}
     \caption{Before training}
@@ -435,7 +435,6 @@ To visually comprehend how the cosine distance loss optimizes the model, we furt
   \end{subfigure}
   \caption{Optimization objectives of cosine distance with description encodings optimize for}
 \end{figure}
-% TODO:make these figures smaller
 
 \section{Encodings - Losses pairs}
 \label{sec:encodings-losses-pairs}
@@ -457,7 +456,7 @@ In the preceding sections, we introduced various encodings and loss functions.
     CD BD      & Barz \& Denzler~(\ref{par:encoding-bd})
                & CD & None    & Yes  \\
     CD Desc.   & Description~(\ref{par:encoding-desc})
-               & CD & $d$     & No   \\
+               & CD & $D$     & No   \\
     \bottomrule
   \end{tabular}
   \caption{Encoding-Loss Pairs}
