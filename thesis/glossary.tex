@@ -48,20 +48,36 @@
 }
 
 % Model symbols
+% Data points
 \newglossaryentry{input}{
   sort=model,
   name={\ensuremath{x}},
   description={Image given as input to the model}
+}
+\newglossaryentry{input_i}{
+  sort=model,
+  name={\ensuremath{x_i}},
+  description={Image with i-th class as ground-truth}
+}
+\newglossaryentry{hidden}{
+  sort=model,
+  name={\ensuremath{h}},
+  description={Feature vector produce by the penuiltime hidden layer}
+}
+\newglossaryentry{hidden_i}{
+  sort=model,
+  name={\ensuremath{h_i}},
+  description={Feature vector of an image with i-th class as ground-truth}
 }
 \newglossaryentry{output}{
   sort=model,
   name={\ensuremath{\hat{y}}},
   description={Output of the model}
 }
-\newglossaryentry{parameters}{
+\newglossaryentry{output_i}{
   sort=model,
-  name={\ensuremath{\theta}},
-  description={Parameters of the model}
+  name={\ensuremath{\hat{y_i}}},
+  description={Output of the model of an image with i-th class as ground-truth}
 }
 \newglossaryentry{class}{
   sort=model,
@@ -73,11 +89,6 @@
   name={\ensuremath{c_i}},
   description={The i-th class in the list of classes}
 }
-\newglossaryentry{predicted_class}{
-  sort=model,
-  name={\ensuremath{\hat{c}}},
-  description={Class, the text associated to a given image}
-}
 \newglossaryentry{encoding}{
   sort=model,
   name={\ensuremath{y}},
@@ -87,6 +98,22 @@
   sort=model,
   name={\ensuremath{y_i}},
   description={Encoding for the i-th class in the list of classes}
+}
+\newglossaryentry{predicted_class}{
+  sort=model,
+  name={\ensuremath{\hat{c}}},
+  description={Predicted class, text associated to a given image}
+}
+\newglossaryentry{predicted_class_i}{
+  sort=model,
+  name={\ensuremath{\hat{c_i}}},
+  description={Predicted class of an image with i-th class as ground-truth}
+}
+% functions
+\newglossaryentry{parameters}{
+  sort=model,
+  name={\ensuremath{\theta}},
+  description={Parameters of the model}
 }
 \newglossaryentry{model}{
   sort=model,
@@ -108,6 +135,7 @@
   name={\ensuremath{\Loss}},
   description={Loss function of the model}
 }
+% adversarial attacks 
 \newglossaryentry{perturbation}{
   sort=symbols,
   name={\ensuremath{\delta_\epsilon}},
@@ -118,7 +146,7 @@
   name={\ensuremath{\delta_{\epsilon, c_i}}},
   description={Targeted perturbation of image with the $c_i$ as targetd class}
 }
-\newglossaryentry{perturbed-input}{
+\newglossaryentry{perturbed_input}{
   sort=symbols,
   name={\ensuremath{\tilde{x}}},
   description={The perturbed image, i.e.\ the adversarial example}
@@ -172,6 +200,11 @@
   name={\ensuremath{\|\cdot\|}},
   description={\ensuremath{L^2} norm}
 }
+\newglossaryentry{len}{
+  sort=symbols,
+  name={\ensuremath{|\cdot|}},
+  description={The number of elements in a set}
+}
 \newglossaryentry{dot_product}{
   sort=symbols,
   name={\ensuremath{\cdot}},
@@ -189,20 +222,30 @@
 }
 
 % Sets
-\newglossaryentry{input_set}{
+\newglossaryentry{images_set}{
   sort=sets,
   name={\ensuremath{\mathcal{X}}},
-  description={Input space}
+  description={Images set}
 }
-\newglossaryentry{output_set}{
+\newglossaryentry{hidden_set}{
+  sort=sets,
+  name={\ensuremath{\mathcal{h}}},
+  description={Features vectors set produce by penuiltime hidden layer}
+}
+\newglossaryentry{outputs_set}{
+  sort=sets,
+  name={\ensuremath{\hat{\mathcal{Y}}}},
+  description={Outputs set}
+}
+\newglossaryentry{encoding_set}{
   sort=sets,
   name={\ensuremath{\mathcal{Y}}},
-  description={Output space}
+  description={Encodings set, i.e. $\{y_1, y_2, ..., y_{|C|}\}$}
 }
 \newglossaryentry{classes_set}{
   sort=sets,
   name={\ensuremath{\mathcal{C}}},
-  description={Classes set}
+  description={Classes set, i.e. $\{c_1, c_2, ..., c_{|C|}\}$}
 }
 \newglossaryentry{descriptions_set}{
   sort=sets,
@@ -235,6 +278,11 @@
 \newacronym{flops}{FLOPs}{Floating Point Operations}
 \newacronym{itos}{IoTs}{Internet of Things}
 \newacronym{vit}{ViT}{Vision Transformer}
+% Clustering Coefficients
+\newacronym{sc}{SC}{Silhouette Coefficient}
+\newacronym{chi}{CHI}{Calinski–Harabasz Index}
+\newacronym{dbi}{DBI}{Davies–Bouldin Index}
+\newacronym{sdbw}{S_DBw}{Scatter + Density BetWeen Clusters}
 % Adversarial attacks
 \newacronym{fgsm}{FGSM}{Fast Gradient Sign Method}
 \newacronym{bim}{BMI}{Basic Iterative Method}
