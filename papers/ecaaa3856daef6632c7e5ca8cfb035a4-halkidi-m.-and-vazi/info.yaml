@@ -1,0 +1,105 @@
+author: Halkidi, M. and Vazirgiannis, M.
+author_list:
+- affiliation: []
+  family: Halkidi
+  given: M.
+- affiliation: []
+  family: Vazirgiannis
+  given: M.
+booktitle: 2001 IEEE International Conference on Data Mining
+citations:
+- doi: 10.1145/276304.276312
+- doi: 10.1109/ICDE.1999.754967
+- article-title: An Efficient Approach to Clustering in Large Multimedia Databases
+    with Noise
+  author: hinneburg
+  journal-title: Proceeding of KKD98
+  year: '1998'
+- article-title: A Fast Clustering Algorithm to Cluster very Large Categorical Data
+    Sets in Data Mining
+  author: huang
+  journal-title: DMKD
+  year: '1997'
+- doi: 10.1145/331499.331504
+- doi: 10.1007/BF02294245
+- doi: 10.1109/TPAMI.1983.4767342
+- article-title: Efficient and Effective Clustering Methods for Spatial Data Mining
+  author: ng
+  journal-title: Proceeding of the 20th VLDB Conference
+  year: '1994'
+- doi: 10.1016/S0167-8655(97)00168-2
+- article-title: 'WaveCluster: A-. MultiResolution Clustering Approach for Very Large
+    Spatial Database'
+  author: sheikholestami
+  journal-title: Proceedings of 24th VLDB Conference
+  year: '1998'
+- doi: 10.1080/01969727408546059
+- doi: 10.1016/0167-8655(96)00026-8
+- article-title: A Density-Based Algorithm for Discovering Clusters in Large Spatial
+    Databases with Noise
+  author: ester
+  first-page: '226'
+  journal-title: Proc Knowledge Discovery and Data Mining Conf
+  year: '1996'
+- article-title: Incremental Clustering for Mining in a Data Warehousing Environment
+  author: ester
+  journal-title: Proceedings of 24th VLDB Conference
+  year: '1998'
+- doi: 10.1145/240455.240463
+- article-title: Padhraic Smuth and Ramasamy Uthurusamy
+  author: fayyad
+  journal-title: Advances in Knowledge Discovery and Data Mining
+  year: '1996'
+- article-title: Gordon Linoff. Data Mining Techniques For marketing. Sales and Customer
+    Support
+  author: michael
+  year: '1996'
+- article-title: Unsupervised Optimal Fuzzy Clustering
+  author: geva
+  journal-title: IEEE Transactions on Pattern Analysis and Machine Intelligence
+  volume: '11'
+  year: '1989'
+- doi: 10.1145/276304.276314
+- author: sharma
+  journal-title: Applied Multivariate Techniques
+  year: '1996'
+- author: theodoridis
+  journal-title: Pattern Recognition
+  year: '1999'
+- article-title: Clustering using Monte Carlo Cross-Val idation
+  author: smyth
+  first-page: '26'
+  journal-title: KDD
+  volume: '1'
+  year: '1996'
+- article-title: 'BIRCH: An Efficient Method for Very Large Databases'
+  author: zhang
+  doi: 10.1145/233269.233324
+  journal-title: ACM SIGMOD
+  volume: '96'
+  year: '1996'
+- article-title: Quality scheme assessment in the clustering process
+  author: halkidi
+  journal-title: In Proceedings of PKDD_ Lyon France
+  year: '2000'
+- journal-title: Spatial Datasets an &#x201C;unofficial&#x201D; collection
+  year: '0'
+- article-title: A Validity measure for Fuzzy Clustering
+  author: lisa xie
+  journal-title: IEEE Tran Pattern Anal Mach Intell
+  volume: '13'
+  year: '1991'
+doc_url: http://xplorestaging.ieee.org/ielx5/7762/21329/00989517.pdf?arnumber=989517
+doi: 10.1109/icdm.2001.989517
+files:
+- tmpbddvx6g4-a.pdf
+journal: Proceedings 2001 IEEE International Conference on Data Mining
+papis_id: 237a1e068df20c0df8db6d8b38481b30
+publisher: IEEE Comput. Soc
+ref: ClusteringValiHalkid
+time-added: 2024-02-07-23:36:42
+title: 'Clustering validity assessment: finding the optimal partitioning of a data
+  set'
+type: inproceedings
+url: http://dx.doi.org/10.1109/icdm.2001.989517
+venue: San Jose, CA, USA

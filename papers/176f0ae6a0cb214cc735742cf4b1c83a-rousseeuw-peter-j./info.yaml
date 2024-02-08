@@ -1,0 +1,164 @@
+author: Rousseeuw, Peter J.
+author_list:
+- affiliation: []
+  family: Rousseeuw
+  given: Peter J.
+citations:
+- article-title: Application of validity techniques on a hierarchical cluster solution
+    using U.S. occupations
+  author: Andes
+  journal-title: Fourth European Meeting of the Psychometric Society and the Classification
+    Societies, Cambridge, United Kingdom
+  year: '1985'
+- article-title: Taxometric maps
+  author: Carmichael
+  doi: 10.2307/2412184
+  first-page: '402'
+  journal-title: Systematic Zoology
+  volume: '18'
+  year: '1969'
+- article-title: Methodological developments in some applications of clustering
+  author: Cohen
+  first-page: '141'
+  series-title: Applications of Statistics
+  year: '1977'
+- article-title: Bicriterion cluster analysis
+  author: Delattre
+  doi: 10.1109/TPAMI.1980.4767027
+  first-page: '277'
+  journal-title: IEEE Trans. Pattern Anal. Mach. Intelligence
+  volume: '2'
+  year: '1980'
+- author: Everitt
+  series-title: Graphical Techniques for Multivariate Data
+  year: '1978'
+- article-title: 'Cluster analysis of multivariate data: efficiency versus interpretability
+    of classifications (abstract)'
+  author: Forgy
+  first-page: '768'
+  journal-title: Biometrics
+  volume: '21'
+  year: '1965'
+- article-title: Unclassed matrix shading and optimal ordering in hierarchical cluster
+    analysis
+  author: Gale
+  doi: 10.1007/BF01890117
+  first-page: '75'
+  journal-title: J. Classification
+  volume: '1'
+  year: '1984'
+- article-title: Interpreting and assessing the results of cluster analyses
+  author: Gnanadesikan
+  first-page: '451'
+  journal-title: Bull. Internat. Statist. Inst.
+  volume: '47'
+  year: '1977'
+- article-title: Multidimensional group analysis
+  author: Jancey
+  doi: 10.1071/BT9660127
+  first-page: '127'
+  journal-title: Australian J. Botany
+  volume: '14'
+  year: '1966'
+- article-title: Hierarchical clustering schemes
+  author: Johnson
+  doi: 10.1007/BF02289588
+  first-page: '241'
+  journal-title: Psychometrika
+  volume: '32'
+  year: '1967'
+- article-title: A comment on icicles
+  author: Kent
+  first-page: '162'
+  journal-title: Amer. Statist.
+  volume: '38'
+  year: '1984'
+- article-title: 'Icicle plots: better displays for hierarchical clustering'
+  author: Kruskal
+  first-page: '162'
+  journal-title: Amer. Statist.
+  volume: '37'
+  year: '1983'
+- article-title: Some methods for classification and analysis of multivariate observations
+  author: MacQueen
+  first-page: '281'
+  series-title: Proceedings 5th Berkeley Symposium on Mathematical Statistics and
+    Probability
+  year: '1967'
+- article-title: Non-hierarchical clustering with MASLOC
+  author: Massart
+  doi: 10.1016/0031-3203(83)90055-9
+  first-page: '507'
+  journal-title: Pattern Recognition
+  volume: '16'
+  year: '1983'
+- article-title: Numerical methods for fuzzy clustering
+  author: Ruspini
+  doi: 10.1016/S0020-0255(70)80056-1
+  first-page: '319'
+  journal-title: Information Sciences
+  volume: '2'
+  year: '1970'
+- article-title: 'Representation of structure in similarity data: problems and prospects'
+  author: Shepard
+  doi: 10.1007/BF02291665
+  first-page: '373'
+  journal-title: Psychometrika
+  volume: '39'
+  year: '1974'
+- article-title: Numerical taxonomy
+  author: Sokal
+  doi: 10.1038/scientificamerican1266-106
+  first-page: '106'
+  journal-title: Scientific American
+  year: '1966'
+- author: Spaeth
+  series-title: Cluster Analysis Algorithms
+  year: '1980'
+- article-title: The extension of factor analysis to three-dimensional matrices
+  author: Tucker
+  series-title: Contributions to Mathematical Psychology
+  year: '1964'
+- article-title: Integer programming and the theory of grouping
+  author: Vinod
+  doi: 10.1080/01621459.1969.10500990
+  first-page: '506'
+  journal-title: J. Amer. Statist. Assoc.
+  volume: '64'
+  year: '1969'
+- article-title: On multivariate display
+  author: Wainer
+  first-page: '469'
+  series-title: Recent Advances in Statistics
+  year: '1983'
+- article-title: Hierarchical grouping to optimize an objective function
+  author: Ward
+  doi: 10.1080/01621459.1963.10500845
+  first-page: '236'
+  journal-title: J. Amer. Statist. Assoc.
+  volume: '58'
+  year: '1963'
+- article-title: Comparisons among multidimensional structures of nations based on
+    different measures of subjective similarity
+  author: Wish
+  first-page: '55'
+  journal-title: General Systems
+  volume: '15'
+  year: '1970'
+doi: 10.1016/0377-0427(87)90125-7
+files:
+- tmptqn6njpo-a.pdf
+journal: Journal of Computational and Applied Mathematics
+language: en
+month: 11
+pages: 53--65
+papis_id: b9dfb26a045319173318c377d6fcf542
+publisher: Elsevier BV
+ref: SilhouettesARousse1987
+time-added: 2024-02-08-16:38:18
+title: 'Silhouettes: A graphical aid to the interpretation and validation of cluster
+  analysis'
+type: article
+url: http://dx.doi.org/10.1016/0377-0427(87)90125-7
+volume: '20'
+year: 1987
