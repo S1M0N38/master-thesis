@@ -269,6 +269,20 @@
   year = {2006},
 }
 
+@article{Mobilenetv2InSandle2018,
+  abstract = {In this paper we describe a new mobile architecture, MobileNetV2, that improves the state of the art performance of mobile models on multiple tasks and benchmarks as well as across a spectrum of different model sizes. We also describe efficient ways of applying these mobile models to object detection in a novel framework we call SSDLite. Additionally, we demonstrate how to build mobile semantic segmentation models through a reduced form of DeepLabv3 which we call Mobile DeepLabv3.   The MobileNetV2 architecture is based on an inverted residual structure where the input and output of the residual block are thin bottleneck layers opposite to traditional residual models which use expanded representations in the input an MobileNetV2 uses lightweight depthwise convolutions to filter features in the intermediate expansion layer. Additionally, we find that it is important to remove non-linearities in the narrow layers in order to maintain representational power. We demonstrate that this improves performance and provide an intuition that led to this design. Finally, our approach allows decoupling of the input/output domains from the expressiveness of the transformation, which provides a convenient framework for further analysis. We measure our performance on Imagenet classification, COCO object detection, VOC image segmentation. We evaluate the trade-offs between accuracy, and number of operations measured by multiply-adds (MAdd), as well as the number of parameters},
+  archiveprefix = {arXiv},
+  author = {Sandler, Mark and Howard, Andrew and Zhu, Menglong and Zhmoginov, Andrey and Chen, Liang-Chieh},
+  eprint = {1801.04381v4},
+  file = {1801.04381v4.pdf},
+  month = {Jan},
+  note = {The IEEE Conference on Computer Vision and Pattern Recognition   (CVPR), 2018, pp. 4510-4520},
+  primaryclass = {cs.CV},
+  title = {MobileNetV2: Inverted Residuals and Linear Bottlenecks},
+  url = {http://arxiv.org/abs/1801.04381v4},
+  year = {2018},
+}
+
 @article{DefensiveDistiCarlin2016,
   abstract = {We show that defensive distillation is not secure: it is no more resistant to targeted misclassification attacks than unprotected neural networks.},
   archiveprefix = {arXiv},
@@ -358,6 +372,20 @@
   year = {2015},
 }
 
+@article{SilhouettesARousse1987,
+  author = {Rousseeuw, Peter J.},
+  doi = {10.1016/0377-0427(87)90125-7},
+  journal = {Journal of Computational and Applied Mathematics},
+  language = {en},
+  month = {11},
+  pages = {53--65},
+  publisher = {Elsevier BV},
+  title = {Silhouettes: A graphical aid to the interpretation and validation of cluster analysis},
+  url = {http://dx.doi.org/10.1016/0377-0427(87)90125-7},
+  volume = {20},
+  year = {1987},
+}
+
 @article{ComplementObjeChen2019,
   abstract = {Learning with a primary objective, such as softmax cross entropy for classification and sequence generation, has been the norm for training deep neural networks for years. Although being a widely-adopted approach, using cross entropy as the primary objective exploits mostly the information from the ground-truth class for maximizing data likelihood, and largely ignores information from the complement (incorrect) classes. We argue that, in addition to the primary objective, training also using a complement objective that leverages information from the complement classes can be effective in improving model performance. This motivates us to study a new training paradigm that maximizes the likelihood of the groundtruth class while neutralizing the probabilities of the complement classes. We conduct extensive experiments on multiple tasks ranging from computer vision to natural language understanding. The experimental results confirm that, compared to the conventional training with just one primary objective, training also with the complement objective further improves the performance of the state-of-the-art models across all tasks. In addition to the accuracy improvement, we also show that models trained with both primary and complement objectives are more robust to single-step adversarial attacks.},
   archiveprefix = {arXiv},
@@ -369,6 +397,20 @@
   title = {Complement Objective Training},
   url = {http://arxiv.org/abs/1903.01182v2},
   year = {2019},
+}
+
+@article{AClusterSeparDavies1979,
+  author = {Davies, David L. and Bouldin, Donald W.},
+  doi = {10.1109/tpami.1979.4766909},
+  issue = {2},
+  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  month = {4},
+  pages = {224--227},
+  publisher = {Institute of Electrical and Electronics Engineers (IEEE)},
+  title = {A Cluster Separation Measure},
+  url = {http://dx.doi.org/10.1109/tpami.1979.4766909},
+  volume = {PAMI-1},
+  year = {1979},
 }
 
 @article{DeepLearningOBarz2019,
@@ -817,6 +859,56 @@
   url = {http://dx.doi.org/10.1109/access.2022.3229654},
   volume = {10},
   year = {2022},
+}
+
+@misc{SDbwLashko2019,
+  author = {Lashkov, Alexander},
+  journal = {GitHub repository},
+  month = {3},
+  publisher = {GitHub},
+  title = {S\_Dbw},
+  url = {https://github.com/alashkov83/S\_Dbw},
+  year = {2019},
+}
+
+@article{ClusteringValiTong2009,
+  author = {Tong, Jianhua and Tan, Hongzhou},
+  doi = {10.1007/s11767-007-0151-8},
+  issue = {2},
+  journal = {Journal of Electronics (China)},
+  language = {en},
+  month = {2},
+  pages = {258--264},
+  publisher = {Springer Science and Business Media LLC},
+  title = {Clustering validity based on the improved S\_Dbw index},
+  url = {http://dx.doi.org/10.1007/s11767-007-0151-8},
+  volume = {26},
+  year = {2009},
+}
+
+@inproceedings{ClusteringValiHalkid,
+  author = {Halkidi, M. and Vazirgiannis, M.},
+  booktitle = {2001 IEEE International Conference on Data Mining},
+  doi = {10.1109/icdm.2001.989517},
+  journal = {Proceedings 2001 IEEE International Conference on Data Mining},
+  publisher = {IEEE Comput. Soc},
+  title = {Clustering validity assessment: finding the optimal partitioning of a data set},
+  url = {http://dx.doi.org/10.1109/icdm.2001.989517},
+  venue = {San Jose, CA, USA},
+}
+
+@article{ADendriteMethCalins1974,
+  author = {Calinski, T. and Harabasz, J.},
+  doi = {10.1080/03610927408827101},
+  issue = {1},
+  journal = {Communications in Statistics - Theory and Methods},
+  language = {en},
+  pages = {1--27},
+  publisher = {Informa UK Limited},
+  title = {A dendrite method for cluster analysis},
+  url = {http://dx.doi.org/10.1080/03610927408827101},
+  volume = {3},
+  year = {1974},
 }
 
 @article{SqueezenetAleIandol2016,
@@ -1359,4 +1451,17 @@
   title = {Distillation as a Defense to Adversarial Perturbations against Deep   Neural Networks},
   url = {http://arxiv.org/abs/1511.04508v2},
   year = {2015},
+}
+
+@article{UmapUniformMMcinne2018,
+  abstract = {UMAP (Uniform Manifold Approximation and Projection) is a novel manifold learning technique for dimension reduction. UMAP is constructed from a theoretical framework based in Riemannian geometry and algebraic topology. The result is a practical scalable algorithm that applies to real world data. The UMAP algorithm is competitive with t-SNE for visualization quality, and arguably preserves more of the global structure with superior run time performance. Furthermore, UMAP has no computational restrictions on embedding dimension, making it viable as a general purpose dimension reduction technique for machine learning.},
+  archiveprefix = {arXiv},
+  author = {McInnes, Leland and Healy, John and Melville, James},
+  eprint = {1802.03426v3},
+  file = {1802.03426v3.pdf},
+  month = {Feb},
+  primaryclass = {stat.ML},
+  title = {UMAP: Uniform Manifold Approximation and Projection for Dimension   Reduction},
+  url = {http://arxiv.org/abs/1802.03426v3},
+  year = {2018},
 }
