@@ -1,0 +1,25 @@
+author: Calinski, T. and Harabasz, J.
+author_list:
+- affiliation: []
+  family: Calinski
+  given: T.
+- affiliation: []
+  family: Harabasz
+  given: J.
+doc_url: http://www.tandfonline.com/doi/pdf/10.1080/03610927408827101
+doi: 10.1080/03610927408827101
+files:
+- tmpahpjv-qv-a.pdf
+issue: '1'
+journal: Communications in Statistics - Theory and Methods
+language: en
+pages: 1--27
+papis_id: 7a89564e70592df575044ef834614ffe
+publisher: Informa UK Limited
+ref: ADendriteMethCalins1974
+time-added: 2024-02-12-18:05:08
+title: A dendrite method for cluster analysis
+type: article
+url: http://dx.doi.org/10.1080/03610927408827101
+volume: '3'
+year: 1974

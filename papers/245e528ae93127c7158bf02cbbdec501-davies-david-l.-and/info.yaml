@@ -1,0 +1,59 @@
+author: Davies, David L. and Bouldin, Donald W.
+author_list:
+- affiliation: []
+  family: Davies
+  given: David L.
+- affiliation: []
+  family: Bouldin
+  given: Donald W.
+citations:
+- author: haralick
+  journal-title: Topics in Applied Physics Vol 11 Digital Picture Analysis
+  year: '1976'
+- author: hartigan
+  journal-title: Clustering Algorithms
+  year: '1975'
+- author: chen
+  journal-title: Statistical Pattern Recognition
+  year: '1973'
+- doi: 10.2307/2283767
+- author: bryan
+  journal-title: Classification and Clustering Using Density Estimation
+  year: '1971'
+- article-title: Theory and applications of imagery pattern recognition
+  author: chen
+  journal-title: Proc 4th Int Congr Sterology
+  year: '1976'
+- author: duda
+  journal-title: Pattern Classification and Scene Analysis
+  year: '1973'
+- author: fisher
+  journal-title: Machine Recognition of Patterns
+  year: '1976'
+- doi: 10.1007/BF02289263
+- author: everett
+  journal-title: Cluster Analysis
+  year: '1975'
+- author: duran
+  journal-title: Cluster Analysis
+  year: '1974'
+- author: tou
+  journal-title: Pattern Recognition Principles
+  year: '1974'
+doc_url: http://xplorestaging.ieee.org/ielx5/34/4766893/04766909.pdf?arnumber=4766909
+doi: 10.1109/tpami.1979.4766909
+files:
+- tmpi9-td3ft-a.pdf
+issue: '2'
+journal: IEEE Transactions on Pattern Analysis and Machine Intelligence
+month: 4
+pages: 224--227
+papis_id: dbbab4cdbc835e7681d628f7d4b5260f
+publisher: Institute of Electrical and Electronics Engineers (IEEE)
+ref: AClusterSeparDavies1979
+time-added: 2024-02-12-16:32:19
+title: A Cluster Separation Measure
+type: article
+url: http://dx.doi.org/10.1109/tpami.1979.4766909
+volume: PAMI-1
+year: 1979
