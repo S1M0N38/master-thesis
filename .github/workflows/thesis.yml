@@ -8,32 +8,18 @@ on:
       - 'thesis/**'
   workflow_dispatch:
 
+
 jobs:
-  build:
+  build_and_publish:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      
-      - uses: actions/cache@v3
-        name: Tectonic Cache
-        with:
-          path: ~/.cache/Tectonic
-          key: ${{ runner.os }}-tectonic-${{ hashFiles('**/*.tex') }}
-          restore-keys: |
-            ${{ runner.os }}-tectonic-
+      - uses: actions/checkout@v3
 
-      - uses: wtfjoke/setup-tectonic@v2
+      - name: Compile
+        uses: xu-cheng/latex-action@v3
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          biber-version: '2.17'
-
-      - name: Build
-        run: |
-          cd thesis
-          tectonic main.tex
-          cd ..
+          working_directory: thesis
+          root_file: thesis/main.tex
 
       - name: Publish
         uses: actions/upload-artifact@v3
