@@ -162,12 +162,12 @@ To get the silhouette coefficient for the entire set \gls{hidden_set}, we take t
 \paragraph{Calinski–Harabasz index}
 \label{par:calinski–harabasz-index}
 
-The \acrfull{chi} was introduce by Calinski and Harabasz in~\cite{ADendriteMethCalins1974}. Let $\mu_i$ and $\mu$ be the centroid for the cluster $i$ and the centroid of the whole dataset respectively define as
+The \acrfull{chi} was introduced by Calinski and Harabasz in~\cite{ADendriteMethCalins1974}. Let $\mu_i$ and $\mu$ be the centroids for cluster $i$ and the entire dataset respectively, defined as
 \begin{equation*}
   \mu_i := \frac{1}{|\mathcal{H}_i|} \sum_{h_i} h_i \quad
   \mu := \frac{1}{|\mathcal{H}|} \sum_{h} h
 \end{equation*}
-the \acrlong{chi} is
+The \acrlong{chi} is
 \begin{equation}
 \textrm{CH} := \frac
   {\sum_i |\mathcal{H}_i| {\left[d(\mu_i, \mu)\right]}^2}
@@ -178,7 +178,7 @@ the \acrlong{chi} is
 \paragraph{Davies–Bouldin index}
 \label{par:Davies–Bouldin-index}
 
-The \acrfull{dbi} was introduce by Davies and Bouldin in~. It's definition is based on the ratio $R_{ij}$ of within-cluster distances $S_i$ to between-cluster distances $M_{ij}$.
+The \acrfull{dbi} was introduced by Davies and Bouldin in~\cite{AClusterSeparDavies1979}. Its definition is based on the ratio $R_{ij}$ of within-cluster distances $S_i$ to between-cluster distances $M_{ij}$.
 
 \begin{equation*}
   R_{ij} := \frac{S_i + S_j}{M_{ij}}
@@ -187,7 +187,7 @@ The \acrfull{dbi} was introduce by Davies and Bouldin in~. It's definition is ba
   M_{ij} := d(\mu_i, \mu_j)
 \end{equation*}
 
-From the ratios $R_{ij}$ we obtain $\textrm{DB}_i$, a per-cluster Davies–Bouldin index, by taking the maximum $R_{ij}$ over all clusters $j$ different from $i$. The $\max$ operation effectively selects the clustering pairs that are overlapping the most (higher value of combined intra-clustering scattering and minimum distance of the centroids). The Davies–Bouldin index for the whole dataset is then the average of all $\textrm{DB}_i$.
+From the ratios $R_{ij}$, we obtain $\textrm{DB}_i$, a per-cluster Davies–Bouldin index, by taking the maximum $R_{ij}$ over all clusters $j$ different from $i$. The $\max$ operation effectively selects the clustering pairs that overlap the most (higher value of combined intra-clustering scattering and minimum distance of the centroids). The Davies–Bouldin index for the entire dataset is then the average of all $\textrm{DB}_i$.
 
 \begin{equation}
   \textrm{DB} := \frac{1}{|\mathcal{C}|} \sum_{i} \textrm{DB}_i
@@ -199,22 +199,22 @@ From the ratios $R_{ij}$ we obtain $\textrm{DB}_i$, a per-cluster Davies–Bould
 \paragraph{SDBw index}
 \label{par:sdbw}
 
-Halkidi and Vazirgiannis in~\cite{ClusteringValiHalkid} define the validity index SDBw as the sum of two terms: Intra-cluster variance and Inter-cluster density. Altrnative names for the two terms are \emph{Scattering} (S) and \emph{Density Between clusters} (DBw).\footnote{SDBw was computed using the library s-dbw\cite{SDbwLashko2019} which make use of the optimization introduce by Tong and Tan in~\cite{ClusteringValiTong2009}.}
+Halkidi and Vazirgiannis in~\cite{ClusteringValiHalkid} define the validity index SDBw as the sum of two terms: intra-cluster variance and inter-cluster density. Alternative names for the two terms are \emph{Scattering} (S) and \emph{Density Between Clusters} (DBw).\footnote{SDBw was computed using the library s-dbw\cite{SDbwLashko2019}, which makes use of the optimization introduced by Tong and Tan in~\cite{ClusteringValiTong2009}.}
 
-The scattering is average ratio of the L2 norm of the standard deviation of the points in a cluster to the L2 norm of the standard deviation of the whole dataset.
+Scattering is the average ratio of the L2 norm of the standard deviation of the points in a cluster to the L2 norm of the standard deviation of the entire dataset.
 \begin{equation*}
   \textrm{S} := \frac{1}{|C|} \sum_{i} \frac{\|\sigma(\mathcal{H}_i)\|}{\|\sigma(\mathcal{H})\|}
   \quad \textrm{where} \quad
   \sigma(\mathcal{H}_i) := \sqrt{\frac{1}{|\mathcal{H}_i|} \sum_{h_i} \left[h_i - \mu_i \right]^{2}}
 \end{equation*}
 
-The density bewteen clusters is computed by averaging the density bewteen all $ij$ pairs of clusters ($\textrm{DBw}_{ij}$).
+The density between clusters is computed by averaging the density between all $ij$ pairs of clusters ($\textrm{DBw}_{ij}$).
 \begin{equation*}
   \textrm{DBw} := \frac{1}{|C| (|C| - 1)} \sum_{i} \sum_{j \neq i} \textrm{DBw}_{ij}
   \quad \textrm{where} \quad
-  \textrm{DBw}_{ij} := \frac{\rho_{ij}}{\max\{\rho_{i},\rho_{i}\}}
+  \textrm{DBw}_{ij} := \frac{\rho_{ij}}{\max\{\rho_{i},\rho_{j}\}}
 \end{equation*}
-The desisty function $\rho_i$ counts the number of points count the number of points of $\mathcal{H}_i$ in the hyperphere of radius $R$ around the centroid $\mu_i$. $\rho_{ij}$ is the number of points belonging to $\mathcal{H}_i \cup \mathcal{H}_j$ lying in the hyperphere of radius $R$ centered in the middle point between the centroids $\mu_i$ and $\mu_j$. The radius $R$ is the same in all calculations.
+The density function $\rho_i$ counts the number of points in the hyper-sphere of radius $R$ around the centroid $\mu_i$. $\rho_{ij}$ is the number of points belonging to $\mathcal{H}_i \cup \mathcal{H}_j$ lying in the hyper-sphere of radius $R$ centered at the midpoint between the centroids $\mu_i$ and $\mu_j$. The radius $R$ is the same in all calculations.
 \begin{align*}
   \quad R &:= \frac{1}{|\mathcal{C}|} \sum_i \| \sigma (\mathcal{H}_i)\| \\
   \rho_{i} &:= \left| \, \left\{ h \in \mathcal{H}_i \ | \ d(h, \mu_{i}) \le R \right\} \, \right| \\
@@ -222,7 +222,7 @@ The desisty function $\rho_i$ counts the number of points count the number of po
     d\left(h, \frac{\left(\mu_{i} + \mu_{j}\right)}{2}\right) \le R \right\} \, \right|
 \end{align*}
 
-S\_DBw index is simply the sum of the two terms
+The SDBw index is simply the sum of the two terms
 \begin{equation}
   \textrm{SDBw} := \textrm{S} + \textrm{DBw}
   \label{eq:sdbw}
@@ -230,7 +230,7 @@ S\_DBw index is simply the sum of the two terms
 
 \subsection{Interpretation}
 
-All these definitions of clustering metrics can sound arbitrary, similar in spirit and, some of them, a bit convoluted. More over is not clear how to interpret their numerical values. However we decided to include them all in this work because different metrics strive in different scenarios. Lie et al. in~\cite{UnderstandingOLiuY2010} performed a study on eleven clustering metrics including the aforementioned ones evaluating their strengths and weaknesses on synthetic data. The study takes into account different aspects that could influence the validity on the metrics depending on data distribution. They focus on monotonicity, noise, density, the presence of sub-clusters and skewed distributions concluding that most of them have certain limitations in different scenarios (\Cref{tab:clustering-metrics-study}). The only metric that proved to be reliable in all tested circumstances is the \acrshort{sdbw}.
+All these definitions of clustering metrics may seem arbitrary, similar in spirit, and, in some cases, somewhat convoluted. Moreover, it is not clear how to interpret their numerical values. However, we decided to include them all in this work because different metrics excel in different scenarios. Liu et al. in~\cite{UnderstandingOLiuY2010} conducted a study on eleven clustering metrics, including the aforementioned ones, evaluating their strengths and weaknesses on synthetic data. The study considers different aspects that could influence the validity of the metrics depending on data distribution. They focus on monotonicity, noise, density, the presence of sub-clusters, and skewed distributions, concluding that most of them have certain limitations in different scenarios (\Cref{tab:clustering-metrics-study}). The only metric that proved to be reliable in all tested circumstances is the \acrshort{sdbw}.
 \begin{table}[h!]
   \renewcommand{\arraystretch}{1.2}%
   \centering
@@ -241,34 +241,32 @@ All these definitions of clustering metrics can sound arbitrary, similar in spir
     \acrshort{dbi}  & $\downarrow$ &       &        &       & $\times$ &           \\
     \acrshort{sdbw} & $\downarrow$ &       &        &       &        &           \\ \hline
   \end{tabular}
-  \caption{Validity for clustering metrics in different scenarios~\cite{UnderstandingOLiuY2010}. $\times$ indicates that the metric is not reliable in that case. $\uparrow / \downarrow$ indicates \emph{higher}$/$ \emph{lower} is better.} \label{tab:clustering-metrics-study}
+  \caption{Validity of clustering metrics in different scenarios~\cite{UnderstandingOLiuY2010}. $\times$ indicates that the metric is not reliable in that case. $\uparrow / \downarrow$ indicates \emph{higher}$/$ \emph{lower} is better.} \label{tab:clustering-metrics-study}
 \end{table}
 
 \section{Projections}
 \label{sec:projections}
 
-In this work, we deal with high-dimensional vectors that we would like to visualize in 2D plots; these vectors are \emph{encodings} and \emph{features vectors}.
-In both cases we expect to observe a cluster like structure with sub-cluster for different levels of the hierarchy. To produce these 2D plot we need to use a dimensionality technique that is able to model the non-linear structure of the data, scale well with the number of points, and preserve the local global and local structure of the data.
-
+In this work, we handle high-dimensional vectors that we aim to visualize in 2D plots; these vectors are referred to as \emph{encodings} and \emph{feature vectors}.
+In both instances, we anticipate observing a cluster-like structure with sub-clusters for different levels of the hierarchy. To generate these 2D plots, we must employ a dimensionality reduction technique that can model the non-linear structure of the data, scale effectively with the number of points, and preserve both the global and local structure of the data.
 
 \subsection{UMAP}
 \label{subsec:projections-umap}
 
-UMAP~\cite{UmapUniformMMcinne2018} is a dimensionality reduction technique that complies with the aforementioned requirements. It assume that the high-dimensional data lies on a lower-dimensional manifold embedded the higher-dimensional space.
+UMAP~\cite{UmapUniformMMcinne2018} is a dimensionality reduction technique that complies with the aforementioned requirements. It assumes that the high-dimensional data lies on a lower-dimensional manifold embedded in the higher-dimensional space.
 
 First, using techniques from algebraic topology, it constructs a \emph{fuzzy topological representation} of the original data. This is a weighted graph where the nodes are the data points and the edges are weighted by the similarity between the data points.
-The problem is now how lay out this graph in the 2D euclidean space. Starting from an initial guess, computed using spectral embedding techniques, UMAP tries to minimize the difference between the fuzzy topological representation and the low-dimensional representation using a stochastic gradient descent algorithm.\footnote{Coincidentally, the loss function that UMAP try to minimize is the cross-entropy loss as well. The reason is that in the construction of the graph representation the existence or not of an edge is model by a Bernoulli distribution. It can be shown that cross-entropy corresponds to minimize the likelihood for a Bernoulli distribution.} This algorithm ensure the topology of the projected data resemble the topology of the manifold underlying the original data.
+The problem now is how to lay out this graph in the 2D Euclidean space. Starting from an initial guess, computed using spectral embedding techniques, UMAP tries to minimize the difference between the fuzzy topological representation and the low-dimensional representation using a stochastic gradient descent algorithm.\footnote{Coincidentally, the loss function that UMAP tries to minimize is the cross-entropy loss as well. The reason is that in the construction of the graph representation, the existence or absence of an edge is modeled by a Bernoulli distribution. It can be shown that cross-entropy corresponds to minimizing the likelihood for a Bernoulli distribution.} This algorithm ensures the topology of the projected data resembles the topology of the manifold underlying the original data.
 
-The quality of the projections produced by UMAP is heavily dependent on the choice of the hyperparameters, specifically the \emph{number of neighbors} and the \emph{minimum distance}. The former is the number of neighbors to consider when constructing the fuzzy topological representation. A low value will result in a more projection that is more sensitive to local structure, while a high value focus more on the global structure of the data. The minimum distance simply avoids that the projected points are too cramped together by setting a minimum distance between them. The choice of these hyperparameters is crucial to obtain a good results, so in this work we explore various combinations depending on the type of data we are projecting, i.e. encodings, features vectors from dataset of different sizes, etc.
+The quality of the projections produced by UMAP is heavily dependent on the choice of the hyperparameters, specifically the \emph{number of neighbors} and the \emph{minimum distance}. The former is the number of neighbors to consider when constructing the fuzzy topological representation. A low value will result in a projection that is more sensitive to local structure, while a high value focuses more on the global structure of the data. The minimum distance simply prevents the projected points from being too cramped together by setting a minimum distance between them. The choice of these hyperparameters is crucial to obtain good results, so in this work we explore various combinations depending on the type of data we are projecting, i.e., encodings, feature vectors from datasets of different sizes, etc.
 
-A pitfall in the interpretation of UMAP plots is about the characteristics of emerging clustering.  While it's true that the presence and the global positions of clusters are better preserved in UMAP, the distances between them are not guaranteed to be meaningful. Moreover the size of the clusters is meaningless. This is because UMAP uses local notions of distance to construct its high-dimensional graph representation. So when reading a UMAP projection plot one must pay attention to the relative distances of the points instead of theirs absolute distances.
-
+A pitfall in the interpretation of UMAP plots is about the characteristics of emerging clustering. While it's true that the presence and the global positions of clusters are better preserved in UMAP, the distances between them are not guaranteed to be meaningful. Moreover, the size of the clusters is meaningless. This is because UMAP uses local notions of distance to construct its high-dimensional graph representation. So when reading a UMAP projection plot, one must pay attention to the relative distances of the points instead of their absolute distances.
 
 \subsection{Encodings projections}
 \label{subsec:encodings-projections}
-The term \emph{encoding projections} refers to the visualization of the encodings produced by different encodings schemes $\phi$ for different datasets. Using UMAP encodings are projected into a 2D space and then colored based on the ground-truth class at a specific level of the hierarchy.
+The term \emph{encoding projections} refers to the visualization of the encodings produced by different encoding schemes $\phi$ for various datasets. Using UMAP, encodings are projected into a 2D space and then colored based on the ground-truth class at a specific level of the hierarchy.
 
-In the case of hierarchical encodings this visualization serve as a debugging tool ensuring that the hierarchy indeed enforce a clusters/sub-clusters structure that reflect the hiearchy of the classes. \Cref{fig:04/hierarchical-encodings-projections} is a hand-crafted example of resulting projections for the toy dataset.
+In the case of hierarchical encodings, this visualization serves as a debugging tool, ensuring that the hierarchy indeed enforces a cluster/sub-cluster structure that reflects the hierarchy of the classes. \Cref{fig:04/hierarchical-encodings-projections} is a hand-crafted example of resulting projections for the toy dataset.
 
 \begin{figure}[h]
   \centering
@@ -282,22 +280,22 @@ In the case of hierarchical encodings this visualization serve as a debugging to
     \caption{Level 2 of the hierarchy}
     \label{fig:04/hierarchical-encodings-projections-lvl2}
   \end{subfigure}
-  \caption{Encodings projections for toy dataset.}
+  \caption{Encoding projections for the toy dataset.}
   \label{fig:04/hierarchical-encodings-projections}
 \end{figure}
 
-For description encodings, UMAP plots are even more important because the is no guaranteed that the encodings produced from text descriptions can carry semantically meaningful information nor that a clustering sturcture that reflect the hard-coded hierarchy is present. Visualizing the descriptions encodings proved to be useful to highlight some ambiguity in how the hiearchy was construct for some dataset (see \Cref{subsec:cifar100-encodings-experimental-setup}).
+For description encodings, UMAP plots are even more important because there is no guarantee that the encodings produced from text descriptions can carry semantically meaningful information, nor that a clustering structure that reflects the hard-coded hierarchy is present. Visualizing the description encodings proved to be useful to highlight some ambiguity in how the hierarchy was constructed for some datasets (see \Cref{subsec:cifar100-encodings-experimental-setup}).
 
-Another situation that descriptions encodings projection came handy, is to highlight the ``homograph'' problem expose in~\Cref{subsec:word-encoding}. For instance the word encoding produced by GloVe for the class ``seal'' (the animal) stood out as a outlier in the projection for the CIFAR-100 dataset. This was a clear indication that the word encoding for ``seal'' was not semantically related to the other animal classes in the dataset and the true meaning encoded give by GloVe was one of ``seal'' as a verb.
+Another situation where description encoding projection proved handy is to highlight the ``homograph'' problem exposed in~\Cref{subsec:word-encoding}. For instance, the word encoding produced by GloVe for the class ``seal'' (the animal) stood out as an outlier in the projection for the CIFAR-100 dataset. This was a clear indication that the word encoding for ``seal'' was not semantically related to the other animal classes in the dataset, and the true meaning encoded by GloVe was that of ``seal'' as a verb.
 
 \subsection{Features projections}
 \label{subsec:features-projections}
 
-\emph{Features projections} (short for feature vectors projections) are obtained by piping the testing dataset into a trained model, extract the feataure vectors --i.e. 1D vectors from the penultimate layer of the model before the final classifier-- and project onto the 2D plane using UMAP. Finally, as in the case of encodings projections, the points are colored based on their ground-truth class at different level of the hiearchy. We restate that the color are based on the ground-turth call associated to the image from which was generated the feature vector and not the predicted class.
+\emph{Feature projections} (short for feature vector projections) are obtained by feeding the testing dataset into a trained model, extracting the feature vectors -- i.e., 1D vectors from the penultimate layer of the model before the final classifier -- and projecting them onto the 2D plane using UMAP. Finally, as in the case of encoding projections, the points are colored based on their ground-truth class at different levels of the hierarchy. We reiterate that the colors are based on the ground-truth class associated with the image from which the feature vector was generated, not the predicted class.
 
-These projections provide a complementary view to the clustering metrics in~\Cref{sec:features-metrics} and should be seem as an euristic tool to qualitatively assess the quality of the model internal representation. However is must be said that features metrics have a deterministic formule which are computed on the numerical values of the full features vectors, while UMAP projections can vary quite a bit depending on the choice of the hyperparameters.
+These projections provide a complementary view to the clustering metrics in~\Cref{sec:features-metrics} and should be seen as a heuristic tool to qualitatively assess the quality of the model's internal representation. However, it must be noted that feature metrics have a deterministic formula which is computed on the numerical values of the full feature vectors, while UMAP projections can vary significantly depending on the choice of hyperparameters.
 
-Computational requirements for feature projections are far greather that the one for encodings projections. All the features vecotrs are pass together to the UMAP algorigthm as a big matrix \emph{length of testing dataset} $\times$ \emph{length of features vectors}. So, given the large amont of point in the testing split we need to use a dimensionality reduction technique that scale well with the number of datapoints. This is the primary reason for the choice of UMAP over t-SNE, an alternative non linear dimensionality reduction technique.
+Computational requirements for feature projections are far greater than those for encoding projections. All the feature vectors are passed together to the UMAP algorithm as a large matrix \emph{length of testing dataset} $\times$ \emph{length of feature vectors}. Given the large number of points in the testing split, we need to use a dimensionality reduction technique that scales well with the number of data points. This is the primary reason for the choice of UMAP over t-SNE, an alternative non-linear dimensionality reduction technique.
 
 \section{Adversarial Attacks}
 \label{sec:adversarial-attacks-model-evaluation}
