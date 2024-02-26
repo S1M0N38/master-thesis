@@ -1,7 +1,7 @@
 \chapter{Model Evaluation}
 \label{ch:model-evaluation}
 
-In this chapter, we will discuss all the components involved in evaluating a model's performance, i.e.\ how to derive the predicted class from the model's output (\Cref{sec:decoding}), various metrics (\Cref{sec:metrics}), projections (\Cref{sec:projections}), and adversarial attacks (\Cref{sec:adversarial-attacks-model-evaluation}).
+In this chapter, we will discuss all the components involved in evaluating a model's performance, i.e.\ how to derive the predicted class from the model's output (\Cref{sec:decoding}), various metrics (\Cref{sec:prediction-metrics}), projections (\Cref{sec:projections}), and adversarial attacks (\Cref{sec:adversarial-attacks-model-evaluation}).
 
 \section{Decoding}
 \label{sec:decoding}
@@ -11,7 +11,7 @@ Due to the trivial nature of this operation, it is often overlooked, but the pro
 
 Formally, obtaining the class from the output can be considered as the inverse of the encoding function $\phi$, that is
 \begin{equation}
-  \gls{decoder} : \mathcal{Y} \to \mathcal{C}
+  \gls{decoder} : \mathbb{R}^{D} \to \mathcal{C}
   : \hat{y} \mapsto \gls{predicted_class} := \gls{decoder}(\hat{y})
   \label{eq:decoding}
 \end{equation}
@@ -31,8 +31,8 @@ Another benefit is the ability to leverage information from all the output's com
 
 The concept of decoding could be straightforwardly extended to the top-\gls{number_predicted_classes} predicted classes. Instead of returning the class associated with the most similar encoding, we simply return the top-\gls{number_predicted_classes} most similar classes.
 
-\section{Metrics}
-\label{sec:metrics}
+\section{Prediction Metrics}
+\label{sec:prediction-metrics}
 Russakovsky et al.~\cite{ImagenetLargeRussak2014} introduced the \acrfull{ilsvrc}, which became the de facto benchmark to evaluate image classification models.
 Even though they propose the use of top-\gls{number_predicted_classes} and hierarchical measures to assess a model's performance, they conclude ``[...] all three measures of error (top-5, top-1, and hierarchical) produced the same ordering of results. Thus, since \acrshort{ilsvrc} 2012 we have been exclusively using the top-5 metric, which is the simplest and most suitable to the dataset.''
 The deep learning community prioritizes achieving high top-\gls{number_predicted_classes} accuracies as these are easier to compute for every dataset.
@@ -99,7 +99,7 @@ Note that $h_{ii}$ are all zeros, so we are effectively summing only the weighte
 \paragraph{Error rate -- Hier.\ dist.\ mistake}
 \label{par:error-rate-hier-dist-mistake}
 In order to compare models at a glance, we can plot the error rate versus hierarchical distance mistake on a two-dimensional scatter plot.
-The x-axis represents the amount of error (error rate), while the y-axis represents the severity of errors. Each point on the scatter plot corresponds to a trained model, and the overall best model is the one in the bottom-left corner.
+The x-axis represents the amount of error (error rate), while the y-axis represents the severity of errors (hierarchical distance mistake). Each point on the scatter plot corresponds to a trained model, and the overall best model is the one in the bottom-left corner.
 Moreover, we can draw this plot for different levels in the hierarchy, highlighting the fact that milder errors at lower levels usually result in fewer errors at higher ones.
 \begin{figure}[htbp]
   \ctikzfig{04/error-rate-hier-dist-mistake}
@@ -115,30 +115,189 @@ Moreover, we can draw this plot for different levels in the hierarchy, highlight
   \sum_{i, \, j} m_{ij}^l \, h_{ij}^l \bigg/ \sum_{i, \, j} m_{ij}^l.
   \label{eq:hierarchical-distance}
 \end{equation}
-If the model produces few errors, the off-diagonal values in the confusion matrix will be smaller, which are the only ones multiplied by non-zero values, hence the numerator is smaller. The denominator always stays the same, resulting in a lower value for hierarchical distance.
+If the model produces few errors, the off-diagonal values in the confusion matrix will be smaller, which are the only ones multiplied by non-zero values, hence the numerator is smaller. The denominator always stays the same, resulting in a lower value for hierarchical distance if compared to hierarchical distance mistake.
+
+\section{Features Metrics}
+\label{sec:features-metrics}
+
+While prediction metrics~\ref{sec:prediction-metrics} are crucial for evaluating a model's performance and are of paramount importance in practical applications, they do not furnish any information about the model's internal representations of the images.
+
+The model is fed with an image, which undergoes a series of transformations that convert the 2D array of pixels into a 1D vector of numbers. This vector represents the image content in an abstract manner. This process is similar in spirit to the aforementioned language embedding models, which convert text into its vector representation, also known as an embedding. The term ``feature vectors'' is more commonly used when referring to the same kind of 1D vector representation in the context of classical machine learning models. In the architecture that we employed, we define the feature vector to be the one produced by the penultimate layer of the network. The feature vector is then passed to the last layer, a \acrshort{fc} layer, which acts as a classifier mapping the feature vector to the output space.
+
+The training phase instructs the model to map images that are similar in the input space to similar feature vectors in the feature space. The concept of similarity of two feature vectors can be defined precisely by choosing a metric (e.g., Euclidean distance, cosine similarity, etc.). Two images in the input space can be considered similar if they exhibit similar visual characteristics. In the considered datasets, images belonging to the same class share visual characteristics, so it is reasonable to expect that a well-trained model will map them to similar feature vectors. This induces a cluster-like structure in the feature space. Moreover, if we assume similar classes (e.g., low value of the \acrshort{lca} height, semantically related, etc.) to be similar in the input space, we can speculate that the clustering of the feature vectors can reflect the hierarchy of the classes.
+
+To quantitatively assess the quality of the model's internal representation, we can resort to clustering metrics; a collection of metrics defined in the context of unsupervised learning that measure the quality of the clustering. As before, such metrics can be computed at different levels of the hierarchy.
+
+Combined with the qualitative method outlined in~\Cref{subsec:features-projections}, the evaluation of clustering metrics sheds a weak light on the black box model, and by opening the box, it reveals itself to be a lighter black.
+
+
+\subsection{Definitions}
+\label{subsec:features-metrics-definitions}
+
+In these sections, the indices $i, j, \dots$ are used to indicate various clusters which correspond to the classes $c_i, c_j, \dots$. Let \gls{hidden_i} be the feature vector produced by the penultimate level of the model for the image \gls{input_i} with the associated ground-truth \gls{class_i}. \gls{hidden_set} is the set of all $h$, while \gls{hidden_set_i} $\subset$ \gls{hidden_set} contains only \gls{hidden_i}. The notation $\sum_{h_i}$ is a shorthand for $\sum_{h_i \in \mathcal{H}_i}$, analogously $\sum_{h}$ is equivalent to $\sum_{h \in \mathcal{H}}$. The number of elements in a set is obtained by applying \gls{len}.
+
+\paragraph{Silhouette Coefficient}
+\label{par:silhouette-coefficient}
+
+The \acrfull{sc} is one such metric for evaluating the quality of clusters in a dataset. It was introduced by Rousseeuw in~\cite{SilhouettesARousse1987}.
+The \acrlong{sc} of a single point \gls{hidden_i} is defined to be
+\begin{equation*}
+  \textrm{SC}(h_i) := \frac{b(h_i) - a(h_i)}{\max\{a(h_i), b(h_i)\}}
+\end{equation*}
+
+The term $a(h_i)$ is the average distance between \gls{hidden_i} and all other points $h_{i'}$ in the same cluster. The term $b(h_i)$ is the average distance of the points belonging to the ``nearest'' cluster. The distance function $d$ used here -- and in the following sections -- is the Euclidean distance.
+
+\begin{equation*}
+  a(h_i) := \frac{1}{|\mathcal{H}_i| - 1} \sum_{h_{i'} \in \mathcal{H}_i \atop h_{i'} \neq h_{i}} d(h_{i}, h_{i'}) \quad
+  b(h_i) := \min_{j \neq i} \frac{1}{|\mathcal{H}_j|} \sum_{h_j} d(h_i, h_j)
+\end{equation*}
+
+To get the silhouette coefficient for the entire set \gls{hidden_set}, we take the average $\textrm{SC}(h_i)$ over all points in \gls{hidden_set}, that is
+
+\begin{equation}
+  \textrm{SC} := \frac{1}{|\mathcal{H}|} \sum_{h} SC(h)
+  \label{eq:sc}
+\end{equation}
+
+\paragraph{Calinski–Harabasz index}
+\label{par:calinski–harabasz-index}
+
+The \acrfull{chi} was introduce by Calinski and Harabasz in~\cite{ADendriteMethCalins1974}. Let $\mu_i$ and $\mu$ be the centroid for the cluster $i$ and the centroid of the whole dataset respectively define as
+\begin{equation*}
+  \mu_i := \frac{1}{|\mathcal{H}_i|} \sum_{h_i} h_i \quad
+  \mu := \frac{1}{|\mathcal{H}|} \sum_{h} h
+\end{equation*}
+the \acrlong{chi} is
+\begin{equation}
+\textrm{CH} := \frac
+  {\sum_i |\mathcal{H}_i| {\left[d(\mu_i, \mu)\right]}^2}
+  {\sum_i \sum_{h_i} {\left[d(\mu_i, h_i)\right]}^2}
+  \label{eq:chi}
+\end{equation}
+
+\paragraph{Davies–Bouldin index}
+\label{par:Davies–Bouldin-index}
+
+The \acrfull{dbi} was introduce by Davies and Bouldin in~. It's definition is based on the ratio $R_{ij}$ of within-cluster distances $S_i$ to between-cluster distances $M_{ij}$.
+
+\begin{equation*}
+  R_{ij} := \frac{S_i + S_j}{M_{ij}}
+  \quad \textrm{where} \quad
+  S_i := \frac{1}{|\mathcal{H}_i|} \sum_{h_i} d(h_i, \mu_i) \quad
+  M_{ij} := d(\mu_i, \mu_j)
+\end{equation*}
+
+From the ratios $R_{ij}$ we obtain $\textrm{DB}_i$, a per-cluster Davies–Bouldin index, by taking the maximum $R_{ij}$ over all clusters $j$ different from $i$. The $\max$ operation effectively selects the clustering pairs that are overlapping the most (higher value of combined intra-clustering scattering and minimum distance of the centroids). The Davies–Bouldin index for the whole dataset is then the average of all $\textrm{DB}_i$.
+
+\begin{equation}
+  \textrm{DB} := \frac{1}{|\mathcal{C}|} \sum_{i} \textrm{DB}_i
+  \quad \textrm{where} \quad
+  \textrm{DB}_i := \max_{j \neq i} R_{ij}
+  \label{eq:bdi}
+\end{equation}
+
+\paragraph{SDBw index}
+\label{par:sdbw}
+
+Halkidi and Vazirgiannis in~\cite{ClusteringValiHalkid} define the validity index SDBw as the sum of two terms: Intra-cluster variance and Inter-cluster density. Altrnative names for the two terms are \emph{Scattering} (S) and \emph{Density Between clusters} (DBw).\footnote{SDBw was computed using the library s-dbw\cite{SDbwLashko2019} which make use of the optimization introduce by Tong and Tan in~\cite{ClusteringValiTong2009}.}
+
+The scattering is average ratio of the L2 norm of the standard deviation of the points in a cluster to the L2 norm of the standard deviation of the whole dataset.
+\begin{equation*}
+  \textrm{S} := \frac{1}{|C|} \sum_{i} \frac{\|\sigma(\mathcal{H}_i)\|}{\|\sigma(\mathcal{H})\|}
+  \quad \textrm{where} \quad
+  \sigma(\mathcal{H}_i) := \sqrt{\frac{1}{|\mathcal{H}_i|} \sum_{h_i} \left[h_i - \mu_i \right]^{2}}
+\end{equation*}
+
+The density bewteen clusters is computed by averaging the density bewteen all $ij$ pairs of clusters ($\textrm{DBw}_{ij}$).
+\begin{equation*}
+  \textrm{DBw} := \frac{1}{|C| (|C| - 1)} \sum_{i} \sum_{j \neq i} \textrm{DBw}_{ij}
+  \quad \textrm{where} \quad
+  \textrm{DBw}_{ij} := \frac{\rho_{ij}}{\max\{\rho_{i},\rho_{i}\}}
+\end{equation*}
+The desisty function $\rho_i$ counts the number of points count the number of points of $\mathcal{H}_i$ in the hyperphere of radius $R$ around the centroid $\mu_i$. $\rho_{ij}$ is the number of points belonging to $\mathcal{H}_i \cup \mathcal{H}_j$ lying in the hyperphere of radius $R$ centered in the middle point between the centroids $\mu_i$ and $\mu_j$. The radius $R$ is the same in all calculations.
+\begin{align*}
+  \quad R &:= \frac{1}{|\mathcal{C}|} \sum_i \| \sigma (\mathcal{H}_i)\| \\
+  \rho_{i} &:= \left| \, \left\{ h \in \mathcal{H}_i \ | \ d(h, \mu_{i}) \le R \right\} \, \right| \\
+  \rho_{ij} &:= \left| \, \left\{ h \in \mathcal{H}_i \cup \mathcal{H}_j \ | \
+    d\left(h, \frac{\left(\mu_{i} + \mu_{j}\right)}{2}\right) \le R \right\} \, \right|
+\end{align*}
+
+S\_DBw index is simply the sum of the two terms
+\begin{equation}
+  \textrm{SDBw} := \textrm{S} + \textrm{DBw}
+  \label{eq:sdbw}
+\end{equation}
+
+\subsection{Interpretation}
+
+All these definitions of clustering metrics can sound arbitrary, similar in spirit and, some of them, a bit convoluted. More over is not clear how to interpret their numerical values. However we decided to include them all in this work because different metrics strive in different scenarios. Lie et al. in~\cite{UnderstandingOLiuY2010} performed a study on eleven clustering metrics including the aforementioned ones evaluating their strengths and weaknesses on synthetic data. The study takes into account different aspects that could influence the validity on the metrics depending on data distribution. They focus on monotonicity, noise, density, the presence of sub-clusters and skewed distributions concluding that most of them have certain limitations in different scenarios (\Cref{tab:clustering-metrics-study}). The only metric that proved to be reliable in all tested circumstances is the \acrshort{sdbw}.
+\begin{table}[h!]
+  \renewcommand{\arraystretch}{1.2}%
+  \centering
+  \begin{tabular}{ |l l c c c c c| }
+    \hline          &              & Mono. & Noise  & Dens. & Subc.  & Skew Dis. \\ \hline
+    \acrshort{sc}   & $\uparrow  $ &       &        &       & $\times$ &           \\
+    \acrshort{chi}  & $\uparrow  $ &       & $\times$ &       &        & $\times$    \\
+    \acrshort{dbi}  & $\downarrow$ &       &        &       & $\times$ &           \\
+    \acrshort{sdbw} & $\downarrow$ &       &        &       &        &           \\ \hline
+  \end{tabular}
+  \caption{Validity for clustering metrics in different scenarios~\cite{UnderstandingOLiuY2010}. $\times$ indicates that the metric is not reliable in that case. $\uparrow / \downarrow$ indicates \emph{higher}$/$ \emph{lower} is better.} \label{tab:clustering-metrics-study}
+\end{table}
 
 \section{Projections}
 \label{sec:projections}
-% TODO: Features vector, clustering, plots ...
+
+In this work, we deal with high-dimensional vectors that we would like to visualize in 2D plots; these vectors are \emph{encodings} and \emph{features vectors}.
+In both cases we expect to observe a cluster like structure with sub-cluster for different levels of the hierarchy. To produce these 2D plot we need to use a dimensionality technique that is able to model the non-linear structure of the data, scale well with the number of points, and preserve the local global and local structure of the data.
+
+
+\subsection{UMAP}
+\label{subsec:projections-umap}
+
+UMAP~\cite{UmapUniformMMcinne2018} is a dimensionality reduction technique that complies with the aforementioned requirements. It assume that the high-dimensional data lies on a lower-dimensional manifold embedded the higher-dimensional space.
+
+First, using techniques from algebraic topology, it constructs a \emph{fuzzy topological representation} of the original data. This is a weighted graph where the nodes are the data points and the edges are weighted by the similarity between the data points.
+The problem is now how lay out this graph in the 2D euclidean space. Starting from an initial guess, computed using spectral embedding techniques, UMAP tries to minimize the difference between the fuzzy topological representation and the low-dimensional representation using a stochastic gradient descent algorithm.\footnote{Coincidentally, the loss function that UMAP try to minimize is the cross-entropy loss as well. The reason is that in the construction of the graph representation the existence or not of an edge is model by a Bernoulli distribution. It can be shown that cross-entropy corresponds to minimize the likelihood for a Bernoulli distribution.} This algorithm ensure the topology of the projected data resemble the topology of the manifold underlying the original data.
+
+The quality of the projections produced by UMAP is heavily dependent on the choice of the hyperparameters, specifically the \emph{number of neighbors} and the \emph{minimum distance}. The former is the number of neighbors to consider when constructing the fuzzy topological representation. A low value will result in a more projection that is more sensitive to local structure, while a high value focus more on the global structure of the data. The minimum distance simply avoids that the projected points are too cramped together by setting a minimum distance between them. The choice of these hyperparameters is crucial to obtain a good results, so in this work we explore various combinations depending on the type of data we are projecting, i.e. encodings, features vectors from dataset of different sizes, etc.
+
+A pitfall in the interpretation of UMAP plots is about the characteristics of emerging clustering.  While it's true that the presence and the global positions of clusters are better preserved in UMAP, the distances between them are not guaranteed to be meaningful. Moreover the size of the clusters is meaningless. This is because UMAP uses local notions of distance to construct its high-dimensional graph representation. So when reading a UMAP projection plot one must pay attention to the relative distances of the points instead of theirs absolute distances.
+
 
 \subsection{Encodings projections}
 \label{subsec:encodings-projections}
-\begin{itemize}
-  \item introduce encodings projections
-  \item are important for description encodings
-  \item briefly explain UMAP
-  \item  We use UMAP because it scale better for large number of points so we
-    can reuse it in the next subsection
-\end{itemize}
+The term \emph{encoding projections} refers to the visualization of the encodings produced by different encodings schemes $\phi$ for different datasets. Using UMAP encodings are projected into a 2D space and then colored based on the ground-truth class at a specific level of the hierarchy.
+
+In the case of hierarchical encodings this visualization serve as a debugging tool ensuring that the hierarchy indeed enforce a clusters/sub-clusters structure that reflect the hiearchy of the classes. \Cref{fig:04/hierarchical-encodings-projections} is a hand-crafted example of resulting projections for the toy dataset.
+
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}{0.45\textwidth}
+    \ctikzfig{04/hierarchical-encodings-projections-lvl1}
+    \caption{Level 1 of the hierarchy}
+    \label{fig:04/hierarchical-encodings-projections-lvl1}
+  \end{subfigure}
+  \begin{subfigure}{0.45\textwidth}
+    \ctikzfig{04/hierarchical-encodings-projections-lvl2}
+    \caption{Level 2 of the hierarchy}
+    \label{fig:04/hierarchical-encodings-projections-lvl2}
+  \end{subfigure}
+  \caption{Encodings projections for toy dataset.}
+  \label{fig:04/hierarchical-encodings-projections}
+\end{figure}
+
+For description encodings, UMAP plots are even more important because the is no guaranteed that the encodings produced from text descriptions can carry semantically meaningful information nor that a clustering sturcture that reflect the hard-coded hierarchy is present. Visualizing the descriptions encodings proved to be useful to highlight some ambiguity in how the hiearchy was construct for some dataset (see \Cref{subsec:cifar100-encodings-experimental-setup}).
+
+Another situation that descriptions encodings projection came handy, is to highlight the ``homograph'' problem expose in~\Cref{subsec:word-encoding}. For instance the word encoding produced by GloVe for the class ``seal'' (the animal) stood out as a outlier in the projection for the CIFAR-100 dataset. This was a clear indication that the word encoding for ``seal'' was not semantically related to the other animal classes in the dataset and the true meaning encoded give by GloVe was one of ``seal'' as a verb.
 
 \subsection{Features projections}
 \label{subsec:features-projections}
-\begin{itemize}
-  \item Visual inspections of model's features vectors (the last layer before
-    output)
-  \item Clustering metrics as measure for internal structured representation
-\end{itemize}
 
+\emph{Features projections} (short for feature vectors projections) are obtained by piping the testing dataset into a trained model, extract the feataure vectors --i.e. 1D vectors from the penultimate layer of the model before the final classifier-- and project onto the 2D plane using UMAP. Finally, as in the case of encodings projections, the points are colored based on their ground-truth class at different level of the hiearchy. We restate that the color are based on the ground-turth call associated to the image from which was generated the feature vector and not the predicted class.
+
+These projections provide a complementary view to the clustering metrics in~\Cref{sec:features-metrics} and should be seem as an euristic tool to qualitatively assess the quality of the model internal representation. However is must be said that features metrics have a deterministic formule which are computed on the numerical values of the full features vectors, while UMAP projections can vary quite a bit depending on the choice of the hyperparameters.
+
+Computational requirements for feature projections are far greather that the one for encodings projections. All the features vecotrs are pass together to the UMAP algorigthm as a big matrix \emph{length of testing dataset} $\times$ \emph{length of features vectors}. So, given the large amont of point in the testing split we need to use a dimensionality reduction technique that scale well with the number of datapoints. This is the primary reason for the choice of UMAP over t-SNE, an alternative non linear dimensionality reduction technique.
 
 \section{Adversarial Attacks}
 \label{sec:adversarial-attacks-model-evaluation}
@@ -172,9 +331,9 @@ The former is a type of attack performed during training in which the training d
 The \acrfull{fgsm} is a \emph{white-box evasion} adversarial attack introduced by Goodfellow et al.~\cite{ExplainingAndGoodfe2014}. Like previous white-box adversarial attacks, it is fundamentally an optimization problem; specifically, finding the stationary point of a given objective with a constraint on the magnitude of the perturbation.
 
 Let \gls{input} be the original image represented by a tensor of \gls{channel_size} $\times$ \gls{height_size} $\times$ \gls{width_size}.
-The perturbation \gls{perturbation} is a tensor with the same dimensions as \gls{input}. The adversarial example \gls{perturbed-input} is the sum of the original image and the perturbation, i.e.
+The perturbation \gls{perturbation} is a tensor with the same dimensions as \gls{input}. The adversarial example \gls{perturbed_input} is the sum of the original image and the perturbation, i.e.
 \begin{equation}
-  \gls{perturbed-input} := \gls{input} + \gls{perturbation}
+  \gls{perturbed_input} := \gls{input} + \gls{perturbation}
   \label{eq:perturbed-input}
 \end{equation}
 Different adversarial attacks have different methods for producing \gls{perturbation}.
@@ -195,6 +354,6 @@ which is the sign of the gradient of the loss between the model's output \gls{ou
 \end{equation}
 The difference between \Cref{eq:targeted-perturbation} and \Cref{eq:untargeted-perturbation} is twofold. The minus sign turns the maximization problem into a minimization one. The quantity we try to minimize is the loss between the model's output \gls{output} and the encoding of the target class \gls{encoding_i}. This procedure effectively steers the model towards the target class, making it more likely that all inputs are classified as the chosen target class.\medskip
 
-The parameter $\epsilon$ is fixed and controls the magnitude of the perturbation. Smaller values of $\epsilon$ produce a smaller perturbation, hence \gls{perturbed-input} will closely resemble the original \gls{input}, but the attack will be less effective. If a perturbation is sufficiently small, a \gls{perturbed-input} cannot be distinguished from \gls{input} by the naked eye but can still deceive the classifier. Conversely, if $\epsilon$ is too large, the corrupted input could be easily spotted by a human observer, and in the extreme case, make the content of \gls{input} barely recognizable. Various experiments for targeted and untargeted attacks with different values for $\epsilon$ are presented in \Cref{ch:results-and-discussion}.\medskip
+The parameter $\epsilon$ is fixed and controls the magnitude of the perturbation. Smaller values of $\epsilon$ produce a smaller perturbation, hence \gls{perturbed_input} will closely resemble the original \gls{input}, but the attack will be less effective. If a perturbation is sufficiently small, a \gls{perturbed_input} cannot be distinguished from \gls{input} by the naked eye but can still deceive the classifier. Conversely, if $\epsilon$ is too large, the corrupted input could be easily spotted by a human observer, and in the extreme case, make the content of \gls{input} barely recognizable. Various experiments for targeted and untargeted attacks with different values for $\epsilon$ are presented in \Cref{ch:results-and-discussion}.\medskip
 
 Despite its simplicity, the \gls{fgsm} attack is quite effective, especially against models that do not implement a defense mechanism (see \Cref{sec:adversarial-attacks-results-and-discussion}), even for ``undetectable values'' of $\epsilon$. We reiterate that the \gls{fgsm} attack is used merely as an evaluation tool for probing the model's internal representation.
