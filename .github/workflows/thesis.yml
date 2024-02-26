@@ -19,7 +19,7 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           working_directory: thesis
-          root_file: thesis/main.tex
+          root_file: main.tex
 
       - name: Publish
         uses: actions/upload-artifact@v3
