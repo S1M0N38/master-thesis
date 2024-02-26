@@ -21,11 +21,11 @@ Additionally, we introduce the notation employed in the mathematical expressions
 
 \item \textbf{Model} (\gls{model}). Let \gls{model} be a function that takes an image as input and returns a vector, i.e.\
 \begin{equation}
-  \psi_\theta: \mathcal{X} \to \mathcal{Y}
+  \psi_\theta: \mathbb{R}^{C \times H \times W} \to \mathbb{R}^{D}
   : x \mapsto \hat{y} \gls{define_lhs_from_rhs} \psi_\theta \left(x\right)
   \label{eq:model}
 \end{equation}
-where \gls{input_set} $\subseteq \mathbb{R}^{C \times H \times W}$ is the set of images and \gls{output_set} $\subseteq \mathbb{R}^{D}$ is the set of the model's outputs. At the highest level of abstraction, a deep learning model can be seen as a deterministic function of several real variables that outputs a real-valued vector. Internally, it is a composition of functions such as matrix multiplications, convolutions, non-linearities, etc. Sometimes the term ``architecture'' is used synonymously with ``model''.
+where $\mathbb{R}^{C \times H \times W}$ is the set of images and $\mathbb{R}^{D}$ is the set of the model's outputs. At the highest level of abstraction, a deep learning model can be seen as a deterministic function of several real variables that outputs a real-valued vector. Internally, it is a composition of functions such as matrix multiplications, convolutions, non-linearities, etc. Sometimes the term ``architecture'' is used synonymously with ``model''.
 
 \item \textbf{Output} (\gls{output}). Let \gls{output} denote the output of the model, that is, the outcome of the application of \gls{model} on \gls{input}. This is a \gls{output_size}-dimensional real-valued vector. We use the more specific term ``model's predictions'' when \gls{output_size} is equal to the number of classes and the vector is a \acrfull{pmf} over the classes.
 
@@ -38,14 +38,14 @@ reminds us that the functions constituting the model are parameterized by a set 
 
 \item \textbf{Encoder} (\gls{encoder}). Let \gls{encoder} be a function that takes a class \gls{class} as input and returns its encoding \gls{encoding}, i.e.\
 \begin{equation}
-  \phi: \mathcal{C} \to \mathcal{Y} : c \mapsto y := \phi(c).
+  \phi: \mathcal{C} \to \mathbb{R}^{D} : c \mapsto y := \phi(c).
   \label{eq:encoder}
 \end{equation}
 Typically, the conversion from class text to numerical representation is not explicitly included in the descriptions of deep learning models. However, in this work, we devote attention to this aspect because it is crucial in the subsequent discussions as a means to inject semantic information. Furthermore, it must not be confused with the ``encoder block'' found in some \acrshort{lm} architectures.
 
 \item \textbf{Loss} (\gls{loss}). The loss or cost function, denoted as \gls{loss}, is a function that takes as input the output of the model \gls{output} and the encoding of the corresponding class \gls{encoding} and returns a scalar,
 \begin{equation}
-  \Loss: \mathcal{Y} \times \mathcal{Y} \to \mathbb{R}
+  \Loss: \mathbb{R}^{D} \times \mathbb{R}^{D} \to \mathbb{R}
        : (\hat{y}, y) \mapsto \Loss(\hat{y}, y).
   \label{eq:loss}
 \end{equation}
@@ -93,7 +93,7 @@ A significant limitation of one-hot encoding is that it discards all hierarchica
 
 \paragraph{Cosine similarity} The notion of encoding similarity employed throughout this document is the \emph{cosine similarity}. Given two encodings $y_1$ and $y_2$, the cosine similarity (or simply their similarity) is defined as
 \begin{equation}
-  \gls{cosine_similarity}: \mathcal{Y} \times \mathcal{Y} \to \left[-1, +1\right]
+  \gls{cosine_similarity}: \mathbb{R}^{D} \times \mathbb{R}^{D} \to \left[-1, +1\right]
   : (y_1, y_2) \mapsto \gls{cosine_similarity} \,(y_1, y_2) :=
   \frac{y_1 \cdot y_2}{\|y_1\| \, \|y_2\|}
   \label{eq:cosine-similarity}
