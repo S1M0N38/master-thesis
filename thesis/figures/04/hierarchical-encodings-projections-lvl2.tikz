@@ -1,0 +1,35 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=orange circle] (0) at (2, 4) {};
+		\node [style=orange circle] (1) at (4, 4) {};
+		\node [style=orange circle] (2) at (4, 1.5) {};
+		\node [style=none] (3) at (0, 0) {};
+		\node [style=orange circle] (4) at (-2.75, 4) {};
+		\node [style=orange circle] (5) at (-3.75, 2.25) {};
+		\node [style=blue circle] (6) at (-2.75, -2.75) {};
+		\node [style=none] (7) at (1.75, 5) {\texttt{pear}};
+		\node [style=none] (8) at (4.75, 5) {\texttt{apple}};
+		\node [style=none] (9) at (4.75, 2.5) {\texttt{lemon}};
+		\node [style=none] (10) at (-2.75, -1.75) {\texttt{car}};
+		\node [style=none] (11) at (-4, 3.25) {\texttt{cat}};
+		\node [style=none] (12) at (-2.75, 5) {\texttt{dog}};
+		\node [style=none] (13) at (0, 6) {};
+		\node [style=none] (14) at (6, 0) {};
+		\node [style=none] (15) at (-6, 0) {};
+		\node [style=none] (16) at (0, -6) {};
+		\node [style=none] (21) at (2, -2.25) {};
+		\node [style=none] (22) at (2.5, -2.25) {};
+		\node [style=none] (23) at (2, -3.25) {};
+		\node [style=none] (24) at (2.5, -3.25) {};
+		\node [style=anchor west] (26) at (3, -2.25) {Natural};
+		\node [style=anchor west] (27) at (3, -3.25) {Artificial};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=grey arrow] (3.center) to (13.center);
+		\draw [style=grey arrow] (3.center) to (14.center);
+		\draw [style=grey arrow] (3.center) to (16.center);
+		\draw [style=grey arrow] (3.center) to (15.center);
+		\draw [style=thick orange] (21.center) to (22.center);
+		\draw [style=thick blue] (23.center) to (24.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
