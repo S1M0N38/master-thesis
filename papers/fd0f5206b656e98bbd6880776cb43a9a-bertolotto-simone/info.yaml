@@ -1,0 +1,14 @@
+author: Bertolotto, Simone
+author_list:
+- family: Bertolotto
+  given: Simone
+files: []
+month: May
+papis_id: 00e32d723af577a79f7ba5b00c28e07a
+ref: PytorchTemplatBertol2023
+time-added: 2024-03-19-17:45:57
+title: PyTorch Template with TOML
+type: software
+url: https://github.com/S1M0N38/pytorch-template
+version: 0.1.0
+year: '2023'
