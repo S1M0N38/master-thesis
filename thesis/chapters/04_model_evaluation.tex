@@ -42,7 +42,7 @@ The deep learning community prioritizes achieving high top-\gls{number_predicted
 However, this work focuses on developing models that not only produce fewer errors but also less severe ones. While top-\gls{number_predicted_classes} accuracies are useful to capture the \emph{quantity} aspect, they do not provide any information about their \emph{quality}.
 For example, confusing a \texttt{dog} for a \texttt{cat} can be considered a milder error compared to a \texttt{dog} - \texttt{car} misclassification; both are mammals and, as such, share some distinguishing features like fur, a head, a pair of eyes, four paws, etc. Cars present straight lines, a uniform coated surface, and an absence of typical traits of living things, etc.
 This notion of visual similarity is somewhat encoded in the classes' hierarchy, so it makes sense to use distances on a hierarchical tree to quantify the severity of mistakes.\footnote{The assumption that a hierarchy carries information about visual characteristics is indeed strong and must be empirically checked for dataset-hierarchy pairs considered.
-Datasets used in this work satisfy the ansatz, so hierarchical similarity is a good proxy for visual similarity.} In the following sections, we introduce some performance metrics that enable this quantitative/qualitative error assessment.
+We assume that dataset hierarchies used in this work satisfy this ansatz, so hierarchical similarity is a good proxy for visual similarity.} In the following sections, we introduce some performance metrics that enable this quantitative/qualitative error assessment.
 
 \paragraph{Levels}
 \label{par:metrics-levels}
@@ -268,7 +268,7 @@ The term \emph{encoding projections} refers to the visualization of the encoding
 
 In the case of hierarchical encodings, this visualization serves as a debugging tool, ensuring that the hierarchy indeed enforces a cluster/sub-cluster structure that reflects the hierarchy of the classes. \Cref{fig:04/hierarchical-encodings-projections} is a hand-crafted example of resulting projections for the toy dataset.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \begin{subfigure}{0.45\textwidth}
     \ctikzfig{04/hierarchical-encodings-projections-lvl1}
@@ -350,7 +350,7 @@ which is the sign of the gradient of the loss between the model's output \gls{ou
   - \gls{signum} \, \left[\gls{grad} \Loss\left(\hat{y}, y_i\right)\right] \, \epsilon.
   \label{eq:targeted-perturbation}
 \end{equation}
-The difference between \Cref{eq:targeted-perturbation} and \Cref{eq:untargeted-perturbation} is twofold. The minus sign turns the maximization problem into a minimization one. The quantity we try to minimize is the loss between the model's output \gls{output} and the encoding of the target class \gls{encoding_i}. This procedure effectively steers the model towards the target class, making it more likely that all inputs are classified as the chosen target class.\medskip
+The difference between \Cref{eq:targeted-perturbation} and \Cref{eq:untargeted-perturbation} is twofold. The minus sign turns the maximization problem into a minimization one. The quantity we try to minimize is the loss between the model's output \gls{output} and the encoding of the target class \gls{encoding_i}. This procedure effectively steers the model towards the target class, increasing the likelihood that inputted images are classified as the chosen target class.\medskip
 
 The parameter $\epsilon$ is fixed and controls the magnitude of the perturbation. Smaller values of $\epsilon$ produce a smaller perturbation, hence \gls{perturbed_input} will closely resemble the original \gls{input}, but the attack will be less effective. If a perturbation is sufficiently small, a \gls{perturbed_input} cannot be distinguished from \gls{input} by the naked eye but can still deceive the classifier. Conversely, if $\epsilon$ is too large, the corrupted input could be easily spotted by a human observer, and in the extreme case, make the content of \gls{input} barely recognizable. Various experiments for targeted and untargeted attacks with different values for $\epsilon$ are presented in \Cref{ch:results-and-discussion}.\medskip
 
